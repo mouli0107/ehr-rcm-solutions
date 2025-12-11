@@ -97,87 +97,66 @@ export function Hero() {
             </motion.div>
           </div>
 
-          {/* Right Content - Stunning Visual + Certification Seal */}
-          <div className="lg:w-1/2 relative perspective-1000">
-            <motion.div
-              initial={{ opacity: 0, rotateX: 5, y: 30 }}
-              animate={{ opacity: 1, rotateX: 0, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="relative z-10"
+          {/* Right Content - Zig-Zag Image Layout */}
+          <div className="lg:w-1/2 relative h-[400px] md:h-[500px]">
+            
+            {/* Zig-Zag Scattered Provider/Clinic Images */}
+            {[
+              { img: doctorPortrait, label: "Dr. Sarah Chen", position: "left-0 top-0", size: "h-32 w-32 md:h-40 md:w-40", delay: 0.1 },
+              { img: medicalTeam, label: "Care Team", position: "right-4 top-8", size: "h-28 w-36 md:h-32 md:w-44", delay: 0.2 },
+              { img: doctorTablet, label: "Digital Workflow", position: "left-8 top-36 md:top-44", size: "h-28 w-28 md:h-36 md:w-36", delay: 0.3 },
+              { img: clinicInterior, label: "Modern Clinic", position: "right-0 top-48 md:top-52", size: "h-24 w-32 md:h-32 md:w-44", delay: 0.4 },
+            ].map((item, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, scale: 0.8, y: 20 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                transition={{ delay: item.delay, duration: 0.6 }}
+                whileHover={{ scale: 1.05, zIndex: 50 }}
+                className={`absolute ${item.position} ${item.size} z-${10 + i} group cursor-pointer`}
+              >
+                <div className="w-full h-full rounded-2xl border-4 border-white shadow-2xl overflow-hidden bg-slate-200">
+                  <img src={item.img} alt={item.label} className="w-full h-full object-cover" />
+                </div>
+                <div className="absolute bottom-2 left-2 right-2 px-2 py-1 bg-slate-900/80 backdrop-blur-sm text-white text-[10px] font-bold rounded opacity-0 group-hover:opacity-100 transition-opacity text-center">
+                  {item.label}
+                </div>
+              </motion.div>
+            ))}
+
+            {/* Floating Certification Seal */}
+            <motion.div 
+              animate={{ y: [0, -8, 0] }}
+              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+              className="absolute right-0 top-0 z-30"
             >
-              {/* Main Visual */}
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-blue-900/10 border border-white/50 bg-white/40 backdrop-blur-xl">
-                 {/* Glass Reflection */}
-                 <div className="absolute inset-0 bg-gradient-to-tr from-white/40 via-transparent to-transparent opacity-50 z-10 pointer-events-none" />
+              <div className="relative h-24 w-24 md:h-28 md:w-28 bg-white rounded-full shadow-2xl shadow-amber-500/20 flex items-center justify-center p-2 border-4 border-white">
+                 <div className="absolute inset-0 rounded-full border border-slate-100"></div>
+                 <img src={oncSeal} alt="ONC Certified" className="w-full h-full object-contain" />
                  
-                 <img 
-                  src={heroImage} 
-                  alt="Future of EHR Dashboard" 
-                  className="w-full h-auto object-cover transform scale-105"
-                />
+                 <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 bg-slate-900 text-white text-[9px] font-bold px-2 py-1 rounded-full whitespace-nowrap shadow-lg">
+                   Cures Update
+                 </div>
               </div>
-
-              {/* Floating Certification Seal */}
-              <motion.div 
-                animate={{ y: [0, -8, 0] }}
-                transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute -right-6 -top-6 md:-right-10 md:-top-10 z-30"
-              >
-                <div className="relative h-28 w-28 md:h-32 md:w-32 bg-white rounded-full shadow-2xl shadow-amber-500/20 flex items-center justify-center p-2 border-4 border-white">
-                   <div className="absolute inset-0 rounded-full border border-slate-100"></div>
-                   <img src={oncSeal} alt="ONC Certified" className="w-full h-full object-contain" />
-                   
-                   {/* Tooltip-like label */}
-                   <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 bg-slate-900 text-white text-[9px] font-bold px-2 py-1 rounded-full whitespace-nowrap shadow-lg">
-                     Cures Update
-                   </div>
-                </div>
-              </motion.div>
-
-              {/* Floating Glass Cards - Clean & Minimal */}
-              <motion.div 
-                animate={{ y: [0, -10, 0] }}
-                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute -left-12 top-1/3 bg-white/90 backdrop-blur-md p-4 rounded-xl shadow-xl border border-white/50 z-20 hidden md:block"
-              >
-                <div className="flex items-center gap-3">
-                  <div className="h-10 w-10 rounded-full bg-emerald-100 flex items-center justify-center">
-                    <TrendingUp className="h-5 w-5 text-emerald-600" />
-                  </div>
-                  <div>
-                    <p className="text-xs font-bold text-slate-400 uppercase">Revenue Growth</p>
-                    <p className="text-lg font-bold text-slate-900">+127%</p>
-                  </div>
-                </div>
-              </motion.div>
-
-              {/* Zig-Zag Provider/Clinic Images */}
-              {[
-                { img: doctorPortrait, label: "Dr. Sarah Chen", position: "-left-16 top-4", labelPos: "left" },
-                { img: medicalTeam, label: "Care Team", position: "-right-8 top-20", labelPos: "right" },
-                { img: doctorTablet, label: "Digital Workflow", position: "-left-12 bottom-32", labelPos: "left" },
-                { img: clinicInterior, label: "Modern Clinic", position: "-right-10 bottom-8", labelPos: "right" }
-              ].map((item, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: 0.4 + (i * 0.15), duration: 0.5 }}
-                  whileHover={{ scale: 1.1 }}
-                  className={`absolute ${item.position} z-20 hidden lg:block group cursor-pointer`}
-                >
-                  <div className="h-20 w-20 md:h-24 md:w-24 rounded-2xl border-3 border-white shadow-2xl overflow-hidden bg-slate-200 ring-4 ring-white/50">
-                    <img src={item.img} alt={item.label} className="w-full h-full object-cover" />
-                  </div>
-                  <div className={`absolute top-1/2 -translate-y-1/2 px-2 py-1 bg-slate-900/90 text-white text-[10px] font-bold rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none ${
-                    item.labelPos === "left" ? "left-full ml-3" : "right-full mr-3"
-                  }`}>
-                    {item.label}
-                  </div>
-                </motion.div>
-              ))}
-
             </motion.div>
+
+            {/* Floating Revenue Growth Card */}
+            <motion.div 
+              animate={{ y: [0, -10, 0] }}
+              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+              className="absolute left-4 bottom-8 bg-white/95 backdrop-blur-md p-4 rounded-xl shadow-xl border border-white/50 z-40 hidden md:block"
+            >
+              <div className="flex items-center gap-3">
+                <div className="h-10 w-10 rounded-full bg-emerald-100 flex items-center justify-center">
+                  <TrendingUp className="h-5 w-5 text-emerald-600" />
+                </div>
+                <div>
+                  <p className="text-xs font-bold text-slate-400 uppercase">Revenue Growth</p>
+                  <p className="text-lg font-bold text-slate-900">+127%</p>
+                </div>
+              </div>
+            </motion.div>
+
           </div>
 
         </div>

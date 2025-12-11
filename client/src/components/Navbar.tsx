@@ -66,7 +66,7 @@ export function Navbar() {
         <div className="container mx-auto px-4 md:px-6 flex justify-between items-center">
           <div className="flex items-center gap-6">
             <span className="flex items-center gap-1.5"><Phone className="h-3 w-3 text-primary" /> (888) 555-0123</span>
-            <span className="flex items-center gap-1.5"><Mail className="h-3 w-3 text-primary" /> support@mdchartehr.com</span>
+            <span className="flex items-center gap-1.5"><Mail className="h-3 w-3 text-primary" /> support@mdchartsehr.com</span>
             <span className="flex items-center gap-1.5"><Clock className="h-3 w-3 text-emerald-500" /> Support Status: Online (Wait: &lt;1m)</span>
           </div>
           <div className="flex items-center gap-4">
@@ -94,7 +94,7 @@ export function Navbar() {
             </div>
             <div className="flex flex-col leading-none">
               <span className="text-lg font-extrabold font-heading text-slate-900 tracking-tight">
-                MDChart<span className="text-primary">EHR</span>
+                MDCharts<span className="text-primary">EHR</span>
               </span>
               <span className="text-[9px] font-bold text-slate-400 uppercase tracking-widest">Enterprise Suite</span>
             </div>

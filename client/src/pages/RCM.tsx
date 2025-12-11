@@ -4,6 +4,8 @@ import { Button } from "@/components/ui/button";
 import { Navbar } from "@/components/Navbar";
 import rcmImage from "@assets/generated_images/abstract_medical_financial_growth_chart.png";
 
+import trizettoBadge from "@assets/generated_images/trizetto_provider_solutions_integration_badge.png";
+
 export default function RCMPage() {
   const fadeInUp = {
     initial: { opacity: 0, y: 20 },
@@ -28,12 +30,14 @@ export default function RCMPage() {
               transition={{ duration: 0.6 }}
               className="lg:col-span-7"
             >
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-blue-600 text-white text-xs font-bold uppercase tracking-widest mb-4">
-                <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-400"></span>
-                </span>
-                Revenue Cycle Intelligence
+              {/* Highlighted TriZetto Integration */}
+              <div className="flex items-center gap-3 mb-6 bg-white border border-slate-200 rounded-full p-1 pr-4 shadow-sm w-fit">
+                 <div className="h-8 w-8 rounded-full overflow-hidden bg-slate-100 flex items-center justify-center">
+                   <img src={trizettoBadge} alt="TriZetto" className="w-full h-full object-cover" />
+                 </div>
+                 <span className="text-xs font-bold text-slate-700 uppercase tracking-wide">
+                   Premier Clearinghouse Integration: <span className="text-blue-600">TriZetto Provider Solutions</span>
+                 </span>
               </div>
               
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold font-heading text-slate-900 leading-[1.1] mb-4 tracking-tight">
@@ -181,7 +185,7 @@ export default function RCMPage() {
             Extended Capabilities
           </h2>
 
-          <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-3">
+          <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-3">
             <AddOnCard 
               title="Patient Support"
               icon={Phone}
@@ -198,17 +202,39 @@ export default function RCMPage() {
               features={["Workflow Audit", "KPI Reports"]}
             />
             <AddOnCard 
-              title="Collections"
-              icon={DollarSign}
-              features={["Recovery", "Statements"]}
-            />
-            <AddOnCard 
               title="A/R Recovery"
               icon={RefreshCw}
               features={["Old Claims", "Appeals"]}
               className="bg-blue-900 text-white border-blue-800"
               dark={true}
             />
+          </div>
+        </div>
+      </section>
+
+      {/* RCM KPI Dashboard Metrics Section */}
+      <section className="py-16 bg-white border-t border-slate-200">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="flex items-center justify-between mb-8">
+            <h2 className="text-2xl font-bold font-heading text-slate-900">RCM Performance Metrics</h2>
+            <div className="flex gap-2">
+               <span className="text-xs font-bold text-slate-500 uppercase tracking-wider">Live Benchmark Data</span>
+            </div>
+          </div>
+          
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-slate-200 border border-slate-200 rounded-lg overflow-hidden">
+             {[
+               { label: "Net Collection Rate", value: "96-99%", sub: "Industry standard: 95%", color: "text-emerald-600" },
+               { label: "Days in A/R", value: "< 30 Days", sub: "Faster than avg (45 days)", color: "text-blue-600" },
+               { label: "First Pass Resolution", value: "98%", sub: "Clean claims rate", color: "text-purple-600" },
+               { label: "Denial Rate", value: "< 4%", sub: "Industry avg: 5-10%", color: "text-indigo-600" },
+             ].map((metric, i) => (
+               <div key={i} className="bg-white p-6 hover:bg-slate-50 transition-colors">
+                 <p className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">{metric.label}</p>
+                 <p className={`text-3xl font-extrabold ${metric.color} mb-1`}>{metric.value}</p>
+                 <p className="text-[10px] font-medium text-slate-500">{metric.sub}</p>
+               </div>
+             ))}
           </div>
         </div>
       </section>

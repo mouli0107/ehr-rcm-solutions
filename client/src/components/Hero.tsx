@@ -26,14 +26,14 @@ export function Hero() {
             >
               {/* Premium Certification Badge Row */}
               <div className="flex flex-wrap gap-3 mb-6">
-                 <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-amber-200 shadow-sm hover:shadow-md transition-shadow cursor-default">
-                    <Award className="h-4 w-4 text-amber-500" />
+                 <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-emerald-200 shadow-[0_0_15px_rgba(16,185,129,0.3)] hover:shadow-[0_0_20px_rgba(16,185,129,0.5)] transition-all cursor-default animate-pulse">
+                    <Award className="h-4 w-4 text-emerald-500" />
                     <span className="text-[10px] font-bold uppercase tracking-widest text-slate-700">
-                      ONC 2015 Edition Cures Update
+                      ONC 2015 Edition Certified
                     </span>
                  </div>
-                 <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-blue-100 shadow-sm hover:shadow-md transition-shadow cursor-default">
-                    <ShieldCheck className="h-4 w-4 text-primary" />
+                 <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-blue-200 shadow-[0_0_15px_rgba(59,130,246,0.3)] hover:shadow-[0_0_20px_rgba(59,130,246,0.5)] transition-all cursor-default animate-pulse">
+                    <ShieldCheck className="h-4 w-4 text-blue-500" />
                     <span className="text-[10px] font-bold uppercase tracking-widest text-slate-700">
                       21st Century Cures Act Certified
                     </span>

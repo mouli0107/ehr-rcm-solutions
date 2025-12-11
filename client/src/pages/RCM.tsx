@@ -15,46 +15,56 @@ export default function RCMPage() {
     <div className="min-h-screen bg-background font-sans selection:bg-primary/20">
       <Navbar />
       
-      {/* Hero Section */}
-      <section className="pt-32 pb-20 md:pt-40 md:pb-24 bg-gradient-to-b from-blue-50/50 to-white overflow-hidden">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+      {/* Hero Section - Packed & Dense */}
+      <section className="pt-28 pb-12 bg-slate-50 overflow-hidden relative border-b border-slate-200">
+        {/* Dense Grid Pattern */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
+        
+        <div className="container mx-auto px-4 md:px-6 relative z-10">
+          <div className="grid lg:grid-cols-12 gap-8 items-center">
             <motion.div 
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
+              className="lg:col-span-7"
             >
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100/50 text-primary text-sm font-semibold mb-6 border border-blue-100">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-blue-600 text-white text-xs font-bold uppercase tracking-widest mb-4">
                 <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-400"></span>
                 </span>
-                Maximize Clean Claims
+                Revenue Cycle Intelligence
               </div>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-heading text-slate-900 leading-[1.1] mb-6 tracking-tight">
-                RCM Services Built to <span className="text-primary">Maximize Revenue</span>
+              
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold font-heading text-slate-900 leading-[1.1] mb-4 tracking-tight">
+                Maximize Clean Claims. <br/>
+                <span className="text-primary">Accelerate Revenue.</span>
               </h1>
-              <p className="text-xl text-slate-600 mb-8 leading-relaxed">
-                Reduce denials, speed reimbursements, and offload billing burden. We handle the entire billing workflow from eligibility through payment posting so your team can stay focused on patient care.
+              
+              <p className="text-lg text-slate-600 mb-6 leading-snug font-medium max-w-2xl">
+                End-to-end RCM that handles the entire billing workflow from eligibility through payment posting. Reduce denials and offload your billing burden today.
               </p>
               
-              <div className="bg-white p-6 rounded-xl shadow-lg border-l-4 border-emerald-500 mb-8 max-w-lg">
-                <div className="flex items-start gap-4">
-                  <div className="bg-emerald-100 p-2 rounded-full mt-1">
-                    <TrendingUp className="h-5 w-5 text-emerald-600" />
-                  </div>
-                  <div>
-                    <p className="text-emerald-900 font-medium italic">
-                      "One clinic grew from <span className="font-bold text-emerald-700">$300,000</span> to over <span className="font-bold text-emerald-700">$1 million</span> in annual collections after switching to MD Charts RCM."
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="h-14 px-8 text-base shadow-xl shadow-primary/20 hover:shadow-primary/30 transition-all rounded-full">
+              <div className="flex flex-wrap gap-3 mb-8">
+                <Button size="lg" className="h-12 px-8 text-sm font-bold uppercase tracking-wide shadow-xl bg-primary hover:bg-blue-700 rounded-sm">
                   Get a Free RCM Audit
                 </Button>
+                <Button size="lg" variant="outline" className="h-12 px-8 text-sm font-bold uppercase tracking-wide bg-white border-slate-300 text-slate-700 rounded-sm">
+                  Download Case Study
+                </Button>
+              </div>
+
+              {/* Stat Banner - Tighter */}
+              <div className="bg-white border border-slate-200 rounded-lg p-4 shadow-sm flex items-center gap-4 max-w-2xl">
+                <div className="bg-emerald-100 p-3 rounded-md shrink-0">
+                   <TrendingUp className="h-6 w-6 text-emerald-600" />
+                </div>
+                <div>
+                  <p className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-1">Success Metric</p>
+                  <p className="text-slate-900 font-medium text-sm leading-tight">
+                    "One clinic grew from <span className="font-bold text-emerald-600 bg-emerald-50 px-1 rounded">$300k</span> to over <span className="font-bold text-emerald-600 bg-emerald-50 px-1 rounded">$1 million</span> in annual collections."
+                  </p>
+                </div>
               </div>
             </motion.div>
 
@@ -62,32 +72,59 @@ export default function RCMPage() {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="relative"
+              className="lg:col-span-5 relative h-full flex items-center"
             >
-               <div className="absolute top-0 right-0 w-3/4 h-full bg-blue-100/50 rounded-full blur-3xl -z-10 translate-x-1/4" />
-               <img 
-                src={rcmImage} 
-                alt="RCM Dashboard Analytics" 
-                className="w-full h-auto rounded-2xl shadow-2xl border border-slate-100"
-              />
+               <div className="relative rounded-lg overflow-hidden shadow-2xl border border-slate-200 bg-white w-full">
+                 <div className="absolute top-0 left-0 right-0 bg-slate-100 border-b border-slate-200 px-4 py-2 flex items-center gap-2">
+                   <div className="flex gap-1.5">
+                     <div className="w-2.5 h-2.5 rounded-full bg-red-400"/>
+                     <div className="w-2.5 h-2.5 rounded-full bg-amber-400"/>
+                     <div className="w-2.5 h-2.5 rounded-full bg-emerald-400"/>
+                   </div>
+                   <div className="text-[10px] font-mono text-slate-400 ml-2">rcm_dashboard_v4.2.exe</div>
+                 </div>
+                 <img 
+                  src={rcmImage} 
+                  alt="RCM Dashboard Analytics" 
+                  className="w-full h-auto object-cover"
+                />
+                
+                {/* Overlay Metrics */}
+                <div className="absolute bottom-4 left-4 right-4 grid grid-cols-3 gap-2">
+                   {[
+                     { l: "Net Collection", v: "98.5%", c: "text-emerald-600" },
+                     { l: "Days in A/R", v: "24", c: "text-blue-600" },
+                     { l: "Denial Rate", v: "<2%", c: "text-purple-600" }
+                   ].map((m, i) => (
+                     <div key={i} className="bg-white/95 backdrop-blur shadow-sm p-2 rounded border border-slate-100 text-center">
+                       <div className="text-[9px] font-bold text-slate-400 uppercase">{m.l}</div>
+                       <div className={`text-lg font-extrabold ${m.c}`}>{m.v}</div>
+                     </div>
+                   ))}
+                </div>
+               </div>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Core Services Grid */}
-      <section className="py-24 bg-white">
+      {/* Core Services Grid - High Density */}
+      <section className="py-16 bg-white">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold font-heading text-slate-900 mb-4">
-              RCM at a Glance
-            </h2>
-            <p className="text-lg text-slate-600">
-              A comprehensive suite of services designed to capture every dollar you earn.
-            </p>
+          <div className="flex items-center justify-between mb-8 pb-4 border-b border-slate-100">
+            <div>
+              <h2 className="text-2xl font-bold font-heading text-slate-900">
+                RCM Workflow Modules
+              </h2>
+              <p className="text-sm text-slate-500 font-medium">End-to-end financial management suite</p>
+            </div>
+            <div className="hidden md:flex gap-2">
+              <Button variant="outline" size="sm" className="h-8 text-xs">Download Specs</Button>
+              <Button size="sm" className="h-8 text-xs">View API Docs</Button>
+            </div>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
             <ServiceCard 
               icon={FileText}
               title="Front-End & Charge Capture"
@@ -105,8 +142,8 @@ export default function RCMPage() {
               items={[
                 "Claim submission",
                 "Rejection resolution",
-                "Denial management & appeals",
-                "Real-time claim tracking"
+                "Denial management",
+                "Real-time tracking"
               ]}
               delay={0.1}
             />
@@ -115,9 +152,9 @@ export default function RCMPage() {
               title="Payments & Accounts"
               items={[
                 "ERA posting",
-                "Payment posting & reconciliation",
+                "Payment reconciliation",
                 "Refund processing",
-                "Insurance credit resolution"
+                "Credit resolution"
               ]}
               delay={0.2}
             />
@@ -126,7 +163,7 @@ export default function RCMPage() {
               title="Patient & Practice Support"
               items={[
                 "Electronic statements",
-                "Paper statements (optional)",
+                "Paper statements",
                 "Performance reporting",
                 "Financial insights"
               ]}
@@ -136,44 +173,41 @@ export default function RCMPage() {
         </div>
       </section>
 
-      {/* Add-On Services */}
-      <section className="py-24 bg-slate-50">
+      {/* Add-On Services - Grid Layout */}
+      <section className="py-16 bg-slate-50 border-t border-slate-200">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold font-heading text-slate-900 mb-4">
-              Optional Add-On Services
-            </h2>
-            <p className="text-lg text-slate-600 max-w-2xl">
-              Expand your RCM capabilities and reduce internal workload with these specialized services.
-            </p>
-          </div>
+          <h2 className="text-xl font-bold font-heading text-slate-900 mb-6 flex items-center gap-2">
+            <span className="w-1 h-6 bg-primary rounded-full"/>
+            Extended Capabilities
+          </h2>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-3">
             <AddOnCard 
               title="Patient Support"
               icon={Phone}
-              features={["Billing questions", "Insurance inquiries", "Payment plans", "Statement assistance"]}
+              features={["Billing Help", "Payment Plans"]}
             />
             <AddOnCard 
               title="Credentialing"
               icon={ShieldCheck}
-              features={["New enrollments", "Re-credentialing", "CAQH maintenance", "Payer updates"]}
+              features={["Enrollments", "CAQH Maint."]}
             />
             <AddOnCard 
-              title="RCM Consulting"
+              title="Consulting"
               icon={TrendingUp}
-              features={["Workflow review", "Denial analysis", "KPI reporting"]}
+              features={["Workflow Audit", "KPI Reports"]}
             />
             <AddOnCard 
               title="Collections"
               icon={DollarSign}
-              features={["Third-party recovery", "After standard statements"]}
+              features={["Recovery", "Statements"]}
             />
             <AddOnCard 
-              title="Insurance A/R Recovery"
+              title="A/R Recovery"
               icon={RefreshCw}
-              features={["Claims 365+ days old", "High-success appeals", "A/R cleanup projects"]}
-              className="lg:col-span-2 bg-gradient-to-br from-white to-blue-50/50"
+              features={["Old Claims", "Appeals"]}
+              className="bg-blue-900 text-white border-blue-800"
+              dark={true}
             />
           </div>
         </div>
@@ -205,20 +239,22 @@ export default function RCMPage() {
 function ServiceCard({ icon: Icon, title, items, delay }: any) {
   return (
     <motion.div 
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 0, y: 10 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ delay, duration: 0.5 }}
-      className="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+      transition={{ delay, duration: 0.4 }}
+      className="bg-white p-5 rounded-lg border border-slate-200 shadow-sm hover:shadow-md hover:border-primary/50 transition-all duration-200"
     >
-      <div className="h-12 w-12 rounded-xl bg-blue-50 flex items-center justify-center mb-6">
-        <Icon className="h-6 w-6 text-primary" />
+      <div className="flex items-center gap-3 mb-4 border-b border-slate-50 pb-3">
+        <div className="h-8 w-8 rounded bg-blue-50 flex items-center justify-center shrink-0">
+          <Icon className="h-4 w-4 text-primary" />
+        </div>
+        <h3 className="font-bold text-slate-900 text-sm leading-tight">{title}</h3>
       </div>
-      <h3 className="text-xl font-bold text-slate-900 mb-4">{title}</h3>
-      <ul className="space-y-3">
+      <ul className="space-y-2">
         {items.map((item: string, i: number) => (
-          <li key={i} className="flex items-start gap-2 text-slate-600 text-sm">
-            <div className="h-1.5 w-1.5 rounded-full bg-primary mt-2 shrink-0" />
+          <li key={i} className="flex items-start gap-2 text-slate-600 text-xs font-medium">
+            <div className="h-1 w-1 rounded-full bg-slate-300 mt-1.5 shrink-0" />
             {item}
           </li>
         ))}
@@ -227,23 +263,29 @@ function ServiceCard({ icon: Icon, title, items, delay }: any) {
   );
 }
 
-function AddOnCard({ title, icon: Icon, features, className }: any) {
+function AddOnCard({ title, icon: Icon, features, className, dark }: any) {
   return (
     <motion.div 
       initial={{ opacity: 0, scale: 0.98 }}
       whileInView={{ opacity: 1, scale: 1 }}
       viewport={{ once: true }}
-      className={`bg-white p-6 rounded-xl border border-slate-200 hover:border-primary/30 transition-colors ${className}`}
+      className={`p-4 rounded-lg border transition-colors ${
+        dark 
+          ? 'bg-slate-900 border-slate-800 text-white' 
+          : 'bg-white border-slate-200 hover:border-primary/50 text-slate-900'
+      } ${className}`}
     >
-      <div className="flex items-center gap-3 mb-4">
-        <div className="p-2 bg-slate-100 rounded-lg">
-          <Icon className="h-5 w-5 text-slate-700" />
-        </div>
-        <h3 className="font-bold text-lg text-slate-900">{title}</h3>
+      <div className="flex items-center gap-2 mb-3">
+        <Icon className={`h-4 w-4 ${dark ? 'text-blue-400' : 'text-primary'}`} />
+        <h3 className="font-bold text-sm">{title}</h3>
       </div>
-      <div className="flex flex-wrap gap-2">
+      <div className="flex flex-wrap gap-1.5">
         {features.map((feature: string, i: number) => (
-          <span key={i} className="inline-flex items-center px-2.5 py-1 rounded-md bg-slate-100 text-slate-700 text-xs font-medium border border-slate-200">
+          <span key={i} className={`inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider ${
+             dark 
+               ? 'bg-slate-800 text-slate-300 border border-slate-700' 
+               : 'bg-slate-50 text-slate-600 border border-slate-100'
+          }`}>
             {feature}
           </span>
         ))}

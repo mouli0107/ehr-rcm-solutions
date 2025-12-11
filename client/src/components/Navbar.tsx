@@ -26,7 +26,7 @@ const components: { title: string; href: string; description: string }[] = [
   },
   {
     title: "Revenue Cycle Management",
-    href: "#rcm",
+    href: "/rcm",
     description: "Maximize reimbursements and reduce claim denials.",
   },
   {

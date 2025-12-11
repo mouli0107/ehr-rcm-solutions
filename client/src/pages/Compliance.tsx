@@ -4,6 +4,7 @@ import { Shield, Award, FileCheck, Lock, CheckCircle2, ArrowRight } from "lucide
 import { Button } from "@/components/ui/button";
 import { Navbar } from "@/components/Navbar";
 import { ContactModal } from "@/components/ContactModal";
+import complianceHeroImage from "@assets/stock_images/medical_compliance_s_cab21242.jpg";
 
 const certifications = [
   {
@@ -90,6 +91,22 @@ export default function CompliancePage() {
               <Button size="lg" variant="outline" className="h-12 px-8">
                 Download Compliance Guide
               </Button>
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.2 }}
+            className="hidden lg:block absolute right-0 top-1/2 -translate-y-1/2 w-[45%]"
+          >
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-l from-transparent via-transparent to-white z-10" />
+              <img 
+                src={complianceHeroImage} 
+                alt="Healthcare compliance and security" 
+                className="rounded-l-2xl shadow-2xl object-cover h-[500px] w-full"
+              />
             </div>
           </motion.div>
         </div>

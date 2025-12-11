@@ -4,6 +4,7 @@ import { FileText, Zap, Shield, Clock, Layers, CheckCircle2, ArrowRight } from "
 import { Button } from "@/components/ui/button";
 import { Navbar } from "@/components/Navbar";
 import { ContactModal } from "@/components/ContactModal";
+import ehrHeroImage from "@assets/stock_images/doctor_using_compute_8619bf2b.jpg";
 
 const features = [
   {
@@ -86,6 +87,22 @@ export default function EHRPage() {
               <Button size="lg" variant="outline" className="h-12 px-8">
                 View Features
               </Button>
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.2 }}
+            className="hidden lg:block absolute right-0 top-1/2 -translate-y-1/2 w-[45%]"
+          >
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-l from-transparent via-transparent to-white z-10" />
+              <img 
+                src={ehrHeroImage} 
+                alt="Doctor using EHR system" 
+                className="rounded-l-2xl shadow-2xl object-cover h-[500px] w-full"
+              />
             </div>
           </motion.div>
         </div>

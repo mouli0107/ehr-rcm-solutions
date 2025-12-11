@@ -9,6 +9,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Navbar } from "@/components/Navbar";
 import { ContactModal } from "@/components/ContactModal";
+import whyHeroImage from "@assets/stock_images/modern_medical_pract_d7c1f4fe.jpg";
 
 const coreValues = [
   { icon: Clock, title: "Quick Setup", desc: "Operational in 2-10 weeks with minimal staff training" },
@@ -123,6 +124,19 @@ export default function WhyMDChartsPage() {
                 View All Features
               </Button>
             </div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3 }}
+              className="mt-12"
+            >
+              <img 
+                src={whyHeroImage} 
+                alt="Modern medical practice" 
+                className="rounded-2xl shadow-2xl mx-auto max-w-4xl w-full object-cover h-[350px]"
+              />
+            </motion.div>
           </motion.div>
         </div>
       </section>

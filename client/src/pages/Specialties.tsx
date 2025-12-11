@@ -4,6 +4,7 @@ import { Stethoscope, Heart, Brain, Baby, Eye, Bone, Activity, Pill, ArrowRight 
 import { Button } from "@/components/ui/button";
 import { Navbar } from "@/components/Navbar";
 import { ContactModal } from "@/components/ContactModal";
+import specialtiesHeroImage from "@assets/stock_images/diverse_medical_team_85d7873a.jpg";
 
 const specialties = [
   { icon: Stethoscope, title: "Internal Medicine", desc: "Comprehensive templates for adult primary care and chronic disease management." },
@@ -68,6 +69,22 @@ export default function SpecialtiesPage() {
               >
                 Book a Demo <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.2 }}
+            className="hidden lg:block absolute right-0 top-1/2 -translate-y-1/2 w-[45%]"
+          >
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-l from-transparent via-transparent to-white z-10" />
+              <img 
+                src={specialtiesHeroImage} 
+                alt="Diverse medical team" 
+                className="rounded-l-2xl shadow-2xl object-cover h-[500px] w-full"
+              />
             </div>
           </motion.div>
         </div>

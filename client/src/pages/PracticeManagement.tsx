@@ -4,6 +4,7 @@ import { Calendar, Users, CreditCard, ClipboardList, BarChart3, Bell, ArrowRight
 import { Button } from "@/components/ui/button";
 import { Navbar } from "@/components/Navbar";
 import { ContactModal } from "@/components/ContactModal";
+import pmHeroImage from "@assets/stock_images/medical_office_front_acb30484.jpg";
 
 const features = [
   {
@@ -79,6 +80,22 @@ export default function PracticeManagementPage() {
               >
                 Book a Demo <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.2 }}
+            className="hidden lg:block absolute right-0 top-1/2 -translate-y-1/2 w-[45%]"
+          >
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-l from-transparent via-transparent to-white z-10" />
+              <img 
+                src={pmHeroImage} 
+                alt="Medical office front desk" 
+                className="rounded-l-2xl shadow-2xl object-cover h-[500px] w-full"
+              />
             </div>
           </motion.div>
         </div>

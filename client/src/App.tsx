@@ -11,6 +11,7 @@ import PracticeManagementPage from "@/pages/PracticeManagement";
 import PatientEngagementPage from "@/pages/PatientEngagement";
 import SpecialtiesPage from "@/pages/Specialties";
 import CompliancePage from "@/pages/Compliance";
+import WhyMDChartsPage from "@/pages/WhyMDCharts";
 
 function Router() {
   return (
@@ -22,6 +23,7 @@ function Router() {
       <Route path="/patient-engagement" component={PatientEngagementPage} />
       <Route path="/specialties" component={SpecialtiesPage} />
       <Route path="/compliance" component={CompliancePage} />
+      <Route path="/why-mdcharts" component={WhyMDChartsPage} />
       <Route component={NotFound} />
     </Switch>
   );

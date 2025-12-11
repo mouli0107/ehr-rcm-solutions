@@ -158,6 +158,12 @@ export function Navbar() {
                     Compliance
                   </NavigationMenuLink>
                 </NavigationMenuItem>
+
+                <NavigationMenuItem>
+                  <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "h-9 px-3 text-xs font-bold uppercase tracking-wide text-primary hover:text-blue-700 cursor-pointer")} href="/why-mdcharts">
+                    Why MDCharts
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
               </NavigationMenuList>
             </NavigationMenu>
           </div>

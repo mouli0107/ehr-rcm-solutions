@@ -98,14 +98,14 @@ export function Hero() {
           </div>
 
           {/* Right Content - Zig-Zag Image Layout */}
-          <div className="lg:w-1/2 relative h-[400px] md:h-[500px]">
+          <div className="lg:w-1/2 relative h-[500px] md:h-[600px]">
             
             {/* Zig-Zag Scattered Provider/Clinic Images */}
             {[
-              { img: doctorPortrait, label: "Dr. Sarah Chen", position: "left-0 top-0", size: "h-32 w-32 md:h-40 md:w-40", delay: 0.1 },
-              { img: medicalTeam, label: "Care Team", position: "right-4 top-8", size: "h-28 w-36 md:h-32 md:w-44", delay: 0.2 },
-              { img: doctorTablet, label: "Digital Workflow", position: "left-8 top-36 md:top-44", size: "h-28 w-28 md:h-36 md:w-36", delay: 0.3 },
-              { img: clinicInterior, label: "Modern Clinic", position: "right-0 top-48 md:top-52", size: "h-24 w-32 md:h-32 md:w-44", delay: 0.4 },
+              { img: doctorPortrait, label: "Dr. Sarah Chen", position: "left-0 top-0", size: "h-44 w-44 md:h-56 md:w-56", delay: 0.1 },
+              { img: medicalTeam, label: "Care Team", position: "right-0 top-4", size: "h-40 w-52 md:h-48 md:w-64", delay: 0.2 },
+              { img: doctorTablet, label: "Digital Workflow", position: "left-4 top-48 md:top-60", size: "h-40 w-40 md:h-52 md:w-52", delay: 0.3 },
+              { img: clinicInterior, label: "Modern Clinic", position: "right-4 bottom-0", size: "h-36 w-48 md:h-44 md:w-60", delay: 0.4 },
             ].map((item, i) => (
               <motion.div
                 key={i}

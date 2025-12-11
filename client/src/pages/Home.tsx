@@ -71,7 +71,7 @@ export default function Home() {
                   <Stethoscope className="h-6 w-6 text-white" />
                 </div>
                 <span className="text-xl font-bold font-heading text-white tracking-tight">
-                  MDChart<span className="text-primary">EHR</span>
+                  MDCharts<span className="text-primary">EHR</span>
                 </span>
               </div>
               <p className="mb-6 max-w-sm text-slate-500 leading-relaxed">

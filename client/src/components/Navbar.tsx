@@ -150,7 +150,7 @@ export function Navbar() {
                 <NavigationMenuItem>
                   <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "h-9 px-3 text-xs font-bold uppercase tracking-wide text-slate-600 hover:text-primary cursor-pointer relative")} href="/rcm">
                     RCM Services
-                    <span className="absolute -top-1 -right-1 bg-emerald-400 text-white text-[8px] font-bold px-1.5 py-0.5 rounded-full uppercase">New</span>
+                    <span className="absolute -top-1 -right-1 bg-emerald-500 text-white text-[8px] font-bold px-1.5 py-0.5 rounded-full uppercase shadow-[0_0_10px_rgba(16,185,129,0.6)] animate-pulse">New</span>
                   </NavigationMenuLink>
                 </NavigationMenuItem>
                 

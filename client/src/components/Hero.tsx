@@ -2,7 +2,11 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, TrendingUp, ShieldCheck, Award } from "lucide-react"; // Added Award icon
 import heroImage from "@assets/generated_images/futuristic_glass_medical_interface_abstract_3d.png";
-import oncSeal from "@assets/generated_images/onc_certified_health_it_seal_3d_gold_and_blue.png"; // Placeholder path
+import oncSeal from "@assets/generated_images/onc_certified_health_it_seal_3d_gold_and_blue.png";
+import doctorPortrait from "@assets/generated_images/friendly_doctor_portrait.png";
+import clinicInterior from "@assets/generated_images/modern_clinic_interior.png";
+import doctorTablet from "@assets/generated_images/doctor_using_tablet.png";
+import medicalTeam from "@assets/generated_images/medical_team_collaboration.png";
 
 export function Hero() {
   return (
@@ -129,6 +133,33 @@ export function Hero() {
                   </div>
                 </div>
               </motion.div>
+
+              {/* Vertical Stack of Provider/Clinic Images */}
+              <div className="absolute -right-4 top-10 flex flex-col gap-4 z-20 hidden lg:flex">
+                {[
+                  { img: doctorPortrait, label: "Dr. Sarah Chen", delay: 0 },
+                  { img: medicalTeam, label: "Care Team", delay: 1 },
+                  { img: doctorTablet, label: "Digital Workflow", delay: 2 },
+                  { img: clinicInterior, label: "Modern Clinic", delay: 3 }
+                ].map((item, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.5 + (i * 0.1), duration: 0.5 }}
+                    whileHover={{ scale: 1.05, x: -5 }}
+                    className="relative group cursor-pointer"
+                  >
+                    <div className="h-14 w-14 md:h-16 md:w-16 rounded-2xl border-2 border-white shadow-lg overflow-hidden bg-slate-200">
+                      <img src={item.img} alt={item.label} className="w-full h-full object-cover" />
+                    </div>
+                    {/* Hover Label */}
+                    <div className="absolute right-full top-1/2 -translate-y-1/2 mr-3 px-2 py-1 bg-slate-900/90 text-white text-[10px] font-bold rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
+                      {item.label}
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
 
             </motion.div>
           </div>

@@ -97,38 +97,57 @@ export function Hero() {
             </motion.div>
           </div>
 
-          {/* Right Content - Zig-Zag Image Layout */}
-          <div className="lg:w-1/2 relative h-[500px] md:h-[600px]">
-            
-            {/* Zig-Zag Scattered Provider/Clinic Images */}
-            {[
-              { img: doctorPortrait, label: "Dr. Sarah Chen", position: "left-0 top-0", size: "h-44 w-44 md:h-56 md:w-56", delay: 0.1 },
-              { img: medicalTeam, label: "Care Team", position: "right-0 top-4", size: "h-40 w-52 md:h-48 md:w-64", delay: 0.2 },
-              { img: doctorTablet, label: "Digital Workflow", position: "left-4 top-48 md:top-60", size: "h-40 w-40 md:h-52 md:w-52", delay: 0.3 },
-              { img: clinicInterior, label: "Modern Clinic", position: "right-4 bottom-0", size: "h-36 w-48 md:h-44 md:w-60", delay: 0.4 },
-            ].map((item, i) => (
+          {/* Right Content - Zig-Zag Image Grid */}
+          <div className="lg:w-1/2 relative">
+            <div className="grid grid-cols-2 gap-4">
+              {/* Row 1 */}
               <motion.div
-                key={i}
-                initial={{ opacity: 0, scale: 0.8, y: 20 }}
-                animate={{ opacity: 1, scale: 1, y: 0 }}
-                transition={{ delay: item.delay, duration: 0.6 }}
-                whileHover={{ scale: 1.05, zIndex: 50 }}
-                className={`absolute ${item.position} ${item.size} z-${10 + i} group cursor-pointer`}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.1, duration: 0.5 }}
+                whileHover={{ scale: 1.03 }}
+                className="h-48 md:h-56 rounded-2xl border-4 border-white shadow-2xl overflow-hidden"
               >
-                <div className="w-full h-full rounded-2xl border-4 border-white shadow-2xl overflow-hidden bg-slate-200">
-                  <img src={item.img} alt={item.label} className="w-full h-full object-cover" />
-                </div>
-                <div className="absolute bottom-2 left-2 right-2 px-2 py-1 bg-slate-900/80 backdrop-blur-sm text-white text-[10px] font-bold rounded opacity-0 group-hover:opacity-100 transition-opacity text-center">
-                  {item.label}
-                </div>
+                <img src={doctorPortrait} alt="Dr. Sarah Chen" className="w-full h-full object-cover" />
               </motion.div>
-            ))}
+              
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2, duration: 0.5 }}
+                whileHover={{ scale: 1.03 }}
+                className="h-48 md:h-56 rounded-2xl border-4 border-white shadow-2xl overflow-hidden mt-8"
+              >
+                <img src={medicalTeam} alt="Care Team" className="w-full h-full object-cover" />
+              </motion.div>
+
+              {/* Row 2 */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3, duration: 0.5 }}
+                whileHover={{ scale: 1.03 }}
+                className="h-48 md:h-56 rounded-2xl border-4 border-white shadow-2xl overflow-hidden -mt-4"
+              >
+                <img src={doctorTablet} alt="Digital Workflow" className="w-full h-full object-cover" />
+              </motion.div>
+              
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.4, duration: 0.5 }}
+                whileHover={{ scale: 1.03 }}
+                className="h-48 md:h-56 rounded-2xl border-4 border-white shadow-2xl overflow-hidden mt-4"
+              >
+                <img src={clinicInterior} alt="Modern Clinic" className="w-full h-full object-cover" />
+              </motion.div>
+            </div>
 
             {/* Floating Revenue Growth Card */}
             <motion.div 
-              animate={{ y: [0, -10, 0] }}
+              animate={{ y: [0, -8, 0] }}
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute left-4 bottom-8 bg-white/95 backdrop-blur-md p-4 rounded-xl shadow-xl border border-white/50 z-40 hidden md:block"
+              className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 bg-white/95 backdrop-blur-md p-4 rounded-xl shadow-xl border border-slate-100 z-40 hidden md:block"
             >
               <div className="flex items-center gap-3">
                 <div className="h-10 w-10 rounded-full bg-emerald-100 flex items-center justify-center">

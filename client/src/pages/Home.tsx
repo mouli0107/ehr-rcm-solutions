@@ -20,6 +20,62 @@ export default function Home() {
     <div className="min-h-screen bg-background font-sans selection:bg-primary/20">
       <Navbar />
       <Hero />
+      
+      {/* Stats Bar */}
+      <section className="py-10 bg-slate-50 border-y border-slate-200">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-wrap justify-center items-center gap-12 md:gap-20">
+            <div className="text-center">
+              <div className="text-4xl md:text-5xl font-bold text-slate-800 tracking-tight">15k+</div>
+              <div className="text-xs font-bold uppercase tracking-widest text-slate-500 mt-1">Active Providers</div>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl md:text-5xl font-bold text-slate-800 tracking-tight">99%</div>
+              <div className="text-xs font-bold uppercase tracking-widest text-slate-500 mt-1">Claim Rate</div>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl md:text-5xl font-bold text-slate-800 tracking-tight">98.5</div>
+              <div className="text-xs font-bold uppercase tracking-widest text-slate-500 mt-1">MIPS Score</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Partner Logos */}
+      <section className="py-8 bg-white border-b border-slate-100">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-wrap justify-center items-center gap-10 md:gap-16 opacity-70">
+            <div className="flex items-center gap-2">
+              <span className="text-xl font-bold text-slate-700">ACOG</span>
+              <span className="text-[10px] text-slate-500 leading-tight">The American College of<br/>Obstetricians and Gynecologists</span>
+            </div>
+            <div className="flex items-center gap-1">
+              <div className="w-6 h-6 rounded-full bg-red-500 flex items-center justify-center">
+                <div className="w-3 h-3 rounded-full bg-white flex items-center justify-center">
+                  <div className="w-1.5 h-1.5 rounded-full bg-red-500"></div>
+                </div>
+              </div>
+              <span className="text-xl font-medium text-slate-700">twilio</span>
+            </div>
+            <div className="flex items-center gap-1">
+              <div className="w-0 h-0 border-l-[10px] border-l-transparent border-r-[10px] border-r-transparent border-b-[16px] border-b-red-500"></div>
+              <span className="text-lg font-bold text-slate-700">TRIZETTO</span>
+              <span className="text-[10px] text-slate-500 ml-1">Provider Solutions<sup>®</sup></span>
+            </div>
+            <div className="flex items-center gap-1">
+              <div className="text-emerald-500 text-xl">✦</div>
+              <span className="text-xl font-bold text-slate-700">DrFirst</span>
+              <span className="text-[10px] text-slate-500 ml-1">Unite the Healthiverse<sup>®</sup></span>
+            </div>
+            <div className="flex items-center justify-center w-8 h-8">
+              <svg viewBox="0 0 24 24" className="w-6 h-6 text-slate-600" fill="currentColor">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <Features />
       <RCMSection />
       <Specialties />

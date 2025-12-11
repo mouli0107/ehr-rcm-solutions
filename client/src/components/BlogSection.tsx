@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Calendar, User } from "lucide-react";
 import blogImage from "@assets/generated_images/medical_blog_header_image.png";
+import mipsImage from "@assets/generated_images/mips_reporting_medical_professional.png";
+import patientImage from "@assets/generated_images/patient_provider_relationship.png";
 import { Button } from "./ui/button";
 
 const posts = [
@@ -18,7 +20,7 @@ const posts = [
     excerpt: "Everything you need to know about maximizing your quality payment incentives this year.",
     author: "Mark Johnson",
     date: "Nov 24, 2025",
-    image: null // We'll use a fallback or color block
+    image: mipsImage
   },
   {
     category: "Patient Experience",
@@ -26,7 +28,7 @@ const posts = [
     excerpt: "New data shows that digital access and portal convenience are top retention factors.",
     author: "Jennifer Wu",
     date: "Nov 15, 2025",
-    image: null
+    image: patientImage
   }
 ];
 

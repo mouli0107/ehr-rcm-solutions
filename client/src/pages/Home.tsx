@@ -24,6 +24,7 @@ export default function Home() {
       {/* Partner Logos */}
       <section className="py-8 bg-white border-b border-slate-100">
         <div className="container mx-auto px-4">
+          <p className="text-center text-xs font-bold uppercase tracking-widest text-slate-400 mb-6">Trusted Integrations & Partners</p>
           <div className="flex flex-wrap justify-center items-center gap-10 md:gap-16 opacity-70">
             <div className="flex items-center gap-2">
               <span className="text-xl font-bold text-slate-700">ACOG</span>

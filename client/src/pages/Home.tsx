@@ -20,26 +20,6 @@ export default function Home() {
     <div className="min-h-screen bg-background font-sans selection:bg-primary/20">
       <Navbar />
       <Hero />
-      
-      {/* Stats Bar */}
-      <section className="py-10 bg-slate-50 border-y border-slate-200">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-wrap justify-center items-center gap-12 md:gap-20">
-            <div className="text-center">
-              <div className="text-4xl md:text-5xl font-bold text-slate-800 tracking-tight">15k+</div>
-              <div className="text-xs font-bold uppercase tracking-widest text-slate-500 mt-1">Active Providers</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl md:text-5xl font-bold text-slate-800 tracking-tight">99%</div>
-              <div className="text-xs font-bold uppercase tracking-widest text-slate-500 mt-1">Claim Rate</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl md:text-5xl font-bold text-slate-800 tracking-tight">98.5</div>
-              <div className="text-xs font-bold uppercase tracking-widest text-slate-500 mt-1">MIPS Score</div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Partner Logos */}
       <section className="py-8 bg-white border-b border-slate-100">

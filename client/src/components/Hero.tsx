@@ -1,150 +1,124 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, CheckCircle2, Activity, Database, Shield, Zap, TrendingUp } from "lucide-react";
-import heroImage from "@assets/generated_images/modern_doctor_using_tablet_in_bright_office.png";
+import { ArrowRight, CheckCircle2, Shield, TrendingUp, PlayCircle } from "lucide-react";
+import heroImage from "@assets/generated_images/futuristic_glass_medical_interface_abstract_3d.png"; // Placeholder until generation finishes
 
 export function Hero() {
   return (
-    <section className="relative pt-36 pb-16 md:pt-48 md:pb-24 overflow-hidden bg-slate-50">
-      {/* Dense Grid Pattern Background */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]" />
+    <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden bg-white">
+      {/* Premium Background Mesh */}
+      <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-blue-100/40 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3 opacity-70 pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-emerald-50/60 rounded-full blur-[100px] translate-y-1/3 -translate-x-1/4 opacity-70 pointer-events-none" />
       
       <div className="container mx-auto px-4 md:px-6 relative z-10">
-        <div className="grid lg:grid-cols-12 gap-8 items-center">
+        <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
           
-          {/* Left Content - Denser Typography */}
-          <div className="lg:col-span-7">
+          {/* Left Content - Clean & Impactful */}
+          <div className="lg:w-1/2 max-w-2xl text-left">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
+              transition={{ duration: 0.6 }}
             >
-              <div className="flex flex-wrap gap-2 mb-6">
-                 <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-blue-100/80 text-blue-800 text-[11px] font-bold uppercase tracking-wider border border-blue-200">
-                   <Zap className="h-3 w-3" /> New V4.0 Engine
-                 </span>
-                 <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-emerald-100/80 text-emerald-800 text-[11px] font-bold uppercase tracking-wider border border-emerald-200">
-                   <Activity className="h-3 w-3" /> 99.99% Uptime
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-50 border border-slate-100 shadow-sm mb-8 hover:shadow-md transition-shadow cursor-default">
+                 <span className="flex h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                 <span className="text-xs font-bold uppercase tracking-widest text-slate-600">
+                   The #1 Rated EHR for 2025
                  </span>
               </div>
 
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold font-heading text-slate-900 leading-[1.1] mb-6 tracking-tight">
-                Click Less. Care More. <br />
-                <span className="text-primary">Maximize Revenue.</span>
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold font-heading text-slate-900 leading-[1.05] mb-6 tracking-tight">
+                Practice Medicine, <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-600">
+                  Not Paperwork.
+                </span>
               </h1>
               
-              <p className="text-lg text-slate-600 mb-8 leading-snug max-w-2xl font-medium">
-                The enterprise-grade EHR, RCM, and Practice Management platform that unifies your entire clinical and financial workflow into one high-performance dashboard.
+              <p className="text-lg md:text-xl text-slate-500 mb-10 leading-relaxed font-medium">
+                Unify your clinical documentation, RCM, and patient engagement in one beautiful, intelligent platform designed to maximize your revenue.
               </p>
 
-              <div className="flex flex-wrap items-center gap-4 mb-8">
-                <Button size="lg" className="h-14 px-8 text-sm font-bold uppercase tracking-wide shadow-xl shadow-blue-900/10 bg-primary hover:bg-blue-700 rounded-md">
-                  Start Free Trial <ArrowRight className="ml-2 h-4 w-4" />
+              <div className="flex flex-col sm:flex-row gap-4 mb-12">
+                <Button size="lg" className="h-14 px-8 text-base font-bold shadow-xl shadow-primary/25 bg-primary hover:bg-blue-700 rounded-full transition-all hover:scale-105">
+                  Start Free Trial <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
-                <Button size="lg" variant="outline" className="h-14 px-8 text-sm font-bold uppercase tracking-wide bg-white hover:bg-slate-50 border-slate-300 text-slate-700 rounded-md">
-                  View Live Demo
+                <Button size="lg" variant="ghost" className="h-14 px-8 text-base font-semibold text-slate-600 hover:text-primary hover:bg-slate-50 rounded-full">
+                  <PlayCircle className="mr-2 h-5 w-5" /> See How It Works
                 </Button>
-                
-                {/* Integrated Provider Stat */}
-                <div className="flex items-center gap-3 px-6 py-2 bg-white border border-slate-200 rounded-md shadow-sm ml-2">
-                   <div className="flex -space-x-2">
-                      {[1,2,3].map(i => (
-                        <div key={i} className={`h-8 w-8 rounded-full border-2 border-white bg-slate-200 flex items-center justify-center text-[10px] font-bold text-slate-500 z-${30-i*10}`}>
-                          {i === 3 ? '+' : ''}
-                        </div>
-                      ))}
-                   </div>
-                   <div className="flex flex-col">
-                     <span className="text-lg font-extrabold text-slate-900 leading-none">15k+</span>
-                     <span className="text-[9px] uppercase font-bold text-slate-500 tracking-wider whitespace-nowrap">Active Providers</span>
-                   </div>
-                </div>
               </div>
 
-              {/* Feature Ticker / Dense List - Solid Bar Design */}
-              <div className="bg-slate-900 text-white rounded-lg p-1 shadow-lg overflow-hidden">
-                <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-slate-800">
+              {/* Clean Stats Row */}
+              <div className="grid grid-cols-3 gap-8 border-t border-slate-100 pt-8">
                 {[
-                   { label: "MIPS Score", value: "98/100", icon: TrendingUp, color: "text-emerald-400" },
-                   { label: "Claim Acceptance", value: "99.2%", icon: CheckCircle2, color: "text-blue-400" },
-                   { label: "Data Security", value: "SOC2 Type II", icon: Shield, color: "text-indigo-400" },
-                   { label: "Records Managed", value: "50M+", icon: Database, color: "text-purple-400" },
+                  { label: "Providers", value: "15k+" },
+                  { label: "Claim Rate", value: "99%" },
+                  { label: "MIPS Score", value: "98.5" },
                 ].map((stat, i) => (
-                  <div key={i} className="flex items-center gap-3 p-4 hover:bg-slate-800/50 transition-colors">
-                    <div className={`p-1.5 rounded bg-slate-800 border border-slate-700 ${stat.color}`}>
-                      <stat.icon className="h-4 w-4" />
-                    </div>
-                    <div className="flex flex-col min-w-0">
-                      <p className="text-[9px] uppercase font-bold text-slate-400 tracking-wider whitespace-nowrap truncate">{stat.label}</p>
-                      <p className="text-sm font-bold text-white whitespace-nowrap">{stat.value}</p>
-                    </div>
+                  <div key={i}>
+                    <p className="text-3xl font-bold text-slate-900 mb-1 tracking-tight">{stat.value}</p>
+                    <p className="text-xs font-bold text-slate-400 uppercase tracking-wider">{stat.label}</p>
                   </div>
                 ))}
-                </div>
               </div>
             </motion.div>
           </div>
 
-          {/* Right Content - "Busy" Dashboard Mockup */}
-          <div className="lg:col-span-5 relative">
+          {/* Right Content - Stunning Visual */}
+          <div className="lg:w-1/2 relative perspective-1000">
             <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
+              initial={{ opacity: 0, rotateX: 5, y: 30 }}
+              animate={{ opacity: 1, rotateX: 0, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
               className="relative z-10"
             >
-              {/* Main Image Frame */}
-              <div className="relative rounded-lg overflow-hidden shadow-2xl border-4 border-white bg-slate-900 ring-1 ring-slate-900/10">
+              {/* Main Visual */}
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-blue-900/10 border border-white/50 bg-white/40 backdrop-blur-xl">
+                 {/* Glass Reflection */}
+                 <div className="absolute inset-0 bg-gradient-to-tr from-white/40 via-transparent to-transparent opacity-50 z-10 pointer-events-none" />
+                 
                  <img 
                   src={heroImage} 
-                  alt="MDChartEHR Dashboard" 
-                  className="w-full h-auto object-cover opacity-80"
+                  alt="Future of EHR Dashboard" 
+                  className="w-full h-auto object-cover transform scale-105"
                 />
-                
-                {/* Overlay UI Elements to make it look "Packed" */}
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent flex flex-col justify-end p-6">
-                   <div className="grid grid-cols-3 gap-2 mb-4">
-                      {[1,2,3].map(i => (
-                        <div key={i} className="bg-white/10 backdrop-blur-md border border-white/20 p-2 rounded">
-                          <div className="h-1.5 w-12 bg-white/30 rounded mb-2"/>
-                          <div className="h-4 w-8 bg-white/90 rounded"/>
-                        </div>
-                      ))}
-                   </div>
-                   <div className="bg-white/10 backdrop-blur-md border border-white/20 p-3 rounded flex items-center justify-between">
-                      <div className="flex items-center gap-3">
-                        <div className="h-8 w-8 rounded bg-emerald-500/80 flex items-center justify-center font-bold text-white text-xs">92%</div>
-                        <div>
-                          <div className="h-2 w-20 bg-white/80 rounded mb-1"/>
-                          <div className="h-1.5 w-12 bg-white/40 rounded"/>
-                        </div>
-                      </div>
-                      <div className="h-6 w-16 bg-blue-500 rounded text-[10px] font-bold text-white flex items-center justify-center">ACTION</div>
-                   </div>
-                </div>
               </div>
 
-              {/* Floating "Live" Data Widgets */}
-              <div className="absolute -right-4 top-10 bg-white p-3 rounded shadow-lg border border-slate-200 w-48 z-20 hidden md:block">
-                 <div className="flex justify-between items-center mb-2 border-b border-slate-100 pb-1">
-                   <span className="text-[10px] font-bold text-slate-500 uppercase">Live Claims</span>
-                   <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse"/>
-                 </div>
-                 <div className="space-y-1.5">
-                   {[1,2,3].map(i => (
-                     <div key={i} className="flex justify-between text-[10px]">
-                       <span className="text-slate-600">Claim #{88230+i}</span>
-                       <span className="font-bold text-emerald-600">Paid</span>
-                     </div>
-                   ))}
-                 </div>
-              </div>
+              {/* Floating Glass Cards - Clean & Minimal */}
+              <motion.div 
+                animate={{ y: [0, -10, 0] }}
+                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                className="absolute -left-12 top-1/3 bg-white/90 backdrop-blur-md p-4 rounded-xl shadow-xl border border-white/50 z-20 hidden md:block"
+              >
+                <div className="flex items-center gap-3">
+                  <div className="h-10 w-10 rounded-full bg-emerald-100 flex items-center justify-center">
+                    <TrendingUp className="h-5 w-5 text-emerald-600" />
+                  </div>
+                  <div>
+                    <p className="text-xs font-bold text-slate-400 uppercase">Revenue Growth</p>
+                    <p className="text-lg font-bold text-slate-900">+127%</p>
+                  </div>
+                </div>
+              </motion.div>
+
+              <motion.div 
+                animate={{ y: [0, 10, 0] }}
+                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                className="absolute -right-8 bottom-1/4 bg-white/90 backdrop-blur-md p-4 rounded-xl shadow-xl border border-white/50 z-20 hidden md:block"
+              >
+                 <div className="flex items-center gap-3">
+                  <div className="h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center">
+                    <Shield className="h-5 w-5 text-primary" />
+                  </div>
+                  <div>
+                    <p className="text-xs font-bold text-slate-400 uppercase">Security Level</p>
+                    <p className="text-lg font-bold text-slate-900">Maximum</p>
+                  </div>
+                </div>
+              </motion.div>
+
             </motion.div>
-            
-            {/* Decorative Background Elements */}
-            <div className="absolute -top-10 -right-10 w-64 h-64 bg-primary/10 rounded-full blur-3xl -z-10" />
-            <div className="absolute -bottom-10 -left-10 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl -z-10" />
           </div>
+
         </div>
       </div>
     </section>

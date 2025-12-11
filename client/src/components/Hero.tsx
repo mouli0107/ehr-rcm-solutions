@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, TrendingUp, ShieldCheck, Award } from "lucide-react"; // Added Award icon
 import heroImage from "@assets/generated_images/futuristic_glass_medical_interface_abstract_3d.png";
-import oncSeal from "@assets/generated_images/official_looking_3d_seal_for_onc_certified_health_it_gold_and_metallic_blue.png"; // Placeholder path
+import oncSeal from "@assets/generated_images/onc_certified_health_it_seal_3d_gold_and_blue.png"; // Placeholder path
 
 export function Hero() {
   return (

@@ -37,39 +37,50 @@ export function Hero() {
                 The enterprise-grade EHR, RCM, and Practice Management platform that unifies your entire clinical and financial workflow into one high-performance dashboard.
               </p>
 
-              <div className="flex flex-wrap gap-3 mb-10">
-                <Button size="lg" className="h-12 px-6 text-sm font-bold uppercase tracking-wide shadow-xl shadow-blue-900/10 bg-primary hover:bg-blue-700 rounded-md">
+              <div className="flex flex-wrap items-center gap-4 mb-8">
+                <Button size="lg" className="h-14 px-8 text-sm font-bold uppercase tracking-wide shadow-xl shadow-blue-900/10 bg-primary hover:bg-blue-700 rounded-md">
                   Start Free Trial <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
-                <Button size="lg" variant="outline" className="h-12 px-6 text-sm font-bold uppercase tracking-wide bg-white hover:bg-slate-50 border-slate-300 text-slate-700 rounded-md">
+                <Button size="lg" variant="outline" className="h-14 px-8 text-sm font-bold uppercase tracking-wide bg-white hover:bg-slate-50 border-slate-300 text-slate-700 rounded-md">
                   View Live Demo
                 </Button>
-                <div className="flex items-center gap-3 px-4 border-l border-slate-300 ml-2">
-                   <div>
-                     <p className="text-2xl font-extrabold text-slate-900 leading-none">15k+</p>
-                     <p className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Active Providers</p>
+                
+                {/* Integrated Provider Stat */}
+                <div className="flex items-center gap-3 px-6 py-2 bg-white border border-slate-200 rounded-md shadow-sm ml-2">
+                   <div className="flex -space-x-2">
+                      {[1,2,3].map(i => (
+                        <div key={i} className={`h-8 w-8 rounded-full border-2 border-white bg-slate-200 flex items-center justify-center text-[10px] font-bold text-slate-500 z-${30-i*10}`}>
+                          {i === 3 ? '+' : ''}
+                        </div>
+                      ))}
+                   </div>
+                   <div className="flex flex-col">
+                     <span className="text-lg font-extrabold text-slate-900 leading-none">15k+</span>
+                     <span className="text-[9px] uppercase font-bold text-slate-500 tracking-wider whitespace-nowrap">Active Providers</span>
                    </div>
                 </div>
               </div>
 
-              {/* Feature Ticker / Dense List */}
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 border-t border-slate-200 pt-6">
+              {/* Feature Ticker / Dense List - Solid Bar Design */}
+              <div className="bg-slate-900 text-white rounded-lg p-1 shadow-lg overflow-hidden">
+                <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-slate-800">
                 {[
-                   { label: "MIPS Score", value: "98/100", icon: TrendingUp, color: "text-emerald-600" },
-                   { label: "Claim Acceptance", value: "99.2%", icon: CheckCircle2, color: "text-blue-600" },
-                   { label: "Data Security", value: "SOC2 Type II", icon: Shield, color: "text-indigo-600" },
-                   { label: "Records", value: "50M+", icon: Database, color: "text-slate-600" },
+                   { label: "MIPS Score", value: "98/100", icon: TrendingUp, color: "text-emerald-400" },
+                   { label: "Claim Acceptance", value: "99.2%", icon: CheckCircle2, color: "text-blue-400" },
+                   { label: "Data Security", value: "SOC2 Type II", icon: Shield, color: "text-indigo-400" },
+                   { label: "Records Managed", value: "50M+", icon: Database, color: "text-purple-400" },
                 ].map((stat, i) => (
-                  <div key={i} className="flex items-center gap-3">
-                    <div className={`p-2 rounded bg-white shadow-sm border border-slate-100 ${stat.color}`}>
+                  <div key={i} className="flex items-center gap-3 p-4 hover:bg-slate-800/50 transition-colors">
+                    <div className={`p-1.5 rounded bg-slate-800 border border-slate-700 ${stat.color}`}>
                       <stat.icon className="h-4 w-4" />
                     </div>
-                    <div>
-                      <p className="text-[10px] uppercase font-bold text-slate-400 tracking-wider">{stat.label}</p>
-                      <p className="text-sm font-extrabold text-slate-900">{stat.value}</p>
+                    <div className="flex flex-col min-w-0">
+                      <p className="text-[9px] uppercase font-bold text-slate-400 tracking-wider whitespace-nowrap truncate">{stat.label}</p>
+                      <p className="text-sm font-bold text-white whitespace-nowrap">{stat.value}</p>
                     </div>
                   </div>
                 ))}
+                </div>
               </div>
             </motion.div>
           </div>

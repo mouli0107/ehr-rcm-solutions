@@ -10,8 +10,9 @@
   --color-background: hsl(0 0% 100%);
   --color-foreground: hsl(222 47% 11%);
 
-  --color-primary: hsl(221 83% 53%); /* Royal Blue */
-  --color-primary-foreground: hsl(210 40% 98%);
+  /* Updated MDChartEHR Blue - Extracted from brand presence */
+  --color-primary: hsl(207 90% 38%); /* Stronger, deeper professional blue #0969da approx */
+  --color-primary-foreground: hsl(0 0% 100%);
 
   --color-secondary: hsl(210 40% 96.1%);
   --color-secondary-foreground: hsl(222 47% 11.2%);
@@ -27,7 +28,7 @@
 
   --color-border: hsl(214.3 31.8% 91.4%);
   --color-input: hsl(214.3 31.8% 91.4%);
-  --color-ring: hsl(221 83% 53%);
+  --color-ring: hsl(207 90% 38%);
 
   --color-card: hsl(0 0% 100%);
   --color-card-foreground: hsl(222 47% 11%);

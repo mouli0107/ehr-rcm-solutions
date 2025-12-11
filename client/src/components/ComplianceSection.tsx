@@ -54,7 +54,7 @@ export function ComplianceSection() {
             
             <div className="grid sm:grid-cols-2 gap-6 mb-10">
               {[
-                { icon: ShieldCheck, title: "HIPAA Certified", desc: "Full compliance with privacy regulations." },
+                { icon: ShieldCheck, title: "ONC Certified", desc: "2015 Edition Cures Update." },
                 { icon: Server, title: "Secure Cloud", desc: "Redundant backups in protected data centers." },
                 { icon: FileCheck, title: "MIPS Ready", desc: "Automated reporting for CMS quality programs." },
                 { icon: Lock, title: "Role-Based Access", desc: "Granular control over who sees what." }

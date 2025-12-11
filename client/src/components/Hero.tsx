@@ -29,19 +29,19 @@ export function Hero() {
                    <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
                  </span>
                  <span className="text-[10px] font-bold uppercase tracking-widest text-slate-600">
-                   V4.0 Live: The #1 Rated EHR
+                   ONC 2015 Cures Update Certified
                  </span>
               </div>
 
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold font-heading text-slate-900 leading-[1.1] mb-4 tracking-tight">
-                Practice Medicine, <br />
+                Chart Faster with <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-700">
-                  Not Paperwork.
+                  Adaptive Templates.
                 </span>
               </h1>
               
               <p className="text-lg text-slate-600 mb-8 leading-snug font-medium max-w-xl">
-                Unify clinical documentation, RCM, and patient engagement in one intelligent platform. Stop clicking, start caring.
+                A highly configurable, template-based EHR engine that adapts to your workflow. Create detailed clinical notes in seconds, not minutes.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-3 mb-10">
@@ -56,7 +56,7 @@ export function Hero() {
               {/* Clean Stats Row - Integrated */}
               <div className="flex items-center gap-8 border-t border-slate-200 pt-6">
                 {[
-                  { label: "Providers", value: "15k+" },
+                  { label: "Active Providers", value: "15k+" },
                   { label: "Claim Rate", value: "99%" },
                   { label: "MIPS Score", value: "98.5" },
                 ].map((stat, i) => (

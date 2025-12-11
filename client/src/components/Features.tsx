@@ -15,12 +15,12 @@ import {
 } from "lucide-react";
 
 const features = [
-  { icon: FileText, title: "Clinical Docs", desc: "100+ specialty templates" },
+  { icon: FileText, title: "Smart Templates", desc: "Highly configurable engine" },
   { icon: Activity, title: "MIPS Reporting", desc: "Automated MACRA/MIPS" },
   { icon: CreditCard, title: "RCM & Billing", desc: "99% first-pass rate" },
   { icon: Users, title: "Patient Portal", desc: "Self-service scheduling" },
   { icon: Smartphone, title: "Mobile App", desc: "iOS & Android native" },
-  { icon: ShieldCheck, title: "HIPAA Secure", desc: "SOC2 Certified" },
+  { icon: ShieldCheck, title: "ONC Certified", desc: "2015 Cures Update" },
   { icon: Calendar, title: "Smart Schedule", desc: "Reduce no-shows by 40%" },
   { icon: MessageSquare, title: "Secure Text", desc: "Direct patient SMS" },
   { icon: BarChart3, title: "Analytics", desc: "Real-time BI dashboard" },

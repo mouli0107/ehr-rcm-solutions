@@ -10,8 +10,8 @@
   --color-background: hsl(0 0% 100%);
   --color-foreground: hsl(222 47% 11%);
 
-  /* Premium Medical Blue */
-  --color-primary: hsl(215 90% 48%); 
+  /* MDChartsEHR Blue - lighter cyan-tinted blue */
+  --color-primary: hsl(197 85% 42%); 
   --color-primary-foreground: hsl(0 0% 100%);
 
   --color-secondary: hsl(210 40% 96.1%);
@@ -28,7 +28,7 @@
 
   --color-border: hsl(214.3 31.8% 91.4%);
   --color-input: hsl(214.3 31.8% 91.4%);
-  --color-ring: hsl(215 90% 48%);
+  --color-ring: hsl(197 85% 42%);
 
   --color-card: hsl(0 0% 100%);
   --color-card-foreground: hsl(222 47% 11%);

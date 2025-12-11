@@ -124,22 +124,6 @@ export function Hero() {
               </motion.div>
             ))}
 
-            {/* Floating Certification Seal */}
-            <motion.div 
-              animate={{ y: [0, -8, 0] }}
-              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute right-0 top-0 z-30"
-            >
-              <div className="relative h-24 w-24 md:h-28 md:w-28 bg-white rounded-full shadow-2xl shadow-amber-500/20 flex items-center justify-center p-2 border-4 border-white">
-                 <div className="absolute inset-0 rounded-full border border-slate-100"></div>
-                 <img src={oncSeal} alt="ONC Certified" className="w-full h-full object-contain" />
-                 
-                 <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 bg-slate-900 text-white text-[9px] font-bold px-2 py-1 rounded-full whitespace-nowrap shadow-lg">
-                   Cures Update
-                 </div>
-              </div>
-            </motion.div>
-
             {/* Floating Revenue Growth Card */}
             <motion.div 
               animate={{ y: [0, -10, 0] }}

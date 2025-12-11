@@ -12,6 +12,7 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
+import { ContactModal } from "@/components/ContactModal";
 
 const components: { title: string; href: string; description: string }[] = [
   {
@@ -50,6 +51,7 @@ const specialties = [
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -171,7 +173,13 @@ export function Navbar() {
 
           {/* Desktop CTA - Compact */}
           <div className="hidden lg:flex items-center gap-3">
-            <Button variant="default" size="sm" className="h-9 px-5 text-xs font-bold uppercase tracking-wide shadow-md shadow-primary/20 rounded-md bg-primary hover:bg-blue-700">
+            <Button 
+              variant="default" 
+              size="sm" 
+              className="h-9 px-5 text-xs font-bold uppercase tracking-wide shadow-md shadow-primary/20 rounded-md bg-primary hover:bg-blue-700"
+              onClick={() => setModalOpen(true)}
+              data-testid="button-book-demo-navbar"
+            >
               Book Demo
             </Button>
           </div>
@@ -206,12 +214,19 @@ export function Navbar() {
               </div>
 
               <div className="pt-4 border-t border-slate-100">
-                <Button className="w-full">Book Demo</Button>
+                <Button className="w-full" onClick={() => { setMobileMenuOpen(false); setModalOpen(true); }}>Book Demo</Button>
               </div>
             </div>
           </div>
         )}
       </nav>
+      
+      <ContactModal
+        isOpen={modalOpen}
+        onClose={() => setModalOpen(false)}
+        title="Schedule a Demo"
+        type="demo"
+      />
     </div>
   );
 }

@@ -151,32 +151,31 @@ export function Hero() {
                 </div>
               </motion.div>
 
-              {/* Vertical Stack of Provider/Clinic Images */}
-              <div className="absolute -right-4 top-10 flex flex-col gap-4 z-20 hidden lg:flex">
-                {[
-                  { img: doctorPortrait, label: "Dr. Sarah Chen", delay: 0 },
-                  { img: medicalTeam, label: "Care Team", delay: 1 },
-                  { img: doctorTablet, label: "Digital Workflow", delay: 2 },
-                  { img: clinicInterior, label: "Modern Clinic", delay: 3 }
-                ].map((item, i) => (
-                  <motion.div
-                    key={i}
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.5 + (i * 0.1), duration: 0.5 }}
-                    whileHover={{ scale: 1.05, x: -5 }}
-                    className="relative group cursor-pointer"
-                  >
-                    <div className="h-14 w-14 md:h-16 md:w-16 rounded-2xl border-2 border-white shadow-lg overflow-hidden bg-slate-200">
-                      <img src={item.img} alt={item.label} className="w-full h-full object-cover" />
-                    </div>
-                    {/* Hover Label */}
-                    <div className="absolute right-full top-1/2 -translate-y-1/2 mr-3 px-2 py-1 bg-slate-900/90 text-white text-[10px] font-bold rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
-                      {item.label}
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
+              {/* Zig-Zag Provider/Clinic Images */}
+              {[
+                { img: doctorPortrait, label: "Dr. Sarah Chen", position: "-left-16 top-4", labelPos: "left" },
+                { img: medicalTeam, label: "Care Team", position: "-right-8 top-20", labelPos: "right" },
+                { img: doctorTablet, label: "Digital Workflow", position: "-left-12 bottom-32", labelPos: "left" },
+                { img: clinicInterior, label: "Modern Clinic", position: "-right-10 bottom-8", labelPos: "right" }
+              ].map((item, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 0.4 + (i * 0.15), duration: 0.5 }}
+                  whileHover={{ scale: 1.1 }}
+                  className={`absolute ${item.position} z-20 hidden lg:block group cursor-pointer`}
+                >
+                  <div className="h-20 w-20 md:h-24 md:w-24 rounded-2xl border-3 border-white shadow-2xl overflow-hidden bg-slate-200 ring-4 ring-white/50">
+                    <img src={item.img} alt={item.label} className="w-full h-full object-cover" />
+                  </div>
+                  <div className={`absolute top-1/2 -translate-y-1/2 px-2 py-1 bg-slate-900/90 text-white text-[10px] font-bold rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none ${
+                    item.labelPos === "left" ? "left-full ml-3" : "right-full mr-3"
+                  }`}>
+                    {item.label}
+                  </div>
+                </motion.div>
+              ))}
 
             </motion.div>
           </div>

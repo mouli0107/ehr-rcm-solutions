@@ -164,11 +164,8 @@ export function Navbar() {
 
           {/* Desktop CTA - Compact */}
           <div className="hidden lg:flex items-center gap-3">
-            <Button variant="ghost" size="sm" className="text-xs font-bold text-slate-600 h-8 px-3">
-              Book Demo
-            </Button>
             <Button variant="default" size="sm" className="h-9 px-5 text-xs font-bold uppercase tracking-wide shadow-md shadow-primary/20 rounded-md bg-primary hover:bg-blue-700">
-              Get Started
+              Book Demo
             </Button>
           </div>
 
@@ -201,9 +198,8 @@ export function Navbar() {
                 </div>
               </div>
 
-              <div className="grid grid-cols-2 gap-4 pt-4 border-t border-slate-100">
-                <Button className="w-full">Get Started</Button>
-                <Button variant="outline" className="w-full">Login</Button>
+              <div className="pt-4 border-t border-slate-100">
+                <Button className="w-full">Book Demo</Button>
               </div>
             </div>
           </div>

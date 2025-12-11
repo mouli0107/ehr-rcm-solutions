@@ -65,11 +65,11 @@ export function Hero() {
               <div className="flex flex-col sm:flex-row gap-3 mb-10">
                 <Button 
                   size="lg" 
-                  variant="outline" 
-                  className="h-12 px-8 text-sm font-bold uppercase tracking-wide bg-white hover:bg-slate-50 border-slate-200 text-slate-700 rounded-md shadow-sm"
-                  data-testid="button-view-certification"
+                  className="h-12 px-8 text-sm font-bold uppercase tracking-wide shadow-lg shadow-blue-900/20 bg-primary hover:bg-blue-700 rounded-md transition-all hover:-translate-y-0.5"
+                  onClick={() => setModalState({ isOpen: true, type: "demo", title: "Book a Demo" })}
+                  data-testid="button-book-demo"
                 >
-                   View Certification
+                   Book Demo
                 </Button>
               </div>
 

@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
 import { Features } from "@/components/Features";
@@ -5,10 +6,16 @@ import { RCMSection } from "@/components/RCMSection";
 import { Specialties } from "@/components/Specialties";
 import { ComplianceSection } from "@/components/ComplianceSection";
 import { BlogSection } from "@/components/BlogSection";
+import { ContactModal } from "@/components/ContactModal";
 import { Button } from "@/components/ui/button";
 import { Stethoscope, Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
 
 export default function Home() {
+  const [modalState, setModalState] = useState<{
+    isOpen: boolean;
+    type: "demo" | "contact" | "trial" | "rcm_audit";
+    title: string;
+  }>({ isOpen: false, type: "demo", title: "" });
   return (
     <div className="min-h-screen bg-background font-sans selection:bg-primary/20">
       <Navbar />
@@ -32,10 +39,21 @@ export default function Home() {
             Join hundreds of high-performing practices that have switched to MDChartEHR to save time, reduce burnout, and increase revenue.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" variant="secondary" className="h-14 px-8 text-primary font-bold text-lg shadow-xl hover:shadow-2xl transition-all">
+            <Button 
+              size="lg" 
+              variant="secondary" 
+              className="h-14 px-8 text-primary font-bold text-lg shadow-xl hover:shadow-2xl transition-all"
+              onClick={() => setModalState({ isOpen: true, type: "demo", title: "Schedule a Demo" })}
+              data-testid="button-schedule-demo"
+            >
               Schedule a Demo
             </Button>
-            <Button size="lg" className="h-14 px-8 bg-transparent border-2 border-white/30 text-white hover:bg-white/10 hover:border-white font-semibold text-lg">
+            <Button 
+              size="lg" 
+              className="h-14 px-8 bg-transparent border-2 border-white/30 text-white hover:bg-white/10 hover:border-white font-semibold text-lg"
+              onClick={() => setModalState({ isOpen: true, type: "contact", title: "Contact Sales" })}
+              data-testid="button-contact-sales"
+            >
               Contact Sales
             </Button>
           </div>
@@ -115,6 +133,13 @@ export default function Home() {
           </div>
         </div>
       </footer>
+
+      <ContactModal
+        isOpen={modalState.isOpen}
+        onClose={() => setModalState({ ...modalState, isOpen: false })}
+        requestType={modalState.type}
+        title={modalState.title}
+      />
     </div>
   );
 }

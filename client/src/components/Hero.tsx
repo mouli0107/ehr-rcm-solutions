@@ -1,6 +1,8 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, TrendingUp, ShieldCheck, Award } from "lucide-react"; // Added Award icon
+import { ArrowRight, TrendingUp, ShieldCheck, Award } from "lucide-react";
+import { ContactModal } from "@/components/ContactModal";
 import heroImage from "@assets/generated_images/futuristic_glass_medical_interface_abstract_3d.png";
 import oncSeal from "@assets/generated_images/onc_certified_health_it_seal_3d_gold_and_blue.png";
 import doctorPortrait from "@assets/generated_images/friendly_doctor_portrait.png";
@@ -9,6 +11,11 @@ import doctorTablet from "@assets/generated_images/doctor_using_tablet.png";
 import medicalTeam from "@assets/generated_images/medical_team_collaboration.png";
 
 export function Hero() {
+  const [modalState, setModalState] = useState<{
+    isOpen: boolean;
+    type: "demo" | "contact" | "trial" | "rcm_audit";
+    title: string;
+  }>({ isOpen: false, type: "trial", title: "" });
   return (
     <section className="relative pt-28 pb-16 md:pt-36 md:pb-24 overflow-hidden bg-slate-50/50">
       {/* Dense Professional Grid Background */}
@@ -56,10 +63,20 @@ export function Hero() {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-3 mb-10">
-                <Button size="lg" className="h-12 px-8 text-sm font-bold uppercase tracking-wide shadow-lg shadow-blue-900/20 bg-primary hover:bg-blue-700 rounded-md transition-all hover:-translate-y-0.5">
+                <Button 
+                  size="lg" 
+                  className="h-12 px-8 text-sm font-bold uppercase tracking-wide shadow-lg shadow-blue-900/20 bg-primary hover:bg-blue-700 rounded-md transition-all hover:-translate-y-0.5"
+                  onClick={() => setModalState({ isOpen: true, type: "trial", title: "Start Your Free Trial" })}
+                  data-testid="button-start-trial"
+                >
                   Start Free Trial <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
-                <Button size="lg" variant="outline" className="h-12 px-8 text-sm font-bold uppercase tracking-wide bg-white hover:bg-slate-50 border-slate-200 text-slate-700 rounded-md shadow-sm">
+                <Button 
+                  size="lg" 
+                  variant="outline" 
+                  className="h-12 px-8 text-sm font-bold uppercase tracking-wide bg-white hover:bg-slate-50 border-slate-200 text-slate-700 rounded-md shadow-sm"
+                  data-testid="button-view-certification"
+                >
                    View Certification
                 </Button>
               </div>
@@ -166,6 +183,13 @@ export function Hero() {
 
         </div>
       </div>
+
+      <ContactModal
+        isOpen={modalState.isOpen}
+        onClose={() => setModalState({ ...modalState, isOpen: false })}
+        requestType={modalState.type}
+        title={modalState.title}
+      />
     </section>
   );
 }

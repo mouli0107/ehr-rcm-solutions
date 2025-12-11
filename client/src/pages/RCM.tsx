@@ -1,12 +1,18 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, CheckCircle2, TrendingUp, DollarSign, FileText, ShieldCheck, Phone, RefreshCw } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Navbar } from "@/components/Navbar";
+import { ContactModal } from "@/components/ContactModal";
 import rcmImage from "@assets/generated_images/abstract_medical_financial_growth_chart.png";
-
 import trizettoBadge from "@assets/generated_images/trizetto_provider_solutions_integration_badge.png";
 
 export default function RCMPage() {
+  const [modalState, setModalState] = useState<{
+    isOpen: boolean;
+    type: "demo" | "contact" | "trial" | "rcm_audit";
+    title: string;
+  }>({ isOpen: false, type: "rcm_audit", title: "" });
   const fadeInUp = {
     initial: { opacity: 0, y: 20 },
     animate: { opacity: 1, y: 0 },
@@ -50,7 +56,12 @@ export default function RCMPage() {
               </p>
               
               <div className="flex flex-wrap gap-3 mb-8">
-                <Button size="lg" className="h-12 px-8 text-sm font-bold uppercase tracking-wide shadow-xl bg-primary hover:bg-blue-700 rounded-sm">
+                <Button 
+                  size="lg" 
+                  className="h-12 px-8 text-sm font-bold uppercase tracking-wide shadow-xl bg-primary hover:bg-blue-700 rounded-sm"
+                  onClick={() => setModalState({ isOpen: true, type: "rcm_audit", title: "Request Free RCM Audit" })}
+                  data-testid="button-rcm-audit"
+                >
                   Get a Free RCM Audit
                 </Button>
                 <Button size="lg" variant="outline" className="h-12 px-8 text-sm font-bold uppercase tracking-wide bg-white border-slate-300 text-slate-700 rounded-sm">
@@ -258,6 +269,13 @@ export default function RCMPage() {
           <p>© 2025 MDChartEHR. All rights reserved.</p>
         </div>
       </footer>
+
+      <ContactModal
+        isOpen={modalState.isOpen}
+        onClose={() => setModalState({ ...modalState, isOpen: false })}
+        requestType={modalState.type}
+        title={modalState.title}
+      />
     </div>
   );
 }

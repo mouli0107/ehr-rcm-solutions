@@ -4,7 +4,7 @@ import { Shield, Award, FileCheck, Lock, CheckCircle2, ArrowRight } from "lucide
 import { Button } from "@/components/ui/button";
 import { Navbar } from "@/components/Navbar";
 import { ContactModal } from "@/components/ContactModal";
-import complianceHeroImage from "@assets/stock_images/medical_compliance_s_cab21242.jpg";
+import complianceHeroImage from "@assets/stock_images/doctor_holding_digit_1e5c4a1a.jpg";
 
 const certifications = [
   {
@@ -55,60 +55,72 @@ export default function CompliancePage() {
     <div className="min-h-screen bg-background font-sans">
       <Navbar />
       
-      <section className="pt-28 pb-16 bg-gradient-to-b from-slate-50 to-white relative overflow-hidden">
+      <section className="pt-28 pb-20 bg-gradient-to-b from-slate-50 to-white relative overflow-hidden">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:24px_24px]" />
         
         <div className="container mx-auto px-4 md:px-6 relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="max-w-3xl"
-          >
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-100 text-emerald-700 text-xs font-bold uppercase tracking-wide mb-6">
-              <Shield className="h-4 w-4" />
-              Compliance & Certification
-            </div>
-            
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-[1.1] mb-6">
-              Certified. Secure. <br/>
-              <span className="text-primary">Compliant.</span>
-            </h1>
-            
-            <p className="text-xl text-slate-600 mb-8 leading-relaxed max-w-2xl">
-              Meet all regulatory requirements with confidence. Our platform is built with 
-              compliance at its core.
-            </p>
-            
-            <div className="flex flex-wrap gap-4">
-              <Button 
-                size="lg" 
-                className="h-12 px-8"
-                onClick={() => setModalOpen(true)}
-                data-testid="button-compliance-demo"
-              >
-                Book a Demo <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
-              <Button size="lg" variant="outline" className="h-12 px-8">
-                Download Compliance Guide
-              </Button>
-            </div>
-          </motion.div>
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+            >
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-100 text-emerald-700 text-xs font-bold uppercase tracking-wide mb-6">
+                <Shield className="h-4 w-4" />
+                Compliance & Certification
+              </div>
+              
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-[1.1] mb-6">
+                Certified. Secure. <br/>
+                <span className="text-primary">Compliant.</span>
+              </h1>
+              
+              <p className="text-xl text-slate-600 mb-8 leading-relaxed">
+                Meet all regulatory requirements with confidence. Our platform is built with 
+                compliance at its core.
+              </p>
+              
+              <div className="flex flex-wrap gap-4">
+                <Button 
+                  size="lg" 
+                  className="h-12 px-8"
+                  onClick={() => setModalOpen(true)}
+                  data-testid="button-compliance-demo"
+                >
+                  Book a Demo <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+                <Button size="lg" variant="outline" className="h-12 px-8">
+                  Download Compliance Guide
+                </Button>
+              </div>
+            </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.2 }}
-            className="hidden lg:block absolute right-0 top-1/2 -translate-y-1/2 w-[45%]"
-          >
-            <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-l from-transparent via-transparent to-white z-10" />
-              <img 
-                src={complianceHeroImage} 
-                alt="Healthcare compliance and security" 
-                className="rounded-l-2xl shadow-2xl object-cover h-[500px] w-full"
-              />
-            </div>
-          </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.2 }}
+              className="relative"
+            >
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+                <img 
+                  src={complianceHeroImage} 
+                  alt="Healthcare data security" 
+                  className="w-full h-[450px] object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-emerald-600/20 to-transparent" />
+              </div>
+              <div className="absolute -bottom-4 -left-4 bg-white rounded-xl shadow-lg p-4 border border-slate-100">
+                <div className="flex items-center gap-3">
+                  <div className="h-10 w-10 rounded-full bg-emerald-100 flex items-center justify-center">
+                    <Shield className="h-5 w-5 text-emerald-600" />
+                  </div>
+                  <div>
+                    <p className="font-bold text-slate-900 text-sm">100% Compliant</p>
+                    <p className="text-xs text-slate-500">HIPAA & ONC Certified</p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
 

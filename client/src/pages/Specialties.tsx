@@ -4,7 +4,7 @@ import { Stethoscope, Heart, Brain, Baby, Eye, Bone, Activity, Pill, ArrowRight 
 import { Button } from "@/components/ui/button";
 import { Navbar } from "@/components/Navbar";
 import { ContactModal } from "@/components/ContactModal";
-import specialtiesHeroImage from "@assets/stock_images/diverse_medical_team_85d7873a.jpg";
+import specialtiesHeroImage from "@assets/stock_images/group_of_doctors_med_da5596cd.jpg";
 
 const specialties = [
   { icon: Stethoscope, title: "Internal Medicine", desc: "Comprehensive templates for adult primary care and chronic disease management." },
@@ -36,57 +36,69 @@ export default function SpecialtiesPage() {
     <div className="min-h-screen bg-background font-sans">
       <Navbar />
       
-      <section className="pt-28 pb-16 bg-gradient-to-b from-slate-50 to-white relative overflow-hidden">
+      <section className="pt-28 pb-20 bg-gradient-to-b from-slate-50 to-white relative overflow-hidden">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:24px_24px]" />
         
         <div className="container mx-auto px-4 md:px-6 relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="max-w-3xl"
-          >
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-amber-100 text-amber-700 text-xs font-bold uppercase tracking-wide mb-6">
-              <Stethoscope className="h-4 w-4" />
-              Medical Specialties
-            </div>
-            
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-[1.1] mb-6">
-              Built for Your <br/>
-              <span className="text-primary">Specialty.</span>
-            </h1>
-            
-            <p className="text-xl text-slate-600 mb-8 leading-relaxed max-w-2xl">
-              40+ specialty-specific templates and workflows designed by practicing physicians 
-              to match how you actually work.
-            </p>
-            
-            <div className="flex flex-wrap gap-4">
-              <Button 
-                size="lg" 
-                className="h-12 px-8"
-                onClick={() => setModalOpen(true)}
-                data-testid="button-specialty-demo"
-              >
-                Book a Demo <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
-            </div>
-          </motion.div>
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+            >
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-amber-100 text-amber-700 text-xs font-bold uppercase tracking-wide mb-6">
+                <Stethoscope className="h-4 w-4" />
+                Medical Specialties
+              </div>
+              
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-[1.1] mb-6">
+                Built for Your <br/>
+                <span className="text-primary">Specialty.</span>
+              </h1>
+              
+              <p className="text-xl text-slate-600 mb-8 leading-relaxed">
+                40+ specialty-specific templates and workflows designed by practicing physicians 
+                to match how you actually work.
+              </p>
+              
+              <div className="flex flex-wrap gap-4">
+                <Button 
+                  size="lg" 
+                  className="h-12 px-8"
+                  onClick={() => setModalOpen(true)}
+                  data-testid="button-specialty-demo"
+                >
+                  Book a Demo <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </div>
+            </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.2 }}
-            className="hidden lg:block absolute right-0 top-1/2 -translate-y-1/2 w-[45%]"
-          >
-            <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-l from-transparent via-transparent to-white z-10" />
-              <img 
-                src={specialtiesHeroImage} 
-                alt="Diverse medical team" 
-                className="rounded-l-2xl shadow-2xl object-cover h-[500px] w-full"
-              />
-            </div>
-          </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.2 }}
+              className="relative"
+            >
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+                <img 
+                  src={specialtiesHeroImage} 
+                  alt="Diverse medical team" 
+                  className="w-full h-[450px] object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-amber-600/20 to-transparent" />
+              </div>
+              <div className="absolute -bottom-4 -right-4 bg-white rounded-xl shadow-lg p-4 border border-slate-100">
+                <div className="flex items-center gap-3">
+                  <div className="h-10 w-10 rounded-full bg-amber-100 flex items-center justify-center">
+                    <Stethoscope className="h-5 w-5 text-amber-600" />
+                  </div>
+                  <div>
+                    <p className="font-bold text-slate-900 text-sm">40+ Templates</p>
+                    <p className="text-xs text-slate-500">Specialty-Specific</p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
 

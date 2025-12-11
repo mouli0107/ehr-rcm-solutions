@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { 
-  Zap, Clock, Users, Shield, TrendingUp, Heart, 
+  Zap, Clock, Users, Shield, TrendingUp,
   Smartphone, MessageSquare, CreditCard, FileText, 
   Stethoscope, Camera, Phone, Video, BarChart3, 
   CheckCircle2, ArrowRight, Sparkles, Award
@@ -9,7 +9,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Navbar } from "@/components/Navbar";
 import { ContactModal } from "@/components/ContactModal";
-import whyHeroImage from "@assets/stock_images/modern_medical_pract_d7c1f4fe.jpg";
+import whyHeroImage from "@assets/stock_images/happy_doctor_in_whit_af55e936.jpg";
 
 const coreValues = [
   { icon: Clock, title: "Quick Setup", desc: "Operational in 2-10 weeks with minimal staff training" },
@@ -34,7 +34,7 @@ const keyFeatures = [
   { 
     icon: CreditCard, 
     title: "Billing & Payments", 
-    items: ["Integrated MDCPay™", "Online patient payments", "Paperless billing", "Real-time eligibility"]
+    items: ["Integrated MDCPay", "Online patient payments", "Paperless billing", "Real-time eligibility"]
   },
   { 
     icon: Stethoscope, 
@@ -88,56 +88,71 @@ export default function WhyMDChartsPage() {
     <div className="min-h-screen bg-background font-sans">
       <Navbar />
       
-      <section className="pt-28 pb-16 bg-gradient-to-b from-primary/5 to-white relative overflow-hidden">
+      <section className="pt-28 pb-20 bg-gradient-to-b from-primary/5 to-white relative overflow-hidden">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:24px_24px]" />
         
         <div className="container mx-auto px-4 md:px-6 relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="max-w-4xl mx-auto text-center"
-          >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-bold uppercase tracking-wide mb-6">
-              <Sparkles className="h-4 w-4" />
-              Why Choose MDChartEHR
-            </div>
-            
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-[1.1] mb-6">
-              Click Less. <span className="text-primary">Care More.</span>
-            </h1>
-            
-            <p className="text-xl text-slate-600 mb-8 leading-relaxed max-w-3xl mx-auto">
-              A multi-specialty EHR and practice management system designed to streamline 
-              workflows, reduce documentation burden, and boost practice efficiency.
-            </p>
-            
-            <div className="flex flex-wrap gap-4 justify-center">
-              <Button 
-                size="lg" 
-                className="h-14 px-8 text-base"
-                onClick={() => setModalOpen(true)}
-                data-testid="button-why-demo"
-              >
-                Schedule Free Demo <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-              <Button size="lg" variant="outline" className="h-14 px-8 text-base">
-                View All Features
-              </Button>
-            </div>
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+            >
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-bold uppercase tracking-wide mb-6">
+                <Sparkles className="h-4 w-4" />
+                Why Choose MDChartEHR
+              </div>
+              
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-[1.1] mb-6">
+                Click Less. <span className="text-primary">Care More.</span>
+              </h1>
+              
+              <p className="text-xl text-slate-600 mb-8 leading-relaxed">
+                A multi-specialty EHR and practice management system designed to streamline 
+                workflows, reduce documentation burden, and boost practice efficiency.
+              </p>
+              
+              <div className="flex flex-wrap gap-4">
+                <Button 
+                  size="lg" 
+                  className="h-14 px-8 text-base"
+                  onClick={() => setModalOpen(true)}
+                  data-testid="button-why-demo"
+                >
+                  Schedule Free Demo <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+                <Button size="lg" variant="outline" className="h-14 px-8 text-base">
+                  View All Features
+                </Button>
+              </div>
+            </motion.div>
 
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3 }}
-              className="mt-12"
+              initial={{ opacity: 0, x: 30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.2 }}
+              className="relative"
             >
-              <img 
-                src={whyHeroImage} 
-                alt="Modern medical practice" 
-                className="rounded-2xl shadow-2xl mx-auto max-w-4xl w-full object-cover h-[350px]"
-              />
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+                <img 
+                  src={whyHeroImage} 
+                  alt="Happy doctor in modern clinic" 
+                  className="w-full h-[500px] object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent" />
+              </div>
+              <div className="absolute -bottom-4 -left-4 bg-white rounded-xl shadow-lg p-4 border border-slate-100">
+                <div className="flex items-center gap-3">
+                  <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center">
+                    <TrendingUp className="h-5 w-5 text-primary" />
+                  </div>
+                  <div>
+                    <p className="font-bold text-slate-900 text-sm">9+ Years</p>
+                    <p className="text-xs text-slate-500">Trusted by Providers</p>
+                  </div>
+                </div>
+              </div>
             </motion.div>
-          </motion.div>
+          </div>
         </div>
       </section>
 

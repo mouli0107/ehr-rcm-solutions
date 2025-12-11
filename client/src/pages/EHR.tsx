@@ -1,0 +1,183 @@
+import { motion } from "framer-motion";
+import { useState } from "react";
+import { FileText, Zap, Shield, Clock, Layers, CheckCircle2, ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Navbar } from "@/components/Navbar";
+import { ContactModal } from "@/components/ContactModal";
+
+const features = [
+  {
+    icon: Zap,
+    title: "Lightning-Fast Charting",
+    description: "Complete notes in under 2 minutes with intelligent auto-population and voice dictation."
+  },
+  {
+    icon: Layers,
+    title: "Specialty Templates",
+    description: "40+ specialty-specific templates that adapt to your unique workflow and documentation needs."
+  },
+  {
+    icon: Shield,
+    title: "ONC 2015 Edition Certified",
+    description: "Fully certified and compliant with Meaningful Use, MIPS, and 21st Century Cures Act requirements."
+  },
+  {
+    icon: Clock,
+    title: "Real-Time Sync",
+    description: "Access patient records instantly across all devices with seamless cloud synchronization."
+  }
+];
+
+const modules = [
+  "Patient Demographics",
+  "Problem List Management", 
+  "Medication Management",
+  "Allergy Documentation",
+  "Lab Results Integration",
+  "Imaging Orders",
+  "E-Prescribing (EPCS)",
+  "Clinical Decision Support",
+  "Progress Notes",
+  "Visit Summaries",
+  "Immunization Records",
+  "Growth Charts"
+];
+
+export default function EHRPage() {
+  const [modalOpen, setModalOpen] = useState(false);
+
+  return (
+    <div className="min-h-screen bg-background font-sans">
+      <Navbar />
+      
+      <section className="pt-28 pb-16 bg-gradient-to-b from-slate-50 to-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:24px_24px]" />
+        
+        <div className="container mx-auto px-4 md:px-6 relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="max-w-3xl"
+          >
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-100 text-primary text-xs font-bold uppercase tracking-wide mb-6">
+              <FileText className="h-4 w-4" />
+              Electronic Health Records
+            </div>
+            
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-[1.1] mb-6">
+              Chart Smarter. <br/>
+              <span className="text-primary">Not Harder.</span>
+            </h1>
+            
+            <p className="text-xl text-slate-600 mb-8 leading-relaxed max-w-2xl">
+              Our intuitive EHR system reduces documentation time by 40% with adaptive templates, 
+              intelligent automation, and seamless integrations.
+            </p>
+            
+            <div className="flex flex-wrap gap-4">
+              <Button 
+                size="lg" 
+                className="h-12 px-8"
+                onClick={() => setModalOpen(true)}
+                data-testid="button-ehr-demo"
+              >
+                Book a Demo <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+              <Button size="lg" variant="outline" className="h-12 px-8">
+                View Features
+              </Button>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4 md:px-6">
+          <h2 className="text-3xl font-bold text-slate-900 mb-12 text-center">
+            Why Providers Choose Our EHR
+          </h2>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {features.map((feature, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="bg-slate-50 rounded-xl p-6 border border-slate-100 hover:border-primary/30 hover:shadow-lg transition-all"
+              >
+                <div className="h-12 w-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+                  <feature.icon className="h-6 w-6 text-primary" />
+                </div>
+                <h3 className="text-lg font-bold text-slate-900 mb-2">{feature.title}</h3>
+                <p className="text-sm text-slate-600">{feature.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 bg-slate-50">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="max-w-3xl mx-auto text-center mb-12">
+            <h2 className="text-3xl font-bold text-slate-900 mb-4">
+              Comprehensive Clinical Modules
+            </h2>
+            <p className="text-lg text-slate-600">
+              Everything you need for complete patient care documentation
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+            {modules.map((module, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.03 }}
+                className="flex items-center gap-3 bg-white rounded-lg p-4 border border-slate-200"
+              >
+                <CheckCircle2 className="h-5 w-5 text-emerald-500 shrink-0" />
+                <span className="text-sm font-medium text-slate-700">{module}</span>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-24 bg-primary text-white text-center">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            Ready to transform your clinical documentation?
+          </h2>
+          <p className="text-blue-100 text-lg mb-8 max-w-2xl mx-auto">
+            Join thousands of providers who have reduced charting time and improved patient care.
+          </p>
+          <Button 
+            size="lg" 
+            variant="secondary" 
+            className="h-14 px-8"
+            onClick={() => setModalOpen(true)}
+          >
+            Schedule Your Demo
+          </Button>
+        </div>
+      </section>
+
+      <footer className="bg-slate-950 text-slate-400 py-12 border-t border-slate-900">
+        <div className="container mx-auto px-4 text-center">
+          <p>© 2025 MDChartEHR. All rights reserved.</p>
+        </div>
+      </footer>
+
+      <ContactModal
+        isOpen={modalOpen}
+        onClose={() => setModalOpen(false)}
+        requestType="demo"
+        title="Book EHR Demo"
+      />
+    </div>
+  );
+}

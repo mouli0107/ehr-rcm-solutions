@@ -16,12 +16,12 @@ import {
 const components: { title: string; href: string; description: string }[] = [
   {
     title: "Electronic Health Records",
-    href: "#ehr",
+    href: "/ehr",
     description: "Intuitive charting with specialty-specific templates.",
   },
   {
     title: "Practice Management",
-    href: "#pm",
+    href: "/practice-management",
     description: "Streamline scheduling, registration, and front-desk workflows.",
   },
   {
@@ -31,20 +31,20 @@ const components: { title: string; href: string; description: string }[] = [
   },
   {
     title: "Patient Engagement",
-    href: "#patient-portal",
+    href: "/patient-engagement",
     description: "Secure portal for messaging, appointments, and payments.",
   },
 ];
 
 const specialties = [
-  { title: "Dermatology", href: "#derm" },
-  { title: "Internal Medicine", href: "#im" },
-  { title: "Pediatrics", href: "#peds" },
-  { title: "OB/GYN", href: "#obgyn" },
-  { title: "Cardiology", href: "#cardio" },
-  { title: "Family Practice", href: "#fp" },
-  { title: "Psychiatry", href: "#psych" },
-  { title: "Pain Management", href: "#pain" },
+  { title: "Dermatology", href: "/specialties" },
+  { title: "Internal Medicine", href: "/specialties" },
+  { title: "Pediatrics", href: "/specialties" },
+  { title: "OB/GYN", href: "/specialties" },
+  { title: "Cardiology", href: "/specialties" },
+  { title: "Family Practice", href: "/specialties" },
+  { title: "Psychiatry", href: "/specialties" },
+  { title: "Pain Management", href: "/specialties" },
 ];
 
 export function Navbar() {
@@ -139,7 +139,7 @@ export function Navbar() {
                          </li>
                       ))}
                       <li className="col-span-3 border-t border-slate-100 pt-2 mt-1 text-center">
-                        <a href="#specialties" className="text-xs font-bold text-primary hover:underline">
+                        <a href="/specialties" className="text-xs font-bold text-primary hover:underline">
                           View Specialty Library (40+)
                         </a>
                       </li>
@@ -154,7 +154,7 @@ export function Navbar() {
                 </NavigationMenuItem>
                 
                 <NavigationMenuItem>
-                  <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "h-9 px-3 text-xs font-bold uppercase tracking-wide text-slate-600 hover:text-primary cursor-pointer")} href="#compliance">
+                  <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "h-9 px-3 text-xs font-bold uppercase tracking-wide text-slate-600 hover:text-primary cursor-pointer")} href="/compliance">
                     Compliance
                   </NavigationMenuLink>
                 </NavigationMenuItem>

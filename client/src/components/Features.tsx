@@ -15,18 +15,18 @@ import {
 } from "lucide-react";
 
 const features = [
-  { icon: FileText, title: "Smart Templates", desc: "Highly configurable engine" },
-  { icon: Activity, title: "MIPS Reporting", desc: "Automated MACRA/MIPS" },
-  { icon: CreditCard, title: "RCM & Billing", desc: "99% first-pass rate" },
-  { icon: Users, title: "Patient Portal", desc: "Self-service scheduling" },
-  { icon: Smartphone, title: "Mobile App", desc: "iOS & Android native" },
-  { icon: ShieldCheck, title: "ONC Certified", desc: "2015 Cures Update" },
-  { icon: Calendar, title: "Smart Schedule", desc: "Reduce no-shows by 40%" },
-  { icon: MessageSquare, title: "Secure Text", desc: "Direct patient SMS" },
-  { icon: BarChart3, title: "Analytics", desc: "Real-time BI dashboard" },
-  { icon: Stethoscope, title: "Telehealth", desc: "HD Video integrated" },
-  { icon: Pill, title: "e-Prescribing", desc: "EPCS Certified" },
-  { icon: ClipboardCheck, title: "Intake Forms", desc: "Digital paperless" }
+  { icon: FileText, title: "Smart Templates", desc: "Highly configurable engine", color: "bg-primary/10 text-primary" },
+  { icon: Activity, title: "MIPS Reporting", desc: "Automated MACRA/MIPS", color: "bg-emerald-100 text-emerald-600" },
+  { icon: CreditCard, title: "RCM & Billing", desc: "99% first-pass rate", color: "bg-amber-100 text-amber-600" },
+  { icon: Users, title: "Patient Portal", desc: "Self-service scheduling", color: "bg-purple-100 text-purple-600" },
+  { icon: Smartphone, title: "Mobile App", desc: "iOS & Android native", color: "bg-primary/10 text-primary" },
+  { icon: ShieldCheck, title: "ONC Certified", desc: "2015 Cures Update", color: "bg-emerald-100 text-emerald-600" },
+  { icon: Calendar, title: "Smart Schedule", desc: "Reduce no-shows by 40%", color: "bg-amber-100 text-amber-600" },
+  { icon: MessageSquare, title: "Secure Text", desc: "Direct patient SMS", color: "bg-purple-100 text-purple-600" },
+  { icon: BarChart3, title: "Analytics", desc: "Real-time BI dashboard", color: "bg-primary/10 text-primary" },
+  { icon: Stethoscope, title: "Telehealth", desc: "HD Video integrated", color: "bg-emerald-100 text-emerald-600" },
+  { icon: Pill, title: "e-Prescribing", desc: "EPCS Certified", color: "bg-amber-100 text-amber-600" },
+  { icon: ClipboardCheck, title: "Intake Forms", desc: "Digital paperless", color: "bg-purple-100 text-purple-600" }
 ];
 
 export function Features() {
@@ -55,15 +55,15 @@ export function Features() {
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.05 }}
-              className="bg-white p-6 hover:bg-blue-50/50 transition-colors group"
+              className="bg-white p-6 hover:bg-slate-50 transition-colors group"
             >
               <div className="flex items-start gap-3 mb-3">
-                <div className="h-8 w-8 rounded bg-slate-100 flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors shrink-0">
-                  <feature.icon className="h-4 w-4" />
+                <div className={`h-9 w-9 rounded-lg ${feature.color} flex items-center justify-center shrink-0`}>
+                  <feature.icon className="h-4.5 w-4.5" />
                 </div>
-                <h3 className="text-sm font-bold text-slate-900 leading-tight pt-1">{feature.title}</h3>
+                <h3 className="text-sm font-bold text-slate-900 leading-tight pt-1.5">{feature.title}</h3>
               </div>
-              <p className="text-xs text-slate-500 font-medium leading-relaxed pl-11">
+              <p className="text-xs text-slate-500 font-medium leading-relaxed pl-12">
                 {feature.desc}
               </p>
             </motion.div>

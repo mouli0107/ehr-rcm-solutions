@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, CheckCircle2, Shield, TrendingUp, PlayCircle } from "lucide-react";
-import heroImage from "@assets/generated_images/futuristic_glass_medical_interface_abstract_3d.png"; // Placeholder until generation finishes
+import { ArrowRight, TrendingUp, ShieldCheck, Award } from "lucide-react"; // Added Award icon
+import heroImage from "@assets/generated_images/futuristic_glass_medical_interface_abstract_3d.png";
+import oncSeal from "@assets/generated_images/official_looking_3d_seal_for_onc_certified_health_it_gold_and_metallic_blue.png"; // Placeholder path
 
 export function Hero() {
   return (
@@ -23,14 +24,20 @@ export function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-blue-100 shadow-sm mb-6 hover:shadow-md transition-shadow cursor-default">
-                 <span className="relative flex h-2 w-2">
-                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                   <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-                 </span>
-                 <span className="text-[10px] font-bold uppercase tracking-widest text-slate-600">
-                   ONC 2015 Cures Update Certified
-                 </span>
+              {/* Premium Certification Badge Row */}
+              <div className="flex flex-wrap gap-3 mb-6">
+                 <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-amber-200 shadow-sm hover:shadow-md transition-shadow cursor-default">
+                    <Award className="h-4 w-4 text-amber-500" />
+                    <span className="text-[10px] font-bold uppercase tracking-widest text-slate-700">
+                      ONC 2015 Edition Cures Update
+                    </span>
+                 </div>
+                 <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-blue-100 shadow-sm hover:shadow-md transition-shadow cursor-default">
+                    <ShieldCheck className="h-4 w-4 text-primary" />
+                    <span className="text-[10px] font-bold uppercase tracking-widest text-slate-700">
+                      21st Century Cures Act Certified
+                    </span>
+                 </div>
               </div>
 
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold font-heading text-slate-900 leading-[1.1] mb-4 tracking-tight">
@@ -49,7 +56,7 @@ export function Hero() {
                   Start Free Trial <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
                 <Button size="lg" variant="outline" className="h-12 px-8 text-sm font-bold uppercase tracking-wide bg-white hover:bg-slate-50 border-slate-200 text-slate-700 rounded-md shadow-sm">
-                  <PlayCircle className="mr-2 h-4 w-4" /> Live Demo
+                   View Certification
                 </Button>
               </div>
 
@@ -69,7 +76,7 @@ export function Hero() {
             </motion.div>
           </div>
 
-          {/* Right Content - Stunning Visual */}
+          {/* Right Content - Stunning Visual + Certification Seal */}
           <div className="lg:w-1/2 relative perspective-1000">
             <motion.div
               initial={{ opacity: 0, rotateX: 5, y: 30 }}
@@ -89,6 +96,23 @@ export function Hero() {
                 />
               </div>
 
+              {/* Floating Certification Seal */}
+              <motion.div 
+                animate={{ y: [0, -8, 0] }}
+                transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+                className="absolute -right-6 -top-6 md:-right-10 md:-top-10 z-30"
+              >
+                <div className="relative h-28 w-28 md:h-32 md:w-32 bg-white rounded-full shadow-2xl shadow-amber-500/20 flex items-center justify-center p-2 border-4 border-white">
+                   <div className="absolute inset-0 rounded-full border border-slate-100"></div>
+                   <img src={oncSeal} alt="ONC Certified" className="w-full h-full object-contain" />
+                   
+                   {/* Tooltip-like label */}
+                   <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 bg-slate-900 text-white text-[9px] font-bold px-2 py-1 rounded-full whitespace-nowrap shadow-lg">
+                     Cures Update
+                   </div>
+                </div>
+              </motion.div>
+
               {/* Floating Glass Cards - Clean & Minimal */}
               <motion.div 
                 animate={{ y: [0, -10, 0] }}
@@ -106,22 +130,6 @@ export function Hero() {
                 </div>
               </motion.div>
 
-              <motion.div 
-                animate={{ y: [0, 10, 0] }}
-                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                className="absolute -right-8 bottom-1/4 bg-white/90 backdrop-blur-md p-4 rounded-xl shadow-xl border border-white/50 z-20 hidden md:block"
-              >
-                 <div className="flex items-center gap-3">
-                  <div className="h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center">
-                    <Shield className="h-5 w-5 text-primary" />
-                  </div>
-                  <div>
-                    <p className="text-xs font-bold text-slate-400 uppercase">Security Level</p>
-                    <p className="text-lg font-bold text-slate-900">Maximum</p>
-                  </div>
-                </div>
-              </motion.div>
-
             </motion.div>
           </div>
 
@@ -130,3 +138,4 @@ export function Hero() {
     </section>
   );
 }
+

@@ -414,29 +414,29 @@ export default function DermatologySpecialty() {
       </section>
 
       {/* Visual Showcase Section - 8 Images Zig-Zag */}
-      <section className="py-20 bg-white">
+      <section className="py-12 bg-slate-50">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+          <div className="text-center mb-8">
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-2">
               See DermCharts in Action
             </h2>
-            <p className="text-lg text-slate-600">
+            <p className="text-slate-600">
               Real dermatology workflows, real results
             </p>
           </div>
           
-          <div className="max-w-4xl mx-auto space-y-4">
-            {/* Row 1 - 4 images aligned left */}
+          <div className="max-w-6xl mx-auto space-y-3">
+            {/* Row 1 - 4 images */}
             <motion.div 
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="flex gap-4 justify-start"
+              className="grid grid-cols-4 gap-3"
             >
               {showcaseImages.slice(0, 4).map((image, index) => (
                 <div
                   key={index}
-                  className="relative group overflow-hidden rounded-xl shadow-lg w-[144px] h-[144px] flex-shrink-0"
+                  className="relative group overflow-hidden rounded-xl shadow-lg aspect-square"
                 >
                   <img 
                     src={image.src} 
@@ -444,25 +444,25 @@ export default function DermatologySpecialty() {
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <div className="absolute bottom-0 left-0 right-0 p-2">
-                      <h4 className="text-white font-semibold text-xs text-center">{image.title}</h4>
+                    <div className="absolute bottom-0 left-0 right-0 p-3">
+                      <h4 className="text-white font-semibold text-sm text-center">{image.title}</h4>
                     </div>
                   </div>
                 </div>
               ))}
             </motion.div>
 
-            {/* Row 2 - 4 images aligned right (zig-zag offset) */}
+            {/* Row 2 - 4 images offset (zig-zag) */}
             <motion.div 
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="flex gap-4 justify-end"
+              className="grid grid-cols-4 gap-3 ml-12"
             >
               {showcaseImages.slice(4, 8).map((image, index) => (
                 <div
                   key={index}
-                  className="relative group overflow-hidden rounded-xl shadow-lg w-[144px] h-[144px] flex-shrink-0"
+                  className="relative group overflow-hidden rounded-xl shadow-lg aspect-square"
                 >
                   <img 
                     src={image.src} 
@@ -470,8 +470,8 @@ export default function DermatologySpecialty() {
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <div className="absolute bottom-0 left-0 right-0 p-2">
-                      <h4 className="text-white font-semibold text-xs text-center">{image.title}</h4>
+                    <div className="absolute bottom-0 left-0 right-0 p-3">
+                      <h4 className="text-white font-semibold text-sm text-center">{image.title}</h4>
                     </div>
                   </div>
                 </div>

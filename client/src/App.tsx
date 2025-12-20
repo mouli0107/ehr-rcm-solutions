@@ -18,6 +18,7 @@ import OBGYNSpecialtyPage from "@/pages/OBGYNSpecialty";
 import PediatricsSpecialtyPage from "@/pages/PediatricsSpecialty";
 import UrologySpecialtyPage from "@/pages/UrologySpecialty";
 import FamilyMedicineSpecialtyPage from "@/pages/FamilyMedicineSpecialty";
+import BookDemoPage from "@/pages/BookDemo";
 
 function Router() {
   return (
@@ -36,6 +37,7 @@ function Router() {
       <Route path="/specialties/family-medicine" component={FamilyMedicineSpecialtyPage} />
       <Route path="/compliance" component={CompliancePage} />
       <Route path="/why-mdcharts" component={WhyMDChartsPage} />
+      <Route path="/book-demo" component={BookDemoPage} />
       <Route component={NotFound} />
     </Switch>
   );

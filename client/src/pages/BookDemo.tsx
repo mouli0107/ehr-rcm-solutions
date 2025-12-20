@@ -1,0 +1,135 @@
+import { motion } from "framer-motion";
+import { Navbar } from "@/components/Navbar";
+import { InlineWidget } from "react-calendly";
+import { 
+  Calendar, Clock, Video, Check,
+  Facebook, Twitter, Linkedin, Shield
+} from "lucide-react";
+
+const fadeIn = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
+};
+
+const benefits = [
+  { icon: Clock, text: "30-minute personalized walkthrough" },
+  { icon: Video, text: "Live demo of your specialty workflows" },
+  { icon: Check, text: "Q&A with our EHR specialists" },
+  { icon: Shield, text: "No commitment required" }
+];
+
+export default function BookDemo() {
+  return (
+    <div className="min-h-screen bg-background font-sans">
+      <Navbar />
+      
+      <section className="pt-32 pb-20 bg-gradient-to-b from-cyan-50 via-white to-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid lg:grid-cols-2 gap-12 items-start">
+              <motion.div 
+                initial="hidden" 
+                animate="visible" 
+                variants={fadeIn}
+                className="lg:sticky lg:top-32"
+              >
+                <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-bold mb-6">
+                  <Calendar className="h-4 w-4" />
+                  SCHEDULE YOUR DEMO
+                </div>
+                
+                <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6 leading-tight">
+                  See MDCharts
+                  <span className="text-primary"> in Action</span>
+                </h1>
+                
+                <p className="text-xl text-slate-600 mb-8">
+                  Book a personalized demo and discover how MDCharts can help your practice document faster, get paid sooner, and focus on patient care.
+                </p>
+
+                <div className="space-y-4 mb-8">
+                  {benefits.map((benefit, idx) => (
+                    <div key={idx} className="flex items-center gap-4 p-4 bg-white rounded-xl shadow-sm border border-slate-100">
+                      <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                        <benefit.icon className="h-5 w-5 text-primary" />
+                      </div>
+                      <span className="text-slate-700 font-medium">{benefit.text}</span>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="p-6 bg-slate-50 rounded-xl border border-slate-100">
+                  <h3 className="font-bold text-slate-900 mb-2">What to Expect</h3>
+                  <ul className="space-y-2 text-sm text-slate-600">
+                    <li className="flex items-start gap-2">
+                      <Check className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                      Overview of MDCharts EHR & Practice Management
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <Check className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                      Specialty-specific template walkthrough
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <Check className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                      Revenue cycle & TriZetto integration demo
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <Check className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                      Pricing and implementation timeline
+                    </li>
+                  </ul>
+                </div>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2, duration: 0.6 }}
+                className="bg-white rounded-2xl shadow-xl border border-slate-200 overflow-hidden"
+              >
+                <div className="p-4 bg-primary text-white text-center">
+                  <h2 className="font-bold text-lg">Select a Time That Works for You</h2>
+                </div>
+                <InlineWidget 
+                  url="https://calendly.com/testmouli4/30min"
+                  styles={{
+                    height: '700px',
+                    width: '100%'
+                  }}
+                  pageSettings={{
+                    backgroundColor: 'ffffff',
+                    hideEventTypeDetails: false,
+                    hideLandingPageDetails: false,
+                    primaryColor: '0891b2',
+                    textColor: '1e293b'
+                  }}
+                />
+              </motion.div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer className="bg-slate-900 text-white pt-12 pb-8">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-6 pb-8 border-b border-slate-800">
+            <div className="flex items-center gap-2">
+              <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center">
+                <Calendar className="h-5 w-5 text-white" />
+              </div>
+              <span className="text-xl font-bold">MDChartsEHR</span>
+            </div>
+            <div className="flex gap-3">
+              <a href="#" className="w-9 h-9 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary transition-colors"><Facebook className="h-4 w-4" /></a>
+              <a href="#" className="w-9 h-9 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary transition-colors"><Twitter className="h-4 w-4" /></a>
+              <a href="#" className="w-9 h-9 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary transition-colors"><Linkedin className="h-4 w-4" /></a>
+            </div>
+          </div>
+          <div className="pt-6 text-center text-slate-400 text-sm">
+            © 2024 MDChartsEHR. All rights reserved. ONC 2015 Edition Certified. HIPAA Compliant.
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+}

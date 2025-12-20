@@ -173,15 +173,16 @@ export function Navbar() {
 
           {/* Desktop CTA - Compact */}
           <div className="hidden lg:flex items-center gap-3">
-            <Button 
-              variant="default" 
-              size="sm" 
-              className="h-9 px-5 text-xs font-bold uppercase tracking-wide shadow-md shadow-primary/20 rounded-md bg-primary hover:bg-blue-700"
-              onClick={() => setModalOpen(true)}
-              data-testid="button-book-demo-navbar"
-            >
-              Book Demo
-            </Button>
+            <Link href="/book-demo">
+              <Button 
+                variant="default" 
+                size="sm" 
+                className="h-9 px-5 text-xs font-bold uppercase tracking-wide shadow-md shadow-primary/20 rounded-md bg-primary hover:bg-blue-700"
+                data-testid="button-book-demo-navbar"
+              >
+                Book Demo
+              </Button>
+            </Link>
           </div>
 
           {/* Mobile Toggle */}
@@ -214,7 +215,9 @@ export function Navbar() {
               </div>
 
               <div className="pt-4 border-t border-slate-100">
-                <Button className="w-full" onClick={() => { setMobileMenuOpen(false); setModalOpen(true); }}>Book Demo</Button>
+                <Link href="/book-demo" onClick={() => setMobileMenuOpen(false)}>
+                  <Button className="w-full">Book Demo</Button>
+                </Link>
               </div>
             </div>
           </div>

@@ -1,0 +1,649 @@
+# **REPLIT PROMPT FOR MDCHARTS DERMATOLOGY SPECIALTY PAGE**
+
+---
+
+## **PROJECT OVERVIEW**
+
+Create a stunning, modern, conversion-focused **Dermatology Specialty Page** for MDCharts EHR website using React/Next.js on Replit platform. The page should showcase dermatology-specific EHR features with visually attractive UI, smooth animations, and mobile-responsive design.
+
+---
+
+## **DESIGN SPECIFICATIONS**
+
+### **Color Scheme (MDCharts Brand)**
+- **Primary Blue**: #2E5BBA (trust, medical professionalism)
+- **Secondary Green**: #28A745 (growth, positive outcomes)
+- **Accent Cyan/Teal**: #00BCD4 (modern, healthcare tech - as seen in "Specialty" text)
+- **Accent Orange**: #FD7E14 (CTAs, energy)
+- **Yellow Badge**: #FFD700 or #FFC107 (for "MEDICAL SPECIALTIES" badge)
+- **Background White**: #FFFFFF
+- **Light Gray**: #F8F9FA (section backgrounds)
+- **Dark Text**: #2C3E50
+
+### **Typography**
+- **Headings**: Bold, modern sans-serif (Inter, Poppins, or similar)
+- **Body Text**: Clean, readable sans-serif (Open Sans, Roboto)
+- **Font Sizes**: 
+  - Hero Headline: 48-64px
+  - Section Headings: 32-40px
+  - Subheadings: 24-28px
+  - Body Text: 16-18px
+
+### **Layout & Spacing**
+- **Max Container Width**: 1400px
+- **Section Padding**: 80px vertical, 40px horizontal
+- **Grid System**: 12-column responsive grid
+- **Border Radius**: 8-12px for cards/buttons
+- **Shadows**: Subtle box-shadows for depth (0 4px 6px rgba(0,0,0,0.1))
+
+---
+
+## **PAGE STRUCTURE & CONTENT**
+
+### **1. NAVIGATION BAR** (Sticky Header)
+**Elements:**
+- Logo: "MDChartsEHR" with medical icon (left)
+- Menu Items: SOLUTIONS (dropdown) | SPECIALTIES (dropdown - active) | RCM SERVICES | COMPLIANCE | WHY MDCHARTS
+- Right Side: "BOOK A DEMO" button (Cyan/Teal color #00BCD4)
+- Background: White with subtle shadow on scroll
+- Height: 80px
+
+**Specialties Dropdown Content:**
+- Column 1: Dermatology, OB/GYN, Psychiatry
+- Column 2: Internal Medicine, Cardiology, Pain Management  
+- Column 3: Pediatrics, Family Practice
+- Footer Link: "View Specialty Library (40+)" in cyan color
+
+---
+
+### **2. HERO SECTION** (Full-width, gradient background)
+
+**Background:**
+- Subtle gradient from light blue (#E3F2FD) to white
+- OR use large hero image with overlay
+
+**Content (Left Side - 50%):**
+- **Yellow Badge**: "🩺 DERMATOLOGY SPECIALTY"
+- **Main Headline**: "DermCharts™ - EHR Built Specifically for Dermatology Practices" (Bold, 56px, dark text)
+- **Subheadline**: "Streamline your dermatology practice with specialty-specific templates, visual documentation tools, and integrated cosmetic billing - all designed to match your workflow" (18px, gray text)
+- **Key Stats (3 mini cards)**:
+  - "📊 100+ Dermatology Templates"
+  - "⚡ 2-Min Average Documentation"
+  - "💰 98% Clean Claim Rate"
+- **CTA Buttons**: 
+  - Primary: "Book a Demo" (Cyan button with arrow →)
+  - Secondary: "Watch Video Tour" (Outline button)
+
+**Visual (Right Side - 50%):**
+- **Hero Image**: Professional dermatologist examining patient's skin with dermatoscope in modern clinic setting
+- **Image Specifications**:
+  - High-resolution (minimum 1920x1080px)
+  - Professional medical photography
+  - Bright, clean aesthetic
+  - Diverse patients representation
+  - Modern medical equipment visible
+  - Warm, welcoming lighting
+
+---
+
+### **3. TRUSTED BY SECTION** (Thin banner)
+**Content:**
+- "Trusted by 500+ dermatology practices nationwide"
+- Small logos/badges: ONC 2015 Certified | HIPAA Compliant | TriZetto Integrated
+- Background: Light gray (#F8F9FA)
+
+---
+
+### **4. WHY DERMATOLOGISTS CHOOSE MDCHARTS** (Icon Grid Section)
+
+**Layout**: 3 columns x 2 rows = 6 feature cards
+
+**Feature Cards Content:**
+
+**Card 1: 📸 Visual Documentation**
+- Icon: Camera/Photo icon (Cyan color)
+- Heading: "Integrated Photo Capture"
+- Text: "HIPAA-compliant before/after photos with built-in body mapping and lesion tracking over time"
+
+**Card 2: 🎯 Precise Coding**
+- Icon: Target/Checkmark icon
+- Heading: "Smart Dermatology Billing"
+- Text: "Auto-suggested CPT codes for biopsies, excisions, Mohs surgery, and cosmetic procedures"
+
+**Card 3: 💉 Cosmetic Tracking**
+- Icon: Syringe/Treatment icon
+- Heading: "Medical vs. Aesthetic Workflows"
+- Text: "Separate billing and documentation for cosmetic treatments - Botox, fillers, laser procedures"
+
+**Card 4: 🔬 Pathology Integration**
+- Icon: Microscope icon
+- Heading: "Seamless Biopsy Tracking"
+- Text: "Automatic pathology result integration with alerts for critical findings and follow-up actions"
+
+**Card 5: 📅 Smart Scheduling**
+- Icon: Calendar icon
+- Heading: "Procedure-Specific Appointments"
+- Text: "Pre-configured time blocks for screenings, Mohs surgery, cosmetic consultations, and procedures"
+
+**Card 6: 💊 Formulary Favorites**
+- Icon: Medication icon
+- Heading: "Quick Dermatology Medications"
+- Text: "One-click prescribing for topicals, biologics, and commonly used dermatology medications"
+
+**Card Design:**
+- White background
+- Rounded corners (12px)
+- Subtle shadow on hover
+- Icon in circle (Cyan background, white icon)
+- Padding: 32px
+- Hover effect: Slight lift with increased shadow
+
+---
+
+### **5. DERMATOLOGY WORKFLOWS SECTION** (Tabbed Interface)
+
+**Section Heading**: "Everything Your Dermatology Practice Needs"
+**Subheading**: "From medical dermatology to cosmetic procedures - we've got you covered"
+
+**Tab Navigation** (3 tabs):
+1. Medical Dermatology
+2. Surgical Dermatology
+3. Cosmetic Dermatology
+
+**Tab Content Structure** (for each tab):
+- **Left Side (40%)**: Feature list with checkmarks
+- **Right Side (60%)**: Screenshot/mockup image of software interface
+
+**TAB 1: MEDICAL DERMATOLOGY**
+**Features List:**
+✓ Skin cancer screening templates
+✓ Chronic condition management (psoriasis, eczema, rosacea)
+✓ Acne treatment protocols
+✓ Pediatric dermatology workflows
+✓ Patch testing documentation
+✓ Total body skin examination (TBSE)
+✓ Automated recall for annual screenings
+
+**Image**: Screenshot showing dermatology template with body diagram and lesion documentation
+
+**TAB 2: SURGICAL DERMATOLOGY**
+**Features List:**
+✓ Mohs micrographic surgery workflows
+✓ Excision and closure documentation
+✓ Skin biopsy templates with pathology tracking
+✓ Pre-operative consent forms with e-signature
+✓ Post-operative care instructions
+✓ Surgical procedure coding assistance
+✓ Photo documentation before/during/after
+
+**Image**: Screenshot showing Mohs surgery documentation interface with multiple stages
+
+**TAB 3: COSMETIC DERMATOLOGY**
+**Features List:**
+✓ Injectable tracking (Botox, Dysport, Juvederm, Restylane)
+✓ Laser and light-based procedure records
+✓ Chemical peel protocols
+✓ Body contouring treatment plans
+✓ Cosmetic consultation templates
+✓ Inventory management for injectables
+✓ Before/after photo galleries for patient marketing
+
+**Image**: Screenshot showing cosmetic treatment record with before/after photo comparison
+
+---
+
+### **6. VISUAL SHOWCASE SECTION** (3x3 Image Grid)
+
+**Section Heading**: "See DermCharts in Action"
+**Subheading**: "Real dermatology workflows, real results"
+
+**Grid Layout**: 3 columns x 3 rows (responsive: 2 columns on tablet, 1 column on mobile)
+
+**IMAGE SPECIFICATIONS FOR ALL 9 IMAGES:**
+- **Dimensions**: 600x600px (square format)
+- **Resolution**: 72-150 DPI (web-optimized)
+- **Format**: JPG or WebP
+- **Quality**: High-quality professional medical photography
+- **Aspect Ratio**: 1:1 (square)
+- **Style**: Bright, clean, modern medical aesthetic
+- **Lighting**: Well-lit, professional medical environment
+- **Color Tone**: Warm, welcoming (avoid cold clinical look)
+- **Diversity**: Show diverse age groups and ethnicities
+- **HIPAA**: Use stock photos or properly released patient photos
+
+**Image Grid Content:**
+
+**ROW 1: CLINICAL EXAMINATION**
+
+**Image 1 - Dermatoscopy Examination**
+- Scene: Dermatologist examining patient's mole/lesion with handheld dermatoscope
+- Focus: Close-up of dermatoscope on skin with physician's hand visible
+- Patient: Visible arm or back being examined
+- Equipment: Modern digital dermatoscope
+- Setting: Bright examination room
+
+**Image 2 - Digital Documentation**
+- Scene: Dermatologist documenting on tablet/computer while examining patient
+- Focus: Split view - physician at computer, patient in background
+- Technology: Modern touchscreen or tablet with visible EHR interface
+- Setting: Contemporary dermatology exam room
+- Expression: Focused, professional
+
+**Image 3 - Before/After Comparison**
+- Scene: Computer screen showing side-by-side before/after treatment photos
+- Focus: Clear view of software interface with image comparison
+- Content: Skin improvement visible (acne treatment, cosmetic result, etc.)
+- Setting: Office desk with monitor
+- Style: Clean, professional software interface
+
+**ROW 2: PROCEDURES & TECHNOLOGY**
+
+**Image 4 - Skin Biopsy Procedure**
+- Scene: Dermatologist performing punch biopsy or excision
+- Focus: Hands performing procedure with medical instruments
+- Patient: Small area of skin being treated (arm, back, or leg)
+- Equipment: Surgical instruments, sterile field
+- Setting: Procedure room with proper lighting
+- PPE: Gloves visible, professional appearance
+
+**Image 5 - Body Mapping Technology**
+- Scene: Digital body mapping display on large touchscreen/monitor
+- Focus: Full-body diagram with marked lesions on screen
+- Technology: Interactive touchscreen with dermatology software
+- Content: Anatomical diagram with multiple documented spots
+- Setting: Modern tech-equipped exam room
+- Style: Futuristic, high-tech medical environment
+
+**Image 6 - Dermoscopy with Digital Integration**
+- Scene: Physician using dermoscope connected to computer/tablet
+- Focus: Live dermoscopy image on screen while examining patient
+- Technology: Modern digital dermoscope with USB/wireless connection
+- Patient: Skin lesion examination in progress
+- Setting: Exam room with integrated technology
+- Lighting: Proper medical examination lighting
+
+**ROW 3: PATIENT CARE & COSMETICS**
+
+**Image 7 - Patient Consultation**
+- Scene: Dermatologist and patient reviewing treatment plan on screen together
+- Focus: Both faces visible, engaged conversation
+- Technology: Computer/tablet showing treatment options or results
+- Patient: Comfortable, engaged, asking questions
+- Physician: Explaining, pointing at screen
+- Setting: Consultation room, comfortable seating
+- Mood: Collaborative, educational, friendly
+
+**Image 8 - Cosmetic Injectable Treatment**
+- Scene: Aesthetic dermatologist performing Botox/filler injection
+- Focus: Injection technique, patient's face (or model with consent)
+- Equipment: Syringe, topical anesthetic, marking pen
+- Patient: Relaxed, receiving cosmetic treatment
+- Setting: Clean, modern aesthetic treatment room
+- Lighting: Bright, flattering (but medical-appropriate)
+- Style: Upscale medical spa aesthetic
+
+**Image 9 - Happy Treatment Result**
+- Scene: Satisfied patient looking in mirror or smiling at camera
+- Focus: Patient's positive reaction to treatment outcome
+- Context: May show dermatologist in background reviewing results
+- Patient: Genuine smile, touching face (showing confidence)
+- Setting: Bright, welcoming dermatology office
+- Mood: Success, satisfaction, confidence
+- Style: Natural, authentic emotion
+
+**Grid Design Features:**
+- Hover effect: Slight zoom (scale 1.05) with overlay showing image caption
+- Spacing: 16px gap between images
+- Border: None or subtle 1px border
+- Loading: Lazy loading for performance
+- Caption overlay on hover: Brief description (e.g., "Digital Dermoscopy", "Before/After Documentation")
+
+---
+
+### **7. TESTIMONIAL SECTION** (Carousel/Slider)
+
+**Design**: Card-based testimonial slider with 3 visible cards
+
+**Testimonial Card Structure:**
+- Doctor headshot (circular, 80x80px)
+- 5-star rating (gold stars)
+- Quote text
+- Doctor name and credentials
+- Practice name and location
+
+**Sample Testimonial Content:**
+
+**Testimonial 1:**
+- **Quote**: "MDCharts has transformed our practice. The dermatology-specific templates save us hours every day, and the visual documentation tools are exactly what we need for accurate patient care and medical-legal protection."
+- **Name**: Dr. Sarah Johnson, MD, FAAD
+- **Practice**: Board-Certified Dermatologist, Austin Dermatology Center, TX
+- **Image**: Professional female dermatologist headshot
+
+**Testimonial 2:**
+- **Quote**: "The cosmetic billing separation is brilliant. We can seamlessly manage both medical and aesthetic services without confusion. Our revenue has increased 30% since implementing DermCharts."
+- **Name**: Dr. Michael Chen, DO
+- **Practice**: Medical & Cosmetic Dermatology, SkinHealth Medical Group, CA
+- **Image**: Professional male dermatologist headshot
+
+**Testimonial 3:**
+- **Quote**: "As a Mohs surgeon, I need precise documentation. The surgical templates and pathology integration are outstanding. Our team cut documentation time in half."
+- **Name**: Dr. Emily Rodriguez, MD
+- **Practice**: Mohs Micrographic Surgery, Precision Dermatology, FL
+- **Image**: Professional female dermatologist headshot
+
+---
+
+### **8. DERMATOLOGY-SPECIFIC FEATURES COMPARISON TABLE**
+
+**Section Heading**: "Complete Dermatology Solution - See What's Included"
+
+**Table Structure**: 3-column comparison (Basic EHR | Generic Dermatology EMR | MDCharts DermCharts)
+
+**Feature Categories:**
+
+**Clinical Documentation:**
+- Total body skin exam templates
+- Lesion tracking and mapping
+- Before/after photo documentation
+- Customizable body diagrams
+- Procedure-specific templates
+- Pathology result integration
+
+**Billing & Revenue:**
+- Dermatology-specific coding
+- Medical vs. cosmetic separation
+- Batch billing for procedures
+- Insurance verification for biologics
+- Integrated clearinghouse
+- Revenue cycle analytics
+
+**Practice Management:**
+- Procedure-specific scheduling
+- Automated skin cancer recalls
+- Cosmetic inventory tracking
+- Patient portal with booking
+- Marketing tools for cosmetics
+- E-prescribing for dermatology meds
+
+**Visual Indicators:**
+- ❌ Red X for "Not Available"
+- ⚠️ Yellow caution for "Limited/Basic"
+- ✅ Green checkmark for "Included/Full Feature"
+
+---
+
+### **9. PRICING & CTA SECTION**
+
+**Background**: Gradient from white to light blue
+
+**Content:**
+- **Heading**: "Start Saving Time and Increasing Revenue Today"
+- **Subheading**: "Join 500+ dermatology practices using DermCharts"
+- **Pricing Badge**: "Starting at $190/provider/month"
+- **Included Benefits** (icon list):
+  - ✓ All dermatology-specific templates
+  - ✓ Unlimited photo storage
+  - ✓ 24/7 technical support
+  - ✓ Free training (4 hours to full productivity)
+  - ✓ ONC 2015 certified platform
+  - ✓ HIPAA-compliant infrastructure
+
+**CTA Buttons** (centered):
+- Primary: "Schedule Your DermCharts Demo" (Large cyan button)
+- Secondary: "Download Dermatology Feature Guide" (Outline button)
+- Tertiary: "Chat with Dermatology Specialist" (Text link)
+
+---
+
+### **10. FAQ SECTION** (Accordion Style)
+
+**Section Heading**: "Frequently Asked Questions About DermCharts"
+
+**Questions** (expandable/collapsible):
+
+1. **How long does it take to implement DermCharts for my dermatology practice?**
+   - Answer: Most practices are fully operational within 2-4 weeks, including data migration, staff training, and workflow customization.
+
+2. **Can DermCharts handle both medical and cosmetic dermatology billing?**
+   - Answer: Yes! DermCharts has built-in separation for medical vs. cosmetic charges, making it easy to manage insurance claims and cash-pay cosmetic services.
+
+3. **Does DermCharts integrate with pathology labs?**
+   - Answer: Yes, we integrate with major pathology labs for automatic result delivery and critical finding alerts.
+
+4. **How does photo documentation work for HIPAA compliance?**
+   - Answer: All patient photos are encrypted, stored on HIPAA-compliant servers, and accessible only through secure authentication with full audit trails.
+
+5. **What happens to my existing patient data?**
+   - Answer: We provide free data migration from most EHR systems, including patient demographics, clinical notes, and historical photos.
+
+6. **Do you support Mohs surgery documentation?**
+   - Answer: Absolutely! We have specialized Mohs surgery templates with stage-by-stage documentation, margin mapping, and defect measurement tools.
+
+---
+
+### **11. FOOTER SECTION**
+
+**Layout**: 4-column grid
+
+**Column 1: MDCharts Logo & Info**
+- Logo
+- Tagline: "Click Less, Care More™"
+- Brief description: "EHR built by physicians for physicians since 2002"
+- Social media icons
+
+**Column 2: Solutions**
+- Electronic Health Records
+- Practice Management
+- Revenue Cycle Management
+- Patient Portal
+- Telemedicine
+- MIPS Reporting
+
+**Column 3: Specialties** (expandable)
+- Dermatology
+- OB/GYN
+- Cardiology
+- Pediatrics
+- Internal Medicine
+- View All 40+ Specialties →
+
+**Column 4: Resources**
+- Book a Demo
+- Contact Sales
+- Support Center
+- Training Resources
+- Blog & News
+- Compliance Info
+
+**Bottom Bar:**
+- Copyright © 2025 MDCharts. All rights reserved.
+- Privacy Policy | Terms of Service | HIPAA Notice
+- Certifications: ONC 2015 Certified | HIPAA Compliant | SOC 2 Type II
+
+---
+
+## **TECHNICAL SPECIFICATIONS FOR REPLIT**
+
+### **Tech Stack Recommendation:**
+- **Framework**: Next.js 14+ with App Router (React 18+)
+- **Styling**: Tailwind CSS with custom theme configuration
+- **Animations**: Framer Motion for smooth transitions
+- **Icons**: Lucide React or Heroicons
+- **Image Optimization**: Next.js Image component with lazy loading
+- **Forms**: React Hook Form with validation
+- **State Management**: React Context or Zustand (if needed)
+- **Carousel**: Swiper.js or Embla Carousel
+
+### **Performance Requirements:**
+- **Page Load Time**: Under 3 seconds
+- **Lighthouse Score**: 90+ (Performance, Accessibility, Best Practices, SEO)
+- **Mobile Responsive**: Breakpoints at 640px, 768px, 1024px, 1280px
+- **Image Optimization**: WebP format with fallback, lazy loading
+- **Animations**: 60fps smooth scrolling and transitions
+
+### **Accessibility (A11y):**
+- WCAG 2.1 AA compliance
+- Proper ARIA labels
+- Keyboard navigation support
+- Screen reader friendly
+- Color contrast ratio 4.5:1 minimum
+
+### **SEO Requirements:**
+- Semantic HTML5 structure
+- Meta tags (title, description, OG tags)
+- Structured data (Schema.org - MedicalOrganization, Service)
+- Alt text for all images
+- H1-H6 heading hierarchy
+- XML sitemap inclusion
+- Canonical URLs
+
+---
+
+## **INTERACTIVE ELEMENTS & ANIMATIONS**
+
+### **Scroll Animations:**
+- Fade-in on scroll for sections
+- Slide-up animation for cards
+- Parallax effect on hero section
+- Progress indicator for page scroll
+
+### **Hover Effects:**
+- Feature cards: Lift with shadow increase
+- Images: Zoom with overlay
+- Buttons: Color transition + scale
+- Links: Underline animation
+
+### **Micro-interactions:**
+- Button click ripple effect
+- Form input focus states
+- Checkbox/radio animations
+- Tab switching transitions
+- Accordion expand/collapse smoothness
+
+### **Loading States:**
+- Skeleton screens for images
+- Spinner for form submissions
+- Progressive image loading (blur-up effect)
+
+---
+
+## **CONTENT TONE & VOICE**
+
+**Brand Voice**: Professional yet approachable, physician-friendly, efficiency-focused
+
+**Key Messaging Themes:**
+1. **Time-Saving**: Emphasize reduced documentation time
+2. **Specialty-Specific**: Highlight dermatology-focused features
+3. **Revenue Growth**: Show billing efficiency and financial benefits
+4. **Ease of Use**: Stress quick implementation and minimal training
+5. **Trust**: ONC certification, HIPAA compliance, 20+ years experience
+
+**Writing Style:**
+- Use active voice
+- Short, scannable paragraphs
+- Bullet points for features
+- Specific numbers and statistics
+- Physician testimonials for credibility
+- Avoid jargon, explain technical terms
+
+---
+
+## **CALL-TO-ACTION STRATEGY**
+
+**Primary CTA**: "Book a Demo" (appears 5+ times on page)
+**Secondary CTAs**: 
+- "Download Feature Guide"
+- "Chat with Specialist"
+- "Watch Video Tour"
+- "Request Pricing"
+
+**CTA Placement:**
+- Hero section (above fold)
+- After feature sections
+- Testimonial section
+- Pricing section
+- Sticky bottom bar on mobile
+- Exit-intent popup (optional)
+
+---
+
+## **MOBILE OPTIMIZATION**
+
+**Mobile-Specific Requirements:**
+- **Hamburger Menu**: Collapsible navigation
+- **Touch-Friendly**: Minimum 44x44px tap targets
+- **Simplified Grid**: 3x3 becomes 1-column on mobile
+- **Sticky CTA**: Bottom-fixed "Book Demo" button
+- **Reduced Animations**: Minimal motion on mobile for performance
+- **Fast Loading**: Optimized images (max 500KB per image on mobile)
+- **Readable Text**: Minimum 16px font size
+
+---
+
+## **IMAGE SOURCING RECOMMENDATIONS**
+
+**Suggested Stock Photo Sources:**
+- **Unsplash**: Free high-quality medical photos (search "dermatology", "doctor patient", "medical examination")
+- **Pexels**: Free professional medical imagery
+- **iStock**: Premium medical photography (paid)
+- **Shutterstock**: Large medical photo library (paid)
+- **GettyImages**: High-end medical photography (paid)
+
+**Search Keywords for Stock Photos:**
+- "dermatologist examining patient"
+- "skin examination dermatoscope"
+- "doctor patient consultation"
+- "medical technology touchscreen"
+- "cosmetic dermatology treatment"
+- "before after skin treatment"
+- "dermatology clinic modern"
+- "happy patient dermatologist"
+- "medical documentation computer"
+
+**AI Image Generation Option** (if using Midjourney/DALL-E):
+- Prompt template: "Professional medical photography, dermatologist examining patient's skin with dermatoscope, modern clinic, bright natural lighting, diverse patient, clean aesthetic, high-resolution, photorealistic"
+
+---
+
+## **FINAL DELIVERABLES CHECKLIST**
+
+✅ Fully responsive landing page (desktop, tablet, mobile)
+✅ Smooth scroll animations and transitions
+✅ 9 high-quality dermatology images in 3x3 grid
+✅ Interactive tabbed interface for workflows
+✅ Testimonial carousel with 3+ reviews
+✅ Feature comparison table
+✅ FAQ accordion section
+✅ Multiple CTAs strategically placed
+✅ SEO-optimized meta tags and structure
+✅ Accessibility compliance (WCAG 2.1 AA)
+✅ Fast page load (under 3 seconds)
+✅ Mobile-optimized with sticky CTA
+✅ HIPAA-compliant messaging
+✅ ONC 2015 certification badges
+✅ TriZetto integration mention
+
+---
+
+## **SUCCESS METRICS TO TRACK**
+
+**User Engagement:**
+- Average time on page: Target 3+ minutes
+- Scroll depth: 80%+ reach bottom
+- CTA click-through rate: 5%+
+- Video play rate (if included): 20%+
+
+**Technical Performance:**
+- Page load time: <3 seconds
+- Mobile usability score: 95+
+- Lighthouse performance: 90+
+- Zero accessibility errors
+
+**Conversion Goals:**
+- Demo booking rate: 2-5%
+- Contact form submissions: 3-7%
+- Resource download rate: 5-10%
+
+---
+
+**This prompt is ready to be copied directly into Replit or provided to a developer for implementation. All content, design specifications, and technical requirements are included!**

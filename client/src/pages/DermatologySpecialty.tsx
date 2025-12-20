@@ -103,8 +103,8 @@ const cosmeticFeatures = [
 const testimonials = [
   {
     quote: "MDCharts has transformed our practice. The dermatology-specific templates save us hours every day, and the visual documentation tools are exactly what we need for accurate patient care and medical-legal protection.",
-    name: "Dr. Sarah Johnson, MD, FAAD",
-    practice: "Board-Certified Dermatologist, Austin Dermatology Center, TX",
+    name: "Joshua Fox, M.D., F.A.A.D.",
+    practice: "Founder & Director, Advanced Dermatology, P.C. and the Center for Laser and Cosmetic Surgery",
     rating: 5
   },
   {
@@ -489,7 +489,7 @@ export default function DermatologySpecialty() {
               Trusted by Leading Dermatologists
             </h2>
             <p className="text-lg text-slate-400">
-              See what dermatology professionals are saying about DermCharts
+              Including Dr. Joshua Fox from Advanced Dermatology, P.C.
             </p>
           </div>
           

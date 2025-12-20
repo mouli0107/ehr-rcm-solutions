@@ -38,11 +38,11 @@ const components: { title: string; href: string; description: string }[] = [
 ];
 
 const specialties = [
-  { title: "Dermatology", href: "/specialties" },
+  { title: "Dermatology", href: "/specialties/dermatology" },
   { title: "Internal Medicine", href: "/specialties" },
   { title: "Pediatrics", href: "/specialties" },
   { title: "OB/GYN", href: "/specialties" },
-  { title: "Cardiology", href: "/specialties" },
+  { title: "Cardiology", href: "/specialties/cardiology" },
   { title: "Family Practice", href: "/specialties" },
   { title: "Psychiatry", href: "/specialties" },
   { title: "Pain Management", href: "/specialties" },

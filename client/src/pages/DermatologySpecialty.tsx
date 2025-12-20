@@ -16,6 +16,10 @@ import dermExamImage from "@assets/generated_images/dermatologist_examining_pati
 import happyPatientImage from "@assets/generated_images/happy_patient_cosmetic_consultation.png";
 import laserTreatmentImage from "@assets/generated_images/laser_skin_treatment_procedure.png";
 import consultationImage from "@assets/generated_images/doctor_patient_treatment_discussion.png";
+import backExamImage from "@assets/generated_images/back_skin_examination_check.png";
+import skincareImage from "@assets/generated_images/skincare_treatment_application.png";
+import resultsImage from "@assets/generated_images/treatment_results_comparison_screen.png";
+import acneImage from "@assets/generated_images/acne_treatment_procedure.png";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
@@ -158,10 +162,14 @@ const comparisonFeatures = [
 ];
 
 const showcaseImages = [
-  { src: dermExamImage, title: "Skin Examination", description: "Precise dermatoscope analysis" },
-  { src: laserTreatmentImage, title: "Laser Treatment", description: "Advanced cosmetic procedures" },
-  { src: happyPatientImage, title: "Patient Satisfaction", description: "Exceptional treatment results" },
-  { src: consultationImage, title: "Treatment Planning", description: "Collaborative care discussion" },
+  { src: dermExamImage, title: "Skin Examination" },
+  { src: laserTreatmentImage, title: "Laser Treatment" },
+  { src: happyPatientImage, title: "Patient Care" },
+  { src: consultationImage, title: "Consultation" },
+  { src: backExamImage, title: "Body Mapping" },
+  { src: skincareImage, title: "Skincare" },
+  { src: resultsImage, title: "Results Review" },
+  { src: acneImage, title: "Acne Treatment" },
 ];
 
 export default function DermatologySpecialty() {
@@ -405,7 +413,7 @@ export default function DermatologySpecialty() {
         </div>
       </section>
 
-      {/* Visual Showcase Section - 2x2 Zig-Zag Layout */}
+      {/* Visual Showcase Section - 8 Images Grid */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
@@ -417,76 +425,28 @@ export default function DermatologySpecialty() {
             </p>
           </div>
           
-          <div className="max-w-5xl mx-auto space-y-8">
-            {/* Row 1 - Image Left, Content Right */}
-            <motion.div 
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="grid md:grid-cols-2 gap-8 items-center"
-            >
-              <div className="relative group overflow-hidden rounded-2xl shadow-xl h-[384px]">
+          <div className="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto">
+            {showcaseImages.map((image, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.05 }}
+                className="relative group overflow-hidden rounded-xl shadow-lg w-[144px] h-[144px]"
+              >
                 <img 
-                  src={showcaseImages[0].src} 
-                  alt={showcaseImages[0].title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  src={image.src} 
+                  alt={image.title}
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/70 to-transparent">
-                  <div className="absolute bottom-0 left-0 right-0 p-6">
-                    <h4 className="text-white font-bold text-xl">{showcaseImages[0].title}</h4>
-                    <p className="text-slate-200">{showcaseImages[0].description}</p>
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="absolute bottom-0 left-0 right-0 p-2">
+                    <h4 className="text-white font-semibold text-xs text-center">{image.title}</h4>
                   </div>
                 </div>
-              </div>
-              <div className="relative group overflow-hidden rounded-2xl shadow-xl h-[384px]">
-                <img 
-                  src={showcaseImages[1].src} 
-                  alt={showcaseImages[1].title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/70 to-transparent">
-                  <div className="absolute bottom-0 left-0 right-0 p-6">
-                    <h4 className="text-white font-bold text-xl">{showcaseImages[1].title}</h4>
-                    <p className="text-slate-200">{showcaseImages[1].description}</p>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-
-            {/* Row 2 - Offset/Zig-Zag */}
-            <motion.div 
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="grid md:grid-cols-2 gap-8 items-center md:ml-16"
-            >
-              <div className="relative group overflow-hidden rounded-2xl shadow-xl h-[384px]">
-                <img 
-                  src={showcaseImages[2].src} 
-                  alt={showcaseImages[2].title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/70 to-transparent">
-                  <div className="absolute bottom-0 left-0 right-0 p-6">
-                    <h4 className="text-white font-bold text-xl">{showcaseImages[2].title}</h4>
-                    <p className="text-slate-200">{showcaseImages[2].description}</p>
-                  </div>
-                </div>
-              </div>
-              <div className="relative group overflow-hidden rounded-2xl shadow-xl h-[384px]">
-                <img 
-                  src={showcaseImages[3].src} 
-                  alt={showcaseImages[3].title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/70 to-transparent">
-                  <div className="absolute bottom-0 left-0 right-0 p-6">
-                    <h4 className="text-white font-bold text-xl">{showcaseImages[3].title}</h4>
-                    <p className="text-slate-200">{showcaseImages[3].description}</p>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>

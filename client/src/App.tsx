@@ -14,6 +14,10 @@ import CompliancePage from "@/pages/Compliance";
 import WhyMDChartsPage from "@/pages/WhyMDCharts";
 import DermatologySpecialtyPage from "@/pages/DermatologySpecialty";
 import CardiologySpecialtyPage from "@/pages/CardiologySpecialty";
+import OBGYNSpecialtyPage from "@/pages/OBGYNSpecialty";
+import PediatricsSpecialtyPage from "@/pages/PediatricsSpecialty";
+import UrologySpecialtyPage from "@/pages/UrologySpecialty";
+import FamilyMedicineSpecialtyPage from "@/pages/FamilyMedicineSpecialty";
 
 function Router() {
   return (
@@ -26,6 +30,10 @@ function Router() {
       <Route path="/specialties" component={SpecialtiesPage} />
       <Route path="/specialties/dermatology" component={DermatologySpecialtyPage} />
       <Route path="/specialties/cardiology" component={CardiologySpecialtyPage} />
+      <Route path="/specialties/obgyn" component={OBGYNSpecialtyPage} />
+      <Route path="/specialties/pediatrics" component={PediatricsSpecialtyPage} />
+      <Route path="/specialties/urology" component={UrologySpecialtyPage} />
+      <Route path="/specialties/family-medicine" component={FamilyMedicineSpecialtyPage} />
       <Route path="/compliance" component={CompliancePage} />
       <Route path="/why-mdcharts" component={WhyMDChartsPage} />
       <Route component={NotFound} />

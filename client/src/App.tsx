@@ -12,6 +12,7 @@ import PatientEngagementPage from "@/pages/PatientEngagement";
 import SpecialtiesPage from "@/pages/Specialties";
 import CompliancePage from "@/pages/Compliance";
 import WhyMDChartsPage from "@/pages/WhyMDCharts";
+import DermatologySpecialtyPage from "@/pages/DermatologySpecialty";
 
 function Router() {
   return (
@@ -22,6 +23,7 @@ function Router() {
       <Route path="/practice-management" component={PracticeManagementPage} />
       <Route path="/patient-engagement" component={PatientEngagementPage} />
       <Route path="/specialties" component={SpecialtiesPage} />
+      <Route path="/specialties/dermatology" component={DermatologySpecialtyPage} />
       <Route path="/compliance" component={CompliancePage} />
       <Route path="/why-mdcharts" component={WhyMDChartsPage} />
       <Route component={NotFound} />

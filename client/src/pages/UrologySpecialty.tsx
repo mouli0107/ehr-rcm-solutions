@@ -1,7 +1,6 @@
-import { useState } from "react";
+import { Link } from "wouter";
 import { motion } from "framer-motion";
 import { Navbar } from "@/components/Navbar";
-import { ContactModal } from "@/components/ContactModal";
 import { Button } from "@/components/ui/button";
 import { 
   Activity, Clock, DollarSign, FileText, Zap, Shield,
@@ -61,12 +60,6 @@ const integrations = [
 ];
 
 export default function UrologySpecialty() {
-  const [modalState, setModalState] = useState<{
-    isOpen: boolean;
-    type: "demo" | "contact";
-    title: string;
-  }>({ isOpen: false, type: "demo", title: "" });
-
   return (
     <div className="min-h-screen bg-background font-sans">
       <Navbar />
@@ -96,20 +89,22 @@ export default function UrologySpecialty() {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 mb-10">
-                <Button 
-                  size="lg" 
-                  className="bg-primary hover:bg-primary/90"
-                  onClick={() => setModalState({ isOpen: true, type: "demo", title: "See UroCharts" })}
-                >
-                  Request Demo <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-                <Button 
-                  size="lg" 
-                  variant="outline"
-                  onClick={() => setModalState({ isOpen: true, type: "contact", title: "Contact Sales" })}
-                >
-                  <Phone className="mr-2 h-4 w-4" /> Contact Sales
-                </Button>
+                <Link href="/book-demo">
+                  <Button 
+                    size="lg" 
+                    className="bg-primary hover:bg-primary/90"
+                  >
+                    Request Demo <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </Link>
+                <Link href="/book-demo">
+                  <Button 
+                    size="lg" 
+                    variant="outline"
+                  >
+                    <Phone className="mr-2 h-4 w-4" /> Contact Sales
+                  </Button>
+                </Link>
               </div>
 
               {/* Quick Stats */}
@@ -308,12 +303,16 @@ export default function UrologySpecialty() {
               Join 200+ urology practices using UroCharts for faster documentation and better revenue
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Button size="lg" className="bg-white text-primary hover:bg-slate-100" onClick={() => setModalState({ isOpen: true, type: "demo", title: "Start Free Trial" })}>
-                Start Free Trial <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10" onClick={() => setModalState({ isOpen: true, type: "demo", title: "Schedule Demo" })}>
-                Schedule Demo
-              </Button>
+              <Link href="/book-demo">
+                <Button size="lg" className="bg-white text-primary hover:bg-slate-100">
+                  Start Free Trial <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </Link>
+              <Link href="/book-demo">
+                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
+                  Schedule Demo
+                </Button>
+              </Link>
             </div>
           </motion.div>
         </div>
@@ -340,13 +339,6 @@ export default function UrologySpecialty() {
           </div>
         </div>
       </footer>
-
-      <ContactModal
-        isOpen={modalState.isOpen}
-        onClose={() => setModalState(prev => ({ ...prev, isOpen: false }))}
-        title={modalState.title}
-        requestType={modalState.type}
-      />
     </div>
   );
 }

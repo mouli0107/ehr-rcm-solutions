@@ -1,3 +1,4 @@
+import { Link } from "wouter";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Navbar } from "@/components/Navbar";
@@ -98,20 +99,16 @@ export default function OBGYNSpecialty() {
               </p>
 
               <div className="flex flex-wrap justify-center gap-4 mb-12">
-                <Button 
-                  size="lg" 
-                  className="bg-primary hover:bg-primary/90"
-                  onClick={() => setModalState({ isOpen: true, type: "demo", title: "Book an OBCharts Demo" })}
-                >
-                  See OBCharts in Action <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-                <Button 
-                  size="lg" 
-                  variant="outline"
-                  onClick={() => setModalState({ isOpen: true, type: "contact", title: "Contact Us" })}
-                >
-                  <Phone className="mr-2 h-4 w-4" /> Talk to Sales
-                </Button>
+                <Link href="/book-demo">
+                  <Button size="lg" className="bg-primary hover:bg-primary/90">
+                    See OBCharts in Action <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </Link>
+                <Link href="/book-demo">
+                  <Button size="lg" variant="outline">
+                    <Phone className="mr-2 h-4 w-4" /> Talk to Sales
+                  </Button>
+                </Link>
               </div>
             </motion.div>
           </div>
@@ -319,12 +316,16 @@ export default function OBGYNSpecialty() {
               See why 300+ OB/GYN practices choose OBCharts for faster documentation and better revenue
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Button size="lg" className="bg-primary hover:bg-primary/90" onClick={() => setModalState({ isOpen: true, type: "demo", title: "Start Free Trial" })}>
-                Start Free 30-Day Trial <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
-              <Button size="lg" variant="outline" onClick={() => setModalState({ isOpen: true, type: "demo", title: "Schedule Demo" })}>
-                Schedule Demo
-              </Button>
+              <Link href="/book-demo">
+                <Button size="lg" className="bg-primary hover:bg-primary/90">
+                  Start Free 30-Day Trial <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </Link>
+              <Link href="/book-demo">
+                <Button size="lg" variant="outline">
+                  Schedule Demo
+                </Button>
+              </Link>
             </div>
           </motion.div>
         </div>

@@ -1,7 +1,6 @@
-import { useState } from "react";
+import { Link } from "wouter";
 import { motion } from "framer-motion";
 import { Navbar } from "@/components/Navbar";
-import { ContactModal } from "@/components/ContactModal";
 import { Button } from "@/components/ui/button";
 import { 
   Baby, Clock, DollarSign, Zap, Shield, TrendingUp,
@@ -67,12 +66,6 @@ const integrations = [
 ];
 
 export default function PediatricsSpecialty() {
-  const [modalState, setModalState] = useState<{
-    isOpen: boolean;
-    type: "demo" | "contact";
-    title: string;
-  }>({ isOpen: false, type: "demo", title: "" });
-
   return (
     <div className="min-h-screen bg-background font-sans">
       <Navbar />
@@ -110,20 +103,22 @@ export default function PediatricsSpecialty() {
               </div>
 
               <div className="flex flex-wrap gap-4">
-                <Button 
-                  size="lg" 
-                  className="bg-primary hover:bg-primary/90"
-                  onClick={() => setModalState({ isOpen: true, type: "demo", title: "See PediCharts" })}
-                >
-                  See It In Action <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-                <Button 
-                  size="lg" 
-                  variant="outline"
-                  onClick={() => setModalState({ isOpen: true, type: "contact", title: "Contact Us" })}
-                >
-                  <Phone className="mr-2 h-4 w-4" /> Talk to Sales
-                </Button>
+                <Link href="/book-demo">
+                  <Button 
+                    size="lg" 
+                    className="bg-primary hover:bg-primary/90"
+                  >
+                    See It In Action <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </Link>
+                <Link href="/book-demo">
+                  <Button 
+                    size="lg" 
+                    variant="outline"
+                  >
+                    <Phone className="mr-2 h-4 w-4" /> Talk to Sales
+                  </Button>
+                </Link>
               </div>
             </motion.div>
 
@@ -324,12 +319,16 @@ export default function PediatricsSpecialty() {
               Join 400+ pediatric practices using PediCharts for faster documentation and better revenue
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Button size="lg" className="bg-primary hover:bg-primary/90" onClick={() => setModalState({ isOpen: true, type: "demo", title: "Start Free Trial" })}>
-                Start Free 30-Day Trial <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
-              <Button size="lg" variant="outline" onClick={() => setModalState({ isOpen: true, type: "demo", title: "Schedule Demo" })}>
-                Schedule Demo
-              </Button>
+              <Link href="/book-demo">
+                <Button size="lg" className="bg-primary hover:bg-primary/90">
+                  Start Free 30-Day Trial <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </Link>
+              <Link href="/book-demo">
+                <Button size="lg" variant="outline">
+                  Schedule Demo
+                </Button>
+              </Link>
             </div>
           </motion.div>
         </div>
@@ -356,13 +355,6 @@ export default function PediatricsSpecialty() {
           </div>
         </div>
       </footer>
-
-      <ContactModal
-        isOpen={modalState.isOpen}
-        onClose={() => setModalState(prev => ({ ...prev, isOpen: false }))}
-        title={modalState.title}
-        requestType={modalState.type}
-      />
     </div>
   );
 }

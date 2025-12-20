@@ -20,6 +20,7 @@ import backExamImage from "@assets/generated_images/back_skin_examination_check.
 import skincareImage from "@assets/generated_images/skincare_treatment_application.png";
 import resultsImage from "@assets/generated_images/treatment_results_comparison_screen.png";
 import acneImage from "@assets/generated_images/acne_treatment_procedure.png";
+import drFoxStyleImage from "@assets/generated_images/smiling_male_dermatologist_with_patient.png";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
@@ -369,7 +370,7 @@ export default function DermatologySpecialty() {
                   ))}
                 </div>
                 <div className="rounded-2xl overflow-hidden shadow-xl">
-                  <img src={dermExamImage} alt="Medical dermatology workflow" className="w-full h-auto" />
+                  <img src={drFoxStyleImage} alt="Medical dermatology workflow" className="w-full h-auto" />
                 </div>
               </div>
             </TabsContent>

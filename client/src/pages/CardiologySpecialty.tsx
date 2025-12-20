@@ -12,10 +12,10 @@ import {
   Facebook, Twitter, Linkedin, Instagram, ArrowRight
 } from "lucide-react";
 
-import heroTeamImage from "@assets/generated_images/laughing_lady_cardiologists_treating_patient.png";
-import echoImage from "@assets/generated_images/echocardiogram_examination_procedure.png";
-import ecgImage from "@assets/generated_images/ecg_review_with_patient.png";
-import stressTestImage from "@assets/generated_images/cardiac_stress_test_procedure.png";
+import heroTeamImage from "@assets/generated_images/diverse_laughing_cardiologists_treating_patient.png";
+import echoImage from "@assets/generated_images/diverse_doctors_echocardiogram_exam.png";
+import ecgImage from "@assets/generated_images/black_doctor_ecg_review_patient.png";
+import stressTestImage from "@assets/generated_images/diverse_doctors_cardiac_stress_test.png";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
@@ -32,7 +32,7 @@ const features = [
     icon: Heart,
     title: "Complete Cardiac Assessment",
     description: "Comprehensive cardiovascular risk assessment templates with Framingham scoring and ACC/AHA guidelines integration",
-    color: "bg-red-500"
+    color: "bg-primary"
   },
   {
     icon: Activity,
@@ -176,7 +176,7 @@ export default function CardiologySpecialty() {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="pt-32 pb-20 bg-gradient-to-br from-red-50 via-white to-rose-50 relative overflow-hidden">
+      <section className="pt-32 pb-20 bg-gradient-to-br from-blue-50 via-white to-cyan-50 relative overflow-hidden">
         <div className="absolute inset-0 opacity-30" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, #EF4444 0.5px, transparent 0)', backgroundSize: '32px 32px' }}></div>
         
         <div className="container mx-auto px-4 relative z-10">
@@ -186,14 +186,14 @@ export default function CardiologySpecialty() {
               animate="visible"
               variants={staggerContainer}
             >
-              <motion.div variants={fadeInUp} className="inline-flex items-center gap-2 bg-red-100 text-red-800 px-4 py-2 rounded-full text-sm font-bold mb-6">
+              <motion.div variants={fadeInUp} className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-bold mb-6">
                 <Heart className="h-4 w-4" />
                 CARDIOLOGY SPECIALTY
               </motion.div>
               
               <motion.h1 variants={fadeInUp} className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6 leading-tight">
                 CardioCharts™ - EHR Built Specifically for{" "}
-                <span className="text-red-600">Cardiology Practices</span>
+                <span className="text-primary">Cardiology Practices</span>
               </motion.h1>
               
               <motion.p variants={fadeInUp} className="text-lg text-slate-600 mb-8 leading-relaxed">
@@ -202,7 +202,7 @@ export default function CardiologySpecialty() {
               
               <motion.div variants={fadeInUp} className="grid grid-cols-3 gap-4 mb-8">
                 <div className="bg-white rounded-xl p-4 shadow-lg border border-slate-100">
-                  <div className="text-2xl font-bold text-red-600">85+</div>
+                  <div className="text-2xl font-bold text-primary">85+</div>
                   <div className="text-xs text-slate-500 font-medium">Cardiology Templates</div>
                 </div>
                 <div className="bg-white rounded-xl p-4 shadow-lg border border-slate-100">
@@ -218,7 +218,7 @@ export default function CardiologySpecialty() {
               <motion.div variants={fadeInUp} className="flex flex-wrap gap-4">
                 <Button 
                   size="lg" 
-                  className="bg-red-600 hover:bg-red-700 text-white shadow-lg"
+                  className="bg-primary hover:bg-primary/90 text-white shadow-lg"
                   onClick={() => setModalState({ isOpen: true, type: "demo", title: "Book a CardioCharts Demo" })}
                   data-testid="button-hero-demo"
                 >
@@ -227,7 +227,7 @@ export default function CardiologySpecialty() {
                 <Button 
                   size="lg" 
                   variant="outline" 
-                  className="border-red-200 hover:bg-red-50"
+                  className="border-primary/20 hover:bg-blue-50"
                   onClick={() => setModalState({ isOpen: true, type: "contact", title: "Contact CardioCharts Team" })}
                   data-testid="button-hero-contact"
                 >
@@ -248,7 +248,7 @@ export default function CardiologySpecialty() {
                   alt="Three cardiologists treating patient" 
                   className="w-full h-[500px] object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-red-600/20 to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent"></div>
               </div>
               <div className="absolute -bottom-6 -left-6 bg-white rounded-xl p-4 shadow-xl border border-slate-100">
                 <div className="flex items-center gap-3">
@@ -276,11 +276,11 @@ export default function CardiologySpecialty() {
               <span className="text-[10px] text-slate-500 leading-tight">American College of<br/>Cardiology</span>
             </div>
             <div className="flex items-center gap-1">
-              <Heart className="h-5 w-5 text-red-500" />
+              <Heart className="h-5 w-5 text-primary" />
               <span className="text-xl font-medium text-slate-700">AHA</span>
             </div>
             <div className="flex items-center gap-1">
-              <div className="w-0 h-0 border-l-[10px] border-l-transparent border-r-[10px] border-r-transparent border-b-[16px] border-b-red-500"></div>
+              <div className="w-0 h-0 border-l-[10px] border-l-transparent border-r-[10px] border-r-transparent border-b-[16px] border-b-primary"></div>
               <span className="text-lg font-bold text-slate-700">TRIZETTO</span>
               <span className="text-[10px] text-slate-500 ml-1">Provider Solutions<sup>®</sup></span>
             </div>
@@ -399,8 +399,8 @@ export default function CardiologySpecialty() {
                   <ul className="space-y-3">
                     {interventionalFeatures.map((feature, idx) => (
                       <li key={idx} className="flex items-center gap-3">
-                        <div className="w-6 h-6 rounded-full bg-red-100 flex items-center justify-center flex-shrink-0">
-                          <Check className="h-4 w-4 text-red-600" />
+                        <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                          <Check className="h-4 w-4 text-primary" />
                         </div>
                         <span className="text-slate-700">{feature}</span>
                       </li>
@@ -481,7 +481,7 @@ export default function CardiologySpecialty() {
       </section>
 
       {/* Testimonials */}
-      <section className="py-20 bg-gradient-to-br from-red-600 to-red-700 text-white">
+      <section className="py-20 bg-gradient-to-br from-primary to-primary/90 text-white">
         <div className="container mx-auto px-4">
           <motion.div
             initial="hidden"
@@ -493,7 +493,7 @@ export default function CardiologySpecialty() {
             <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-bold mb-4">
               Trusted by Leading Cardiology Practices
             </motion.h2>
-            <motion.p variants={fadeInUp} className="text-lg text-red-100 max-w-2xl mx-auto">
+            <motion.p variants={fadeInUp} className="text-lg text-primary/10 max-w-2xl mx-auto">
               See why cardiologists across the country choose CardioCharts for their EHR needs
             </motion.p>
           </motion.div>
@@ -516,7 +516,7 @@ export default function CardiologySpecialty() {
                 <p className="text-white/90 mb-6 italic">"{testimonial.quote}"</p>
                 <div>
                   <div className="font-bold text-white">{testimonial.name}</div>
-                  <div className="text-sm text-red-200">{testimonial.practice}</div>
+                  <div className="text-sm text-primary/20">{testimonial.practice}</div>
                 </div>
               </motion.div>
             ))}
@@ -549,7 +549,7 @@ export default function CardiologySpecialty() {
                   <th className="text-left py-4 px-4 font-bold text-slate-900">Feature</th>
                   <th className="text-center py-4 px-4 font-bold text-slate-400">Basic EHR</th>
                   <th className="text-center py-4 px-4 font-bold text-slate-400">Generic EHR</th>
-                  <th className="text-center py-4 px-4 font-bold text-red-600">CardioCharts</th>
+                  <th className="text-center py-4 px-4 font-bold text-primary">CardioCharts</th>
                 </tr>
               </thead>
               <tbody>
@@ -603,7 +603,7 @@ export default function CardiologySpecialty() {
             <motion.div variants={fadeInUp} className="flex flex-wrap justify-center gap-4">
               <Button 
                 size="lg" 
-                className="bg-red-600 hover:bg-red-700 text-white"
+                className="bg-primary hover:bg-primary/90 text-white"
                 onClick={() => setModalState({ isOpen: true, type: "demo", title: "Start Your Free Trial" })}
                 data-testid="button-cta-trial"
               >
@@ -648,7 +648,7 @@ export default function CardiologySpecialty() {
             <Accordion type="single" collapsible className="space-y-4">
               {faqs.map((faq, idx) => (
                 <AccordionItem key={idx} value={`faq-${idx}`} className="border rounded-xl px-6 shadow-sm">
-                  <AccordionTrigger className="text-left font-bold text-slate-900 hover:text-red-600" data-testid={`faq-trigger-${idx}`}>
+                  <AccordionTrigger className="text-left font-bold text-slate-900 hover:text-primary" data-testid={`faq-trigger-${idx}`}>
                     {faq.question}
                   </AccordionTrigger>
                   <AccordionContent className="text-slate-600">
@@ -667,7 +667,7 @@ export default function CardiologySpecialty() {
           <div className="grid md:grid-cols-4 gap-8 mb-12">
             <div>
               <div className="flex items-center gap-2 mb-4">
-                <div className="w-10 h-10 rounded-xl bg-red-600 flex items-center justify-center">
+                <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center">
                   <Heart className="h-5 w-5 text-white" />
                 </div>
                 <span className="text-xl font-bold">CardioCharts</span>
@@ -676,16 +676,16 @@ export default function CardiologySpecialty() {
                 The leading EHR solution built specifically for cardiology practices.
               </p>
               <div className="flex gap-3">
-                <a href="#" className="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center hover:bg-red-600 transition-colors">
+                <a href="#" className="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary transition-colors">
                   <Facebook className="h-4 w-4" />
                 </a>
-                <a href="#" className="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center hover:bg-red-600 transition-colors">
+                <a href="#" className="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary transition-colors">
                   <Twitter className="h-4 w-4" />
                 </a>
-                <a href="#" className="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center hover:bg-red-600 transition-colors">
+                <a href="#" className="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary transition-colors">
                   <Linkedin className="h-4 w-4" />
                 </a>
-                <a href="#" className="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center hover:bg-red-600 transition-colors">
+                <a href="#" className="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary transition-colors">
                   <Instagram className="h-4 w-4" />
                 </a>
               </div>

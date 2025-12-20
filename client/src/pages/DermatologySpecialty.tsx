@@ -413,7 +413,7 @@ export default function DermatologySpecialty() {
         </div>
       </section>
 
-      {/* Visual Showcase Section - 8 Images Grid */}
+      {/* Visual Showcase Section - 8 Images Zig-Zag */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
@@ -425,28 +425,58 @@ export default function DermatologySpecialty() {
             </p>
           </div>
           
-          <div className="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto">
-            {showcaseImages.map((image, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.05 }}
-                className="relative group overflow-hidden rounded-xl shadow-lg w-[144px] h-[144px]"
-              >
-                <img 
-                  src={image.src} 
-                  alt={image.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="absolute bottom-0 left-0 right-0 p-2">
-                    <h4 className="text-white font-semibold text-xs text-center">{image.title}</h4>
+          <div className="max-w-4xl mx-auto space-y-4">
+            {/* Row 1 - 4 images aligned left */}
+            <motion.div 
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="flex gap-4 justify-start"
+            >
+              {showcaseImages.slice(0, 4).map((image, index) => (
+                <div
+                  key={index}
+                  className="relative group overflow-hidden rounded-xl shadow-lg w-[144px] h-[144px] flex-shrink-0"
+                >
+                  <img 
+                    src={image.src} 
+                    alt={image.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="absolute bottom-0 left-0 right-0 p-2">
+                      <h4 className="text-white font-semibold text-xs text-center">{image.title}</h4>
+                    </div>
                   </div>
                 </div>
-              </motion.div>
-            ))}
+              ))}
+            </motion.div>
+
+            {/* Row 2 - 4 images aligned right (zig-zag offset) */}
+            <motion.div 
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="flex gap-4 justify-end"
+            >
+              {showcaseImages.slice(4, 8).map((image, index) => (
+                <div
+                  key={index}
+                  className="relative group overflow-hidden rounded-xl shadow-lg w-[144px] h-[144px] flex-shrink-0"
+                >
+                  <img 
+                    src={image.src} 
+                    alt={image.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="absolute bottom-0 left-0 right-0 p-2">
+                      <h4 className="text-white font-semibold text-xs text-center">{image.title}</h4>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </motion.div>
           </div>
         </div>
       </section>

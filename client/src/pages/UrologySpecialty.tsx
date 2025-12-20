@@ -92,14 +92,14 @@ export default function UrologySpecialty() {
               </h1>
               
               <p className="text-lg text-slate-600 mb-8 leading-relaxed">
-                MDCharts helps urology practices document 50% faster, reduce claim denials to near-zero, and focus on what matters - patient care.
+                UroCharts helps urology practices document 50% faster, reduce claim denials to near-zero, and focus on what matters - patient care.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 mb-10">
                 <Button 
                   size="lg" 
                   className="bg-primary hover:bg-primary/90"
-                  onClick={() => setModalState({ isOpen: true, type: "demo", title: "See MDCharts for Urology" })}
+                  onClick={() => setModalState({ isOpen: true, type: "demo", title: "See UroCharts" })}
                 >
                   Request Demo <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
@@ -179,7 +179,7 @@ export default function UrologySpecialty() {
             className="text-center mb-12"
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              How MDCharts Transforms Your Urology Practice
+              How UroCharts Transforms Your Urology Practice
             </h2>
             <p className="text-lg text-slate-400 max-w-2xl mx-auto">
               Real solutions to the challenges urology practices face every day
@@ -279,7 +279,7 @@ export default function UrologySpecialty() {
               </div>
               
               <blockquote className="text-xl md:text-2xl text-slate-700 leading-relaxed mb-8">
-                "MDCharts has transformed how we run our urology practice. Documentation that took 10 minutes now takes 3. The TriZetto integration means claims go out faster and we get paid sooner. Our denials dropped from 8% to under 2%."
+                "UroCharts has transformed how we run our urology practice. Documentation that took 10 minutes now takes 3. The TriZetto integration means claims go out faster and we get paid sooner. Our denials dropped from 8% to under 2%."
               </blockquote>
               
               <div className="flex items-center gap-4">
@@ -305,7 +305,7 @@ export default function UrologySpecialty() {
               Ready to Transform Your Urology Practice?
             </h2>
             <p className="text-xl text-white/80 mb-8 max-w-2xl mx-auto">
-              Join 200+ urology practices using MDCharts for faster documentation and better revenue
+              Join 200+ urology practices using UroCharts for faster documentation and better revenue
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Button size="lg" className="bg-white text-primary hover:bg-slate-100" onClick={() => setModalState({ isOpen: true, type: "demo", title: "Start Free Trial" })}>
@@ -327,7 +327,7 @@ export default function UrologySpecialty() {
               <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center">
                 <Activity className="h-5 w-5 text-white" />
               </div>
-              <span className="text-xl font-bold">MDCharts for Urology</span>
+              <span className="text-xl font-bold">UroCharts</span>
             </div>
             <div className="flex gap-3">
               <a href="#" className="w-9 h-9 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary transition-colors"><Facebook className="h-4 w-4" /></a>

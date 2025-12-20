@@ -22,7 +22,7 @@ const softwareBenefits = [
   { 
     icon: Clock, 
     title: "Complete Notes in 2.5 Minutes", 
-    desc: "MDCharts auto-populates patient history, medications, and problem list. Smart templates adapt to each visit type - from well-child to Medicare AWV.",
+    desc: "FamilyCharts auto-populates patient history, medications, and problem list. Smart templates adapt to each visit type - from well-child to Medicare AWV.",
     stat: "40% faster"
   },
   { 
@@ -103,14 +103,14 @@ export default function FamilyMedicineSpecialty() {
                 </h1>
                 
                 <p className="text-xl text-slate-600 mb-8">
-                  MDCharts helps family medicine practices document 40% faster, maximize reimbursement, and focus on patient relationships - not paperwork.
+                  FamilyCharts helps family medicine practices document 40% faster, maximize reimbursement, and focus on patient relationships - not paperwork.
                 </p>
 
                 <div className="flex flex-wrap gap-4 mb-10">
                   <Button 
                     size="lg" 
                     className="bg-primary hover:bg-primary/90"
-                    onClick={() => setModalState({ isOpen: true, type: "demo", title: "See MDCharts for Family Medicine" })}
+                    onClick={() => setModalState({ isOpen: true, type: "demo", title: "See FamilyCharts" })}
                   >
                     See It In Action <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
@@ -184,10 +184,10 @@ export default function FamilyMedicineSpecialty() {
             className="text-center mb-10"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-              Fast Documentation for Every Visit Type
+              Fast Documentation with FamilyCharts for Every Visit Type
             </h2>
             <p className="text-slate-600 max-w-2xl mx-auto">
-              MDCharts adapts to your workflow with templates optimized for speed
+              FamilyCharts adapts to your workflow with templates optimized for speed
             </p>
           </motion.div>
 
@@ -225,7 +225,7 @@ export default function FamilyMedicineSpecialty() {
             className="text-center mb-12"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-              How MDCharts Transforms Your Practice
+              How FamilyCharts Transforms Your Practice
             </h2>
             <p className="text-lg text-slate-600 max-w-2xl mx-auto">
               Real solutions to the challenges family medicine practices face every day
@@ -355,7 +355,7 @@ export default function FamilyMedicineSpecialty() {
             </div>
             
             <blockquote className="text-xl md:text-2xl font-medium leading-relaxed mb-8">
-              "MDCharts finally gets family medicine. I see newborns, manage diabetics, and do Medicare AWVs all in the same day - and the templates adapt to each. Documentation is so fast I'm actually leaving on time. Our revenue is up 22% since switching."
+              "FamilyCharts finally gets family medicine. I see newborns, manage diabetics, and do Medicare AWVs all in the same day - and the templates adapt to each. Documentation is so fast I'm actually leaving on time. Our revenue is up 22% since switching."
             </blockquote>
             
             <div>
@@ -375,7 +375,7 @@ export default function FamilyMedicineSpecialty() {
               Ready to Transform Your Practice?
             </h2>
             <p className="text-lg text-slate-600 mb-8 max-w-2xl mx-auto">
-              Join 600+ family medicine practices using MDCharts for faster documentation and better revenue
+              Join 600+ family medicine practices using FamilyCharts for faster documentation and better revenue
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Button size="lg" className="bg-primary hover:bg-primary/90" onClick={() => setModalState({ isOpen: true, type: "demo", title: "Start Free Trial" })}>
@@ -397,7 +397,7 @@ export default function FamilyMedicineSpecialty() {
               <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center">
                 <Users className="h-5 w-5 text-white" />
               </div>
-              <span className="text-xl font-bold">MDCharts for Family Medicine</span>
+              <span className="text-xl font-bold">FamilyCharts</span>
             </div>
             <div className="flex gap-3">
               <a href="#" className="w-9 h-9 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary transition-colors"><Facebook className="h-4 w-4" /></a>

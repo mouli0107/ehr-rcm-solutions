@@ -23,7 +23,7 @@ const softwareBenefits = [
   {
     stage: "01",
     title: "40% Faster Documentation",
-    description: "MDCharts OB/GYN templates auto-populate patient data, gestational age, and visit history - so you click less and care more.",
+    description: "OBCharts templates auto-populate patient data, gestational age, and visit history - so you click less and care more.",
     features: ["One-click prenatal notes", "Auto EDD calculation", "Smart phrase library"]
   },
   {
@@ -94,16 +94,16 @@ export default function OBGYNSpecialty() {
               </h1>
               
               <p className="text-xl text-slate-600 mb-8 max-w-2xl mx-auto">
-                MDCharts saves OB/GYN practices 40% on documentation time while boosting revenue with built-in billing and TriZetto integration.
+                OBCharts saves your practice 40% on documentation time while boosting revenue with built-in billing and TriZetto integration.
               </p>
 
               <div className="flex flex-wrap justify-center gap-4 mb-12">
                 <Button 
                   size="lg" 
                   className="bg-primary hover:bg-primary/90"
-                  onClick={() => setModalState({ isOpen: true, type: "demo", title: "Book Your Demo" })}
+                  onClick={() => setModalState({ isOpen: true, type: "demo", title: "Book an OBCharts Demo" })}
                 >
-                  See MDCharts in Action <ArrowRight className="ml-2 h-4 w-4" />
+                  See OBCharts in Action <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
                 <Button 
                   size="lg" 
@@ -162,7 +162,7 @@ export default function OBGYNSpecialty() {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mb-4">
-              How MDCharts Transforms Your OB/GYN Practice
+              How OBCharts Transforms Your OB/GYN Practice
             </h2>
             <p className="text-xl text-slate-600 max-w-2xl mx-auto">
               Purpose-built EHR software that solves the real problems OB/GYN practices face daily
@@ -296,7 +296,7 @@ export default function OBGYNSpecialty() {
             </div>
             
             <blockquote className="text-2xl md:text-3xl font-medium leading-relaxed mb-10">
-              "MDCharts cut our documentation time in half and our denials dropped to almost zero. The TriZetto integration handles our global OB billing perfectly - we finally get paid faster."
+              "OBCharts cut our documentation time in half and our denials dropped to almost zero. The TriZetto integration handles our global OB billing perfectly - we finally get paid faster."
             </blockquote>
             
             <div>
@@ -316,7 +316,7 @@ export default function OBGYNSpecialty() {
               Ready to Transform Your OB/GYN Practice?
             </h2>
             <p className="text-xl text-slate-600 mb-8 max-w-2xl mx-auto">
-              See why 300+ OB/GYN practices choose MDCharts for faster documentation and better revenue
+              See why 300+ OB/GYN practices choose OBCharts for faster documentation and better revenue
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Button size="lg" className="bg-primary hover:bg-primary/90" onClick={() => setModalState({ isOpen: true, type: "demo", title: "Start Free Trial" })}>
@@ -338,7 +338,7 @@ export default function OBGYNSpecialty() {
               <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center">
                 <Baby className="h-5 w-5 text-white" />
               </div>
-              <span className="text-xl font-bold">MDCharts for OB/GYN</span>
+              <span className="text-xl font-bold">OBCharts</span>
             </div>
             <div className="flex gap-4">
               <a href="#" className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary transition-colors"><Facebook className="h-5 w-5" /></a>

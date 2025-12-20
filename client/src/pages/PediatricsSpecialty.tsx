@@ -22,7 +22,7 @@ const softwareBenefits = [
   { 
     icon: Clock, 
     title: "2-Minute Well-Child Notes", 
-    desc: "MDCharts auto-populates growth percentiles, immunization status, and developmental milestones. Complete a full well-child note before the patient leaves the room.",
+    desc: "PediCharts auto-populates growth percentiles, immunization status, and developmental milestones. Complete a full well-child note before the patient leaves the room.",
     highlight: "2 min avg"
   },
   { 
@@ -93,7 +93,7 @@ export default function PediatricsSpecialty() {
               </h1>
               
               <p className="text-xl text-slate-600 mb-8">
-                MDCharts helps pediatric practices document 45% faster, get paid sooner, and spend more time with patients - not paperwork.
+                PediCharts helps pediatric practices document 45% faster, get paid sooner, and spend more time with patients - not paperwork.
               </p>
 
               {/* Stats Cards */}
@@ -113,7 +113,7 @@ export default function PediatricsSpecialty() {
                 <Button 
                   size="lg" 
                   className="bg-primary hover:bg-primary/90"
-                  onClick={() => setModalState({ isOpen: true, type: "demo", title: "See MDCharts for Pediatrics" })}
+                  onClick={() => setModalState({ isOpen: true, type: "demo", title: "See PediCharts" })}
                 >
                   See It In Action <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
@@ -175,7 +175,7 @@ export default function PediatricsSpecialty() {
             className="text-center mb-12"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-              How MDCharts Transforms Your Pediatric Practice
+              How PediCharts Transforms Your Pediatric Practice
             </h2>
             <p className="text-lg text-slate-600 max-w-2xl mx-auto">
               Real solutions to the daily challenges pediatricians face
@@ -225,7 +225,7 @@ export default function PediatricsSpecialty() {
               </div>
               <div className="bg-white rounded-xl p-6 shadow-lg">
                 <h3 className="text-xl font-bold text-slate-900 mb-2">Vaccine Management Made Easy</h3>
-                <p className="text-slate-600">One-click ordering, automatic lot tracking, and instant registry submission. MDCharts handles the paperwork so you can focus on patients.</p>
+                <p className="text-slate-600">One-click ordering, automatic lot tracking, and instant registry submission. PediCharts handles the paperwork so you can focus on patients.</p>
               </div>
             </motion.div>
             
@@ -301,7 +301,7 @@ export default function PediatricsSpecialty() {
             </div>
             
             <blockquote className="text-xl md:text-2xl font-medium leading-relaxed mb-8">
-              "MDCharts has been a game-changer. Our well-child visits take half the time to document, the vaccine tracking is flawless, and our revenue is up 18% since switching. Parents love the portal too!"
+              "PediCharts has been a game-changer. Our well-child visits take half the time to document, the vaccine tracking is flawless, and our revenue is up 18% since switching. Parents love the portal too!"
             </blockquote>
             
             <div>
@@ -321,7 +321,7 @@ export default function PediatricsSpecialty() {
               Ready to Transform Your Pediatric Practice?
             </h2>
             <p className="text-lg text-slate-600 mb-8 max-w-2xl mx-auto">
-              Join 400+ pediatric practices using MDCharts for faster documentation and better revenue
+              Join 400+ pediatric practices using PediCharts for faster documentation and better revenue
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Button size="lg" className="bg-primary hover:bg-primary/90" onClick={() => setModalState({ isOpen: true, type: "demo", title: "Start Free Trial" })}>
@@ -343,7 +343,7 @@ export default function PediatricsSpecialty() {
               <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center">
                 <Baby className="h-5 w-5 text-white" />
               </div>
-              <span className="text-xl font-bold">MDCharts for Pediatrics</span>
+              <span className="text-xl font-bold">PediCharts</span>
             </div>
             <div className="flex gap-3">
               <a href="#" className="w-9 h-9 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary transition-colors"><Facebook className="h-4 w-4" /></a>

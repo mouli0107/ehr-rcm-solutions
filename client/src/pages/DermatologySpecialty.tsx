@@ -13,16 +13,14 @@ import {
 } from "lucide-react";
 
 import heroImage from "@assets/stock_images/dermatologist_examin_9f9d1ab9.jpg";
-import examImage from "@assets/stock_images/dermatologist_examin_b40dc4bd.jpg";
-import examImage2 from "@assets/stock_images/dermatologist_examin_1155159a.jpg";
-import cosmeticImage from "@assets/stock_images/cosmetic_dermatology_939ffdc1.jpg";
-import cosmeticImage2 from "@assets/stock_images/cosmetic_dermatology_fb18c355.jpg";
-import consultImage from "@assets/stock_images/happy_patient_consul_47821e1b.jpg";
-import consultImage2 from "@assets/stock_images/happy_patient_consul_e8a6e886.jpg";
-import biopsyImage from "@assets/stock_images/medical_skin_biopsy__219cd181.jpg";
-import biopsyImage2 from "@assets/stock_images/medical_skin_biopsy__5f3d7342.jpg";
-import techImage from "@assets/stock_images/modern_medical_techn_f4144289.jpg";
-import satisfiedPatient from "@assets/stock_images/doctor_patient_smili_5ddb2a1f.jpg";
+import dermExam1 from "@assets/stock_images/dermatologist_examin_a8744d47.jpg";
+import dermExam2 from "@assets/stock_images/dermatologist_examin_c6c7a938.jpg";
+import dermExam3 from "@assets/stock_images/dermatologist_examin_246ea310.jpg";
+import dermExam4 from "@assets/stock_images/dermatologist_examin_47d58df5.jpg";
+import skinCare1 from "@assets/stock_images/skin_care_dermatolog_36801774.jpg";
+import skinCare2 from "@assets/stock_images/skin_care_dermatolog_26027580.jpg";
+import skinCare3 from "@assets/stock_images/skin_care_dermatolog_9c11ca8e.jpg";
+import skinCare4 from "@assets/stock_images/skin_care_dermatolog_75c9434e.jpg";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
@@ -165,15 +163,10 @@ const comparisonFeatures = [
 ];
 
 const showcaseImages = [
-  { src: examImage, title: "Digital Dermoscopy", description: "Advanced skin examination" },
-  { src: consultImage, title: "Patient Consultation", description: "Collaborative care planning" },
-  { src: cosmeticImage, title: "Cosmetic Treatments", description: "Aesthetic procedures" },
-  { src: biopsyImage, title: "Biopsy Procedures", description: "Surgical documentation" },
-  { src: examImage2, title: "Skin Analysis", description: "Comprehensive examination" },
-  { src: cosmeticImage2, title: "Injectable Tracking", description: "Cosmetic record keeping" },
-  { src: consultImage2, title: "Treatment Planning", description: "Personalized care" },
-  { src: techImage, title: "Digital Integration", description: "Modern technology" },
-  { src: satisfiedPatient, title: "Happy Patients", description: "Exceptional outcomes" },
+  { src: dermExam1, title: "Skin Examination", description: "Precise mole analysis" },
+  { src: skinCare1, title: "Laser Treatment", description: "Advanced cosmetic procedures" },
+  { src: dermExam2, title: "Dermoscopy", description: "Digital skin imaging" },
+  { src: skinCare2, title: "Facial Procedures", description: "Medical aesthetics" },
 ];
 
 export default function DermatologySpecialty() {
@@ -373,7 +366,7 @@ export default function DermatologySpecialty() {
                   ))}
                 </div>
                 <div className="rounded-2xl overflow-hidden shadow-xl">
-                  <img src={examImage} alt="Medical dermatology workflow" className="w-full h-auto" />
+                  <img src={dermExam3} alt="Medical dermatology workflow" className="w-full h-auto" />
                 </div>
               </div>
             </TabsContent>
@@ -391,7 +384,7 @@ export default function DermatologySpecialty() {
                   ))}
                 </div>
                 <div className="rounded-2xl overflow-hidden shadow-xl">
-                  <img src={biopsyImage} alt="Surgical dermatology workflow" className="w-full h-auto" />
+                  <img src={dermExam4} alt="Surgical dermatology workflow" className="w-full h-auto" />
                 </div>
               </div>
             </TabsContent>
@@ -409,7 +402,7 @@ export default function DermatologySpecialty() {
                   ))}
                 </div>
                 <div className="rounded-2xl overflow-hidden shadow-xl">
-                  <img src={cosmeticImage} alt="Cosmetic dermatology workflow" className="w-full h-auto" />
+                  <img src={skinCare3} alt="Cosmetic dermatology workflow" className="w-full h-auto" />
                 </div>
               </div>
             </TabsContent>
@@ -417,7 +410,7 @@ export default function DermatologySpecialty() {
         </div>
       </section>
 
-      {/* Visual Showcase Section */}
+      {/* Visual Showcase Section - 2x2 Zig-Zag Layout */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
@@ -429,29 +422,76 @@ export default function DermatologySpecialty() {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {showcaseImages.map((image, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="relative group overflow-hidden rounded-xl aspect-square"
-              >
+          <div className="max-w-5xl mx-auto space-y-8">
+            {/* Row 1 - Image Left, Content Right */}
+            <motion.div 
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="grid md:grid-cols-2 gap-8 items-center"
+            >
+              <div className="relative group overflow-hidden rounded-2xl shadow-xl h-[384px]">
                 <img 
-                  src={image.src} 
-                  alt={image.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  src={showcaseImages[0].src} 
+                  alt={showcaseImages[0].title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/70 to-transparent">
                   <div className="absolute bottom-0 left-0 right-0 p-6">
-                    <h4 className="text-white font-bold text-lg">{image.title}</h4>
-                    <p className="text-slate-300 text-sm">{image.description}</p>
+                    <h4 className="text-white font-bold text-xl">{showcaseImages[0].title}</h4>
+                    <p className="text-slate-200">{showcaseImages[0].description}</p>
                   </div>
                 </div>
-              </motion.div>
-            ))}
+              </div>
+              <div className="relative group overflow-hidden rounded-2xl shadow-xl h-[384px]">
+                <img 
+                  src={showcaseImages[1].src} 
+                  alt={showcaseImages[1].title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/70 to-transparent">
+                  <div className="absolute bottom-0 left-0 right-0 p-6">
+                    <h4 className="text-white font-bold text-xl">{showcaseImages[1].title}</h4>
+                    <p className="text-slate-200">{showcaseImages[1].description}</p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Row 2 - Offset/Zig-Zag */}
+            <motion.div 
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="grid md:grid-cols-2 gap-8 items-center md:ml-16"
+            >
+              <div className="relative group overflow-hidden rounded-2xl shadow-xl h-[384px]">
+                <img 
+                  src={showcaseImages[2].src} 
+                  alt={showcaseImages[2].title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/70 to-transparent">
+                  <div className="absolute bottom-0 left-0 right-0 p-6">
+                    <h4 className="text-white font-bold text-xl">{showcaseImages[2].title}</h4>
+                    <p className="text-slate-200">{showcaseImages[2].description}</p>
+                  </div>
+                </div>
+              </div>
+              <div className="relative group overflow-hidden rounded-2xl shadow-xl h-[384px]">
+                <img 
+                  src={showcaseImages[3].src} 
+                  alt={showcaseImages[3].title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/70 to-transparent">
+                  <div className="absolute bottom-0 left-0 right-0 p-6">
+                    <h4 className="text-white font-bold text-xl">{showcaseImages[3].title}</h4>
+                    <p className="text-slate-200">{showcaseImages[3].description}</p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>

@@ -4,10 +4,10 @@ import { Navbar } from "@/components/Navbar";
 import { ContactModal } from "@/components/ContactModal";
 import { Button } from "@/components/ui/button";
 import { 
-  Baby, Heart, Calendar, FileText, Pill, Users,
-  Check, Star, ChevronRight, Shield, Award, Clock,
-  Facebook, Twitter, Linkedin, Instagram, ArrowRight, Phone,
-  Stethoscope, Activity, HeartPulse
+  Baby, Clock, DollarSign, FileText, Zap, Users,
+  Check, Star, ChevronRight, Shield, Award, TrendingUp,
+  Facebook, Twitter, Linkedin, ArrowRight, Phone,
+  MousePointer, Layers, LineChart, Lock
 } from "lucide-react";
 
 import heroImage from "@assets/generated_images/diverse_obgyn_doctors_with_pregnant_patient.png";
@@ -19,47 +19,52 @@ const fadeIn = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
 };
 
-const journeyStages = [
+const softwareBenefits = [
   {
     stage: "01",
-    title: "Preconception & Fertility",
-    description: "Comprehensive fertility tracking, ovulation prediction, and preconception counseling templates.",
-    features: ["Fertility assessment templates", "Ovulation tracking integration", "Genetic counseling documentation"]
+    title: "40% Faster Documentation",
+    description: "MDCharts OB/GYN templates auto-populate patient data, gestational age, and visit history - so you click less and care more.",
+    features: ["One-click prenatal notes", "Auto EDD calculation", "Smart phrase library"]
   },
   {
     stage: "02", 
-    title: "Prenatal Care",
-    description: "Trimester-specific templates with automatic gestational age calculations and milestone tracking.",
-    features: ["Automatic EDD calculation", "Trimester milestone alerts", "Ultrasound report integration"]
+    title: "98% Clean Claim Rate",
+    description: "TriZetto integration ensures your OB global billing, antepartum visits, and delivery codes are submitted correctly the first time.",
+    features: ["Global OB billing workflows", "Real-time eligibility", "Denial prevention alerts"]
   },
   {
     stage: "03",
-    title: "Labor & Delivery",
-    description: "Real-time labor tracking, fetal monitoring documentation, and delivery summary tools.",
-    features: ["Labor progress charts", "Fetal heart rate tracking", "C-section documentation"]
+    title: "Seamless Lab & Imaging",
+    description: "Quest, LabCorp, and ultrasound results flow directly into patient charts - no manual entry, no missed results.",
+    features: ["Auto-imported lab results", "Ultrasound image storage", "Abnormal result flags"]
   },
   {
     stage: "04",
-    title: "Postpartum & Beyond",
-    description: "Postpartum visit templates, breastfeeding support, and well-woman care continuity.",
-    features: ["Postpartum depression screening", "Lactation documentation", "Contraception counseling"]
+    title: "ONC 2015 Certified & HIPAA Ready",
+    description: "Stay compliant with automatic audit trails, secure messaging, and 21st Century Cures Act requirements built-in.",
+    features: ["Complete audit logging", "Secure patient portal", "MIPS quality reporting"]
   }
 ];
 
 const features = [
-  { icon: Baby, title: "Pregnancy Timeline", desc: "Automatic gestational age tracking with trimester-specific templates and milestone alerts" },
-  { icon: HeartPulse, title: "Fetal Monitoring", desc: "Integrated fetal heart rate documentation and NST/BPP result tracking" },
-  { icon: Calendar, title: "Smart Scheduling", desc: "Automated prenatal visit scheduling based on risk factors and ACOG guidelines" },
-  { icon: FileText, title: "Ultrasound Integration", desc: "Seamless import of ultrasound images and reports with measurement tracking" },
-  { icon: Pill, title: "OB Medications", desc: "Pregnancy-safe medication alerts and prenatal vitamin tracking" },
-  { icon: Shield, title: "High-Risk Protocols", desc: "Specialized workflows for gestational diabetes, preeclampsia, and multiple gestations" }
+  { icon: Clock, title: "2-Minute Prenatal Notes", desc: "Complete a full prenatal visit note in under 2 minutes with intelligent auto-population and specialty macros" },
+  { icon: DollarSign, title: "Revenue Cycle Built-In", desc: "TriZetto clearinghouse integration handles claims, ERA/EOB posting, and denial management automatically" },
+  { icon: Layers, title: "75+ OB/GYN Templates", desc: "Pre-built templates for antepartum, L&D, postpartum, GYN, and annual well-woman visits" },
+  { icon: LineChart, title: "Real-Time Analytics", desc: "Dashboard shows no-show rates, revenue trends, and quality measure performance at a glance" },
+  { icon: Lock, title: "Enterprise Security", desc: "Bank-level encryption, role-based access, and automatic backups keep your practice safe" },
+  { icon: MousePointer, title: "Click Less, Care More", desc: "Intuitive interface designed by OB/GYNs means less time on the computer and more time with patients" }
 ];
 
 const stats = [
-  { value: "75+", label: "OB/GYN Templates" },
-  { value: "40%", label: "Faster Documentation" },
+  { value: "40%", label: "Less Documentation Time" },
   { value: "98%", label: "Clean Claim Rate" },
-  { value: "300+", label: "Practices Trust Us" }
+  { value: "$47K", label: "Avg Annual Savings" },
+  { value: "300+", label: "OB/GYN Practices" }
+];
+
+const integrations = [
+  "TriZetto Clearinghouse", "DrFirst ePrescribing", "Quest Diagnostics", 
+  "LabCorp", "Surescripts", "Immunization Registries"
 ];
 
 export default function OBGYNSpecialty() {
@@ -73,36 +78,32 @@ export default function OBGYNSpecialty() {
     <div className="min-h-screen bg-background font-sans">
       <Navbar />
       
-      {/* Hero - Centered with Background */}
+      {/* Hero */}
       <section className="pt-32 pb-24 bg-gradient-to-b from-cyan-50 via-white to-white relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-1/2 h-full opacity-20">
-          <div className="absolute inset-0" style={{ backgroundImage: 'radial-gradient(circle at 70% 30%, #EC4899 0%, transparent 50%)' }}></div>
-        </div>
-        
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center mb-12">
             <motion.div initial="hidden" animate="visible" variants={fadeIn}>
               <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-bold mb-6">
                 <Baby className="h-4 w-4" />
-                OB/GYN SPECIALTY EHR
+                OB/GYN EHR SOFTWARE
               </div>
               
               <h1 className="text-4xl md:text-6xl font-bold text-slate-900 mb-6 leading-tight">
-                From First Visit to
-                <span className="block text-primary">First Breath</span>
+                Click Less, Care More
+                <span className="block text-primary">In Your OB/GYN Practice</span>
               </h1>
               
               <p className="text-xl text-slate-600 mb-8 max-w-2xl mx-auto">
-                OBCharts follows your patients through every stage of their journey - preconception, pregnancy, delivery, and beyond.
+                MDCharts saves OB/GYN practices 40% on documentation time while boosting revenue with built-in billing and TriZetto integration.
               </p>
 
               <div className="flex flex-wrap justify-center gap-4 mb-12">
                 <Button 
                   size="lg" 
                   className="bg-primary hover:bg-primary/90"
-                  onClick={() => setModalState({ isOpen: true, type: "demo", title: "Book an OBCharts Demo" })}
+                  onClick={() => setModalState({ isOpen: true, type: "demo", title: "Book Your Demo" })}
                 >
-                  Schedule Demo <ArrowRight className="ml-2 h-4 w-4" />
+                  See MDCharts in Action <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
                 <Button 
                   size="lg" 
@@ -115,7 +116,6 @@ export default function OBGYNSpecialty() {
             </motion.div>
           </div>
 
-          {/* Hero Image with Stats Overlay */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
@@ -127,7 +127,6 @@ export default function OBGYNSpecialty() {
               <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent"></div>
             </div>
             
-            {/* Stats Bar */}
             <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 bg-white rounded-2xl shadow-xl p-6 flex gap-12">
               {stats.map((stat, idx) => (
                 <div key={idx} className="text-center">
@@ -140,21 +139,19 @@ export default function OBGYNSpecialty() {
         </div>
       </section>
 
-      {/* Partners */}
+      {/* Integrations */}
       <section className="py-12 bg-white border-b">
         <div className="container mx-auto px-4">
-          <p className="text-center text-xs font-bold uppercase tracking-widest text-slate-400 mb-6">Trusted By Leading Organizations</p>
-          <div className="flex flex-wrap justify-center items-center gap-12 opacity-60">
-            <span className="text-xl font-bold text-slate-700">ACOG</span>
-            <span className="text-xl font-bold text-slate-700">SMFM</span>
-            <span className="text-xl font-bold text-slate-700">TriZetto</span>
-            <span className="text-xl font-bold text-slate-700">DrFirst</span>
-            <span className="text-xl font-bold text-slate-700">Quest</span>
+          <p className="text-center text-xs font-bold uppercase tracking-widest text-slate-400 mb-6">Seamless Integrations Built In</p>
+          <div className="flex flex-wrap justify-center items-center gap-8 opacity-70">
+            {integrations.map((name, idx) => (
+              <span key={idx} className="text-lg font-bold text-slate-700">{name}</span>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Journey Timeline */}
+      {/* How MDCharts Helps */}
       <section className="py-24 bg-slate-50">
         <div className="container mx-auto px-4">
           <motion.div
@@ -165,15 +162,15 @@ export default function OBGYNSpecialty() {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mb-4">
-              The Complete Care Journey
+              How MDCharts Transforms Your OB/GYN Practice
             </h2>
             <p className="text-xl text-slate-600 max-w-2xl mx-auto">
-              OBCharts adapts to every stage of your patient's reproductive health journey
+              Purpose-built EHR software that solves the real problems OB/GYN practices face daily
             </p>
           </motion.div>
 
           <div className="max-w-5xl mx-auto">
-            {journeyStages.map((stage, idx) => (
+            {softwareBenefits.map((benefit, idx) => (
               <motion.div
                 key={idx}
                 initial={{ opacity: 0, x: idx % 2 === 0 ? -30 : 30 }}
@@ -182,19 +179,17 @@ export default function OBGYNSpecialty() {
                 transition={{ delay: idx * 0.1 }}
                 className={`flex flex-col md:flex-row items-center gap-8 mb-16 ${idx % 2 === 1 ? 'md:flex-row-reverse' : ''}`}
               >
-                {/* Stage Number */}
                 <div className="flex-shrink-0">
                   <div className="w-24 h-24 rounded-full bg-primary text-white flex items-center justify-center text-4xl font-bold shadow-lg">
-                    {stage.stage}
+                    {benefit.stage}
                   </div>
                 </div>
 
-                {/* Content Card */}
                 <div className="flex-1 bg-white rounded-2xl p-8 shadow-lg">
-                  <h3 className="text-2xl font-bold text-slate-900 mb-3">{stage.title}</h3>
-                  <p className="text-slate-600 mb-6">{stage.description}</p>
+                  <h3 className="text-2xl font-bold text-slate-900 mb-3">{benefit.title}</h3>
+                  <p className="text-slate-600 mb-6">{benefit.description}</p>
                   <div className="flex flex-wrap gap-3">
-                    {stage.features.map((feature, fIdx) => (
+                    {benefit.features.map((feature, fIdx) => (
                       <span key={fIdx} className="inline-flex items-center gap-2 bg-primary/10 text-primary px-3 py-1.5 rounded-full text-sm font-medium">
                         <Check className="h-3 w-3" /> {feature}
                       </span>
@@ -207,7 +202,7 @@ export default function OBGYNSpecialty() {
         </div>
       </section>
 
-      {/* Image Gallery Row */}
+      {/* Image Gallery */}
       <section className="py-24 bg-white">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
@@ -220,8 +215,8 @@ export default function OBGYNSpecialty() {
               <img src={ultrasoundImage} alt="Prenatal ultrasound" className="w-full h-[350px] object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-900/70 to-transparent flex items-end p-6">
                 <div>
-                  <h3 className="text-xl font-bold text-white mb-2">Ultrasound Integration</h3>
-                  <p className="text-white/80 text-sm">Seamless image and report imports</p>
+                  <h3 className="text-xl font-bold text-white mb-2">Imaging Integration</h3>
+                  <p className="text-white/80 text-sm">Ultrasound images auto-attach to patient records</p>
                 </div>
               </div>
             </motion.div>
@@ -236,8 +231,8 @@ export default function OBGYNSpecialty() {
               <img src={postpartumImage} alt="Postpartum care" className="w-full h-[350px] object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-900/70 to-transparent flex items-end p-6">
                 <div>
-                  <h3 className="text-xl font-bold text-white mb-2">Postpartum Excellence</h3>
-                  <p className="text-white/80 text-sm">Complete continuity of care</p>
+                  <h3 className="text-xl font-bold text-white mb-2">Faster Patient Flow</h3>
+                  <p className="text-white/80 text-sm">See more patients with less documentation burden</p>
                 </div>
               </div>
             </motion.div>
@@ -256,10 +251,10 @@ export default function OBGYNSpecialty() {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mb-4">
-              Built for OB/GYN Excellence
+              Everything Your Practice Needs
             </h2>
             <p className="text-xl text-slate-600 max-w-2xl mx-auto">
-              Every feature designed specifically for women's health practices
+              All-in-one EHR, practice management, and revenue cycle for OB/GYN
             </p>
           </motion.div>
 
@@ -296,18 +291,18 @@ export default function OBGYNSpecialty() {
           >
             <div className="flex justify-center gap-1 mb-8">
               {[...Array(5)].map((_, i) => (
-                <Star key={i} className="h-8 w-8 fill-amber-400 text-amber-400" />
+                <Star key={i} className="h-8 w-8 fill-cyan-300 text-cyan-300" />
               ))}
             </div>
             
             <blockquote className="text-2xl md:text-3xl font-medium leading-relaxed mb-10">
-              "OBCharts has revolutionized our practice. The pregnancy timeline feature alone saves us hours of documentation time, and the ACOG-aligned templates ensure we never miss critical assessments."
+              "MDCharts cut our documentation time in half and our denials dropped to almost zero. The TriZetto integration handles our global OB billing perfectly - we finally get paid faster."
             </blockquote>
             
             <div>
               <div className="font-bold text-xl">Dr. Sarah Williams, MD, FACOG</div>
               <div className="text-white/80">Director, Women's Health Associates</div>
-              <div className="text-white/60 text-sm">Houston, TX</div>
+              <div className="text-white/60 text-sm">Houston, TX - 300+ deliveries/year</div>
             </div>
           </motion.div>
         </div>
@@ -321,7 +316,7 @@ export default function OBGYNSpecialty() {
               Ready to Transform Your OB/GYN Practice?
             </h2>
             <p className="text-xl text-slate-600 mb-8 max-w-2xl mx-auto">
-              Join 300+ OB/GYN practices who document faster and deliver better care
+              See why 300+ OB/GYN practices choose MDCharts for faster documentation and better revenue
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Button size="lg" className="bg-primary hover:bg-primary/90" onClick={() => setModalState({ isOpen: true, type: "demo", title: "Start Free Trial" })}>
@@ -343,7 +338,7 @@ export default function OBGYNSpecialty() {
               <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center">
                 <Baby className="h-5 w-5 text-white" />
               </div>
-              <span className="text-xl font-bold">OBCharts</span>
+              <span className="text-xl font-bold">MDCharts for OB/GYN</span>
             </div>
             <div className="flex gap-4">
               <a href="#" className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary transition-colors"><Facebook className="h-5 w-5" /></a>
@@ -352,7 +347,7 @@ export default function OBGYNSpecialty() {
             </div>
           </div>
           <div className="pt-8 text-center text-slate-400 text-sm">
-            © 2024 MDChartsEHR. All rights reserved. OBCharts is a product of MDChartsEHR.
+            © 2024 MDChartsEHR. All rights reserved. ONC 2015 Edition Certified. HIPAA Compliant.
           </div>
         </div>
       </footer>

@@ -4,10 +4,9 @@ import { Navbar } from "@/components/Navbar";
 import { ContactModal } from "@/components/ContactModal";
 import { Button } from "@/components/ui/button";
 import { 
-  Activity, Stethoscope, FileText, Pill, Users, Shield,
-  Check, Star, ChevronRight, Award, Clock, Target,
-  Facebook, Twitter, Linkedin, Instagram, ArrowRight, Phone,
-  Microscope, Zap, ClipboardList
+  Activity, Clock, DollarSign, FileText, Zap, Shield,
+  Check, Star, ArrowRight, Phone, MousePointer,
+  Facebook, Twitter, Linkedin, Layers, TrendingUp, Lock
 } from "lucide-react";
 
 import heroImage from "@assets/generated_images/diverse_urologists_consulting_patient.png";
@@ -24,32 +23,41 @@ const slideIn = {
   visible: { opacity: 1, x: 0, transition: { duration: 0.6 } }
 };
 
-const services = [
+const softwareBenefits = [
   {
-    category: "General Urology",
-    items: ["UTI management", "Kidney stones", "BPH treatment", "Incontinence", "Male infertility"]
+    category: "Documentation Speed",
+    title: "Complete Notes 50% Faster",
+    items: ["One-click procedure templates", "Voice dictation integration", "Smart phrase libraries", "Auto-populated patient history", "Batch signing capability"]
   },
   {
-    category: "Oncology",
-    items: ["Prostate cancer", "Bladder cancer", "Kidney cancer", "Testicular cancer", "Staging & surveillance"]
+    category: "Revenue Optimization",
+    title: "Maximize Every Claim",
+    items: ["TriZetto clearinghouse built-in", "Real-time eligibility checks", "Procedure coding guidance", "Denial prevention alerts", "ERA/EOB auto-posting"]
   },
   {
-    category: "Procedures",
-    items: ["Cystoscopy", "TURP/TURBT", "Lithotripsy", "Vasectomy", "Robotic surgery"]
+    category: "Procedure Tracking",
+    title: "Seamless Workflow",
+    items: ["Cystoscopy documentation", "In-office procedure logs", "Surgery scheduling integration", "Equipment tracking", "Consent form management"]
   },
   {
-    category: "Diagnostics",
-    items: ["PSA tracking", "Urodynamics", "Imaging integration", "Biopsy tracking", "Lab integration"]
+    category: "Compliance & Security",
+    title: "Always Audit-Ready",
+    items: ["ONC 2015 certified", "Complete audit trails", "HIPAA-compliant messaging", "MIPS quality reporting", "Role-based access control"]
   }
 ];
 
 const keyFeatures = [
-  { icon: Target, title: "PSA Trend Tracking", desc: "Automatic PSA velocity calculations with risk stratification alerts" },
-  { icon: Microscope, title: "Biopsy Management", desc: "Complete biopsy tracking from order to pathology result integration" },
-  { icon: ClipboardList, title: "Procedure Templates", desc: "Pre-built templates for cystoscopy, TURP, lithotripsy, and more" },
-  { icon: Zap, title: "Stone Analysis", desc: "Stone composition tracking with recurrence prevention protocols" },
-  { icon: Pill, title: "BPH Medication Management", desc: "Alpha-blocker and 5-ARI tracking with symptom score integration" },
-  { icon: Shield, title: "Cancer Surveillance", desc: "Active surveillance protocols with automatic recall scheduling" }
+  { icon: Clock, title: "3-Minute Visit Notes", desc: "Complete a full urology visit in under 3 minutes with specialty-specific templates and smart auto-population" },
+  { icon: DollarSign, title: "98% Clean Claim Rate", desc: "TriZetto integration handles claims, eligibility, and payment posting - all in one system" },
+  { icon: Layers, title: "60+ Urology Templates", desc: "Pre-built templates for BPH, prostate cancer, stones, incontinence, and in-office procedures" },
+  { icon: TrendingUp, title: "PSA Trend Analysis", desc: "Automatic PSA velocity calculations with visual trend graphs and risk stratification" },
+  { icon: Lock, title: "Enterprise Security", desc: "Bank-level encryption, automatic backups, and complete HIPAA compliance built-in" },
+  { icon: MousePointer, title: "Click Less, Care More", desc: "Intuitive interface designed by urologists means less documentation burden" }
+];
+
+const integrations = [
+  "TriZetto Clearinghouse", "DrFirst ePrescribing", "Quest Diagnostics", 
+  "LabCorp", "Imaging Centers", "Hospital Systems"
 ];
 
 export default function UrologySpecialty() {
@@ -63,11 +71,10 @@ export default function UrologySpecialty() {
     <div className="min-h-screen bg-background font-sans">
       <Navbar />
       
-      {/* Hero - Clean Professional */}
+      {/* Hero */}
       <section className="pt-32 pb-20 bg-white relative">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-12 gap-12 items-center">
-            {/* Content - 5 columns */}
             <motion.div 
               initial="hidden" 
               animate="visible" 
@@ -76,23 +83,23 @@ export default function UrologySpecialty() {
             >
               <div className="inline-flex items-center gap-2 bg-slate-100 text-slate-700 px-4 py-2 rounded-lg text-sm font-bold mb-6">
                 <Activity className="h-4 w-4 text-primary" />
-                UROLOGY EHR
+                UROLOGY EHR SOFTWARE
               </div>
               
               <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6 leading-tight">
-                Precision Documentation for
-                <span className="text-primary"> Urology</span>
+                Click Less, Care More
+                <span className="text-primary"> in Urology</span>
               </h1>
               
               <p className="text-lg text-slate-600 mb-8 leading-relaxed">
-                UroCharts delivers specialty-specific workflows for general urology, oncology, and procedural documentation - built by urologists, for urologists.
+                MDCharts helps urology practices document 50% faster, reduce claim denials to near-zero, and focus on what matters - patient care.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 mb-10">
                 <Button 
                   size="lg" 
                   className="bg-primary hover:bg-primary/90"
-                  onClick={() => setModalState({ isOpen: true, type: "demo", title: "Book a UroCharts Demo" })}
+                  onClick={() => setModalState({ isOpen: true, type: "demo", title: "See MDCharts for Urology" })}
                 >
                   Request Demo <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
@@ -108,21 +115,20 @@ export default function UrologySpecialty() {
               {/* Quick Stats */}
               <div className="grid grid-cols-3 gap-6 p-6 bg-slate-50 rounded-xl">
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-primary">60+</div>
-                  <div className="text-xs text-slate-500">Templates</div>
+                  <div className="text-2xl font-bold text-primary">50%</div>
+                  <div className="text-xs text-slate-500">Faster Charting</div>
                 </div>
                 <div className="text-center border-x border-slate-200">
-                  <div className="text-2xl font-bold text-primary">96%</div>
+                  <div className="text-2xl font-bold text-primary">98%</div>
                   <div className="text-xs text-slate-500">Clean Claims</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-primary">200+</div>
-                  <div className="text-xs text-slate-500">Practices</div>
+                  <div className="text-2xl font-bold text-primary">$41K</div>
+                  <div className="text-xs text-slate-500">Avg Savings/Yr</div>
                 </div>
               </div>
             </motion.div>
 
-            {/* Image - 7 columns */}
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
@@ -150,7 +156,19 @@ export default function UrologySpecialty() {
         </div>
       </section>
 
-      {/* Services Grid */}
+      {/* Integrations */}
+      <section className="py-8 bg-slate-50 border-y">
+        <div className="container mx-auto px-4">
+          <p className="text-center text-xs font-bold uppercase tracking-widest text-slate-400 mb-4">Seamless Integrations</p>
+          <div className="flex flex-wrap justify-center items-center gap-8 opacity-70">
+            {integrations.map((name, idx) => (
+              <span key={idx} className="text-sm font-bold text-slate-700">{name}</span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* How MDCharts Helps - Grid */}
       <section className="py-20 bg-slate-900 text-white">
         <div className="container mx-auto px-4">
           <motion.div
@@ -161,15 +179,15 @@ export default function UrologySpecialty() {
             className="text-center mb-12"
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Complete Urology Coverage
+              How MDCharts Transforms Your Urology Practice
             </h2>
             <p className="text-lg text-slate-400 max-w-2xl mx-auto">
-              From routine visits to complex oncology cases, UroCharts has you covered
+              Real solutions to the challenges urology practices face every day
             </p>
           </motion.div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {services.map((service, idx) => (
+            {softwareBenefits.map((benefit, idx) => (
               <motion.div
                 key={idx}
                 initial={{ opacity: 0, y: 20 }}
@@ -178,9 +196,10 @@ export default function UrologySpecialty() {
                 transition={{ delay: idx * 0.1 }}
                 className="bg-slate-800 rounded-xl p-6 border border-slate-700"
               >
-                <h3 className="text-lg font-bold text-primary mb-4">{service.category}</h3>
+                <div className="text-xs font-bold text-primary uppercase tracking-wider mb-2">{benefit.category}</div>
+                <h3 className="text-lg font-bold text-white mb-4">{benefit.title}</h3>
                 <ul className="space-y-2">
-                  {service.items.map((item, iIdx) => (
+                  {benefit.items.map((item, iIdx) => (
                     <li key={iIdx} className="flex items-center gap-2 text-slate-300 text-sm">
                       <Check className="h-4 w-4 text-primary flex-shrink-0" />
                       {item}
@@ -203,10 +222,10 @@ export default function UrologySpecialty() {
               viewport={{ once: true }}
             >
               <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">
-                Features That Matter
+                Everything Your Practice Needs
               </h2>
               <p className="text-lg text-slate-600 mb-8">
-                Purpose-built tools for urology-specific documentation, tracking, and clinical decision support.
+                All-in-one EHR, practice management, and revenue cycle designed specifically for urology.
               </p>
 
               <div className="space-y-4">
@@ -242,7 +261,7 @@ export default function UrologySpecialty() {
         </div>
       </section>
 
-      {/* Testimonial - Minimal */}
+      {/* Testimonial */}
       <section className="py-20 bg-slate-50">
         <div className="container mx-auto px-4">
           <motion.div
@@ -255,12 +274,12 @@ export default function UrologySpecialty() {
             <div className="bg-white rounded-2xl p-10 shadow-lg border border-slate-100">
               <div className="flex gap-1 mb-6">
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="h-6 w-6 fill-amber-400 text-amber-400" />
+                  <Star key={i} className="h-6 w-6 fill-cyan-500 text-cyan-500" />
                 ))}
               </div>
               
               <blockquote className="text-xl md:text-2xl text-slate-700 leading-relaxed mb-8">
-                "UroCharts understands how urologists think. The PSA tracking and biopsy management features have streamlined our prostate cancer surveillance program significantly. Documentation that used to take 10 minutes now takes 3."
+                "MDCharts has transformed how we run our urology practice. Documentation that took 10 minutes now takes 3. The TriZetto integration means claims go out faster and we get paid sooner. Our denials dropped from 8% to under 2%."
               </blockquote>
               
               <div className="flex items-center gap-4">
@@ -270,6 +289,7 @@ export default function UrologySpecialty() {
                 <div>
                   <div className="font-bold text-slate-900">Dr. Robert Kim, MD, FACS</div>
                   <div className="text-slate-500">Director, Advanced Urology Center</div>
+                  <div className="text-slate-400 text-sm">6 providers, 15,000+ patients</div>
                 </div>
               </div>
             </div>
@@ -282,10 +302,10 @@ export default function UrologySpecialty() {
         <div className="container mx-auto px-4 text-center">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn}>
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Ready to Modernize Your Urology Practice?
+              Ready to Transform Your Urology Practice?
             </h2>
             <p className="text-xl text-white/80 mb-8 max-w-2xl mx-auto">
-              Join 200+ urology practices using UroCharts for smarter documentation
+              Join 200+ urology practices using MDCharts for faster documentation and better revenue
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Button size="lg" className="bg-white text-primary hover:bg-slate-100" onClick={() => setModalState({ isOpen: true, type: "demo", title: "Start Free Trial" })}>
@@ -307,7 +327,7 @@ export default function UrologySpecialty() {
               <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center">
                 <Activity className="h-5 w-5 text-white" />
               </div>
-              <span className="text-xl font-bold">UroCharts</span>
+              <span className="text-xl font-bold">MDCharts for Urology</span>
             </div>
             <div className="flex gap-3">
               <a href="#" className="w-9 h-9 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary transition-colors"><Facebook className="h-4 w-4" /></a>
@@ -316,7 +336,7 @@ export default function UrologySpecialty() {
             </div>
           </div>
           <div className="pt-6 text-center text-slate-400 text-sm">
-            © 2024 MDChartsEHR. All rights reserved. UroCharts is a product of MDChartsEHR.
+            © 2024 MDChartsEHR. All rights reserved. ONC 2015 Edition Certified. HIPAA Compliant.
           </div>
         </div>
       </footer>

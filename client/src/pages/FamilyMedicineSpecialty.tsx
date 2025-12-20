@@ -4,10 +4,9 @@ import { Navbar } from "@/components/Navbar";
 import { ContactModal } from "@/components/ContactModal";
 import { Button } from "@/components/ui/button";
 import { 
-  Users, Heart, Stethoscope, FileText, Pill, Calendar,
-  Check, Star, ChevronRight, Shield, Award, Clock,
-  Facebook, Twitter, Linkedin, Instagram, ArrowRight, Phone,
-  Activity, Baby, Brain, Thermometer
+  Users, Clock, DollarSign, FileText, Zap, Shield,
+  Check, Star, ArrowRight, Phone, MousePointer,
+  Facebook, Twitter, Linkedin, Layers, TrendingUp, Lock
 } from "lucide-react";
 
 import heroImage from "@assets/generated_images/diverse_family_doctors_with_family.png";
@@ -19,42 +18,61 @@ const fadeIn = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
 };
 
-const patientTypes = [
-  { icon: Baby, label: "Pediatrics", desc: "Well-child visits to adolescent care" },
-  { icon: Users, label: "Adult Medicine", desc: "Chronic disease management" },
-  { icon: Heart, label: "Geriatrics", desc: "Medicare wellness & aging care" },
-  { icon: Brain, label: "Behavioral Health", desc: "Depression, anxiety screening" }
-];
-
-const conditions = [
-  "Hypertension", "Diabetes", "Hyperlipidemia", "Asthma/COPD", "Obesity",
-  "Depression", "Anxiety", "Hypothyroidism", "Arthritis", "Back Pain",
-  "Allergies", "Sinusitis", "UTI", "Skin Conditions", "Headaches"
-];
-
-const workflows = [
-  {
-    title: "Annual Wellness",
-    desc: "Medicare AWV and preventive visit templates with automatic health risk assessments",
-    features: ["HRA questionnaires", "Preventive care gaps", "Personalized prevention plans"]
+const softwareBenefits = [
+  { 
+    icon: Clock, 
+    title: "Complete Notes in 2.5 Minutes", 
+    desc: "MDCharts auto-populates patient history, medications, and problem list. Smart templates adapt to each visit type - from well-child to Medicare AWV.",
+    stat: "40% faster"
   },
-  {
-    title: "Chronic Care",
-    desc: "Disease-specific protocols for diabetes, hypertension, and more",
-    features: ["Care plan management", "Quality measure tracking", "CCM billing support"]
+  { 
+    icon: DollarSign, 
+    title: "Capture Every Dollar", 
+    desc: "Built-in coding guidance ensures correct E&M levels. TriZetto clearinghouse integration gets claims paid 30% faster with 98% clean claim rates.",
+    stat: "$38K saved/yr"
   },
-  {
-    title: "Acute Visits",
-    desc: "Rapid documentation for same-day sick visits and urgent care",
-    features: ["Chief complaint templates", "Quick assessment tools", "Return visit planning"]
+  { 
+    icon: Shield, 
+    title: "MIPS Made Easy", 
+    desc: "Automatic quality measure tracking with real-time dashboards. Hit your MIPS targets without the headache - compliance built right into your workflow.",
+    stat: "100% compliant"
+  },
+  { 
+    icon: MousePointer, 
+    title: "Click Less, Care More", 
+    desc: "Intuitive interface designed by family physicians. Less time on the computer means more time actually connecting with your patients.",
+    stat: "2x patient face time"
   }
 ];
 
+const features = [
+  { icon: Layers, title: "120+ Templates", desc: "Pre-built templates for every family medicine scenario - well visits, chronic care, AWV, acute visits, and procedures" },
+  { icon: TrendingUp, title: "Chronic Care Management", desc: "CCM billing workflows with automatic time tracking and care plan documentation" },
+  { icon: Zap, title: "Same-Day Sick Visits", desc: "Rapid documentation templates for acute visits - complete chief complaint to assessment in under 2 minutes" },
+  { icon: DollarSign, title: "Revenue Cycle Built-In", desc: "TriZetto clearinghouse handles claims, eligibility checks, and payment posting automatically" },
+  { icon: Users, title: "Patient Portal Included", desc: "Secure messaging, online scheduling, and records access keeps patients engaged between visits" },
+  { icon: Lock, title: "Enterprise Security", desc: "Bank-level encryption, automatic backups, and complete HIPAA compliance included" }
+];
+
 const stats = [
-  { value: "120+", label: "Templates" },
-  { value: "2.5 min", label: "Avg Note Time" },
-  { value: "97%", label: "Clean Claims" },
-  { value: "600+", label: "Practices" }
+  { value: "40%", label: "Faster Documentation" },
+  { value: "98%", label: "Clean Claim Rate" },
+  { value: "$38K", label: "Avg Annual Savings" },
+  { value: "600+", label: "FM Practices" }
+];
+
+const integrations = [
+  "TriZetto Clearinghouse", "DrFirst ePrescribing", "Quest Diagnostics", 
+  "LabCorp", "Surescripts", "Immunization Registries"
+];
+
+const visitTypes = [
+  { type: "Well-Child Visits", time: "1.5 min", template: "AAP Bright Futures aligned" },
+  { type: "Annual Physicals", time: "2 min", template: "Preventive care checklists" },
+  { type: "Medicare AWV", time: "2.5 min", template: "HRA auto-populated" },
+  { type: "Chronic Care", time: "2 min", template: "Care plan management" },
+  { type: "Acute Visits", time: "1.5 min", template: "Chief complaint focused" },
+  { type: "Procedures", time: "1 min", template: "Consent & documentation" }
 ];
 
 export default function FamilyMedicineSpecialty() {
@@ -68,8 +86,8 @@ export default function FamilyMedicineSpecialty() {
     <div className="min-h-screen bg-background font-sans">
       <Navbar />
       
-      {/* Hero - Warm Community Feel */}
-      <section className="pt-32 pb-20 bg-gradient-to-b from-blue-50 via-white to-white relative">
+      {/* Hero */}
+      <section className="pt-32 pb-20 bg-gradient-to-b from-cyan-50 via-white to-white relative">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -80,21 +98,21 @@ export default function FamilyMedicineSpecialty() {
                 </div>
                 
                 <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6 leading-tight">
-                  One EHR for
-                  <span className="text-primary"> Every Generation</span>
+                  Click Less, Care More
+                  <span className="text-primary"> in Family Medicine</span>
                 </h1>
                 
                 <p className="text-xl text-slate-600 mb-8">
-                  FamilyCharts adapts to every patient in your practice - from newborns to great-grandparents - with templates designed for the full scope of family medicine.
+                  MDCharts helps family medicine practices document 40% faster, maximize reimbursement, and focus on patient relationships - not paperwork.
                 </p>
 
                 <div className="flex flex-wrap gap-4 mb-10">
                   <Button 
                     size="lg" 
                     className="bg-primary hover:bg-primary/90"
-                    onClick={() => setModalState({ isOpen: true, type: "demo", title: "Book a FamilyCharts Demo" })}
+                    onClick={() => setModalState({ isOpen: true, type: "demo", title: "See MDCharts for Family Medicine" })}
                   >
-                    Get Started <ArrowRight className="ml-2 h-4 w-4" />
+                    See It In Action <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                   <Button 
                     size="lg" 
@@ -105,17 +123,12 @@ export default function FamilyMedicineSpecialty() {
                   </Button>
                 </div>
 
-                {/* Patient Types */}
-                <div className="grid grid-cols-2 gap-4">
-                  {patientTypes.map((type, idx) => (
-                    <div key={idx} className="flex items-center gap-3 p-3 bg-white rounded-xl shadow-sm border border-slate-100">
-                      <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
-                        <type.icon className="h-5 w-5 text-primary" />
-                      </div>
-                      <div>
-                        <div className="font-bold text-slate-900 text-sm">{type.label}</div>
-                        <div className="text-xs text-slate-500">{type.desc}</div>
-                      </div>
+                {/* Stats */}
+                <div className="grid grid-cols-4 gap-4 p-4 bg-slate-50 rounded-xl">
+                  {stats.map((stat, idx) => (
+                    <div key={idx} className="text-center">
+                      <div className="text-xl font-bold text-primary">{stat.value}</div>
+                      <div className="text-xs text-slate-500">{stat.label}</div>
                     </div>
                   ))}
                 </div>
@@ -131,14 +144,16 @@ export default function FamilyMedicineSpecialty() {
                   <img src={heroImage} alt="Family medicine team" className="w-full h-[550px] object-cover" />
                 </div>
                 
-                {/* Stats Overlay */}
-                <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 bg-white rounded-2xl shadow-xl p-6 flex gap-8 border border-slate-100">
-                  {stats.map((stat, idx) => (
-                    <div key={idx} className="text-center px-4">
-                      <div className="text-2xl font-bold text-primary">{stat.value}</div>
-                      <div className="text-xs text-slate-500">{stat.label}</div>
+                <div className="absolute -bottom-6 -right-6 bg-white rounded-2xl p-4 shadow-xl border border-slate-100">
+                  <div className="flex items-center gap-3">
+                    <div className="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center">
+                      <Check className="h-6 w-6 text-green-600" />
                     </div>
-                  ))}
+                    <div>
+                      <div className="font-bold text-slate-900">ONC 2015 Certified</div>
+                      <div className="text-xs text-slate-500">MIPS Ready</div>
+                    </div>
+                  </div>
                 </div>
               </motion.div>
             </div>
@@ -146,8 +161,20 @@ export default function FamilyMedicineSpecialty() {
         </div>
       </section>
 
-      {/* Conditions We Cover */}
-      <section className="py-20 bg-white border-t">
+      {/* Integrations */}
+      <section className="py-8 bg-white border-b">
+        <div className="container mx-auto px-4">
+          <p className="text-center text-xs font-bold uppercase tracking-widest text-slate-400 mb-4">Built-In Integrations</p>
+          <div className="flex flex-wrap justify-center items-center gap-8 opacity-70">
+            {integrations.map((name, idx) => (
+              <span key={idx} className="text-sm font-bold text-slate-700">{name}</span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Visit Type Speed */}
+      <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <motion.div
             initial="hidden"
@@ -156,32 +183,38 @@ export default function FamilyMedicineSpecialty() {
             variants={fadeIn}
             className="text-center mb-10"
           >
-            <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-2">
-              Templates for Every Condition
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+              Fast Documentation for Every Visit Type
             </h2>
-            <p className="text-slate-600">
-              Pre-built documentation for the most common family medicine encounters
+            <p className="text-slate-600 max-w-2xl mx-auto">
+              MDCharts adapts to your workflow with templates optimized for speed
             </p>
           </motion.div>
 
-          <div className="flex flex-wrap justify-center gap-3 max-w-4xl mx-auto">
-            {conditions.map((condition, idx) => (
-              <motion.span
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto">
+            {visitTypes.map((visit, idx) => (
+              <motion.div
                 key={idx}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: idx * 0.02 }}
-                className="px-4 py-2 bg-slate-100 rounded-full text-slate-700 text-sm font-medium hover:bg-primary hover:text-white transition-colors cursor-default"
+                transition={{ delay: idx * 0.05 }}
+                className="flex items-center gap-4 p-4 bg-slate-50 rounded-xl border border-slate-100"
               >
-                {condition}
-              </motion.span>
+                <div className="w-14 h-14 rounded-xl bg-primary flex items-center justify-center flex-shrink-0">
+                  <span className="text-white font-bold text-sm">{visit.time}</span>
+                </div>
+                <div>
+                  <div className="font-bold text-slate-900">{visit.type}</div>
+                  <div className="text-xs text-slate-500">{visit.template}</div>
+                </div>
+              </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Workflow Cards */}
+      {/* How MDCharts Helps */}
       <section className="py-20 bg-slate-50">
         <div className="container mx-auto px-4">
           <motion.div
@@ -192,15 +225,15 @@ export default function FamilyMedicineSpecialty() {
             className="text-center mb-12"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-              Streamlined Workflows
+              How MDCharts Transforms Your Practice
             </h2>
             <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-              Purpose-built documentation for every type of family medicine visit
+              Real solutions to the challenges family medicine practices face every day
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            {workflows.map((workflow, idx) => (
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            {softwareBenefits.map((benefit, idx) => (
               <motion.div
                 key={idx}
                 initial={{ opacity: 0, y: 20 }}
@@ -209,19 +242,18 @@ export default function FamilyMedicineSpecialty() {
                 transition={{ delay: idx * 0.1 }}
                 className="bg-white rounded-2xl p-8 shadow-lg border border-slate-100"
               >
-                <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-6">
-                  <span className="text-2xl font-bold text-primary">{idx + 1}</span>
+                <div className="flex items-start gap-4">
+                  <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                    <benefit.icon className="h-7 w-7 text-primary" />
+                  </div>
+                  <div className="flex-1">
+                    <div className="flex items-center gap-3 mb-2">
+                      <h3 className="text-xl font-bold text-slate-900">{benefit.title}</h3>
+                      <span className="px-2 py-1 bg-primary text-white text-xs font-bold rounded-full">{benefit.stat}</span>
+                    </div>
+                    <p className="text-slate-600">{benefit.desc}</p>
+                  </div>
                 </div>
-                <h3 className="text-xl font-bold text-slate-900 mb-3">{workflow.title}</h3>
-                <p className="text-slate-600 mb-6">{workflow.desc}</p>
-                <ul className="space-y-2">
-                  {workflow.features.map((feature, fIdx) => (
-                    <li key={fIdx} className="flex items-center gap-2 text-sm text-slate-600">
-                      <Check className="h-4 w-4 text-primary" />
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
               </motion.div>
             ))}
           </div>
@@ -243,8 +275,8 @@ export default function FamilyMedicineSpecialty() {
               </div>
               <div className="absolute inset-0 bg-gradient-to-t from-slate-900/70 via-transparent to-transparent rounded-2xl flex items-end p-6">
                 <div>
-                  <h3 className="text-xl font-bold text-white mb-1">Preventive Care</h3>
-                  <p className="text-white/80 text-sm">Annual wellness visits with automated screening reminders</p>
+                  <h3 className="text-xl font-bold text-white mb-1">Revenue Cycle Built-In</h3>
+                  <p className="text-white/80 text-sm">TriZetto handles claims so you get paid faster</p>
                 </div>
               </div>
             </motion.div>
@@ -261,11 +293,47 @@ export default function FamilyMedicineSpecialty() {
               </div>
               <div className="absolute inset-0 bg-gradient-to-t from-slate-900/70 via-transparent to-transparent rounded-2xl flex items-end p-6">
                 <div>
-                  <h3 className="text-xl font-bold text-white mb-1">Patient Education</h3>
-                  <p className="text-white/80 text-sm">Built-in handouts and care instructions</p>
+                  <h3 className="text-xl font-bold text-white mb-1">More Face Time</h3>
+                  <p className="text-white/80 text-sm">Less documentation means more patient connection</p>
                 </div>
               </div>
             </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Features */}
+      <section className="py-20 bg-slate-50">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeIn}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+              Everything Your Practice Needs
+            </h2>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            {features.map((feature, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.05 }}
+                className="bg-white p-6 rounded-2xl shadow-lg border border-slate-100 hover:shadow-xl transition-all"
+              >
+                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+                  <feature.icon className="h-6 w-6 text-primary" />
+                </div>
+                <h3 className="text-lg font-bold text-slate-900 mb-2">{feature.title}</h3>
+                <p className="text-slate-600 text-sm">{feature.desc}</p>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
@@ -282,17 +350,18 @@ export default function FamilyMedicineSpecialty() {
           >
             <div className="flex justify-center gap-1 mb-6">
               {[...Array(5)].map((_, i) => (
-                <Star key={i} className="h-7 w-7 fill-amber-400 text-primary400" />
+                <Star key={i} className="h-7 w-7 fill-cyan-400 text-cyan-400" />
               ))}
             </div>
             
             <blockquote className="text-xl md:text-2xl font-medium leading-relaxed mb-8">
-              "FamilyCharts understands the breadth of family medicine. I can see a newborn, manage a diabetic adult, and do a Medicare wellness visit - all with perfectly tailored templates. It's like having an EHR that actually gets what we do."
+              "MDCharts finally gets family medicine. I see newborns, manage diabetics, and do Medicare AWVs all in the same day - and the templates adapt to each. Documentation is so fast I'm actually leaving on time. Our revenue is up 22% since switching."
             </blockquote>
             
             <div>
               <div className="font-bold text-lg">Dr. Jennifer Adams, MD</div>
               <div className="text-slate-400">Family Care Partners, Austin, TX</div>
+              <div className="text-slate-500 text-sm">3 providers, 8,000+ patients</div>
             </div>
           </motion.div>
         </div>
@@ -303,10 +372,10 @@ export default function FamilyMedicineSpecialty() {
         <div className="container mx-auto px-4 text-center">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn}>
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-              Ready for an EHR That Keeps Up With You?
+              Ready to Transform Your Practice?
             </h2>
             <p className="text-lg text-slate-600 mb-8 max-w-2xl mx-auto">
-              Join 600+ family medicine practices documenting faster and caring better
+              Join 600+ family medicine practices using MDCharts for faster documentation and better revenue
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Button size="lg" className="bg-primary hover:bg-primary/90" onClick={() => setModalState({ isOpen: true, type: "demo", title: "Start Free Trial" })}>
@@ -328,7 +397,7 @@ export default function FamilyMedicineSpecialty() {
               <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center">
                 <Users className="h-5 w-5 text-white" />
               </div>
-              <span className="text-xl font-bold">FamilyCharts</span>
+              <span className="text-xl font-bold">MDCharts for Family Medicine</span>
             </div>
             <div className="flex gap-3">
               <a href="#" className="w-9 h-9 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary transition-colors"><Facebook className="h-4 w-4" /></a>
@@ -337,7 +406,7 @@ export default function FamilyMedicineSpecialty() {
             </div>
           </div>
           <div className="pt-6 text-center text-slate-400 text-sm">
-            © 2024 MDChartsEHR. All rights reserved. FamilyCharts is a product of MDChartsEHR.
+            © 2024 MDChartsEHR. All rights reserved. ONC 2015 Edition Certified. HIPAA Compliant.
           </div>
         </div>
       </footer>

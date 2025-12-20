@@ -4,10 +4,9 @@ import { Navbar } from "@/components/Navbar";
 import { ContactModal } from "@/components/ContactModal";
 import { Button } from "@/components/ui/button";
 import { 
-  Baby, Syringe, Ruler, Brain, Apple, Heart,
-  Check, Star, ChevronRight, Shield, Award, Clock,
-  Facebook, Twitter, Linkedin, Instagram, ArrowRight, Phone,
-  Stethoscope, Activity, Smile
+  Baby, Clock, DollarSign, Zap, Shield, TrendingUp,
+  Check, Star, ArrowRight, Phone, MousePointer,
+  Facebook, Twitter, Linkedin, FileCheck, Users, Layers
 } from "lucide-react";
 
 import heroImage from "@assets/generated_images/diverse_pediatricians_examining_child.png";
@@ -19,27 +18,52 @@ const fadeIn = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
 };
 
-const ageGroups = [
-  { range: "0-2 Years", label: "Infants & Toddlers", color: "bg-blue-500", features: ["Well-baby visits", "Developmental milestones", "Feeding assessments"] },
-  { range: "3-5 Years", label: "Preschoolers", color: "bg-primary", features: ["Behavioral screening", "School readiness", "Vision & hearing"] },
-  { range: "6-12 Years", label: "School Age", color: "bg-emerald-500", features: ["ADHD assessment", "Sports physicals", "Learning evaluations"] },
-  { range: "13-18 Years", label: "Adolescents", color: "bg-primary", features: ["Mental health screening", "Confidential visits", "College physicals"] }
+const softwareBenefits = [
+  { 
+    icon: Clock, 
+    title: "2-Minute Well-Child Notes", 
+    desc: "MDCharts auto-populates growth percentiles, immunization status, and developmental milestones. Complete a full well-child note before the patient leaves the room.",
+    highlight: "2 min avg"
+  },
+  { 
+    icon: DollarSign, 
+    title: "Maximize Reimbursement", 
+    desc: "Built-in AAP coding guidance ensures you capture the right E&M level. TriZetto integration gets your claims paid 30% faster with 98% clean claim rates.",
+    highlight: "$32K saved/yr"
+  },
+  { 
+    icon: FileCheck, 
+    title: "Automatic Vaccine Tracking", 
+    desc: "ACIP-aligned schedules with automatic catch-up calculations. One-click submission to state immunization registries saves hours every week.",
+    highlight: "5 hrs/week saved"
+  },
+  { 
+    icon: Shield, 
+    title: "HIPAA & MIPS Ready", 
+    desc: "ONC 2015 certified with built-in quality measure tracking. Automatic audit trails and secure parent portal messaging included.",
+    highlight: "100% compliant"
+  }
 ];
 
 const features = [
-  { icon: Ruler, title: "Growth Charts", desc: "Automatic CDC/WHO growth chart plotting with percentile tracking and trend alerts", color: "bg-emerald-100 text-emerald-600" },
-  { icon: Syringe, title: "Immunization Tracking", desc: "ACIP-aligned vaccine schedules with automatic catch-up calculations", color: "bg-blue-100 text-blue-600" },
-  { icon: Brain, title: "Developmental Milestones", desc: "Age-specific milestone checklists with ASQ-3 and M-CHAT integration", color: "bg-purple-100 text-purple-600" },
-  { icon: Apple, title: "Nutrition Guidance", desc: "BMI tracking with obesity screening and nutrition counseling tools", color: "bg-primary/10 text-primary" },
-  { icon: Heart, title: "Well-Child Templates", desc: "AAP Bright Futures aligned templates for every well-child visit", color: "bg-primary/10 text-primary" },
-  { icon: Smile, title: "Teen-Friendly Workflows", desc: "Confidential adolescent visits with HEADSS assessment integration", color: "bg-cyan-100 text-cyan-600" }
+  { icon: Layers, title: "90+ Pediatric Templates", desc: "Age-specific templates from newborn to adolescent - well-child, sick visits, sports physicals, ADHD, and more" },
+  { icon: TrendingUp, title: "Auto Growth Charts", desc: "CDC/WHO charts auto-plot with each visit. Get instant percentile calculations and growth velocity alerts" },
+  { icon: Zap, title: "One-Click Vaccine Orders", desc: "VFC-compliant ordering with automatic lot tracking, consent forms, and VIS documentation" },
+  { icon: MousePointer, title: "Click Less, Care More", desc: "Intuitive interface means less screen time and more face time with kids and parents" },
+  { icon: Users, title: "Parent Portal Included", desc: "Secure messaging, appointment scheduling, and immunization records access for busy parents" },
+  { icon: DollarSign, title: "Revenue Cycle Built-In", desc: "TriZetto clearinghouse handles claims, eligibility, and ERA posting - all in one system" }
 ];
 
 const stats = [
-  { value: "90+", label: "Pediatric Templates", icon: "📋" },
-  { value: "2 min", label: "Avg Well-Child Note", icon: "⏱️" },
-  { value: "99%", label: "Parent Satisfaction", icon: "❤️" },
-  { value: "400+", label: "Practices Trust Us", icon: "🏥" }
+  { value: "45%", label: "Faster Charting", icon: "⚡" },
+  { value: "98%", label: "Clean Claims", icon: "💰" },
+  { value: "$32K", label: "Annual Savings", icon: "📈" },
+  { value: "400+", label: "Practices", icon: "🏥" }
+];
+
+const integrations = [
+  "TriZetto Clearinghouse", "DrFirst ePrescribing", "State Immunization Registries", 
+  "Quest Diagnostics", "LabCorp", "Surescripts"
 ];
 
 export default function PediatricsSpecialty() {
@@ -53,26 +77,23 @@ export default function PediatricsSpecialty() {
     <div className="min-h-screen bg-background font-sans">
       <Navbar />
       
-      {/* Hero - Playful & Colorful */}
+      {/* Hero */}
       <section className="pt-32 pb-16 bg-gradient-to-br from-cyan-50 via-white to-blue-50 relative overflow-hidden">
-        <div className="absolute top-20 left-10 w-32 h-32 bg-yellow-200 rounded-full opacity-30 blur-3xl"></div>
-        <div className="absolute bottom-20 right-10 w-40 h-40 bg-primary/20 rounded-full opacity-30 blur-3xl"></div>
-        
         <div className="container mx-auto px-4 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div initial="hidden" animate="visible" variants={fadeIn}>
               <div className="inline-flex items-center gap-2 bg-cyan-100 text-cyan-700 px-4 py-2 rounded-full text-sm font-bold mb-6">
                 <Baby className="h-4 w-4" />
-                PEDIATRIC EHR SOLUTION
+                PEDIATRIC EHR SOFTWARE
               </div>
               
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6 leading-tight">
-                Charting Made for
-                <span className="block text-primary">Growing Patients</span>
+                Click Less, Care More
+                <span className="block text-primary">In Pediatrics</span>
               </h1>
               
               <p className="text-xl text-slate-600 mb-8">
-                PediCharts grows with your patients - from newborn to young adult, with age-appropriate templates for every milestone.
+                MDCharts helps pediatric practices document 45% faster, get paid sooner, and spend more time with patients - not paperwork.
               </p>
 
               {/* Stats Cards */}
@@ -92,9 +113,9 @@ export default function PediatricsSpecialty() {
                 <Button 
                   size="lg" 
                   className="bg-primary hover:bg-primary/90"
-                  onClick={() => setModalState({ isOpen: true, type: "demo", title: "Book a PediCharts Demo" })}
+                  onClick={() => setModalState({ isOpen: true, type: "demo", title: "See MDCharts for Pediatrics" })}
                 >
-                  Get Started <ArrowRight className="ml-2 h-4 w-4" />
+                  See It In Action <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
                 <Button 
                   size="lg" 
@@ -121,8 +142,8 @@ export default function PediatricsSpecialty() {
                     <Check className="h-6 w-6 text-green-600" />
                   </div>
                   <div>
-                    <div className="font-bold text-slate-900">AAP Aligned</div>
-                    <div className="text-xs text-slate-500">Bright Futures Compliant</div>
+                    <div className="font-bold text-slate-900">ONC 2015 Certified</div>
+                    <div className="text-xs text-slate-500">AAP Bright Futures Aligned</div>
                   </div>
                 </div>
               </div>
@@ -131,7 +152,19 @@ export default function PediatricsSpecialty() {
         </div>
       </section>
 
-      {/* Age Group Cards */}
+      {/* Integrations Bar */}
+      <section className="py-8 bg-white border-b">
+        <div className="container mx-auto px-4">
+          <p className="text-center text-xs font-bold uppercase tracking-widest text-slate-400 mb-4">Built-In Integrations</p>
+          <div className="flex flex-wrap justify-center items-center gap-6 opacity-70">
+            {integrations.map((name, idx) => (
+              <span key={idx} className="text-sm font-bold text-slate-700">{name}</span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* How MDCharts Helps */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <motion.div
@@ -142,36 +175,34 @@ export default function PediatricsSpecialty() {
             className="text-center mb-12"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-              Templates for Every Age
+              How MDCharts Transforms Your Pediatric Practice
             </h2>
             <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-              Age-appropriate documentation that adapts as your patients grow
+              Real solutions to the daily challenges pediatricians face
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {ageGroups.map((group, idx) => (
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            {softwareBenefits.map((benefit, idx) => (
               <motion.div
                 key={idx}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
-                className="bg-white rounded-2xl overflow-hidden shadow-lg border border-slate-100 hover:shadow-xl transition-shadow"
+                className="bg-slate-50 rounded-2xl p-8 border border-slate-100"
               >
-                <div className={`${group.color} py-4 px-6`}>
-                  <div className="text-white text-2xl font-bold">{group.range}</div>
-                  <div className="text-white/80 text-sm">{group.label}</div>
-                </div>
-                <div className="p-6">
-                  <ul className="space-y-3">
-                    {group.features.map((feature, fIdx) => (
-                      <li key={fIdx} className="flex items-center gap-2 text-slate-600 text-sm">
-                        <Check className="h-4 w-4 text-primary flex-shrink-0" />
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
+                <div className="flex items-start gap-4">
+                  <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                    <benefit.icon className="h-7 w-7 text-primary" />
+                  </div>
+                  <div className="flex-1">
+                    <div className="flex items-center gap-3 mb-2">
+                      <h3 className="text-xl font-bold text-slate-900">{benefit.title}</h3>
+                      <span className="px-2 py-1 bg-primary text-white text-xs font-bold rounded-full">{benefit.highlight}</span>
+                    </div>
+                    <p className="text-slate-600">{benefit.desc}</p>
+                  </div>
                 </div>
               </motion.div>
             ))}
@@ -193,8 +224,8 @@ export default function PediatricsSpecialty() {
                 <img src={vaccinationImage} alt="Pediatric vaccination" className="w-full h-[300px] object-cover" />
               </div>
               <div className="bg-white rounded-xl p-6 shadow-lg">
-                <h3 className="text-xl font-bold text-slate-900 mb-2">Smart Immunization Tracking</h3>
-                <p className="text-slate-600">Automatic vaccine scheduling with ACIP guidelines, catch-up calculations, and state registry integration.</p>
+                <h3 className="text-xl font-bold text-slate-900 mb-2">Vaccine Management Made Easy</h3>
+                <p className="text-slate-600">One-click ordering, automatic lot tracking, and instant registry submission. MDCharts handles the paperwork so you can focus on patients.</p>
               </div>
             </motion.div>
             
@@ -206,8 +237,8 @@ export default function PediatricsSpecialty() {
               className="space-y-6"
             >
               <div className="bg-white rounded-xl p-6 shadow-lg">
-                <h3 className="text-xl font-bold text-slate-900 mb-2">Growth Chart Intelligence</h3>
-                <p className="text-slate-600">Automatic plotting on CDC/WHO charts with percentile tracking and growth velocity alerts.</p>
+                <h3 className="text-xl font-bold text-slate-900 mb-2">Revenue Cycle Built Right In</h3>
+                <p className="text-slate-600">TriZetto clearinghouse integration means faster payments, fewer denials, and no separate billing software needed.</p>
               </div>
               <div className="rounded-2xl overflow-hidden shadow-xl">
                 <img src={growthImage} alt="Growth assessment" className="w-full h-[300px] object-cover" />
@@ -228,7 +259,7 @@ export default function PediatricsSpecialty() {
             className="text-center mb-12"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-              Everything Pediatricians Need
+              Everything Your Practice Needs in One System
             </h2>
           </motion.div>
 
@@ -242,8 +273,8 @@ export default function PediatricsSpecialty() {
                 transition={{ delay: idx * 0.05 }}
                 className="bg-white p-6 rounded-2xl shadow-lg border border-slate-100 hover:shadow-xl transition-all"
               >
-                <div className={`w-12 h-12 rounded-xl ${feature.color} flex items-center justify-center mb-4`}>
-                  <feature.icon className="h-6 w-6" />
+                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+                  <feature.icon className="h-6 w-6 text-primary" />
                 </div>
                 <h3 className="text-lg font-bold text-slate-900 mb-2">{feature.title}</h3>
                 <p className="text-slate-600 text-sm">{feature.desc}</p>
@@ -265,17 +296,18 @@ export default function PediatricsSpecialty() {
           >
             <div className="flex justify-center gap-1 mb-6">
               {[...Array(5)].map((_, i) => (
-                <Star key={i} className="h-7 w-7 fill-amber-400 text-amber-400" />
+                <Star key={i} className="h-7 w-7 fill-cyan-300 text-cyan-300" />
               ))}
             </div>
             
             <blockquote className="text-xl md:text-2xl font-medium leading-relaxed mb-8">
-              "PediCharts has transformed our well-child visits. The age-appropriate templates and automatic growth tracking save us so much time. Parents love the patient portal too!"
+              "MDCharts has been a game-changer. Our well-child visits take half the time to document, the vaccine tracking is flawless, and our revenue is up 18% since switching. Parents love the portal too!"
             </blockquote>
             
             <div>
               <div className="font-bold text-lg">Dr. Maria Santos, MD, FAAP</div>
               <div className="text-white/80">Sunny Days Pediatrics, Phoenix, AZ</div>
+              <div className="text-white/60 text-sm">4 providers, 12,000+ patients</div>
             </div>
           </motion.div>
         </div>
@@ -289,7 +321,7 @@ export default function PediatricsSpecialty() {
               Ready to Transform Your Pediatric Practice?
             </h2>
             <p className="text-lg text-slate-600 mb-8 max-w-2xl mx-auto">
-              Join 400+ pediatric practices delivering better care with less documentation time
+              Join 400+ pediatric practices using MDCharts for faster documentation and better revenue
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Button size="lg" className="bg-primary hover:bg-primary/90" onClick={() => setModalState({ isOpen: true, type: "demo", title: "Start Free Trial" })}>
@@ -311,7 +343,7 @@ export default function PediatricsSpecialty() {
               <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center">
                 <Baby className="h-5 w-5 text-white" />
               </div>
-              <span className="text-xl font-bold">PediCharts</span>
+              <span className="text-xl font-bold">MDCharts for Pediatrics</span>
             </div>
             <div className="flex gap-3">
               <a href="#" className="w-9 h-9 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary transition-colors"><Facebook className="h-4 w-4" /></a>
@@ -320,7 +352,7 @@ export default function PediatricsSpecialty() {
             </div>
           </div>
           <div className="pt-6 text-center text-slate-400 text-sm">
-            © 2024 MDChartsEHR. All rights reserved. PediCharts is a product of MDChartsEHR.
+            © 2024 MDChartsEHR. All rights reserved. ONC 2015 Edition Certified. HIPAA Compliant.
           </div>
         </div>
       </footer>

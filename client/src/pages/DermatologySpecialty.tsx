@@ -12,15 +12,10 @@ import {
   Facebook, Twitter, Linkedin, Instagram, ArrowRight
 } from "lucide-react";
 
-import heroImage from "@assets/stock_images/dermatologist_examin_9f9d1ab9.jpg";
-import dermExam1 from "@assets/stock_images/dermatologist_examin_a8744d47.jpg";
-import dermExam2 from "@assets/stock_images/dermatologist_examin_c6c7a938.jpg";
-import dermExam3 from "@assets/stock_images/dermatologist_examin_246ea310.jpg";
-import dermExam4 from "@assets/stock_images/dermatologist_examin_47d58df5.jpg";
-import skinCare1 from "@assets/stock_images/skin_care_dermatolog_36801774.jpg";
-import skinCare2 from "@assets/stock_images/skin_care_dermatolog_26027580.jpg";
-import skinCare3 from "@assets/stock_images/skin_care_dermatolog_9c11ca8e.jpg";
-import skinCare4 from "@assets/stock_images/skin_care_dermatolog_75c9434e.jpg";
+import dermExamImage from "@assets/generated_images/dermatologist_examining_patient_skin.png";
+import happyPatientImage from "@assets/generated_images/happy_patient_cosmetic_consultation.png";
+import laserTreatmentImage from "@assets/generated_images/laser_skin_treatment_procedure.png";
+import consultationImage from "@assets/generated_images/doctor_patient_treatment_discussion.png";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
@@ -163,10 +158,10 @@ const comparisonFeatures = [
 ];
 
 const showcaseImages = [
-  { src: dermExam1, title: "Skin Examination", description: "Precise mole analysis" },
-  { src: skinCare1, title: "Laser Treatment", description: "Advanced cosmetic procedures" },
-  { src: dermExam2, title: "Dermoscopy", description: "Digital skin imaging" },
-  { src: skinCare2, title: "Facial Procedures", description: "Medical aesthetics" },
+  { src: dermExamImage, title: "Skin Examination", description: "Precise dermatoscope analysis" },
+  { src: laserTreatmentImage, title: "Laser Treatment", description: "Advanced cosmetic procedures" },
+  { src: happyPatientImage, title: "Patient Satisfaction", description: "Exceptional treatment results" },
+  { src: consultationImage, title: "Treatment Planning", description: "Collaborative care discussion" },
 ];
 
 export default function DermatologySpecialty() {
@@ -247,7 +242,7 @@ export default function DermatologySpecialty() {
             >
               <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                 <img 
-                  src={heroImage} 
+                  src={dermExamImage} 
                   alt="Dermatologist examining patient" 
                   className="w-full h-auto object-cover"
                 />
@@ -366,7 +361,7 @@ export default function DermatologySpecialty() {
                   ))}
                 </div>
                 <div className="rounded-2xl overflow-hidden shadow-xl">
-                  <img src={dermExam3} alt="Medical dermatology workflow" className="w-full h-auto" />
+                  <img src={dermExamImage} alt="Medical dermatology workflow" className="w-full h-auto" />
                 </div>
               </div>
             </TabsContent>
@@ -384,7 +379,7 @@ export default function DermatologySpecialty() {
                   ))}
                 </div>
                 <div className="rounded-2xl overflow-hidden shadow-xl">
-                  <img src={dermExam4} alt="Surgical dermatology workflow" className="w-full h-auto" />
+                  <img src={laserTreatmentImage} alt="Surgical dermatology workflow" className="w-full h-auto" />
                 </div>
               </div>
             </TabsContent>
@@ -402,7 +397,7 @@ export default function DermatologySpecialty() {
                   ))}
                 </div>
                 <div className="rounded-2xl overflow-hidden shadow-xl">
-                  <img src={skinCare3} alt="Cosmetic dermatology workflow" className="w-full h-auto" />
+                  <img src={happyPatientImage} alt="Cosmetic dermatology workflow" className="w-full h-auto" />
                 </div>
               </div>
             </TabsContent>

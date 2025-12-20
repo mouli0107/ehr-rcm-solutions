@@ -21,7 +21,7 @@ import skincareImage from "@assets/generated_images/skincare_treatment_applicati
 import resultsImage from "@assets/generated_images/treatment_results_comparison_screen.png";
 import acneImage from "@assets/generated_images/acne_treatment_procedure.png";
 import drFoxStyleImage from "@assets/generated_images/smiling_male_dermatologist_with_patient.png";
-import heroTeamImage from "@assets/generated_images/three_lady_doctors_treating_patient.png";
+import heroTeamImage from "@assets/generated_images/laughing_lady_doctors_treating_patient.png";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
@@ -254,7 +254,7 @@ export default function DermatologySpecialty() {
                 <img 
                   src={heroTeamImage} 
                   alt="Three dermatologists treating patient" 
-                  className="w-full h-auto object-cover"
+                  className="w-full h-[500px] object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent"></div>
               </div>

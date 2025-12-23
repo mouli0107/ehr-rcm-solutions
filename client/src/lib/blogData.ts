@@ -87,6 +87,7 @@ Security never stands still. Emerging technologies and regulations will redefine
     author: "MD Charts Team",
     date: "July 2, 2025",
     readTime: "8 min read",
+    image: "/assets/generated_images/ehr_data_security_concept.png",
   },
   {
     id: "2",
@@ -157,6 +158,7 @@ Implementing an EHR for dermatology involves more than just the initial software
     author: "MD Charts Team",
     date: "May 13, 2025",
     readTime: "7 min read",
+    image: "/assets/generated_images/dermatology_ehr_tablet_usage.png",
   },
   {
     id: "3",
@@ -242,6 +244,7 @@ The integration of telehealth within pediatric EHRs enables virtual consultation
     author: "MD Charts Team",
     date: "February 17, 2025",
     readTime: "9 min read",
+    image: "/assets/generated_images/pediatric_ehr_with_child.png",
   },
   {
     id: "4",
@@ -304,6 +307,7 @@ MD Charts works with practices to minimize disruption, often completing critical
     author: "MD Charts Team",
     date: "January 12, 2024",
     readTime: "6 min read",
+    image: "/assets/generated_images/medical_software_dashboard_mockup.png",
   },
   {
     id: "5",
@@ -358,6 +362,7 @@ Being named to the Top 12 list validates our commitment to:
     author: "MD Charts Team",
     date: "January 12, 2024",
     readTime: "5 min read",
+    image: "/assets/generated_images/dermatologist_examining_patient_skin.png",
   },
   {
     id: "6",
@@ -422,6 +427,7 @@ Stay compliant with:
     author: "MD Charts Team",
     date: "August 29, 2023",
     readTime: "5 min read",
+    image: "/assets/generated_images/obgyn_prenatal_ehr_review.png",
   },
   {
     id: "7",
@@ -497,6 +503,7 @@ Your EHR should seamlessly handle:
     author: "MD Charts Team",
     date: "August 9, 2023",
     readTime: "6 min read",
+    image: "/assets/generated_images/prenatal_ultrasound_examination.png",
   },
   {
     id: "8",
@@ -584,6 +591,7 @@ Your EHR should seamlessly handle:
     author: "Margarita Saldana",
     date: "November 10, 2023",
     readTime: "7 min read",
+    image: "/assets/generated_images/ehr_system_selection_meeting.png",
   },
   {
     id: "9",
@@ -657,6 +665,7 @@ While switching has upfront costs, consider:
     author: "Adam Sanborn",
     date: "November 6, 2023",
     readTime: "6 min read",
+    image: "/assets/generated_images/practice_management_software.png",
   },
   {
     id: "10",
@@ -731,6 +740,7 @@ Integrated billing features include:
     author: "Maitry Shah",
     date: "September 13, 2023",
     readTime: "6 min read",
+    image: "/assets/generated_images/medical_team_collaboration.png",
   },
   {
     id: "11",
@@ -801,6 +811,7 @@ Key metrics to track:
     author: "MD Charts Team",
     date: "June 8, 2023",
     readTime: "5 min read",
+    image: "/assets/generated_images/obgyn_with_new_mother_and_baby.png",
   },
   {
     id: "12",
@@ -886,6 +897,7 @@ Practices that leverage technology during downturns often emerge stronger, with:
     author: "MD Charts Team",
     date: "June 20, 2023",
     readTime: "7 min read",
+    image: "/assets/generated_images/dermatology_skin_care_illustration.png",
   },
 ];
 

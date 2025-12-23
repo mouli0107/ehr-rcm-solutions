@@ -114,11 +114,19 @@ export default function Blog() {
               className="bg-white rounded-3xl overflow-hidden shadow-xl border border-slate-100"
             >
               <div className="grid lg:grid-cols-2 gap-0">
-                <div className="h-64 lg:h-auto bg-gradient-to-br from-primary/10 to-blue-100 flex items-center justify-center p-8">
-                  <div className="text-center">
-                    <div className="w-24 h-24 rounded-2xl bg-primary/20 flex items-center justify-center mx-auto mb-4">
+                <div className="h-64 lg:h-auto relative overflow-hidden">
+                  {featuredPost.image ? (
+                    <img 
+                      src={featuredPost.image} 
+                      alt={featuredPost.title}
+                      className="w-full h-full object-cover"
+                    />
+                  ) : (
+                    <div className="w-full h-full bg-gradient-to-br from-primary/10 to-blue-100 flex items-center justify-center">
                       <BookOpen className="h-12 w-12 text-primary" />
                     </div>
+                  )}
+                  <div className="absolute top-4 left-4 bg-white/90 backdrop-blur px-4 py-1.5 rounded-full">
                     <span className="text-sm font-bold text-primary uppercase tracking-wide">{featuredPost.categoryLabel}</span>
                   </div>
                 </div>
@@ -178,12 +186,20 @@ export default function Blog() {
                   data-testid={`card-blog-${post.id}`}
                 >
                   {/* Card Header */}
-                  <div className="h-48 bg-gradient-to-br from-slate-100 to-slate-50 relative overflow-hidden">
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="w-16 h-16 rounded-xl bg-primary/10 flex items-center justify-center group-hover:scale-110 transition-transform">
-                        <BookOpen className="h-8 w-8 text-primary" />
+                  <div className="h-48 relative overflow-hidden">
+                    {post.image ? (
+                      <img 
+                        src={post.image} 
+                        alt={post.title}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      />
+                    ) : (
+                      <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-slate-100 to-slate-50">
+                        <div className="w-16 h-16 rounded-xl bg-primary/10 flex items-center justify-center group-hover:scale-110 transition-transform">
+                          <BookOpen className="h-8 w-8 text-primary" />
+                        </div>
                       </div>
-                    </div>
+                    )}
                     <div className="absolute top-4 left-4 bg-white/90 backdrop-blur px-3 py-1.5 rounded-full text-xs font-bold text-primary uppercase tracking-wide shadow-sm">
                       {post.categoryLabel}
                     </div>

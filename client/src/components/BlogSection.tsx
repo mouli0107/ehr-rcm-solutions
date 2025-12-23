@@ -4,16 +4,6 @@ import { ArrowRight, Calendar, Clock, BookOpen } from "lucide-react";
 import { Button } from "./ui/button";
 import { blogPosts } from "@/lib/blogData";
 
-import securityImage from "@assets/generated_images/ehr_data_security_concept.png";
-import dermImage from "@assets/generated_images/dermatology_ehr_tablet_usage.png";
-import pediatricImage from "@assets/generated_images/pediatric_ehr_with_child.png";
-
-const blogImages: Record<string, string> = {
-  "ehr-healthcare-data-security": securityImage,
-  "dermatology-ehr-benefits": dermImage,
-  "pediatric-ehr-solutions": pediatricImage,
-};
-
 const featuredPosts = blogPosts.slice(0, 3);
 
 export function BlogSection() {
@@ -51,10 +41,10 @@ export function BlogSection() {
               className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 flex flex-col h-full group"
               data-testid={`card-blog-home-${post.id}`}
             >
-              <div className="h-48 bg-gradient-to-br from-slate-100 to-slate-50 relative overflow-hidden">
-                {blogImages[post.slug] ? (
+              <div className="h-48 relative overflow-hidden">
+                {post.image ? (
                   <img 
-                    src={blogImages[post.slug]} 
+                    src={post.image} 
                     alt={post.title} 
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
                   />

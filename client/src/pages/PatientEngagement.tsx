@@ -52,81 +52,14 @@ export default function PatientEngagementPage() {
     <div className="min-h-screen bg-background font-sans">
       <Navbar />
       
-      <section className="pt-28 pb-20 bg-gradient-to-b from-slate-50 to-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:24px_24px]" />
-        
-        <div className="container mx-auto px-4 md:px-6 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <motion.div
-              initial={{ opacity: 0.9, y: 5 }}
-              animate={{ opacity: 1, y: 0 }}
-            >
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-purple-100 text-purple-700 text-xs font-bold uppercase tracking-wide mb-6">
-                <Heart className="h-4 w-4" />
-                Patient Engagement
-              </div>
-              
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-[1.1] mb-6">
-                Engage Patients. <br/>
-                <span className="text-primary">Build Loyalty.</span>
-              </h1>
-              
-              <p className="text-xl text-slate-600 mb-8 leading-relaxed">
-                Empower patients with self-service tools while reducing phone calls and 
-                administrative burden on your staff.
-              </p>
-              
-              <div className="flex flex-wrap gap-4">
-                <Button 
-                  size="lg" 
-                  className="h-12 px-8"
-                  onClick={() => setModalOpen(true)}
-                  data-testid="button-patient-demo"
-                >
-                  Book a Demo <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.2 }}
-              className="relative"
-            >
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-                <img 
-                  src={patientHeroImage} 
-                  alt="Patient using healthcare app" 
-                  className="w-full h-[450px] object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-purple-600/20 to-transparent" />
-              </div>
-              <div className="absolute -bottom-4 -left-4 bg-white rounded-xl shadow-lg p-4 border border-slate-100">
-                <div className="flex items-center gap-3">
-                  <div className="h-10 w-10 rounded-full bg-purple-100 flex items-center justify-center">
-                    <Heart className="h-5 w-5 text-purple-600" />
-                  </div>
-                  <div>
-                    <p className="font-bold text-slate-900 text-sm">4.8/5 Stars</p>
-                    <p className="text-xs text-slate-500">Patient Satisfaction</p>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Telehealth Section - Elegant Light Design */}
-      <section className="py-20 bg-white relative overflow-hidden">
+      {/* Telehealth Section - Hero Position */}
+      <section className="pt-28 pb-20 bg-white relative overflow-hidden">
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-bl from-primary/5 via-cyan-100/20 to-transparent rounded-full blur-3xl"></div>
         <div className="container mx-auto px-4 md:px-6 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div
               initial={{ opacity: 0.9, y: 5 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              animate={{ opacity: 1, y: 0 }}
               className="order-2 lg:order-1"
             >
               <div className="relative rounded-2xl overflow-hidden shadow-xl border border-slate-200">
@@ -154,8 +87,7 @@ export default function PatientEngagementPage() {
 
             <motion.div
               initial={{ opacity: 0.9, y: 5 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              animate={{ opacity: 1, y: 0 }}
               className="order-1 lg:order-2"
             >
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wide mb-6">
@@ -163,9 +95,9 @@ export default function PatientEngagementPage() {
                 Telehealth Integration
               </div>
               
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6 leading-tight">
+              <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-6 leading-tight">
                 Virtual Care, <span className="text-primary">Real Connection</span>
-              </h2>
+              </h1>
               
               <p className="text-lg text-slate-600 mb-8 leading-relaxed">
                 Provide face-to-face consultations from anywhere. Our integrated telehealth platform 

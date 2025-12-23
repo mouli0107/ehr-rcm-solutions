@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, Calendar, Clock, BookOpen } from "lucide-react";
 import { Button } from "./ui/button";
 import { blogPosts } from "@/lib/blogData";
+import { getBlogImage } from "@/lib/blogImages";
 
 const featuredPosts = blogPosts.slice(0, 3);
 
@@ -42,9 +43,9 @@ export function BlogSection() {
               data-testid={`card-blog-home-${post.id}`}
             >
               <div className="h-48 relative overflow-hidden">
-                {post.image ? (
+                {getBlogImage(post.slug) ? (
                   <img 
-                    src={post.image} 
+                    src={getBlogImage(post.slug)} 
                     alt={post.title} 
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
                   />

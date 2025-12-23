@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Navbar } from "@/components/Navbar";
 import { Button } from "@/components/ui/button";
 import { blogPosts, blogCategories, getPostsByCategory } from "@/lib/blogData";
+import { getBlogImage } from "@/lib/blogImages";
 import { 
   Calendar, 
   Clock, 
@@ -115,9 +116,9 @@ export default function Blog() {
             >
               <div className="grid lg:grid-cols-2 gap-0">
                 <div className="h-64 lg:h-auto relative overflow-hidden">
-                  {featuredPost.image ? (
+                  {getBlogImage(featuredPost.slug) ? (
                     <img 
-                      src={featuredPost.image} 
+                      src={getBlogImage(featuredPost.slug)} 
                       alt={featuredPost.title}
                       className="w-full h-full object-cover"
                     />
@@ -187,9 +188,9 @@ export default function Blog() {
                 >
                   {/* Card Header */}
                   <div className="h-48 relative overflow-hidden">
-                    {post.image ? (
+                    {getBlogImage(post.slug) ? (
                       <img 
-                        src={post.image} 
+                        src={getBlogImage(post.slug)} 
                         alt={post.title}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                       />

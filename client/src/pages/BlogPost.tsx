@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Navbar } from "@/components/Navbar";
 import { Button } from "@/components/ui/button";
 import { getPostBySlug, getRelatedPosts, blogPosts } from "@/lib/blogData";
+import { getBlogImage } from "@/lib/blogImages";
 import { 
   Calendar, 
   Clock, 
@@ -98,7 +99,7 @@ export default function BlogPost() {
       </section>
 
       {/* Featured Image */}
-      {post.image && (
+      {getBlogImage(post.slug) && (
         <section className="relative -mt-8 pb-8">
           <div className="container mx-auto px-4">
             <motion.div
@@ -109,7 +110,7 @@ export default function BlogPost() {
             >
               <div className="rounded-2xl overflow-hidden shadow-2xl border-4 border-white">
                 <img 
-                  src={post.image} 
+                  src={getBlogImage(post.slug)} 
                   alt={post.title}
                   className="w-full h-64 md:h-96 object-cover"
                 />

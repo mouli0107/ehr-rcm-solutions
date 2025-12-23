@@ -3,6 +3,7 @@ import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { insertContactRequestSchema } from "@shared/schema";
 import { z } from "zod";
+import { sendContactEmail } from "./resend";
 
 export async function registerRoutes(
   httpServer: Server,
@@ -13,6 +14,22 @@ export async function registerRoutes(
     try {
       const validated = insertContactRequestSchema.parse(req.body);
       const contactRequest = await storage.createContactRequest(validated);
+      
+      // Send email notification
+      const emailResult = await sendContactEmail({
+        firstName: validated.name.split(' ')[0] || validated.name,
+        lastName: validated.name.split(' ').slice(1).join(' ') || '',
+        email: validated.email,
+        phone: validated.phone || undefined,
+        company: validated.company || undefined,
+        message: validated.message,
+        requestType: validated.requestType || 'General Inquiry',
+      });
+      
+      if (!emailResult.success) {
+        console.error("Email notification failed:", emailResult.error);
+      }
+      
       res.status(201).json(contactRequest);
     } catch (error) {
       if (error instanceof z.ZodError) {

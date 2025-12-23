@@ -36,7 +36,7 @@ export default function Blog() {
       <Navbar />
 
       {/* Elegant Hero Section */}
-      <section className="relative pt-36 pb-24 overflow-hidden">
+      <section className="relative pt-28 pb-12 overflow-hidden">
         {/* Subtle background pattern */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#f0f9ff_1px,transparent_1px),linear-gradient(to_bottom,#f0f9ff_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
         
@@ -52,30 +52,29 @@ export default function Blog() {
             className="max-w-4xl mx-auto text-center"
           >
             {/* Elegant badge */}
-            <div className="inline-flex items-center gap-2 bg-white border border-primary/20 rounded-full px-5 py-2 mb-8 shadow-sm">
-              <Sparkles className="h-4 w-4 text-primary" />
-              <span className="text-sm font-medium text-slate-600">Insights & Resources</span>
+            <div className="inline-flex items-center gap-2 bg-white border border-primary/20 rounded-full px-4 py-1.5 mb-5 shadow-sm">
+              <Sparkles className="h-3.5 w-3.5 text-primary" />
+              <span className="text-xs font-medium text-slate-600">Insights & Resources</span>
             </div>
             
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6 leading-tight tracking-tight">
-              Healthcare Technology
-              <span className="block text-primary mt-2">Insights</span>
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-4 leading-tight tracking-tight">
+              Healthcare Technology <span className="text-primary">Insights</span>
             </h1>
             
-            <p className="text-lg md:text-xl text-slate-500 mb-12 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-base md:text-lg text-slate-500 mb-8 max-w-2xl mx-auto leading-relaxed">
               Expert advice on EHR systems, practice management, and specialty-specific healthcare solutions.
             </p>
 
             {/* Elegant Search Bar */}
-            <div className="max-w-2xl mx-auto">
-              <div className="relative bg-white rounded-2xl shadow-lg shadow-slate-200/50 border border-slate-100 overflow-hidden">
-                <Search className="absolute left-5 top-1/2 -translate-y-1/2 h-5 w-5 text-slate-400" />
+            <div className="max-w-xl mx-auto">
+              <div className="relative bg-white rounded-xl shadow-md shadow-slate-200/50 border border-slate-100 overflow-hidden">
+                <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400" />
                 <input
                   type="text"
                   placeholder="Search articles by topic or keyword..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full pl-14 pr-6 py-5 text-slate-700 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-primary/20 rounded-2xl text-base"
+                  className="w-full pl-11 pr-5 py-3.5 text-slate-700 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-primary/20 rounded-xl text-sm"
                   data-testid="input-blog-search"
                 />
               </div>
@@ -87,7 +86,7 @@ export default function Blog() {
       {/* Elegant Category Tabs */}
       <section className="sticky top-16 z-30 bg-white/80 backdrop-blur-lg border-b border-slate-100">
         <div className="container mx-auto px-4">
-          <div className="flex items-center justify-center gap-2 py-5 overflow-x-auto scrollbar-hide">
+          <div className="flex items-center justify-center gap-2 py-3 overflow-x-auto scrollbar-hide">
             {blogCategories.map((category) => (
               <button
                 key={category.id}
@@ -108,7 +107,7 @@ export default function Blog() {
 
       {/* Featured Post - Only show when viewing all */}
       {selectedCategory === "all" && !searchQuery && (
-        <section className="py-20">
+        <section className="py-12">
           <div className="container mx-auto px-4">
             <motion.article
               initial={{ opacity: 0, y: 20 }}
@@ -176,7 +175,7 @@ export default function Blog() {
       )}
 
       {/* Blog Posts Grid */}
-      <section className="py-16 pb-24">
+      <section className="py-10 pb-16">
         <div className="container mx-auto px-4">
           {selectedCategory === "all" && !searchQuery && (
             <div className="flex items-center justify-between mb-12">

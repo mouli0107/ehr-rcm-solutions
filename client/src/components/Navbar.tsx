@@ -73,14 +73,13 @@ export function Navbar() {
       <div className="bg-slate-900 text-slate-300 text-[11px] font-medium py-1.5 border-b border-slate-800 hidden md:block">
         <div className="container mx-auto px-4 md:px-6 flex justify-between items-center">
           <div className="flex items-center gap-6">
-            <span className="flex items-center gap-1.5"><Phone className="h-3 w-3 text-primary" /> (888) 555-0123</span>
-            <span className="flex items-center gap-1.5"><Mail className="h-3 w-3 text-primary" /> support@mdchartsehr.com</span>
+            <a href="/contact" className="flex items-center gap-1.5 hover:text-white transition-colors"><Phone className="h-3 w-3 text-primary" /> (516) 684-9521</a>
+            <a href="/contact" className="flex items-center gap-1.5 hover:text-white transition-colors"><Mail className="h-3 w-3 text-primary" /> info@mdchartsehr.com</a>
             <span className="flex items-center gap-1.5"><Clock className="h-3 w-3 text-emerald-500" /> Support Status: Online (Wait: &lt;1m)</span>
           </div>
           <div className="flex items-center gap-4">
-            <a href="#" className="hover:text-white transition-colors">News</a>
-            <a href="#" className="hover:text-white transition-colors">Careers</a>
-            <a href="#" className="hover:text-white transition-colors">Partner Program</a>
+            <a href="/support" className="hover:text-white transition-colors">Support</a>
+            <a href="/contact" className="hover:text-white transition-colors">Contact</a>
             <span className="text-slate-700">|</span>
             <a href="#" className="text-white hover:text-primary transition-colors font-bold flex items-center gap-1">
               Client Login <ChevronRight className="h-3 w-3" />

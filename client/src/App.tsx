@@ -22,6 +22,8 @@ import BookDemoPage from "@/pages/BookDemo";
 import OurMissionPage from "@/pages/OurMission";
 import ManagementPage from "@/pages/Management";
 import ClickLessCareMorePage from "@/pages/ClickLessCareMore";
+import ContactPage from "@/pages/Contact";
+import SupportPage from "@/pages/Support";
 
 function Router() {
   return (
@@ -44,6 +46,8 @@ function Router() {
       <Route path="/about/our-mission" component={OurMissionPage} />
       <Route path="/about/management" component={ManagementPage} />
       <Route path="/about/click-less-care-more" component={ClickLessCareMorePage} />
+      <Route path="/contact" component={ContactPage} />
+      <Route path="/support" component={SupportPage} />
       <Route component={NotFound} />
     </Switch>
   );

@@ -197,7 +197,7 @@ export default function EHRPage() {
 
       <footer className="bg-slate-950 text-slate-400 py-12 border-t border-slate-900">
         <div className="container mx-auto px-4 text-center">
-          <p>© 2025 MDcharts EHR. All rights reserved.</p>
+          <p>© 2026 MDcharts EHR. All rights reserved.</p>
         </div>
       </footer>
 

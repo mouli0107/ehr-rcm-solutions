@@ -158,7 +158,7 @@ export default function Home() {
           </div>
           
           <div className="pt-8 border-t border-slate-900 flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
-            <p>© 2025 MDcharts EHR. All rights reserved.</p>
+            <p>© 2026 MDcharts EHR. All rights reserved.</p>
             <div className="flex gap-6">
               <a href="#" className="hover:text-white">Terms of Service</a>
               <a href="#" className="hover:text-white">Privacy Policy</a>

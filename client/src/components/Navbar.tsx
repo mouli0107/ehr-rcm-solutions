@@ -48,6 +48,12 @@ const specialties = [
   { title: "Psychiatry", href: "/specialties" },
 ];
 
+const aboutUs = [
+  { title: "Our Mission", href: "/about/our-mission", description: "Learn about our commitment to improving healthcare" },
+  { title: "Management Team", href: "/about/management", description: "Meet the leaders behind MDcharts EHR" },
+  { title: "Click Less, Care More", href: "/about/click-less-care-more", description: "Our philosophy for efficient healthcare" },
+];
+
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -167,6 +173,23 @@ export function Navbar() {
                     Why MDCharts
                   </NavigationMenuLink>
                 </NavigationMenuItem>
+
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger className="h-9 px-3 text-xs font-bold uppercase tracking-wide text-slate-600 hover:text-primary focus:bg-slate-50">About Us</NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <ul className="grid w-[400px] gap-2 p-3 bg-white border-t-2 border-primary">
+                      {aboutUs.map((item) => (
+                        <ListItem
+                          key={item.title}
+                          title={item.title}
+                          href={item.href}
+                        >
+                          {item.description}
+                        </ListItem>
+                      ))}
+                    </ul>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
               </NavigationMenuList>
             </NavigationMenu>
           </div>
@@ -212,6 +235,13 @@ export function Navbar() {
                     <a key={s.title} href={s.href} className="text-slate-600 py-1.5 text-sm hover:text-primary px-2" onClick={() => setMobileMenuOpen(false)}>{s.title}</a>
                   ))}
                 </div>
+              </div>
+
+              <div className="space-y-2">
+                <h3 className="font-heading font-bold text-sm uppercase tracking-wider text-slate-900 border-b pb-2">About Us</h3>
+                {aboutUs.map(a => (
+                  <a key={a.title} href={a.href} className="block text-slate-600 py-1.5 text-sm font-medium hover:text-primary hover:bg-slate-50 px-2 rounded" onClick={() => setMobileMenuOpen(false)}>{a.title}</a>
+                ))}
               </div>
 
               <div className="pt-4 border-t border-slate-100">

@@ -19,6 +19,9 @@ import PediatricsSpecialtyPage from "@/pages/PediatricsSpecialty";
 import UrologySpecialtyPage from "@/pages/UrologySpecialty";
 import FamilyMedicineSpecialtyPage from "@/pages/FamilyMedicineSpecialty";
 import BookDemoPage from "@/pages/BookDemo";
+import OurMissionPage from "@/pages/OurMission";
+import ManagementPage from "@/pages/Management";
+import ClickLessCareMorePage from "@/pages/ClickLessCareMore";
 
 function Router() {
   return (
@@ -38,6 +41,9 @@ function Router() {
       <Route path="/compliance" component={CompliancePage} />
       <Route path="/why-mdcharts" component={WhyMDChartsPage} />
       <Route path="/book-demo" component={BookDemoPage} />
+      <Route path="/about/our-mission" component={OurMissionPage} />
+      <Route path="/about/management" component={ManagementPage} />
+      <Route path="/about/click-less-care-more" component={ClickLessCareMorePage} />
       <Route component={NotFound} />
     </Switch>
   );

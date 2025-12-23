@@ -68,7 +68,7 @@ export default function Home() {
             Ready to streamline your practice?
           </h2>
           <p className="text-blue-100 text-lg md:text-xl mb-10 max-w-2xl mx-auto leading-relaxed">
-            Join hundreds of high-performing practices that have switched to MDChartsEHR to save time, reduce burnout, and increase revenue.
+            Join hundreds of high-performing practices that have switched to MDcharts EHR to save time, reduce burnout, and increase revenue.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button 
@@ -156,7 +156,7 @@ export default function Home() {
           </div>
           
           <div className="pt-8 border-t border-slate-900 flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
-            <p>© 2025 MDChartsEHR. All rights reserved.</p>
+            <p>© 2025 MDcharts EHR. All rights reserved.</p>
             <div className="flex gap-6">
               <a href="#" className="hover:text-white">Terms of Service</a>
               <a href="#" className="hover:text-white">Privacy Policy</a>

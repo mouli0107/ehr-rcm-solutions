@@ -708,7 +708,7 @@ export default function DermatologySpecialty() {
           </div>
           
           <div className="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
-            <p>&copy; 2025 MDChartsEHR. All rights reserved.</p>
+            <p>&copy; 2025 MDcharts EHR. All rights reserved.</p>
             <div className="flex flex-wrap gap-6">
               <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
               <a href="#" className="hover:text-white transition-colors">Terms of Service</a>

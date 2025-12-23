@@ -178,7 +178,7 @@ export default function SpecialtiesPage() {
 
       <footer className="bg-slate-950 text-slate-400 py-12">
         <div className="container mx-auto px-4 text-center">
-          <p>© 2025 MDChartsEHR. All rights reserved.</p>
+          <p>© 2025 MDcharts EHR. All rights reserved.</p>
         </div>
       </footer>
 

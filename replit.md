@@ -1,8 +1,8 @@
-# MDChartEHR - Medical Practice Management Platform
+# MDcharts EHR - Medical Practice Management Platform
 
 ## Overview
 
-MDChartEHR is a comprehensive Electronic Health Record (EHR) and Revenue Cycle Management (RCM) solution designed for modern medical practices. The platform provides a marketing/landing website showcasing features for practice management, patient engagement, billing, and compliance across multiple medical specialties. The tagline is "Click Less, Care More."
+MDcharts EHR is a comprehensive Electronic Health Record (EHR) and Revenue Cycle Management (RCM) solution designed for modern medical practices. The platform provides a marketing/landing website showcasing features for practice management, patient engagement, billing, and compliance across multiple medical specialties. The tagline is "Click Less, Care More."
 
 ## User Preferences
 

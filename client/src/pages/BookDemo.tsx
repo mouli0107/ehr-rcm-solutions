@@ -117,7 +117,7 @@ export default function BookDemo() {
               <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center">
                 <Calendar className="h-5 w-5 text-white" />
               </div>
-              <span className="text-xl font-bold">MDChartsEHR</span>
+              <span className="text-xl font-bold">MDcharts EHR</span>
             </div>
             <div className="flex gap-3">
               <a href="#" className="w-9 h-9 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary transition-colors"><Facebook className="h-4 w-4" /></a>
@@ -126,7 +126,7 @@ export default function BookDemo() {
             </div>
           </div>
           <div className="pt-6 text-center text-slate-400 text-sm">
-            © 2024 MDChartsEHR. All rights reserved. ONC 2015 Edition Certified. HIPAA Compliant.
+            © 2024 MDcharts EHR. All rights reserved. ONC 2015 Edition Certified. HIPAA Compliant.
           </div>
         </div>
       </footer>

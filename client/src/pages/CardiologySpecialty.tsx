@@ -449,7 +449,7 @@ export default function CardiologySpecialty() {
           
           <div className="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-slate-400 text-sm">
-              © 2024 MDChartsEHR. All rights reserved. CardioCharts is a product of MDChartsEHR.
+              © 2024 MDcharts EHR. All rights reserved. CardioCharts is a product of MDcharts EHR.
             </p>
             <div className="flex items-center gap-6 text-sm text-slate-400">
               <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>

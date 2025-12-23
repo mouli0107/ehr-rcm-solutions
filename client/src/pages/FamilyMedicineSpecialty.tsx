@@ -405,7 +405,7 @@ export default function FamilyMedicineSpecialty() {
             </div>
           </div>
           <div className="pt-6 text-center text-slate-400 text-sm">
-            © 2024 MDChartsEHR. All rights reserved. ONC 2015 Edition Certified. HIPAA Compliant.
+            © 2024 MDcharts EHR. All rights reserved. ONC 2015 Edition Certified. HIPAA Compliant.
           </div>
         </div>
       </footer>

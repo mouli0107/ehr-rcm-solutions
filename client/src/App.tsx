@@ -26,6 +26,7 @@ import ContactPage from "@/pages/Contact";
 import SupportPage from "@/pages/Support";
 import BlogPage from "@/pages/Blog";
 import BlogPostPage from "@/pages/BlogPost";
+import PricingPage from "@/pages/Pricing";
 
 function Router() {
   return (
@@ -52,6 +53,7 @@ function Router() {
       <Route path="/support" component={SupportPage} />
       <Route path="/blog" component={BlogPage} />
       <Route path="/blog/:slug" component={BlogPostPage} />
+      <Route path="/pricing" component={PricingPage} />
       <Route component={NotFound} />
     </Switch>
   );

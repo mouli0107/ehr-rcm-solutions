@@ -227,14 +227,15 @@ export default function DermatologySpecialty() {
               </motion.div>
               
               <motion.div variants={fadeInUp} className="flex flex-wrap gap-4">
-                <Button 
-                  size="lg" 
-                  className="h-14 px-8 bg-primary hover:bg-blue-700 text-white font-bold shadow-xl"
-                  onClick={() => setModalState({ isOpen: true, type: "demo", title: "Book a Demo" })}
-                  data-testid="button-hero-demo"
-                >
-                  Book a Demo <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
+                <Link href="/book-demo">
+                  <Button 
+                    size="lg" 
+                    className="h-14 px-8 bg-primary hover:bg-blue-700 text-white font-bold shadow-xl"
+                    data-testid="button-hero-demo"
+                  >
+                    Book a Demo <ArrowRight className="ml-2 h-5 w-5" />
+                  </Button>
+                </Link>
                 <Button 
                   size="lg" 
                   variant="outline"
@@ -603,15 +604,16 @@ export default function DermatologySpecialty() {
           </div>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button 
-              size="lg" 
-              variant="secondary"
-              className="h-14 px-8 text-primary font-bold text-lg shadow-xl"
-              onClick={() => setModalState({ isOpen: true, type: "demo", title: "Schedule Your DermCharts Demo" })}
-              data-testid="button-pricing-demo"
-            >
-              Schedule Your DermCharts Demo
-            </Button>
+            <Link href="/book-demo">
+              <Button 
+                size="lg" 
+                variant="secondary"
+                className="h-14 px-8 text-primary font-bold text-lg shadow-xl"
+                data-testid="button-pricing-demo"
+              >
+                Schedule Your DermCharts Demo
+              </Button>
+            </Link>
             <Button 
               size="lg"
               className="h-14 px-8 bg-transparent border-2 border-white/30 text-white hover:bg-white/10 font-semibold"
@@ -697,7 +699,7 @@ export default function DermatologySpecialty() {
             <div>
               <h4 className="text-white font-bold mb-6">Resources</h4>
               <ul className="space-y-3 text-sm">
-                <li><a href="#" className="hover:text-primary transition-colors" onClick={(e) => { e.preventDefault(); setModalState({ isOpen: true, type: "demo", title: "Book a Demo" }); }}>Book a Demo</a></li>
+                <li><a href="/book-demo" className="hover:text-primary transition-colors">Book a Demo</a></li>
                 <li><a href="#" className="hover:text-primary transition-colors" onClick={(e) => { e.preventDefault(); setModalState({ isOpen: true, type: "contact", title: "Contact Sales" }); }}>Contact Sales</a></li>
                 <li><a href="#" className="hover:text-primary transition-colors">Support Center</a></li>
                 <li><a href="#" className="hover:text-primary transition-colors">Training Resources</a></li>
@@ -708,7 +710,7 @@ export default function DermatologySpecialty() {
           </div>
           
           <div className="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
-            <p>&copy; 2025 MDcharts EHR. All rights reserved.</p>
+            <p>&copy; 2026 MDcharts EHR. All rights reserved.</p>
             <div className="flex flex-wrap gap-6">
               <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
               <a href="#" className="hover:text-white transition-colors">Terms of Service</a>

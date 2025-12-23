@@ -117,14 +117,15 @@ export default function CardiologySpecialty() {
               </p>
 
               <div className="flex flex-wrap gap-4 mb-12">
-                <Button 
-                  size="lg" 
-                  className="bg-primary hover:bg-primary/90 text-white"
-                  onClick={() => setModalState({ isOpen: true, type: "demo", title: "Book a CardioCharts Demo" })}
-                  data-testid="button-hero-demo"
-                >
-                  Schedule Demo <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
+                <Link href="/book-demo">
+                  <Button 
+                    size="lg" 
+                    className="bg-primary hover:bg-primary/90 text-white"
+                    data-testid="button-hero-demo"
+                  >
+                    Schedule Demo <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </Link>
                 <Button 
                   size="lg" 
                   variant="outline" 
@@ -361,23 +362,25 @@ export default function CardiologySpecialty() {
               Join 500+ cardiology practices who document faster, bill smarter, and focus more on patient care.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Button 
-                size="lg" 
-                className="bg-primary hover:bg-primary/90 text-white px-8"
-                onClick={() => setModalState({ isOpen: true, type: "demo", title: "Start Free Trial" })}
-                data-testid="button-cta-trial"
-              >
-                Start Free 30-Day Trial <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
-              <Button 
-                size="lg" 
-                variant="outline" 
-                className="border-slate-600 text-white hover:bg-slate-700 px-8"
-                onClick={() => setModalState({ isOpen: true, type: "demo", title: "Schedule Demo" })}
-                data-testid="button-cta-demo"
-              >
-                <Play className="mr-2 h-4 w-4" /> Watch Demo
-              </Button>
+              <Link href="/book-demo">
+                <Button 
+                  size="lg" 
+                  className="bg-primary hover:bg-primary/90 text-white px-8"
+                  data-testid="button-cta-trial"
+                >
+                  Start Free 30-Day Trial <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </Link>
+              <Link href="/book-demo">
+                <Button 
+                  size="lg" 
+                  variant="outline" 
+                  className="border-slate-600 text-white hover:bg-slate-700 px-8"
+                  data-testid="button-cta-demo"
+                >
+                  <Play className="mr-2 h-4 w-4" /> Watch Demo
+                </Button>
+              </Link>
             </div>
             <p className="text-sm text-slate-400 mt-6">
               No credit card required. Cancel anytime.
@@ -449,7 +452,7 @@ export default function CardiologySpecialty() {
           
           <div className="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-slate-400 text-sm">
-              © 2024 MDcharts EHR. All rights reserved. CardioCharts is a product of MDcharts EHR.
+              © 2026 MDcharts EHR. All rights reserved. CardioCharts is a product of MDcharts EHR.
             </p>
             <div className="flex items-center gap-6 text-sm text-slate-400">
               <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>

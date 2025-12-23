@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "wouter";
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
 import { Features } from "@/components/Features";
@@ -71,15 +72,16 @@ export default function Home() {
             Join hundreds of high-performing practices that have switched to MDcharts EHR to save time, reduce burnout, and increase revenue.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button 
-              size="lg" 
-              variant="secondary" 
-              className="h-14 px-8 text-primary font-bold text-lg shadow-xl hover:shadow-2xl transition-all"
-              onClick={() => setModalState({ isOpen: true, type: "demo", title: "Schedule a Demo" })}
-              data-testid="button-schedule-demo"
-            >
-              Schedule a Demo
-            </Button>
+            <Link href="/book-demo">
+              <Button 
+                size="lg" 
+                variant="secondary" 
+                className="h-14 px-8 text-primary font-bold text-lg shadow-xl hover:shadow-2xl transition-all"
+                data-testid="button-schedule-demo"
+              >
+                Schedule a Demo
+              </Button>
+            </Link>
             <Button 
               size="lg" 
               className="h-14 px-8 bg-transparent border-2 border-white/30 text-white hover:bg-white/10 hover:border-white font-semibold text-lg"

@@ -235,7 +235,7 @@ export default function OurMission() {
       <footer className="bg-slate-900 text-white py-12">
         <div className="container mx-auto px-4 text-center">
           <p className="text-slate-400 text-sm">
-            © 2024 MDcharts EHR. All rights reserved. ONC 2015 Edition Certified. HIPAA Compliant.
+            © 2026 MDcharts EHR. All rights reserved. ONC 2015 Edition Certified. HIPAA Compliant.
           </p>
         </div>
       </footer>

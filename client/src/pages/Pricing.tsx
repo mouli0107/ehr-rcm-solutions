@@ -134,7 +134,7 @@ export default function Pricing() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 bg-white overflow-hidden">
+      <section className="relative pt-28 pb-8 bg-white overflow-hidden">
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-bl from-primary/8 via-cyan-100/30 to-transparent rounded-full blur-3xl"></div>
         <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-gradient-to-tr from-slate-100 to-transparent rounded-full blur-2xl"></div>
         
@@ -144,22 +144,21 @@ export default function Pricing() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <div className="inline-flex items-center gap-2 bg-primary/10 rounded-full px-4 py-2 mb-6">
+            <div className="inline-flex items-center gap-2 bg-primary/10 rounded-full px-4 py-1.5 mb-4">
               <Sparkles className="h-4 w-4 text-primary" />
               <span className="text-sm font-semibold text-primary">Simple, Transparent Pricing</span>
             </div>
             
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6 leading-tight">
-              Choose the Right Plan for<br />
-              <span className="text-primary">Your Practice</span>
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-4 leading-tight">
+              Choose the Right Plan for <span className="text-primary">Your Practice</span>
             </h1>
             
-            <p className="text-xl text-slate-600 max-w-2xl mx-auto mb-10">
+            <p className="text-lg text-slate-600 max-w-2xl mx-auto mb-6">
               No hidden fees. No long-term contracts. Start with a 30-day free trial and scale as you grow.
             </p>
 
             {/* Billing Toggle */}
-            <div className="inline-flex items-center bg-slate-100 rounded-full p-1 mb-12">
+            <div className="inline-flex items-center bg-slate-100 rounded-full p-1 mb-6">
               <button
                 onClick={() => setBillingPeriod("monthly")}
                 className={`px-6 py-2 rounded-full text-sm font-semibold transition-all ${

@@ -1,9 +1,8 @@
 import { motion } from "framer-motion";
-import { useState } from "react";
 import { Smartphone, MessageSquare, Calendar, CreditCard, ArrowRight, Heart, Video, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Navbar } from "@/components/Navbar";
-import { ContactModal } from "@/components/ContactModal";
+import { Link } from "wouter";
 import patientHeroImage from "@assets/stock_images/senior_woman_patient_eb20284f.jpg";
 import telehealthVideo from "@assets/generated_videos/doctor_video_calling_elderly_patient.mp4";
 
@@ -46,8 +45,6 @@ const portalFeatures = [
 ];
 
 export default function PatientEngagementPage() {
-  const [modalOpen, setModalOpen] = useState(false);
-
   return (
     <div className="min-h-screen bg-background font-sans">
       <Navbar />
@@ -212,14 +209,16 @@ export default function PatientEngagementPage() {
           <p className="text-blue-100 text-lg mb-8 max-w-2xl mx-auto">
             See how our patient engagement tools can transform your practice.
           </p>
-          <Button 
-            size="lg" 
-            variant="secondary" 
-            className="h-14 px-8"
-            onClick={() => setModalOpen(true)}
-          >
-            Schedule Your Demo
-          </Button>
+          <Link href="/book-demo">
+            <Button 
+              size="lg" 
+              variant="secondary" 
+              className="h-14 px-8"
+              data-testid="button-schedule-demo"
+            >
+              Schedule Your Demo
+            </Button>
+          </Link>
         </div>
       </section>
 
@@ -228,13 +227,6 @@ export default function PatientEngagementPage() {
           <p>© 2026 MDcharts EHR. All rights reserved.</p>
         </div>
       </footer>
-
-      <ContactModal
-        isOpen={modalOpen}
-        onClose={() => setModalOpen(false)}
-        requestType="demo"
-        title="Book Patient Engagement Demo"
-      />
     </div>
   );
 }

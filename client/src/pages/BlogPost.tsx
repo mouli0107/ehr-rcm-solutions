@@ -121,7 +121,7 @@ export default function BlogPost() {
       )}
 
       {/* Article Content */}
-      <section className="py-12">
+      <section className="py-16 bg-gradient-to-b from-white via-slate-50/30 to-white">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-12 gap-12">
             {/* Main Content */}
@@ -130,18 +130,77 @@ export default function BlogPost() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
-                className="prose prose-lg prose-slate max-w-none
-                  prose-headings:font-bold prose-headings:text-slate-900
-                  prose-h2:text-2xl prose-h2:mt-12 prose-h2:mb-4 prose-h2:border-b prose-h2:border-slate-200 prose-h2:pb-3
-                  prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-3
-                  prose-p:text-slate-600 prose-p:leading-relaxed
-                  prose-li:text-slate-600
-                  prose-strong:text-slate-900
-                  prose-ul:my-4
-                  prose-ol:my-4
-                "
+                className="bg-white rounded-2xl shadow-sm border border-slate-100 p-8 md:p-12"
               >
-                <ReactMarkdown>{post.content}</ReactMarkdown>
+                <ReactMarkdown
+                  components={{
+                    h1: ({ children }) => (
+                      <h1 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6 mt-0 leading-tight">
+                        {children}
+                      </h1>
+                    ),
+                    h2: ({ children }) => (
+                      <div className="mt-12 mb-6 first:mt-0">
+                        <h2 className="text-2xl font-bold text-slate-900 pb-3 border-b-2 border-primary/20 inline-block">
+                          {children}
+                        </h2>
+                      </div>
+                    ),
+                    h3: ({ children }) => (
+                      <h3 className="text-xl font-bold text-slate-800 mt-8 mb-4 flex items-center gap-2">
+                        <span className="w-1 h-6 bg-primary rounded-full"></span>
+                        {children}
+                      </h3>
+                    ),
+                    h4: ({ children }) => (
+                      <h4 className="text-lg font-semibold text-slate-800 mt-6 mb-3">
+                        {children}
+                      </h4>
+                    ),
+                    p: ({ children }) => (
+                      <p className="text-slate-600 leading-relaxed mb-5 text-base md:text-lg">
+                        {children}
+                      </p>
+                    ),
+                    ul: ({ children }) => (
+                      <ul className="my-6 space-y-3 pl-0 list-none">
+                        {children}
+                      </ul>
+                    ),
+                    ol: ({ children }) => (
+                      <ol className="my-6 space-y-3 pl-0 list-none counter-reset-item">
+                        {children}
+                      </ol>
+                    ),
+                    li: ({ children }) => (
+                      <li className="flex items-start gap-3 text-slate-600 leading-relaxed bg-slate-50/50 rounded-lg p-3 border-l-3 border-primary/30">
+                        <span className="w-2 h-2 rounded-full bg-primary mt-2 shrink-0"></span>
+                        <span className="flex-1">{children}</span>
+                      </li>
+                    ),
+                    strong: ({ children }) => (
+                      <strong className="font-bold text-slate-900">{children}</strong>
+                    ),
+                    em: ({ children }) => (
+                      <em className="italic text-slate-700">{children}</em>
+                    ),
+                    blockquote: ({ children }) => (
+                      <blockquote className="my-8 bg-gradient-to-r from-primary/5 to-cyan-50 border-l-4 border-primary rounded-r-xl p-6 italic text-slate-700">
+                        {children}
+                      </blockquote>
+                    ),
+                    a: ({ href, children }) => (
+                      <a href={href} className="text-primary font-medium hover:underline underline-offset-2">
+                        {children}
+                      </a>
+                    ),
+                    hr: () => (
+                      <hr className="my-10 border-0 h-px bg-gradient-to-r from-transparent via-slate-300 to-transparent" />
+                    ),
+                  }}
+                >
+                  {post.content}
+                </ReactMarkdown>
               </motion.div>
 
               {/* Share Section */}

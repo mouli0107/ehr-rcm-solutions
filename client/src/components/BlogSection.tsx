@@ -1,36 +1,20 @@
+import { Link } from "wouter";
 import { motion } from "framer-motion";
-import { ArrowRight, Calendar, User } from "lucide-react";
-import blogImage from "@assets/generated_images/medical_blog_header_image.png";
-import mipsImage from "@assets/generated_images/mips_reporting_medical_professional.png";
-import patientImage from "@assets/generated_images/patient_provider_relationship.png";
+import { ArrowRight, Calendar, Clock, BookOpen } from "lucide-react";
 import { Button } from "./ui/button";
+import { blogPosts } from "@/lib/blogData";
 
-const posts = [
-  {
-    category: "RCM Insights",
-    title: "5 Strategies to Reduce Claim Denials in 2025",
-    excerpt: "Learn how modern practices are using AI-driven coding assistance to slash denial rates by up to 30%.",
-    author: "Dr. Sarah Chen",
-    date: "Dec 08, 2025",
-    image: blogImage
-  },
-  {
-    category: "Practice Management",
-    title: "The Ultimate Guide to MIPS Reporting",
-    excerpt: "Everything you need to know about maximizing your quality payment incentives this year.",
-    author: "Mark Johnson",
-    date: "Nov 24, 2025",
-    image: mipsImage
-  },
-  {
-    category: "Patient Experience",
-    title: "Why Patients Switch Providers (And How to Keep Them)",
-    excerpt: "New data shows that digital access and portal convenience are top retention factors.",
-    author: "Jennifer Wu",
-    date: "Nov 15, 2025",
-    image: patientImage
-  }
-];
+import securityImage from "@assets/generated_images/ehr_data_security_concept.png";
+import dermImage from "@assets/generated_images/dermatology_ehr_tablet_usage.png";
+import pediatricImage from "@assets/generated_images/pediatric_ehr_with_child.png";
+
+const blogImages: Record<string, string> = {
+  "ehr-healthcare-data-security": securityImage,
+  "dermatology-ehr-benefits": dermImage,
+  "pediatric-ehr-solutions": pediatricImage,
+};
+
+const featuredPosts = blogPosts.slice(0, 3);
 
 export function BlogSection() {
   return (
@@ -38,58 +22,73 @@ export function BlogSection() {
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
           <div className="max-w-2xl">
+            <div className="inline-flex items-center gap-2 bg-primary/10 rounded-full px-4 py-1.5 mb-4">
+              <BookOpen className="h-4 w-4 text-primary" />
+              <span className="text-sm font-semibold text-primary">Latest Insights</span>
+            </div>
             <h2 className="text-3xl md:text-4xl font-bold font-heading text-slate-900 mb-4">
-              Latest Insights & Resources
+              Healthcare Technology Resources
             </h2>
             <p className="text-lg text-slate-600">
-              Stay ahead of industry trends with expert advice on practice management, billing, and healthcare technology.
+              Stay ahead of industry trends with expert advice on EHR systems, practice management, billing, and specialty-specific solutions.
             </p>
           </div>
-          <Button variant="outline" className="shrink-0">
-            View All Articles <ArrowRight className="ml-2 h-4 w-4" />
-          </Button>
+          <Link href="/blog">
+            <Button variant="outline" className="shrink-0" data-testid="button-view-all-articles">
+              View All Articles <ArrowRight className="ml-2 h-4 w-4" />
+            </Button>
+          </Link>
         </div>
 
         <div className="grid md:grid-cols-3 gap-8">
-          {posts.map((post, i) => (
+          {featuredPosts.map((post, i) => (
             <motion.article
-              key={i}
+              key={post.id}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1, duration: 0.5 }}
-              className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow border border-slate-100 flex flex-col h-full group"
+              className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 flex flex-col h-full group"
+              data-testid={`card-blog-home-${post.id}`}
             >
-              <div className="h-48 bg-slate-200 relative overflow-hidden">
-                {post.image ? (
-                   <img src={post.image} alt={post.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              <div className="h-48 bg-gradient-to-br from-slate-100 to-slate-50 relative overflow-hidden">
+                {blogImages[post.slug] ? (
+                  <img 
+                    src={blogImages[post.slug]} 
+                    alt={post.title} 
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                  />
                 ) : (
-                   <div className="w-full h-full bg-gradient-to-br from-blue-100 to-slate-100 flex items-center justify-center">
-                     <div className="h-12 w-12 rounded-full bg-white/50" />
-                   </div>
+                  <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-primary/10 to-blue-100">
+                    <div className="w-16 h-16 rounded-xl bg-primary/20 flex items-center justify-center">
+                      <BookOpen className="h-8 w-8 text-primary" />
+                    </div>
+                  </div>
                 )}
-                <div className="absolute top-4 left-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-xs font-bold text-primary uppercase tracking-wide">
-                  {post.category}
+                <div className="absolute top-4 left-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-xs font-bold text-primary uppercase tracking-wide shadow-sm">
+                  {post.categoryLabel}
                 </div>
               </div>
               
               <div className="p-6 flex flex-col flex-1">
                 <div className="flex items-center gap-4 text-xs text-slate-500 mb-4">
                   <span className="flex items-center gap-1"><Calendar className="h-3 w-3" /> {post.date}</span>
-                  <span className="flex items-center gap-1"><User className="h-3 w-3" /> {post.author}</span>
+                  <span className="flex items-center gap-1"><Clock className="h-3 w-3" /> {post.readTime}</span>
                 </div>
                 
-                <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-primary transition-colors">
-                  <a href="#">{post.title}</a>
+                <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-primary transition-colors line-clamp-2">
+                  <Link href={`/blog/${post.slug}`}>{post.title}</Link>
                 </h3>
                 
-                <p className="text-slate-600 text-sm leading-relaxed mb-6 flex-1">
+                <p className="text-slate-600 text-sm leading-relaxed mb-6 flex-1 line-clamp-3">
                   {post.excerpt}
                 </p>
                 
-                <a href="#" className="inline-flex items-center text-sm font-semibold text-primary hover:text-blue-700">
-                  Read Article <ArrowRight className="ml-1 h-3 w-3" />
-                </a>
+                <Link href={`/blog/${post.slug}`}>
+                  <span className="inline-flex items-center text-sm font-semibold text-primary hover:text-blue-700 transition-colors">
+                    Read Article <ArrowRight className="ml-1 h-3 w-3" />
+                  </span>
+                </Link>
               </div>
             </motion.article>
           ))}

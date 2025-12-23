@@ -52,6 +52,7 @@ const aboutUs = [
   { title: "Our Mission", href: "/about/our-mission", description: "Learn about our commitment to improving healthcare" },
   { title: "Management Team", href: "/about/management", description: "Meet the leaders behind MDcharts EHR" },
   { title: "Click Less, Care More", href: "/about/click-less-care-more", description: "Our philosophy for efficient healthcare" },
+  { title: "Blog", href: "/blog", description: "Latest insights on EHR, practice management, and healthcare technology" },
 ];
 
 export function Navbar() {
@@ -256,7 +257,7 @@ export function Navbar() {
         isOpen={modalOpen}
         onClose={() => setModalOpen(false)}
         title="Schedule a Demo"
-        type="demo"
+        requestType="demo"
       />
     </div>
   );

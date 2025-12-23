@@ -1,0 +1,333 @@
+import { useParams, Link } from "wouter";
+import { motion } from "framer-motion";
+import { Navbar } from "@/components/Navbar";
+import { Button } from "@/components/ui/button";
+import { getPostBySlug, getRelatedPosts, blogPosts } from "@/lib/blogData";
+import { 
+  Calendar, 
+  Clock, 
+  ArrowLeft, 
+  ArrowRight,
+  User,
+  Share2,
+  Stethoscope,
+  Facebook,
+  Twitter,
+  Linkedin,
+  Instagram,
+  BookOpen,
+  ChevronRight
+} from "lucide-react";
+import ReactMarkdown from "react-markdown";
+
+export default function BlogPost() {
+  const { slug } = useParams<{ slug: string }>();
+  const post = getPostBySlug(slug || "");
+
+  if (!post) {
+    return (
+      <div className="min-h-screen bg-white font-sans">
+        <Navbar />
+        <div className="pt-32 pb-20 text-center">
+          <h1 className="text-4xl font-bold text-slate-900 mb-4">Article Not Found</h1>
+          <p className="text-slate-600 mb-8">The article you're looking for doesn't exist.</p>
+          <Link href="/blog">
+            <Button>
+              <ArrowLeft className="mr-2 h-4 w-4" /> Back to Blog
+            </Button>
+          </Link>
+        </div>
+      </div>
+    );
+  }
+
+  const relatedPosts = getRelatedPosts(post, 3);
+
+  return (
+    <div className="min-h-screen bg-white font-sans">
+      <Navbar />
+
+      {/* Hero Section */}
+      <section className="relative pt-32 pb-16 bg-gradient-to-br from-slate-900 via-slate-800 to-primary/20 overflow-hidden">
+        <div className="absolute inset-0 opacity-30" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, rgba(255,255,255,0.1) 1px, transparent 0)', backgroundSize: '32px 32px' }}></div>
+        
+        <div className="container mx-auto px-4 relative z-10">
+          {/* Breadcrumb */}
+          <div className="flex items-center gap-2 text-sm text-slate-400 mb-8">
+            <Link href="/blog" className="hover:text-white transition-colors">Blog</Link>
+            <ChevronRight className="h-4 w-4" />
+            <span className="text-primary">{post.categoryLabel}</span>
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="max-w-4xl"
+          >
+            <div className="inline-block bg-primary/20 backdrop-blur border border-primary/30 rounded-full px-4 py-1.5 mb-6">
+              <span className="text-sm font-semibold text-primary">{post.categoryLabel}</span>
+            </div>
+            
+            <h1 className="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight">
+              {post.title}
+            </h1>
+            
+            <p className="text-xl text-slate-300 mb-8">
+              {post.excerpt}
+            </p>
+
+            <div className="flex flex-wrap items-center gap-6 text-sm text-slate-400">
+              <span className="flex items-center gap-2">
+                <User className="h-4 w-4" />
+                {post.author}
+              </span>
+              <span className="flex items-center gap-2">
+                <Calendar className="h-4 w-4" />
+                {post.date}
+              </span>
+              <span className="flex items-center gap-2">
+                <Clock className="h-4 w-4" />
+                {post.readTime}
+              </span>
+            </div>
+          </motion.div>
+        </div>
+
+        <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-white to-transparent"></div>
+      </section>
+
+      {/* Article Content */}
+      <section className="py-12">
+        <div className="container mx-auto px-4">
+          <div className="grid lg:grid-cols-12 gap-12">
+            {/* Main Content */}
+            <article className="lg:col-span-8">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2 }}
+                className="prose prose-lg prose-slate max-w-none
+                  prose-headings:font-bold prose-headings:text-slate-900
+                  prose-h2:text-2xl prose-h2:mt-12 prose-h2:mb-4 prose-h2:border-b prose-h2:border-slate-200 prose-h2:pb-3
+                  prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-3
+                  prose-p:text-slate-600 prose-p:leading-relaxed
+                  prose-li:text-slate-600
+                  prose-strong:text-slate-900
+                  prose-ul:my-4
+                  prose-ol:my-4
+                "
+              >
+                <ReactMarkdown>{post.content}</ReactMarkdown>
+              </motion.div>
+
+              {/* Share Section */}
+              <div className="mt-12 pt-8 border-t border-slate-200">
+                <div className="flex items-center justify-between flex-wrap gap-4">
+                  <div className="flex items-center gap-4">
+                    <span className="text-sm font-medium text-slate-600">Share this article:</span>
+                    <div className="flex gap-2">
+                      <button className="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
+                        <Twitter className="h-4 w-4" />
+                      </button>
+                      <button className="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
+                        <Facebook className="h-4 w-4" />
+                      </button>
+                      <button className="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
+                        <Linkedin className="h-4 w-4" />
+                      </button>
+                    </div>
+                  </div>
+                  <Link href="/blog">
+                    <Button variant="outline">
+                      <ArrowLeft className="mr-2 h-4 w-4" /> Back to Blog
+                    </Button>
+                  </Link>
+                </div>
+              </div>
+            </article>
+
+            {/* Sidebar */}
+            <aside className="lg:col-span-4">
+              <div className="sticky top-24 space-y-8">
+                {/* CTA Card */}
+                <div className="bg-gradient-to-br from-primary to-blue-700 rounded-2xl p-6 text-white">
+                  <h3 className="text-xl font-bold mb-3">Ready to Transform Your Practice?</h3>
+                  <p className="text-blue-100 text-sm mb-6">
+                    See how MDcharts can streamline your workflows and boost revenue.
+                  </p>
+                  <Link href="/book-demo">
+                    <Button variant="secondary" className="w-full" data-testid="button-sidebar-demo">
+                      Book a Demo <ArrowRight className="ml-2 h-4 w-4" />
+                    </Button>
+                  </Link>
+                </div>
+
+                {/* Related Posts */}
+                {relatedPosts.length > 0 && (
+                  <div className="bg-slate-50 rounded-2xl p-6">
+                    <h3 className="text-lg font-bold text-slate-900 mb-4">Related Articles</h3>
+                    <div className="space-y-4">
+                      {relatedPosts.map((related) => (
+                        <Link key={related.id} href={`/blog/${related.slug}`}>
+                          <div className="group cursor-pointer">
+                            <h4 className="text-sm font-semibold text-slate-800 group-hover:text-primary transition-colors line-clamp-2 mb-1">
+                              {related.title}
+                            </h4>
+                            <span className="text-xs text-slate-500">{related.date}</span>
+                          </div>
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {/* Categories */}
+                <div className="bg-slate-50 rounded-2xl p-6">
+                  <h3 className="text-lg font-bold text-slate-900 mb-4">Categories</h3>
+                  <div className="flex flex-wrap gap-2">
+                    <Link href="/blog?category=derm">
+                      <span className="inline-block px-3 py-1.5 bg-white rounded-full text-sm text-slate-600 hover:bg-primary hover:text-white transition-colors cursor-pointer">
+                        Dermatology
+                      </span>
+                    </Link>
+                    <Link href="/blog?category=ehr">
+                      <span className="inline-block px-3 py-1.5 bg-white rounded-full text-sm text-slate-600 hover:bg-primary hover:text-white transition-colors cursor-pointer">
+                        EHR
+                      </span>
+                    </Link>
+                    <Link href="/blog?category=obgyn">
+                      <span className="inline-block px-3 py-1.5 bg-white rounded-full text-sm text-slate-600 hover:bg-primary hover:text-white transition-colors cursor-pointer">
+                        OB/GYN
+                      </span>
+                    </Link>
+                    <Link href="/blog?category=pediatrics">
+                      <span className="inline-block px-3 py-1.5 bg-white rounded-full text-sm text-slate-600 hover:bg-primary hover:text-white transition-colors cursor-pointer">
+                        Pediatrics
+                      </span>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      {/* More Articles */}
+      <section className="py-16 bg-slate-50">
+        <div className="container mx-auto px-4">
+          <div className="flex items-center justify-between mb-8">
+            <h2 className="text-2xl font-bold text-slate-900">More Articles</h2>
+            <Link href="/blog">
+              <Button variant="outline">
+                View All <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </Link>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {blogPosts.filter(p => p.id !== post.id).slice(0, 3).map((article) => (
+              <motion.article
+                key={article.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="group bg-white rounded-2xl overflow-hidden border border-slate-200 hover:shadow-xl transition-all"
+              >
+                <div className="h-40 bg-gradient-to-br from-slate-100 to-slate-50 flex items-center justify-center">
+                  <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center">
+                    <BookOpen className="h-7 w-7 text-primary" />
+                  </div>
+                </div>
+                <div className="p-5">
+                  <span className="text-xs font-bold text-primary uppercase tracking-wide">{article.categoryLabel}</span>
+                  <h3 className="text-lg font-bold text-slate-900 mt-2 mb-2 line-clamp-2 group-hover:text-primary transition-colors">
+                    <Link href={`/blog/${article.slug}`}>{article.title}</Link>
+                  </h3>
+                  <p className="text-sm text-slate-600 line-clamp-2 mb-4">{article.excerpt}</p>
+                  <div className="flex items-center justify-between text-xs text-slate-500">
+                    <span>{article.date}</span>
+                    <span>{article.readTime}</span>
+                  </div>
+                </div>
+              </motion.article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-slate-900 text-white pt-16 pb-8">
+        <div className="container mx-auto px-4">
+          <div className="grid md:grid-cols-4 gap-8 mb-12">
+            <div>
+              <div className="flex items-center gap-2 mb-4">
+                <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center">
+                  <Stethoscope className="h-5 w-5 text-white" />
+                </div>
+                <span className="text-xl font-bold">MDcharts</span>
+              </div>
+              <p className="text-slate-400 text-sm mb-4">
+                Click Less. Care More. The complete EHR and practice management solution.
+              </p>
+              <div className="flex gap-3">
+                <a href="#" className="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary transition-colors">
+                  <Facebook className="h-4 w-4" />
+                </a>
+                <a href="#" className="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary transition-colors">
+                  <Twitter className="h-4 w-4" />
+                </a>
+                <a href="#" className="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary transition-colors">
+                  <Linkedin className="h-4 w-4" />
+                </a>
+                <a href="#" className="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary transition-colors">
+                  <Instagram className="h-4 w-4" />
+                </a>
+              </div>
+            </div>
+
+            <div>
+              <h4 className="font-bold mb-4">Solutions</h4>
+              <ul className="space-y-2 text-sm text-slate-400">
+                <li><a href="/ehr" className="hover:text-primary transition-colors">Electronic Health Records</a></li>
+                <li><a href="/rcm" className="hover:text-primary transition-colors">Revenue Cycle Management</a></li>
+                <li><a href="/practice-management" className="hover:text-primary transition-colors">Practice Management</a></li>
+                <li><a href="/patient-engagement" className="hover:text-primary transition-colors">Patient Engagement</a></li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="font-bold mb-4">Specialties</h4>
+              <ul className="space-y-2 text-sm text-slate-400">
+                <li><a href="/specialties/dermatology" className="hover:text-primary transition-colors">Dermatology</a></li>
+                <li><a href="/specialties/obgyn" className="hover:text-primary transition-colors">OB/GYN</a></li>
+                <li><a href="/specialties/pediatrics" className="hover:text-primary transition-colors">Pediatrics</a></li>
+                <li><a href="/specialties" className="hover:text-primary transition-colors">All Specialties</a></li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="font-bold mb-4">Resources</h4>
+              <ul className="space-y-2 text-sm text-slate-400">
+                <li><a href="/blog" className="text-primary">Blog</a></li>
+                <li><a href="/book-demo" className="hover:text-primary transition-colors">Book a Demo</a></li>
+                <li><a href="/contact" className="hover:text-primary transition-colors">Contact Us</a></li>
+                <li><a href="/support" className="hover:text-primary transition-colors">Support</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-400">
+            <p>&copy; 2026 MDcharts EHR. All rights reserved.</p>
+            <div className="flex gap-6">
+              <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
+              <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
+              <a href="#" className="hover:text-white transition-colors">HIPAA Notice</a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+}

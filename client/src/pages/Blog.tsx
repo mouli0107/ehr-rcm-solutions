@@ -333,30 +333,30 @@ export default function Blog() {
             <div>
               <h4 className="font-bold mb-4">Solutions</h4>
               <ul className="space-y-2 text-sm text-slate-400">
-                <li><a href="/ehr" className="hover:text-primary transition-colors">Electronic Health Records</a></li>
-                <li><a href="/rcm" className="hover:text-primary transition-colors">Revenue Cycle Management</a></li>
-                <li><a href="/practice-management" className="hover:text-primary transition-colors">Practice Management</a></li>
-                <li><a href="/patient-engagement" className="hover:text-primary transition-colors">Patient Engagement</a></li>
+                <li><Link href="/ehr" className="hover:text-primary transition-colors">Electronic Health Records</Link></li>
+                <li><Link href="/rcm" className="hover:text-primary transition-colors">Revenue Cycle Management</Link></li>
+                <li><Link href="/practice-management" className="hover:text-primary transition-colors">Practice Management</Link></li>
+                <li><Link href="/patient-engagement" className="hover:text-primary transition-colors">Patient Engagement</Link></li>
               </ul>
             </div>
 
             <div>
               <h4 className="font-bold mb-4">Specialties</h4>
               <ul className="space-y-2 text-sm text-slate-400">
-                <li><a href="/specialties/dermatology" className="hover:text-primary transition-colors">Dermatology</a></li>
-                <li><a href="/specialties/obgyn" className="hover:text-primary transition-colors">OB/GYN</a></li>
-                <li><a href="/specialties/pediatrics" className="hover:text-primary transition-colors">Pediatrics</a></li>
-                <li><a href="/specialties" className="hover:text-primary transition-colors">All Specialties</a></li>
+                <li><Link href="/specialties/dermatology" className="hover:text-primary transition-colors">Dermatology</Link></li>
+                <li><Link href="/specialties/obgyn" className="hover:text-primary transition-colors">OB/GYN</Link></li>
+                <li><Link href="/specialties/pediatrics" className="hover:text-primary transition-colors">Pediatrics</Link></li>
+                <li><Link href="/specialties" className="hover:text-primary transition-colors">All Specialties</Link></li>
               </ul>
             </div>
 
             <div>
               <h4 className="font-bold mb-4">Resources</h4>
               <ul className="space-y-2 text-sm text-slate-400">
-                <li><a href="/blog" className="text-primary">Blog</a></li>
-                <li><a href="/book-demo" className="hover:text-primary transition-colors">Book a Demo</a></li>
-                <li><a href="/contact" className="hover:text-primary transition-colors">Contact Us</a></li>
-                <li><a href="/support" className="hover:text-primary transition-colors">Support</a></li>
+                <li><Link href="/blog" className="text-primary">Blog</Link></li>
+                <li><Link href="/book-demo" className="hover:text-primary transition-colors">Book a Demo</Link></li>
+                <li><Link href="/contact" className="hover:text-primary transition-colors">Contact Us</Link></li>
+                <li><Link href="/support" className="hover:text-primary transition-colors">Support</Link></li>
               </ul>
             </div>
           </div>

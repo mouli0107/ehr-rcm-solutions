@@ -6,6 +6,7 @@ import {
   Headphones, Phone, Mail, Clock, MessageSquare, 
   BookOpen, Video, Users, ArrowRight, CheckCircle 
 } from "lucide-react";
+import heroImage from "@assets/generated_images/medical_support_team_helping.png";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -73,6 +74,21 @@ export default function Support() {
             <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
               MD Charts prides itself on providing world-class support to each and every client. Our team is here to help you succeed.
             </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3, duration: 0.6 }}
+            className="max-w-5xl mx-auto"
+          >
+            <div className="rounded-3xl overflow-hidden shadow-2xl">
+              <img 
+                src={heroImage} 
+                alt="Professional support team helping customers" 
+                className="w-full h-[350px] object-cover"
+              />
+            </div>
           </motion.div>
         </div>
       </section>

@@ -9,6 +9,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Navbar } from "@/components/Navbar";
 import { Mail, Phone, MapPin, Clock, Send, CheckCircle } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import heroImage from "@assets/generated_images/medical_team_welcoming_patients.png";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -84,6 +85,21 @@ export default function Contact() {
             <p className="text-xl text-slate-600 leading-relaxed">
               Fill in and submit the form below, and an MD Charts representative will contact you shortly.
             </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3, duration: 0.6 }}
+            className="max-w-5xl mx-auto"
+          >
+            <div className="rounded-3xl overflow-hidden shadow-2xl">
+              <img 
+                src={heroImage} 
+                alt="Friendly medical team at reception" 
+                className="w-full h-[300px] object-cover"
+              />
+            </div>
           </motion.div>
         </div>
       </section>

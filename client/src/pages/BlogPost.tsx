@@ -48,16 +48,18 @@ export default function BlogPost() {
     <div className="min-h-screen bg-white font-sans">
       <Navbar />
 
-      {/* Hero Section */}
-      <section className="relative pt-32 pb-16 bg-gradient-to-br from-slate-900 via-slate-800 to-primary/20 overflow-hidden">
-        <div className="absolute inset-0 opacity-30" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, rgba(255,255,255,0.1) 1px, transparent 0)', backgroundSize: '32px 32px' }}></div>
+      {/* Hero Section - Elegant Light Design */}
+      <section className="relative pt-32 pb-20 bg-white overflow-hidden">
+        {/* Subtle gradient orbs */}
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-bl from-primary/8 via-cyan-100/30 to-transparent rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-gradient-to-tr from-slate-100 to-transparent rounded-full blur-2xl"></div>
         
         <div className="container mx-auto px-4 relative z-10">
           {/* Breadcrumb */}
-          <div className="flex items-center gap-2 text-sm text-slate-400 mb-8">
-            <Link href="/blog" className="hover:text-white transition-colors">Blog</Link>
-            <ChevronRight className="h-4 w-4" />
-            <span className="text-primary">{post.categoryLabel}</span>
+          <div className="flex items-center gap-2 text-sm text-slate-500 mb-8">
+            <Link href="/blog" className="hover:text-primary transition-colors font-medium">Blog</Link>
+            <ChevronRight className="h-4 w-4 text-slate-400" />
+            <span className="text-primary font-medium">{post.categoryLabel}</span>
           </div>
 
           <motion.div
@@ -66,41 +68,43 @@ export default function BlogPost() {
             transition={{ duration: 0.6 }}
             className="max-w-4xl"
           >
-            <div className="inline-block bg-primary/20 backdrop-blur border border-primary/30 rounded-full px-4 py-1.5 mb-6">
+            <div className="inline-block bg-primary/10 rounded-full px-4 py-1.5 mb-6">
               <span className="text-sm font-semibold text-primary">{post.categoryLabel}</span>
             </div>
             
-            <h1 className="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight">
+            <h1 className="text-3xl md:text-5xl font-bold text-slate-900 mb-6 leading-tight">
               {post.title}
             </h1>
             
-            <p className="text-xl text-slate-300 mb-8">
+            <p className="text-xl text-slate-600 mb-8 leading-relaxed">
               {post.excerpt}
             </p>
 
-            <div className="flex flex-wrap items-center gap-6 text-sm text-slate-400">
+            <div className="flex flex-wrap items-center gap-6 text-sm text-slate-500">
               <span className="flex items-center gap-2">
-                <User className="h-4 w-4" />
-                {post.author}
+                <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
+                  <User className="h-4 w-4 text-primary" />
+                </div>
+                <span className="font-medium">{post.author}</span>
               </span>
               <span className="flex items-center gap-2">
-                <Calendar className="h-4 w-4" />
+                <Calendar className="h-4 w-4 text-slate-400" />
                 {post.date}
               </span>
               <span className="flex items-center gap-2">
-                <Clock className="h-4 w-4" />
+                <Clock className="h-4 w-4 text-slate-400" />
                 {post.readTime}
               </span>
             </div>
           </motion.div>
         </div>
 
-        <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-white to-transparent"></div>
+        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent"></div>
       </section>
 
       {/* Featured Image */}
       {getBlogImage(post.slug) && (
-        <section className="relative -mt-8 pb-8">
+        <section className="relative py-8">
           <div className="container mx-auto px-4">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -108,7 +112,7 @@ export default function BlogPost() {
               transition={{ delay: 0.1 }}
               className="max-w-4xl mx-auto"
             >
-              <div className="rounded-2xl overflow-hidden shadow-2xl border-4 border-white">
+              <div className="rounded-2xl overflow-hidden shadow-lg border border-slate-200">
                 <img 
                   src={getBlogImage(post.slug)} 
                   alt={post.title}
@@ -121,7 +125,7 @@ export default function BlogPost() {
       )}
 
       {/* Article Content */}
-      <section className="py-16 bg-gradient-to-b from-white via-slate-50/30 to-white">
+      <section className="py-12 bg-white">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-12 gap-12">
             {/* Main Content */}

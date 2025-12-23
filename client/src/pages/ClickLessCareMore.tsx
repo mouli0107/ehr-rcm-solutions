@@ -6,6 +6,8 @@ import {
   Sparkles, Calendar, FlaskConical, Pill, MessageSquare, 
   ArrowRight, CheckCircle, Zap, Clock, MousePointer
 } from "lucide-react";
+import heroImage from "@assets/generated_images/efficient_doctor_using_technology.png";
+import techImage from "@assets/generated_images/healthcare_technology_abstract_concept.png";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -76,43 +78,70 @@ export default function ClickLessCareMore() {
     <div className="min-h-screen bg-background font-sans">
       <Navbar />
       
-      {/* Hero */}
+      {/* Hero with Image */}
       <section className="pt-32 pb-20 bg-gradient-to-b from-cyan-50 via-white to-white relative overflow-hidden">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:32px_32px]" />
         
         <div className="container mx-auto px-4 relative z-10">
-          <motion.div 
-            initial="hidden" 
-            animate="visible" 
-            variants={fadeIn}
-            className="max-w-4xl mx-auto text-center"
-          >
-            <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-bold mb-6">
-              <MousePointer className="h-4 w-4" />
-              OUR PHILOSOPHY
-            </div>
-            
-            <h1 className="text-4xl md:text-6xl font-bold text-slate-900 mb-6 leading-tight">
-              Click Less, <span className="text-primary">Care More</span>
-            </h1>
-            
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed mb-10">
-              Click less utilizing automation, customization, and workflow optimization tools to streamline your practice and care more for your patients.
-            </p>
+          <div className="grid lg:grid-cols-2 gap-12 items-center max-w-7xl mx-auto">
+            <motion.div 
+              initial="hidden" 
+              animate="visible" 
+              variants={fadeIn}
+            >
+              <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-bold mb-6">
+                <MousePointer className="h-4 w-4" />
+                OUR PHILOSOPHY
+              </div>
+              
+              <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6 leading-tight">
+                Click Less, <span className="text-primary">Care More</span>
+              </h1>
+              
+              <p className="text-xl text-slate-600 leading-relaxed mb-8">
+                Click less utilizing automation, customization, and workflow optimization tools to streamline your practice and care more for your patients.
+              </p>
 
-            <div className="flex flex-wrap justify-center gap-4">
-              <Link href="/book-demo">
-                <Button size="lg" className="bg-primary hover:bg-primary/90">
-                  See It In Action <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-              </Link>
-            </div>
-          </motion.div>
+              <div className="flex flex-wrap gap-4">
+                <Link href="/book-demo">
+                  <Button size="lg" className="bg-primary hover:bg-primary/90">
+                    See It In Action <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </Link>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.2, duration: 0.6 }}
+              className="relative"
+            >
+              <div className="rounded-3xl overflow-hidden shadow-2xl">
+                <img 
+                  src={heroImage} 
+                  alt="Doctor using tablet efficiently" 
+                  className="w-full h-[400px] object-cover"
+                />
+              </div>
+              <div className="absolute -bottom-6 -right-6 bg-white rounded-2xl shadow-xl p-4 border border-slate-100">
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 rounded-full bg-emerald-100 flex items-center justify-center">
+                    <Zap className="h-6 w-6 text-emerald-600" />
+                  </div>
+                  <div>
+                    <p className="text-2xl font-bold text-slate-900">75%</p>
+                    <p className="text-sm text-slate-500">Fewer Clicks</p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
       {/* Stats */}
-      <section className="py-12 bg-white border-b">
+      <section className="py-16 bg-white border-b">
         <div className="container mx-auto px-4">
           <div className="flex flex-wrap justify-center gap-12 md:gap-20">
             {stats.map((stat, idx) => (
@@ -135,29 +164,66 @@ export default function ClickLessCareMore() {
         </div>
       </section>
 
-      {/* Philosophy */}
+      {/* Philosophy with Image */}
       <section className="py-20 bg-slate-50">
         <div className="container mx-auto px-4">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeIn}
-            className="max-w-4xl mx-auto text-center mb-16"
-          >
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-              ClickLess CareMore Technology
-            </h2>
-            <p className="text-lg text-slate-600">
-              MD Charts was designed with customization as a forethought and not an afterthought, resulting in an agile platform to meet your needs and adapt to your practice.
-            </p>
-          </motion.div>
+          <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={fadeIn}
+            >
+              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">
+                ClickLess CareMore Technology
+              </h2>
+              <p className="text-lg text-slate-600 mb-6">
+                MD Charts was designed with customization as a forethought and not an afterthought, resulting in an agile platform to meet your needs and adapt to your practice.
+              </p>
+              <ul className="space-y-4">
+                {["Automation that saves hours daily", "Customization for every specialty", "Workflow optimization built-in"].map((item, idx) => (
+                  <li key={idx} className="flex items-center gap-3">
+                    <CheckCircle className="h-5 w-5 text-primary flex-shrink-0" />
+                    <span className="text-slate-700 font-medium">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="rounded-3xl overflow-hidden shadow-xl"
+            >
+              <img 
+                src={techImage} 
+                alt="Healthcare technology interface" 
+                className="w-full h-[350px] object-cover"
+              />
+            </motion.div>
+          </div>
         </div>
       </section>
 
       {/* Features */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeIn}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+              How We Help You Click Less
+            </h2>
+            <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+              Every feature designed to reduce clicks and increase patient care time
+            </p>
+          </motion.div>
+
           <div className="max-w-5xl mx-auto space-y-8">
             {features.map((feature, idx) => (
               <motion.div
@@ -170,8 +236,8 @@ export default function ClickLessCareMore() {
               >
                 <div className="flex flex-col md:flex-row gap-6 items-start">
                   <div className="flex-shrink-0">
-                    <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center">
-                      <feature.icon className="h-8 w-8 text-primary" />
+                    <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary to-cyan-400 flex items-center justify-center shadow-lg">
+                      <feature.icon className="h-8 w-8 text-white" />
                     </div>
                   </div>
                   

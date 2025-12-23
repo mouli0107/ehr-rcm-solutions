@@ -3,6 +3,8 @@ import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Navbar } from "@/components/Navbar";
 import { Target, Users, Heart, TrendingUp, Star, ArrowRight, CheckCircle } from "lucide-react";
+import heroImage from "@assets/generated_images/healthcare_team_mission_image.png";
+import patientCareImage from "@assets/generated_images/caring_doctor_patient_consultation.png";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -37,49 +39,102 @@ export default function OurMission() {
     <div className="min-h-screen bg-background font-sans">
       <Navbar />
       
-      {/* Hero */}
+      {/* Hero with Image */}
       <section className="pt-32 pb-20 bg-gradient-to-b from-cyan-50 via-white to-white relative overflow-hidden">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:32px_32px]" />
         
         <div className="container mx-auto px-4 relative z-10">
-          <motion.div 
-            initial="hidden" 
-            animate="visible" 
-            variants={fadeIn}
-            className="max-w-4xl mx-auto text-center"
-          >
-            <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-bold mb-6">
-              <Target className="h-4 w-4" />
-              ABOUT MDcharts EHR
-            </div>
-            
-            <h1 className="text-4xl md:text-6xl font-bold text-slate-900 mb-6 leading-tight">
-              Our Mission
-            </h1>
-            
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
-              MD Charts, designed by physicians and top-level software system architects, is dedicated to improving your practice. We offer a bold new approach to EHR & Practice Management.
-            </p>
-          </motion.div>
+          <div className="grid lg:grid-cols-2 gap-12 items-center max-w-7xl mx-auto">
+            <motion.div 
+              initial="hidden" 
+              animate="visible" 
+              variants={fadeIn}
+            >
+              <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-bold mb-6">
+                <Target className="h-4 w-4" />
+                ABOUT MDcharts EHR
+              </div>
+              
+              <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6 leading-tight">
+                Our Mission
+              </h1>
+              
+              <p className="text-xl text-slate-600 leading-relaxed mb-8">
+                MD Charts, designed by physicians and top-level software system architects, is dedicated to improving your practice. We offer a bold new approach to EHR & Practice Management.
+              </p>
+
+              <div className="flex flex-wrap gap-4">
+                <Link href="/book-demo">
+                  <Button size="lg" className="bg-primary hover:bg-primary/90">
+                    Book a Demo <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </Link>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.2, duration: 0.6 }}
+              className="relative"
+            >
+              <div className="rounded-3xl overflow-hidden shadow-2xl">
+                <img 
+                  src={heroImage} 
+                  alt="Healthcare team working together" 
+                  className="w-full h-[400px] object-cover"
+                />
+              </div>
+              <div className="absolute -bottom-6 -left-6 bg-white rounded-2xl shadow-xl p-4 border border-slate-100">
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                    <Heart className="h-6 w-6 text-primary" />
+                  </div>
+                  <div>
+                    <p className="text-2xl font-bold text-slate-900">35+</p>
+                    <p className="text-sm text-slate-500">Years Experience</p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
-      {/* Mission Statement */}
+      {/* Mission Statement with Image */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeIn}
-            className="max-w-4xl mx-auto"
-          >
-            <div className="bg-gradient-to-br from-primary/5 to-cyan-50 rounded-3xl p-10 md:p-14 border border-primary/10">
-              <p className="text-lg md:text-xl text-slate-700 leading-relaxed">
-                The result is a system that can be fully customized to fit the needs of the basic user to even the most astute user. Engineered to maximize care to patients and improve profitability for practices, MD Charts' unique approach to reducing the time required to take notes or e-prescribe medication as well as superior Practice Management tools can help your practice no matter its size or specialty.
+          <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="rounded-3xl overflow-hidden shadow-xl"
+            >
+              <img 
+                src={patientCareImage} 
+                alt="Doctor caring for patient" 
+                className="w-full h-[350px] object-cover"
+              />
+            </motion.div>
+
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={fadeIn}
+            >
+              <h2 className="text-3xl font-bold text-slate-900 mb-6">
+                Designed for Your Success
+              </h2>
+              <p className="text-lg text-slate-600 leading-relaxed mb-6">
+                The result is a system that can be fully customized to fit the needs of the basic user to even the most astute user.
               </p>
-            </div>
-          </motion.div>
+              <p className="text-lg text-slate-600 leading-relaxed">
+                Engineered to maximize care to patients and improve profitability for practices, MD Charts' unique approach to reducing the time required to take notes or e-prescribe medication as well as superior Practice Management tools can help your practice no matter its size or specialty.
+              </p>
+            </motion.div>
+          </div>
         </div>
       </section>
 

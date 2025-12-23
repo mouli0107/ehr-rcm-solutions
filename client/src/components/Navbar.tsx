@@ -98,17 +98,17 @@ export function Navbar() {
       <div className="bg-slate-900 text-slate-300 text-[11px] font-medium py-1.5 border-b border-slate-800 hidden md:block">
         <div className="container mx-auto px-4 md:px-6 flex justify-between items-center">
           <div className="flex items-center gap-6">
-            <a href="/contact" className="flex items-center gap-1.5 hover:text-white transition-colors"><Phone className="h-3 w-3 text-primary" /> (516) 684-9521</a>
-            <a href="/contact" className="flex items-center gap-1.5 hover:text-white transition-colors"><Mail className="h-3 w-3 text-primary" /> info@mdchartsehr.com</a>
+            <Link href="/contact" className="flex items-center gap-1.5 hover:text-white transition-colors"><Phone className="h-3 w-3 text-primary" /> (516) 684-9521</Link>
+            <Link href="/contact" className="flex items-center gap-1.5 hover:text-white transition-colors"><Mail className="h-3 w-3 text-primary" /> info@mdchartsehr.com</Link>
             <span className="flex items-center gap-1.5"><Clock className="h-3 w-3 text-emerald-500" /> Support Status: Online (Wait: &lt;1m)</span>
           </div>
           <div className="flex items-center gap-4">
-            <a href="/support" className="hover:text-white transition-colors">Support</a>
-            <a href="/contact" className="hover:text-white transition-colors">Contact</a>
+            <Link href="/support" className="hover:text-white transition-colors">Support</Link>
+            <Link href="/contact" className="hover:text-white transition-colors">Contact</Link>
             <span className="text-slate-700">|</span>
-            <a href="#" className="text-white hover:text-primary transition-colors font-bold flex items-center gap-1">
+            <Link href="#" className="text-white hover:text-primary transition-colors font-bold flex items-center gap-1">
               Client Login <ChevronRight className="h-3 w-3" />
-            </a>
+            </Link>
           </div>
         </div>
       </div>
@@ -149,7 +149,7 @@ export function Navbar() {
                           <h3 className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-4">Core Platform</h3>
                           <div className="space-y-1">
                             {solutionsLeft.map((item) => (
-                              <a
+                              <Link
                                 key={item.title}
                                 href={item.href}
                                 className="flex items-start gap-3 p-3 rounded-lg hover:bg-primary/5 group transition-all"
@@ -161,7 +161,7 @@ export function Navbar() {
                                   <div className="font-semibold text-slate-800 group-hover:text-primary transition-colors">{item.title}</div>
                                   <div className="text-sm text-slate-500">{item.description}</div>
                                 </div>
-                              </a>
+                              </Link>
                             ))}
                           </div>
                         </div>
@@ -171,7 +171,7 @@ export function Navbar() {
                           <h3 className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-4">Additional Modules</h3>
                           <div className="space-y-1">
                             {solutionsRight.map((item) => (
-                              <a
+                              <Link
                                 key={item.title}
                                 href={item.href}
                                 className="flex items-center gap-2 px-3 py-2 rounded-md text-sm text-slate-600 hover:text-primary hover:bg-white transition-all group"
@@ -179,13 +179,13 @@ export function Navbar() {
                                 <item.icon className="h-4 w-4 text-slate-400 group-hover:text-primary transition-colors" />
                                 <span>{item.title}</span>
                                 <ExternalLink className="h-3 w-3 ml-auto opacity-0 group-hover:opacity-100 transition-opacity" />
-                              </a>
+                              </Link>
                             ))}
                           </div>
                           <div className="mt-6 pt-4 border-t border-slate-200">
-                            <a href="/solutions" className="flex items-center gap-1 text-sm font-semibold text-primary hover:underline">
+                            <Link href="/solutions" className="flex items-center gap-1 text-sm font-semibold text-primary hover:underline">
                               View All 25+ Modules <ArrowRight className="h-4 w-4" />
-                            </a>
+                            </Link>
                           </div>
                         </div>
 
@@ -227,14 +227,14 @@ export function Navbar() {
                           <h3 className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-4">Popular</h3>
                           <div className="space-y-1">
                             {specialtiesCol1.map((item) => (
-                              <a
+                              <Link
                                 key={item.title}
                                 href={item.href}
                                 className="flex items-center justify-between px-3 py-2.5 rounded-lg text-slate-700 hover:bg-primary/5 hover:text-primary transition-all group"
                               >
                                 <span className="font-medium">{item.title}</span>
                                 <ChevronRight className="h-4 w-4 opacity-0 group-hover:opacity-100 transition-opacity" />
-                              </a>
+                              </Link>
                             ))}
                           </div>
                         </div>
@@ -243,14 +243,14 @@ export function Navbar() {
                           <h3 className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-4">More Specialties</h3>
                           <div className="space-y-1">
                             {specialtiesCol2.map((item) => (
-                              <a
+                              <Link
                                 key={item.title}
                                 href={item.href}
                                 className="flex items-center justify-between px-3 py-2.5 rounded-lg text-slate-700 hover:bg-white hover:text-primary transition-all group"
                               >
                                 <span className="font-medium">{item.title}</span>
                                 <ChevronRight className="h-4 w-4 opacity-0 group-hover:opacity-100 transition-opacity" />
-                              </a>
+                              </Link>
                             ))}
                           </div>
                         </div>
@@ -266,9 +266,9 @@ export function Navbar() {
                               <p className="text-sm text-slate-500 mb-3">
                                 Pre-built templates for every practice type.
                               </p>
-                              <a href="/specialties" className="inline-flex items-center gap-1 text-sm font-semibold text-primary hover:underline">
+                              <Link href="/specialties" className="inline-flex items-center gap-1 text-sm font-semibold text-primary hover:underline">
                                 Explore All <ArrowRight className="h-3 w-3" />
-                              </a>
+                              </Link>
                             </div>
                           </div>
                         </div>
@@ -289,7 +289,7 @@ export function Navbar() {
                         <div className="col-span-5 p-6">
                           <div className="space-y-1">
                             {aboutUsItems.map((item) => (
-                              <a
+                              <Link
                                 key={item.title}
                                 href={item.href}
                                 className="flex items-start gap-3 p-3 rounded-lg hover:bg-primary/5 group transition-all"
@@ -301,7 +301,7 @@ export function Navbar() {
                                   <div className="font-semibold text-slate-800 group-hover:text-primary transition-colors">{item.title}</div>
                                   <div className="text-sm text-slate-500">{item.description}</div>
                                 </div>
-                              </a>
+                              </Link>
                             ))}
                           </div>
                         </div>
@@ -310,7 +310,7 @@ export function Navbar() {
                         <div className="col-span-3 p-6 bg-slate-50/50">
                           <div className="space-y-1">
                             {aboutUsLinks.map((item) => (
-                              <a
+                              <Link
                                 key={item.title}
                                 href={item.href}
                                 className="flex items-center gap-2 px-3 py-2.5 rounded-md text-slate-600 hover:text-primary hover:bg-white transition-all group"
@@ -318,7 +318,7 @@ export function Navbar() {
                                 <item.icon className="h-4 w-4 text-slate-400 group-hover:text-primary transition-colors" />
                                 <span className="font-medium">{item.title}</span>
                                 <ExternalLink className="h-3 w-3 ml-auto opacity-0 group-hover:opacity-100 transition-opacity" />
-                              </a>
+                              </Link>
                             ))}
                           </div>
                         </div>
@@ -337,9 +337,9 @@ export function Navbar() {
                               <p className="text-sm text-slate-500 mb-3">
                                 Learn how they improved efficiency by 40%.
                               </p>
-                              <a href="/about/success-stories" className="inline-flex items-center gap-1 text-sm font-semibold text-primary hover:underline">
+                              <Link href="/about/success-stories" className="inline-flex items-center gap-1 text-sm font-semibold text-primary hover:underline">
                                 Read More <ArrowRight className="h-3 w-3" />
-                              </a>
+                              </Link>
                             </div>
                           </div>
                         </div>
@@ -356,7 +356,7 @@ export function Navbar() {
                   <NavigationMenuContent>
                     <div className="w-[400px] p-4 bg-white shadow-xl rounded-lg border border-slate-100">
                       <div className="space-y-1">
-                        <a href="/blog" className="flex items-center gap-3 p-3 rounded-lg hover:bg-primary/5 group transition-all">
+                        <Link href="/blog" className="flex items-center gap-3 p-3 rounded-lg hover:bg-primary/5 group transition-all">
                           <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary/20 transition-colors">
                             <BookOpen className="h-5 w-5 text-primary" />
                           </div>
@@ -364,8 +364,8 @@ export function Navbar() {
                             <div className="font-semibold text-slate-800 group-hover:text-primary transition-colors">Blog</div>
                             <div className="text-sm text-slate-500">Healthcare insights & EHR tips</div>
                           </div>
-                        </a>
-                        <a href="/compliance" className="flex items-center gap-3 p-3 rounded-lg hover:bg-primary/5 group transition-all">
+                        </Link>
+                        <Link href="/compliance" className="flex items-center gap-3 p-3 rounded-lg hover:bg-primary/5 group transition-all">
                           <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary/20 transition-colors">
                             <Shield className="h-5 w-5 text-primary" />
                           </div>
@@ -373,8 +373,8 @@ export function Navbar() {
                             <div className="font-semibold text-slate-800 group-hover:text-primary transition-colors">Compliance</div>
                             <div className="text-sm text-slate-500">HIPAA, MIPS & regulatory info</div>
                           </div>
-                        </a>
-                        <a href="/support" className="flex items-center gap-3 p-3 rounded-lg hover:bg-primary/5 group transition-all">
+                        </Link>
+                        <Link href="/support" className="flex items-center gap-3 p-3 rounded-lg hover:bg-primary/5 group transition-all">
                           <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary/20 transition-colors">
                             <MessageSquare className="h-5 w-5 text-primary" />
                           </div>
@@ -382,7 +382,7 @@ export function Navbar() {
                             <div className="font-semibold text-slate-800 group-hover:text-primary transition-colors">Support Center</div>
                             <div className="text-sm text-slate-500">Help docs & live assistance</div>
                           </div>
-                        </a>
+                        </Link>
                       </div>
                     </div>
                   </NavigationMenuContent>
@@ -435,7 +435,7 @@ export function Navbar() {
               <div className="space-y-2">
                 <h3 className="font-heading font-bold text-sm uppercase tracking-wider text-slate-900 border-b pb-2">Solutions</h3>
                 {solutionsLeft.map(c => (
-                  <a key={c.title} href={c.href} className="block text-slate-600 py-1.5 text-sm font-medium hover:text-primary hover:bg-slate-50 px-2 rounded" onClick={() => setMobileMenuOpen(false)}>{c.title}</a>
+                  <Link key={c.title} href={c.href} className="block text-slate-600 py-1.5 text-sm font-medium hover:text-primary hover:bg-slate-50 px-2 rounded" onClick={() => setMobileMenuOpen(false)}>{c.title}</Link>
                 ))}
               </div>
               
@@ -443,16 +443,16 @@ export function Navbar() {
                 <h3 className="font-heading font-bold text-sm uppercase tracking-wider text-slate-900 border-b pb-2">Specialties</h3>
                 <div className="grid grid-cols-2 gap-1">
                   {[...specialtiesCol1, ...specialtiesCol2].map(s => (
-                    <a key={s.title} href={s.href} className="text-slate-600 py-1.5 text-sm hover:text-primary px-2" onClick={() => setMobileMenuOpen(false)}>{s.title}</a>
+                    <Link key={s.title} href={s.href} className="text-slate-600 py-1.5 text-sm hover:text-primary px-2" onClick={() => setMobileMenuOpen(false)}>{s.title}</Link>
                   ))}
                 </div>
               </div>
 
               <div className="space-y-2">
                 <h3 className="font-heading font-bold text-sm uppercase tracking-wider text-slate-900 border-b pb-2">Resources</h3>
-                <a href="/blog" className="block text-slate-600 py-1.5 text-sm font-medium hover:text-primary hover:bg-slate-50 px-2 rounded" onClick={() => setMobileMenuOpen(false)}>Blog</a>
-                <a href="/compliance" className="block text-slate-600 py-1.5 text-sm font-medium hover:text-primary hover:bg-slate-50 px-2 rounded" onClick={() => setMobileMenuOpen(false)}>Compliance</a>
-                <a href="/support" className="block text-slate-600 py-1.5 text-sm font-medium hover:text-primary hover:bg-slate-50 px-2 rounded" onClick={() => setMobileMenuOpen(false)}>Support</a>
+                <Link href="/blog" className="block text-slate-600 py-1.5 text-sm font-medium hover:text-primary hover:bg-slate-50 px-2 rounded" onClick={() => setMobileMenuOpen(false)}>Blog</Link>
+                <Link href="/compliance" className="block text-slate-600 py-1.5 text-sm font-medium hover:text-primary hover:bg-slate-50 px-2 rounded" onClick={() => setMobileMenuOpen(false)}>Compliance</Link>
+                <Link href="/support" className="block text-slate-600 py-1.5 text-sm font-medium hover:text-primary hover:bg-slate-50 px-2 rounded" onClick={() => setMobileMenuOpen(false)}>Support</Link>
               </div>
 
               <div className="pt-4 border-t border-slate-100 space-y-2">

@@ -33,7 +33,7 @@ export default function RCMPage() {
             <motion.div 
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
+              transition={{ duration: 0.25 }}
               className="lg:col-span-7"
             >
               {/* Highlighted TriZetto Integration */}
@@ -283,7 +283,7 @@ export default function RCMPage() {
 function ServiceCard({ icon: Icon, title, items, delay }: any) {
   return (
     <motion.div 
-      initial={{ opacity: 0, y: 10 }}
+      initial={{ opacity: 0.9, y: 3 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay, duration: 0.4 }}

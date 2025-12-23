@@ -140,9 +140,9 @@ export default function Pricing() {
         
         <div className="container mx-auto px-4 relative z-10 text-center">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0.9, y: 5 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.25 }}
           >
             <div className="inline-flex items-center gap-2 bg-primary/10 rounded-full px-4 py-1.5 mb-4">
               <Sparkles className="h-4 w-4 text-primary" />
@@ -194,9 +194,9 @@ export default function Pricing() {
             {pricingPlans.map((plan, index) => (
               <motion.div
                 key={plan.name}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0.9, y: 5 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
+                transition={{ delay: index * 0.03 }}
                 className={`relative rounded-2xl p-8 ${
                   plan.highlight 
                     ? "bg-gradient-to-br from-primary to-cyan-600 text-white shadow-2xl shadow-primary/30 scale-105 z-10" 
@@ -388,10 +388,10 @@ export default function Pricing() {
             {faqs.map((faq, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 10 }}
+                initial={{ opacity: 0.9, y: 3 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.05 }}
+                transition={{ delay: index * 0.02 }}
                 className="bg-white rounded-xl border border-slate-200 overflow-hidden"
               >
                 <button
@@ -419,7 +419,7 @@ export default function Pricing() {
       <section className="py-20 bg-gradient-to-br from-primary to-cyan-600">
         <div className="container mx-auto px-4 text-center">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0.9, y: 5 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >

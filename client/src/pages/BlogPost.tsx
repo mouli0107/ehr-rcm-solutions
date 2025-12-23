@@ -63,9 +63,9 @@ export default function BlogPost() {
           </div>
 
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0.9, y: 5 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.25 }}
             className="max-w-4xl"
           >
             <div className="inline-block bg-primary/10 rounded-full px-4 py-1.5 mb-6">
@@ -107,9 +107,9 @@ export default function BlogPost() {
         <section className="relative py-8">
           <div className="container mx-auto px-4">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0.9, y: 5 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 }}
+              transition={{ duration: 0.15 }}
               className="max-w-4xl mx-auto"
             >
               <div className="rounded-2xl overflow-hidden shadow-lg border border-slate-200">
@@ -131,9 +131,9 @@ export default function BlogPost() {
             {/* Main Content */}
             <article className="lg:col-span-8">
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0.9, y: 5 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2 }}
+                transition={{ duration: 0.2 }}
                 className="bg-white rounded-2xl shadow-sm border border-slate-100 p-8 md:p-12"
               >
                 <ReactMarkdown
@@ -318,7 +318,7 @@ export default function BlogPost() {
               return (
               <motion.article
                 key={article.id}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0.9, y: 5 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 className="group bg-white rounded-2xl overflow-hidden border border-slate-200 hover:shadow-xl transition-all"

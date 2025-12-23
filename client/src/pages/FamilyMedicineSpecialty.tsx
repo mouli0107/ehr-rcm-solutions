@@ -190,7 +190,7 @@ export default function FamilyMedicineSpecialty() {
             {visitTypes.map((visit, idx) => (
               <motion.div
                 key={idx}
-                initial={{ opacity: 0, y: 10 }}
+                initial={{ opacity: 0.9, y: 3 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.05 }}
@@ -231,7 +231,7 @@ export default function FamilyMedicineSpecialty() {
             {softwareBenefits.map((benefit, idx) => (
               <motion.div
                 key={idx}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0.9, y: 5 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
@@ -260,7 +260,7 @@ export default function FamilyMedicineSpecialty() {
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0.9, y: 5 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               className="relative group"
@@ -277,10 +277,10 @@ export default function FamilyMedicineSpecialty() {
             </motion.div>
             
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0.9, y: 5 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
+              transition={{ duration: 0.15 }}
               className="relative group"
             >
               <div className="rounded-2xl overflow-hidden shadow-xl">
@@ -316,7 +316,7 @@ export default function FamilyMedicineSpecialty() {
             {features.map((feature, idx) => (
               <motion.div
                 key={idx}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0.9, y: 5 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.05 }}

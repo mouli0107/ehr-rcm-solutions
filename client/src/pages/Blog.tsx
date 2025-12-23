@@ -46,9 +46,9 @@ export default function Blog() {
         
         <div className="container mx-auto px-4 relative z-10">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0.9, y: 5 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.25 }}
             className="max-w-4xl mx-auto text-center"
           >
             {/* Elegant badge */}
@@ -110,7 +110,7 @@ export default function Blog() {
         <section className="py-12">
           <div className="container mx-auto px-4">
             <motion.article
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0.9, y: 5 }}
               animate={{ opacity: 1, y: 0 }}
               className="bg-white rounded-3xl overflow-hidden shadow-xl shadow-slate-200/50 border border-slate-100"
             >
@@ -196,7 +196,7 @@ export default function Blog() {
               {filteredPosts.map((post, i) => (
                 <motion.article
                   key={post.id}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0.9, y: 5 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: i * 0.05 }}
                   className="group bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-xl hover:shadow-slate-200/50 hover:-translate-y-1 transition-all duration-300"

@@ -112,7 +112,7 @@ export default function Contact() {
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.2 }}
+              transition={{ duration: 0.2 }}
               className="space-y-8"
             >
               <div>
@@ -167,9 +167,9 @@ export default function Contact() {
 
             {/* Contact Form */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0.9, y: 5 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3 }}
+              transition={{ duration: 0.15 }}
               className="lg:col-span-2"
             >
               <form onSubmit={handleSubmit} className="bg-slate-50 rounded-3xl p-8 md:p-10 border border-slate-100">

@@ -16,7 +16,7 @@ export function RCMSection() {
              initial={{ opacity: 0, x: -20 }}
              whileInView={{ opacity: 1, x: 0 }}
              viewport={{ once: true }}
-             transition={{ duration: 0.6 }}
+             transition={{ duration: 0.25 }}
           >
             <h2 className="text-3xl md:text-4xl font-bold font-heading mb-6">
               RCM Services Built to Maximize Clean Claims
@@ -65,7 +65,7 @@ export function RCMSection() {
              initial={{ opacity: 0, x: 20 }}
              whileInView={{ opacity: 1, x: 0 }}
              viewport={{ once: true }}
-             transition={{ duration: 0.6 }}
+             transition={{ duration: 0.25 }}
              className="relative"
           >
             <div className="rounded-2xl overflow-hidden shadow-2xl border border-slate-700">

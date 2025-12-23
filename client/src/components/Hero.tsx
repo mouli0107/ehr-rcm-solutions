@@ -25,9 +25,9 @@ export function Hero() {
           {/* Left Content - Tighter Layout */}
           <div className="lg:w-1/2 max-w-2xl text-left">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0.9, y: 5 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
+              transition={{ duration: 0.2 }}
             >
               {/* Premium Certification Badge Row */}
               <div className="flex flex-wrap gap-3 mb-6">
@@ -89,7 +89,7 @@ export function Hero() {
             <div className="grid grid-cols-2 gap-4">
               {/* Row 1 */}
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0.9, y: 5 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1, duration: 0.5 }}
                 whileHover={{ scale: 1.03 }}
@@ -99,7 +99,7 @@ export function Hero() {
               </motion.div>
               
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0.9, y: 5 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2, duration: 0.5 }}
                 whileHover={{ scale: 1.03 }}
@@ -110,7 +110,7 @@ export function Hero() {
 
               {/* Row 2 */}
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0.9, y: 5 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3, duration: 0.5 }}
                 whileHover={{ scale: 1.03 }}
@@ -120,7 +120,7 @@ export function Hero() {
               </motion.div>
               
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0.9, y: 5 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4, duration: 0.5 }}
                 whileHover={{ scale: 1.03 }}

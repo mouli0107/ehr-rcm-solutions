@@ -181,7 +181,7 @@ export default function PediatricsSpecialty() {
             {softwareBenefits.map((benefit, idx) => (
               <motion.div
                 key={idx}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0.9, y: 5 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
@@ -228,7 +228,7 @@ export default function PediatricsSpecialty() {
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
+              transition={{ duration: 0.15 }}
               className="space-y-6"
             >
               <div className="bg-white rounded-xl p-6 shadow-lg">
@@ -262,7 +262,7 @@ export default function PediatricsSpecialty() {
             {features.map((feature, idx) => (
               <motion.div
                 key={idx}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0.9, y: 5 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.05 }}

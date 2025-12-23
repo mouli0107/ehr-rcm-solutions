@@ -222,7 +222,7 @@ export default function OBGYNSpecialty() {
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
+              transition={{ duration: 0.15 }}
               className="relative rounded-2xl overflow-hidden shadow-xl"
             >
               <img src={postpartumImage} alt="Postpartum care" className="w-full h-[350px] object-cover" />
@@ -259,7 +259,7 @@ export default function OBGYNSpecialty() {
             {features.map((feature, idx) => (
               <motion.div
                 key={idx}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0.9, y: 5 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.05 }}

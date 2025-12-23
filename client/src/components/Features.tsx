@@ -54,7 +54,7 @@ export function Features() {
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.05 }}
+              transition={{ delay: index * 0.02 }}
               className="bg-white p-6 hover:bg-slate-50 transition-colors group"
             >
               <div className="flex items-start gap-3 mb-3">

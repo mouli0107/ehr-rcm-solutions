@@ -13,7 +13,7 @@ export function ComplianceSection() {
              initial={{ opacity: 0, scale: 0.95 }}
              whileInView={{ opacity: 1, scale: 1 }}
              viewport={{ once: true }}
-             transition={{ duration: 0.6 }}
+             transition={{ duration: 0.25 }}
              className="relative order-2 lg:order-1"
           >
              {/* Abstract background element */}
@@ -37,7 +37,7 @@ export function ComplianceSection() {
              initial={{ opacity: 0, x: 20 }}
              whileInView={{ opacity: 1, x: 0 }}
              viewport={{ once: true }}
-             transition={{ duration: 0.6 }}
+             transition={{ duration: 0.25 }}
              className="order-1 lg:order-2"
           >
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-blue-700 text-sm font-semibold mb-6">

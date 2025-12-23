@@ -250,7 +250,9 @@ export default function BlogPost() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            {blogPosts.filter(p => p.id !== post.id).slice(0, 3).map((article) => (
+            {blogPosts.filter(p => p.id !== post.id).slice(0, 3).map((article) => {
+              const articleImage = getBlogImage(article.slug);
+              return (
               <motion.article
                 key={article.id}
                 initial={{ opacity: 0, y: 20 }}
@@ -258,10 +260,20 @@ export default function BlogPost() {
                 viewport={{ once: true }}
                 className="group bg-white rounded-2xl overflow-hidden border border-slate-200 hover:shadow-xl transition-all"
               >
-                <div className="h-40 bg-gradient-to-br from-slate-100 to-slate-50 flex items-center justify-center">
-                  <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center">
-                    <BookOpen className="h-7 w-7 text-primary" />
-                  </div>
+                <div className="h-40 bg-gradient-to-br from-slate-100 to-slate-50 overflow-hidden">
+                  {articleImage ? (
+                    <img 
+                      src={articleImage} 
+                      alt={article.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                  ) : (
+                    <div className="w-full h-full flex items-center justify-center">
+                      <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center">
+                        <BookOpen className="h-7 w-7 text-primary" />
+                      </div>
+                    </div>
+                  )}
                 </div>
                 <div className="p-5">
                   <span className="text-xs font-bold text-primary uppercase tracking-wide">{article.categoryLabel}</span>
@@ -275,7 +287,8 @@ export default function BlogPost() {
                   </div>
                 </div>
               </motion.article>
-            ))}
+            );
+            })}
           </div>
         </div>
       </section>

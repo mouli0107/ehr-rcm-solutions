@@ -82,7 +82,7 @@ export default function BookDemo() {
               </motion.div>
 
               <motion.div
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 1, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2, duration: 0.6 }}
                 className="bg-white rounded-2xl shadow-xl border border-slate-200 overflow-hidden"

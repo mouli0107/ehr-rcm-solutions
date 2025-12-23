@@ -91,7 +91,7 @@ export default function EHRPage() {
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0, x: 30 }}
+              initial={{ opacity: 1, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.2 }}
               className="relative"
@@ -162,7 +162,7 @@ export default function EHRPage() {
             {modules.map((module, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, scale: 0.95 }}
+                initial={{ opacity: 1, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.03 }}

@@ -10,7 +10,7 @@ export function ComplianceSection() {
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           
           <motion.div
-             initial={{ opacity: 0, scale: 0.95 }}
+             initial={{ opacity: 1, scale: 0.95 }}
              whileInView={{ opacity: 1, scale: 1 }}
              viewport={{ once: true }}
              transition={{ duration: 0.25 }}
@@ -34,7 +34,7 @@ export function ComplianceSection() {
           </motion.div>
 
           <motion.div
-             initial={{ opacity: 0, x: 20 }}
+             initial={{ opacity: 1, x: 20 }}
              whileInView={{ opacity: 1, x: 0 }}
              viewport={{ once: true }}
              transition={{ duration: 0.25 }}

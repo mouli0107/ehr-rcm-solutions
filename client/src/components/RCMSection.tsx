@@ -13,7 +13,7 @@ export function RCMSection() {
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <motion.div
-             initial={{ opacity: 0, x: -20 }}
+             initial={{ opacity: 1, x: -20 }}
              whileInView={{ opacity: 1, x: 0 }}
              viewport={{ once: true }}
              transition={{ duration: 0.25 }}
@@ -62,7 +62,7 @@ export function RCMSection() {
           </motion.div>
 
           <motion.div
-             initial={{ opacity: 0, x: 20 }}
+             initial={{ opacity: 1, x: 20 }}
              whileInView={{ opacity: 1, x: 0 }}
              viewport={{ once: true }}
              transition={{ duration: 0.25 }}

@@ -153,7 +153,7 @@ export default function CardiologySpecialty() {
         {/* Right Image */}
         <div className="lg:w-1/2 relative">
           <motion.div
-            initial={{ opacity: 0, scale: 1.1 }}
+            initial={{ opacity: 1, scale: 1.1 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1 }}
             className="h-full"

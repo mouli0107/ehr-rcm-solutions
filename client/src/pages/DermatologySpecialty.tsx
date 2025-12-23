@@ -247,7 +247,7 @@ export default function DermatologySpecialty() {
             </motion.div>
             
             <motion.div
-              initial={{ opacity: 0, x: 50 }}
+              initial={{ opacity: 1, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
               className="relative"
@@ -432,7 +432,7 @@ export default function DermatologySpecialty() {
           <div className="max-w-6xl mx-auto space-y-3">
             {/* Row 1 - 4 images */}
             <motion.div 
-              initial={{ opacity: 0, x: -30 }}
+              initial={{ opacity: 1, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               className="grid grid-cols-4 gap-3"
@@ -458,7 +458,7 @@ export default function DermatologySpecialty() {
 
             {/* Row 2 - 4 images offset (zig-zag) */}
             <motion.div 
-              initial={{ opacity: 0, x: 30 }}
+              initial={{ opacity: 1, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               className="grid grid-cols-4 gap-3 ml-12"
@@ -501,7 +501,7 @@ export default function DermatologySpecialty() {
             {testimonials.map((testimonial, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 1, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.2 }}

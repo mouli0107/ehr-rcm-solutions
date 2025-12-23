@@ -31,7 +31,7 @@ export default function RCMPage() {
         <div className="container mx-auto px-4 md:px-6 relative z-10">
           <div className="grid lg:grid-cols-12 gap-8 items-center">
             <motion.div 
-              initial={{ opacity: 0, x: -20 }}
+              initial={{ opacity: 1, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.25 }}
               className="lg:col-span-7"
@@ -84,7 +84,7 @@ export default function RCMPage() {
             </motion.div>
 
             <motion.div 
-              initial={{ opacity: 0, scale: 0.95 }}
+              initial={{ opacity: 1, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.2 }}
               className="lg:col-span-5 relative h-full flex items-center"
@@ -310,7 +310,7 @@ function ServiceCard({ icon: Icon, title, items, delay }: any) {
 function AddOnCard({ title, icon: Icon, features, className, dark }: any) {
   return (
     <motion.div 
-      initial={{ opacity: 0, scale: 0.98 }}
+      initial={{ opacity: 1, scale: 0.98 }}
       whileInView={{ opacity: 1, scale: 1 }}
       viewport={{ once: true }}
       className={`p-4 rounded-lg border transition-colors ${

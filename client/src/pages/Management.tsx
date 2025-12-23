@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Navbar } from "@/components/Navbar";
-import { Users, ArrowRight, Award, Briefcase, GraduationCap } from "lucide-react";
+import { Users, ArrowRight } from "lucide-react";
 import heroImage from "@assets/generated_images/corporate_leadership_team_meeting.png";
 
 const fadeIn = {
@@ -15,41 +15,31 @@ const teamMembers = [
     name: "Aaron Wachspress",
     title: "CTO",
     initials: "AW",
-    bio: "Harnessing his experience as Founder and CTO at Universal EHR Solutions, Aaron brings his expertise of electronic health records technologies to MD Charts. Under his leadership, MD Charts has developed partnerships with numerous industry-leading healthcare systems, with the vision to simplify the complex and often poorly integrated healthcare systems used in most medical practices today.",
-    details: "Aaron has a Master of Arts in Computer Science from City University of New York - specializing in algorithm analysis and optimization. In his 35+ years in healthcare and software development, he has designed everything from algorithms to full-scale EHR systems.",
-    highlights: ["35+ Years Experience", "MA Computer Science", "EHR Pioneer"]
+    bio: "Harnessing his experience as Founder and CTO at Universal EHR Solutions, Aaron brings his expertise of electronic health records technologies to MD Charts. Under his leadership, MD Charts has developed partnerships with numerous industry-leading healthcare systems, with the vision to simplify the complex and often poorly integrated healthcare systems used in most medical practices today."
   },
   {
     name: "Maitry Shah",
     title: "IT Project Manager",
     initials: "MS",
-    bio: "As the IT Project Manager, Maitry is focused on MD Charts' product and technology strategy in support of the company's goals and vision. She brings extensive experience in developing and leading technology integration teams, defining strategic product vision and roadmaps, and developing a customer-focused culture.",
-    details: "A computer engineer by profession, Maitry holds a Masters' Degree from New York Institute of Technology (NYIT) and Bachelors' of Engineering from India.",
-    highlights: ["Masters NYIT", "Tech Integration", "Customer Focus"]
+    bio: "As the IT Project Manager, Maitry is focused on MD Charts' product and technology strategy in support of the company's goals and vision. She brings extensive experience in developing and leading technology integration teams, defining strategic product vision and roadmaps, and developing a customer-focused culture."
   },
   {
     name: "Ran Berkman",
     title: "Digital Marketing Director",
     initials: "RB",
-    bio: "Ran brings over 20 years of invaluable digital experience in the health and aesthetics sector. His unique expertise has enabled him to assist clients in developing and implementing winning strategies that continually enhance results across the USA and abroad.",
-    details: "Ran graduated with distinction from the Zicklin School of Business at Baruch College, where he earned an MBA degree in Management and Entrepreneurship.",
-    highlights: ["20+ Years Digital", "MBA Baruch", "Global Reach"]
+    bio: "Ran brings over 20 years of invaluable digital experience in the health and aesthetics sector. His unique expertise has enabled him to assist clients in developing and implementing winning strategies that continually enhance results across the USA and abroad."
   },
   {
     name: "Mago Saldana",
     title: "Senior Business Analyst",
     initials: "MS",
-    bio: "Mago has been instrumental in over 150 EHR implementations across a wide range of medical specialties. As a business analyst, her expertise extends to Ambulatory practices, Urgent care facilities, OB/GYN, Gastroenterology, Internal Medicine, Cardiology, Podiatry, FQHC, Pediatrics, and Dermatology.",
-    details: "Mago graduated with a bachelor's degree from Iowa State University and is committed to improving the efficiency and effectiveness of healthcare delivery.",
-    highlights: ["150+ Implementations", "Multi-Specialty", "Iowa State"]
+    bio: "Mago has been instrumental in over 150 EHR implementations across a wide range of medical specialties. As a business analyst, her expertise extends to Ambulatory practices, Urgent care facilities, OB/GYN, Gastroenterology, Internal Medicine, Cardiology, Podiatry, FQHC, Pediatrics, and Dermatology."
   },
   {
     name: "Jacqueline Lally",
     title: "Senior Revenue Cycle Manager",
     initials: "JL",
-    bio: "Jackie brings over 8 years of experience in Medical Billing, specializing in laboratory and genetic testing, cardiology, vascular procedures, sleep studies, internal medicine, OB/GYN, and endometriosis surgery. Her expertise spans the entire billing cycle with a strong focus on accuracy, compliance, and process efficiency.",
-    details: "Jackie is a Certified Medical Billing Specialist and is currently pursuing her Certified Coding Specialist (CCS) certification at Molloy University.",
-    highlights: ["Certified Specialist", "8+ Years Billing", "CCS Candidate"]
+    bio: "Jackie brings over 8 years of experience in Medical Billing, specializing in laboratory and genetic testing, cardiology, vascular procedures, sleep studies, internal medicine, OB/GYN, and endometriosis surgery. Her expertise spans the entire billing cycle with a strong focus on accuracy, compliance, and process efficiency."
   }
 ];
 
@@ -135,13 +125,6 @@ export default function Management() {
                         {member.initials}
                       </span>
                     </div>
-                    <div className="mt-4 flex flex-wrap gap-2">
-                      {member.highlights.map((highlight, hIdx) => (
-                        <span key={hIdx} className="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full font-medium">
-                          {highlight}
-                        </span>
-                      ))}
-                    </div>
                   </div>
                   
                   <div className="flex-1">
@@ -150,13 +133,8 @@ export default function Management() {
                       <p className="text-primary font-semibold text-lg">{member.title}</p>
                     </div>
                     
-                    <p className="text-slate-600 mb-4 leading-relaxed">
+                    <p className="text-slate-600 leading-relaxed">
                       {member.bio}
-                    </p>
-                    
-                    <p className="text-slate-500 text-sm leading-relaxed border-t border-slate-100 pt-4">
-                      <GraduationCap className="h-4 w-4 inline mr-2 text-primary" />
-                      {member.details}
                     </p>
                   </div>
                 </div>

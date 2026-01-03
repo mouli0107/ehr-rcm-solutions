@@ -1,6 +1,6 @@
 import { Link } from "wouter";
 import { Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
-import mdchartsLogo from "@assets/mdcharts_logo.png";
+import mdchartsLogo from "@assets/mdcharts_official_logo.png";
 
 export function Footer() {
   return (
@@ -12,7 +12,7 @@ export function Footer() {
               <img 
                 src={mdchartsLogo} 
                 alt="MDcharts EHR" 
-                className="h-8 w-auto brightness-0 invert"
+                className="h-10 w-auto brightness-0 invert"
               />
             </Link>
             <p className="mb-6 max-w-sm text-slate-500 leading-relaxed">

@@ -1,14 +1,14 @@
 import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { 
-  Menu, X, Phone, Mail, Clock, ChevronRight, 
+  Stethoscope, Menu, X, Phone, Mail, Clock, ChevronRight, 
   FileText, Calendar, DollarSign, Users, Shield, Award, 
   BookOpen, ExternalLink, ArrowRight, Building2, Heart,
   ClipboardList, Zap, TrendingUp, MessageSquare, Video,
   Smartphone, BarChart3, FlaskConical, Briefcase, Newspaper,
-  HelpCircle, Star, Handshake, Stethoscope
+  HelpCircle, Star, Handshake
 } from "lucide-react";
-import mdchartsLogo from "@assets/mdcharts_logo.png";
+import mdchartsLogo from "@assets/mdcharts_official_logo.png";
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import {
@@ -162,7 +162,7 @@ export function Navbar() {
             <img 
               src={mdchartsLogo} 
               alt="MDcharts EHR" 
-              className="h-8 w-auto"
+              className="h-10 w-auto"
             />
           </Link>
 

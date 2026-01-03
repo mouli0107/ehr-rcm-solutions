@@ -7,6 +7,7 @@ import { ContactModal } from "@/components/ContactModal";
 import { Link } from "wouter";
 import ehrHeroImage from "@assets/stock_images/female_doctor_smilin_9aeffd62.jpg";
 import ehrDashboardImage from "@assets/image_1767433966912.png";
+import patientChartImage from "@assets/image_1767434643508.png";
 
 const features = [
   {
@@ -170,6 +171,58 @@ export default function EHRPage() {
                   className="w-full h-auto"
                 />
               </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Patient Chart Section - Cyan Background */}
+      <section className="py-24 bg-primary">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Left Screenshot */}
+            <motion.div
+              initial={{ opacity: 1, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="relative"
+            >
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-white">
+                <img 
+                  src={patientChartImage} 
+                  alt="MDcharts Patient Chart with comprehensive medical history" 
+                  className="w-full h-auto"
+                />
+              </div>
+            </motion.div>
+
+            {/* Right Content */}
+            <motion.div
+              initial={{ opacity: 1, y: 5 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mb-6">
+                Go paperless with digital patient records
+              </h2>
+              
+              <p className="text-lg text-white/90 mb-4 leading-relaxed">
+                MDcharts' patient management system has been tailor-made to cater for the heavy documentation needs of medical patient workflows.
+              </p>
+              
+              <p className="text-lg text-white/90 mb-4 leading-relaxed">
+                Access complete patient history at a glance — allergies, medications, critical items, and visit notes — all organized in a single view.
+              </p>
+              
+              <p className="text-lg text-white/90 mb-8 leading-relaxed">
+                From allergy alerts to SOAP notes and lab orders — all the information you need about your patients is securely stored in one place and can be accessed from anywhere, on any device.
+              </p>
+              
+              <Link href="/ehr">
+                <Button variant="secondary" size="lg" className="rounded-full px-8 h-12">
+                  Explore our Patient Management features
+                </Button>
+              </Link>
             </motion.div>
           </div>
         </div>

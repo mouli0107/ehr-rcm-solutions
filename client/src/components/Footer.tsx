@@ -1,6 +1,6 @@
 import { Link } from "wouter";
 import { Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
-import mdchartsLogo from "@assets/mdcharts_official_logo.png";
+import mdchartsLogo from "@assets/generated_images/mdcharts_logo_text_design.png";
 
 export function Footer() {
   return (

@@ -4,7 +4,9 @@ import {
   Stethoscope, Menu, X, Phone, Mail, Clock, ChevronRight, 
   FileText, Calendar, DollarSign, Users, Shield, Award, 
   BookOpen, ExternalLink, ArrowRight, Building2, Heart,
-  ClipboardList, Zap, TrendingUp, MessageSquare
+  ClipboardList, Zap, TrendingUp, MessageSquare, Video,
+  Smartphone, BarChart3, FlaskConical, Briefcase, Newspaper,
+  HelpCircle, Star, Handshake
 } from "lucide-react";
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
@@ -17,7 +19,6 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
-import { ContactModal } from "@/components/ContactModal";
 
 const solutionsLeft = [
   { 
@@ -47,10 +48,12 @@ const solutionsLeft = [
 ];
 
 const solutionsRight = [
-  { title: "E-Prescribing", href: "/ehr", icon: ClipboardList },
-  { title: "Lab Integration", href: "/ehr", icon: Zap },
-  { title: "Analytics & Reports", href: "/practice-management", icon: TrendingUp },
-  { title: "Telehealth", href: "/patient-engagement", icon: MessageSquare },
+  { title: "E-Prescribing", href: "/features/e-prescribing", icon: ClipboardList },
+  { title: "Lab Integration", href: "/features/lab-integration", icon: FlaskConical },
+  { title: "Telehealth", href: "/features/telehealth", icon: Video },
+  { title: "Patient Portal", href: "/features/patient-portal", icon: Users },
+  { title: "Mobile App", href: "/features/mobile-app", icon: Smartphone },
+  { title: "Analytics & Reports", href: "/features/analytics", icon: BarChart3 },
 ];
 
 const specialtiesCol1 = [
@@ -58,31 +61,48 @@ const specialtiesCol1 = [
   { title: "OB/GYN", href: "/specialties/obgyn" },
   { title: "Pediatrics", href: "/specialties/pediatrics" },
   { title: "Urology", href: "/specialties/urology" },
+  { title: "Cardiology", href: "/specialties/cardiology" },
+  { title: "Family Medicine", href: "/specialties/family-medicine" },
 ];
 
 const specialtiesCol2 = [
-  { title: "Cardiology", href: "/specialties/cardiology" },
-  { title: "Family Medicine", href: "/specialties/family-medicine" },
-  { title: "Internal Medicine", href: "/specialties" },
-  { title: "Psychiatry", href: "/specialties" },
+  { title: "Orthopedics", href: "/specialties/orthopedics" },
+  { title: "Ophthalmology", href: "/specialties/ophthalmology" },
+  { title: "ENT", href: "/specialties/ent" },
+  { title: "Gastroenterology", href: "/specialties/gastroenterology" },
+  { title: "Neurology", href: "/specialties/neurology" },
+  { title: "Psychiatry", href: "/specialties/psychiatry" },
 ];
 
-const aboutUsItems = [
-  { title: "Success Stories", href: "/about/success-stories", description: "Read case studies from our satisfied clients", icon: Award },
-  { title: "Compare", href: "/about/compare", description: "Compare MDcharts with alternative systems", icon: Building2 },
+const resourcesLeft = [
+  { title: "Blog", href: "/blog", description: "Healthcare insights & EHR tips", icon: BookOpen },
+  { title: "Case Studies", href: "/resources/case-studies", description: "Real results from real practices", icon: Award },
+  { title: "Testimonials", href: "/resources/testimonials", description: "What our customers say", icon: Star },
 ];
 
-const aboutUsLinks = [
-  { title: "Integrations", href: "/integrations", icon: ExternalLink },
-  { title: "Our Security Commitment", href: "/security", icon: Shield },
-  { title: "About Us", href: "/about", icon: Heart },
-  { title: "Blog", href: "/blog", icon: BookOpen },
+const resourcesRight = [
+  { title: "FAQs", href: "/resources/faqs", icon: HelpCircle },
+  { title: "Webinars", href: "/resources/webinars", icon: Video },
+  { title: "White Papers", href: "/resources/white-papers", icon: FileText },
+  { title: "Compliance", href: "/compliance", icon: Shield },
+  { title: "Support Center", href: "/support", icon: MessageSquare },
+];
+
+const companyItems = [
+  { title: "About Us", href: "/about", description: "Our mission and values", icon: Heart },
+  { title: "Leadership", href: "/about/leadership", description: "Meet our team", icon: Users },
+];
+
+const companyLinks = [
+  { title: "Careers", href: "/careers", icon: Briefcase },
+  { title: "Partners", href: "/partners", icon: Handshake },
+  { title: "Press & News", href: "/press", icon: Newspaper },
+  { title: "Security", href: "/security", icon: Shield },
 ];
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [modalOpen, setModalOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -100,7 +120,7 @@ export function Navbar() {
           <div className="flex items-center gap-6">
             <Link href="/contact" className="flex items-center gap-1.5 hover:text-white transition-colors"><Phone className="h-3 w-3 text-primary" /> (516) 684-9521</Link>
             <Link href="/contact" className="flex items-center gap-1.5 hover:text-white transition-colors"><Mail className="h-3 w-3 text-primary" /> info@mdchartsehr.com</Link>
-            <span className="flex items-center gap-1.5"><Clock className="h-3 w-3 text-emerald-500" /> Support Status: Online (Wait: &lt;1m)</span>
+            <span className="flex items-center gap-1.5"><Clock className="h-3 w-3 text-emerald-500" /> Support Status: Online</span>
           </div>
           <div className="flex items-center gap-4">
             <Link href="/support" className="hover:text-white transition-colors">Support</Link>
@@ -132,7 +152,7 @@ export function Navbar() {
             </div>
           </Link>
 
-          {/* Desktop Mega Menu - Elegant & Wide */}
+          {/* Desktop Mega Menu */}
           <div className="hidden lg:flex items-center justify-center flex-1 ml-8">
             <NavigationMenu>
               <NavigationMenuList className="gap-0">
@@ -166,9 +186,9 @@ export function Navbar() {
                           </div>
                         </div>
 
-                        {/* Middle Column - Quick Links */}
-                        <div className="col-span-3 p-6 bg-slate-50/50">
-                          <h3 className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-4">Additional Modules</h3>
+                        {/* Middle Column - Features */}
+                        <div className="col-span-4 p-6 bg-slate-50/50">
+                          <h3 className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-4">Features</h3>
                           <div className="space-y-1">
                             {solutionsRight.map((item) => (
                               <Link
@@ -178,30 +198,22 @@ export function Navbar() {
                               >
                                 <item.icon className="h-4 w-4 text-slate-400 group-hover:text-primary transition-colors" />
                                 <span>{item.title}</span>
-                                <ExternalLink className="h-3 w-3 ml-auto opacity-0 group-hover:opacity-100 transition-opacity" />
+                                <ChevronRight className="h-3 w-3 ml-auto opacity-0 group-hover:opacity-100 transition-opacity" />
                               </Link>
                             ))}
-                          </div>
-                          <div className="mt-6 pt-4 border-t border-slate-200">
-                            <Link href="/solutions" className="flex items-center gap-1 text-sm font-semibold text-primary hover:underline">
-                              View All 25+ Modules <ArrowRight className="h-4 w-4" />
-                            </Link>
                           </div>
                         </div>
 
                         {/* Right Column - Featured */}
-                        <div className="col-span-4 p-6 bg-gradient-to-br from-primary/5 to-cyan-50/50">
+                        <div className="col-span-3 p-6 bg-gradient-to-br from-primary/5 to-cyan-50/50">
                           <div className="rounded-xl overflow-hidden bg-white shadow-sm border border-slate-100">
-                            <div className="h-32 bg-gradient-to-br from-primary to-cyan-500 flex items-center justify-center">
-                              <div className="text-center text-white">
-                                <Shield className="h-10 w-10 mx-auto mb-2 opacity-90" />
-                                <span className="text-xs font-semibold opacity-90">ONC 2015 Certified</span>
-                              </div>
+                            <div className="h-24 bg-gradient-to-br from-primary to-cyan-500 flex items-center justify-center">
+                              <Shield className="h-10 w-10 text-white opacity-90" />
                             </div>
                             <div className="p-4">
                               <h4 className="font-bold text-slate-800 mb-1">Complete EHR Solution</h4>
                               <p className="text-sm text-slate-500 mb-3">
-                                Fully certified platform trusted by 1000+ practices nationwide.
+                                Fully certified platform for modern practices.
                               </p>
                               <Link href="/book-demo" className="inline-flex items-center gap-1 text-sm font-semibold text-primary hover:underline">
                                 Schedule Demo <ArrowRight className="h-3 w-3" />
@@ -222,7 +234,7 @@ export function Navbar() {
                   <NavigationMenuContent>
                     <div className="w-[700px] p-0 bg-white shadow-xl rounded-lg border border-slate-100">
                       <div className="grid grid-cols-12 divide-x divide-slate-100">
-                        {/* Specialties Columns */}
+                        {/* Specialties Column 1 */}
                         <div className="col-span-4 p-6">
                           <h3 className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-4">Popular</h3>
                           <div className="space-y-1">
@@ -239,6 +251,7 @@ export function Navbar() {
                           </div>
                         </div>
 
+                        {/* Specialties Column 2 */}
                         <div className="col-span-4 p-6 bg-slate-50/50">
                           <h3 className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-4">More Specialties</h3>
                           <div className="space-y-1">
@@ -258,11 +271,11 @@ export function Navbar() {
                         {/* Featured Specialty */}
                         <div className="col-span-4 p-6 bg-gradient-to-br from-cyan-50/50 to-primary/5">
                           <div className="rounded-xl overflow-hidden bg-white shadow-sm border border-slate-100">
-                            <div className="h-28 bg-gradient-to-r from-primary to-cyan-500 flex items-center justify-center">
-                              <Stethoscope className="h-12 w-12 text-white opacity-80" />
+                            <div className="h-24 bg-gradient-to-r from-primary to-cyan-500 flex items-center justify-center">
+                              <Stethoscope className="h-10 w-10 text-white opacity-80" />
                             </div>
                             <div className="p-4">
-                              <h4 className="font-bold text-slate-800 mb-1">40+ Specialties</h4>
+                              <h4 className="font-bold text-slate-800 mb-1">All Specialties</h4>
                               <p className="text-sm text-slate-500 mb-3">
                                 Pre-built templates for every practice type.
                               </p>
@@ -277,18 +290,19 @@ export function Navbar() {
                   </NavigationMenuContent>
                 </NavigationMenuItem>
 
-                {/* Why Us Menu */}
+                {/* Resources Menu */}
                 <NavigationMenuItem>
                   <NavigationMenuTrigger className="h-10 px-4 text-sm font-semibold text-slate-700 hover:text-primary data-[state=open]:text-primary bg-transparent hover:bg-transparent data-[state=open]:bg-transparent">
-                    Why Us
+                    Resources
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
-                    <div className="w-[750px] p-0 bg-white shadow-xl rounded-lg border border-slate-100">
+                    <div className="w-[600px] p-0 bg-white shadow-xl rounded-lg border border-slate-100">
                       <div className="grid grid-cols-12 divide-x divide-slate-100">
-                        {/* Left Column - Main Items */}
-                        <div className="col-span-5 p-6">
+                        {/* Left Column */}
+                        <div className="col-span-6 p-6">
+                          <h3 className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-4">Learn</h3>
                           <div className="space-y-1">
-                            {aboutUsItems.map((item) => (
+                            {resourcesLeft.map((item) => (
                               <Link
                                 key={item.title}
                                 href={item.href}
@@ -306,10 +320,11 @@ export function Navbar() {
                           </div>
                         </div>
 
-                        {/* Middle Column - Quick Links */}
-                        <div className="col-span-3 p-6 bg-slate-50/50">
+                        {/* Right Column */}
+                        <div className="col-span-6 p-6 bg-slate-50/50">
+                          <h3 className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-4">More Resources</h3>
                           <div className="space-y-1">
-                            {aboutUsLinks.map((item) => (
+                            {resourcesRight.map((item) => (
                               <Link
                                 key={item.title}
                                 href={item.href}
@@ -317,30 +332,9 @@ export function Navbar() {
                               >
                                 <item.icon className="h-4 w-4 text-slate-400 group-hover:text-primary transition-colors" />
                                 <span className="font-medium">{item.title}</span>
-                                <ExternalLink className="h-3 w-3 ml-auto opacity-0 group-hover:opacity-100 transition-opacity" />
+                                <ChevronRight className="h-3 w-3 ml-auto opacity-0 group-hover:opacity-100 transition-opacity" />
                               </Link>
                             ))}
-                          </div>
-                        </div>
-
-                        {/* Right Column - Featured Case Study */}
-                        <div className="col-span-4 p-6 bg-gradient-to-br from-primary/5 to-cyan-50/50">
-                          <div className="rounded-xl overflow-hidden bg-white shadow-sm border border-slate-100">
-                            <div className="h-32 bg-gradient-to-br from-slate-700 to-slate-800 flex items-center justify-center relative overflow-hidden">
-                              <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400&h=200&fit=crop')] bg-cover bg-center opacity-50" />
-                              <div className="relative text-center text-white z-10 px-4">
-                                <span className="text-xs font-semibold bg-primary/90 px-2 py-1 rounded">Case Study</span>
-                              </div>
-                            </div>
-                            <div className="p-4">
-                              <h4 className="font-bold text-slate-800 mb-1 leading-snug">City Medical Group Success</h4>
-                              <p className="text-sm text-slate-500 mb-3">
-                                Learn how they improved efficiency by 40%.
-                              </p>
-                              <Link href="/about/success-stories" className="inline-flex items-center gap-1 text-sm font-semibold text-primary hover:underline">
-                                Read More <ArrowRight className="h-3 w-3" />
-                              </Link>
-                            </div>
                           </div>
                         </div>
                       </div>
@@ -348,41 +342,53 @@ export function Navbar() {
                   </NavigationMenuContent>
                 </NavigationMenuItem>
 
-                {/* Resources Menu */}
+                {/* Company Menu */}
                 <NavigationMenuItem>
                   <NavigationMenuTrigger className="h-10 px-4 text-sm font-semibold text-slate-700 hover:text-primary data-[state=open]:text-primary bg-transparent hover:bg-transparent data-[state=open]:bg-transparent">
-                    Resources
+                    Company
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
-                    <div className="w-[400px] p-4 bg-white shadow-xl rounded-lg border border-slate-100">
-                      <div className="space-y-1">
-                        <Link href="/blog" className="flex items-center gap-3 p-3 rounded-lg hover:bg-primary/5 group transition-all">
-                          <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary/20 transition-colors">
-                            <BookOpen className="h-5 w-5 text-primary" />
+                    <div className="w-[500px] p-0 bg-white shadow-xl rounded-lg border border-slate-100">
+                      <div className="grid grid-cols-12 divide-x divide-slate-100">
+                        {/* Left Column */}
+                        <div className="col-span-6 p-6">
+                          <h3 className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-4">About MDcharts</h3>
+                          <div className="space-y-1">
+                            {companyItems.map((item) => (
+                              <Link
+                                key={item.title}
+                                href={item.href}
+                                className="flex items-start gap-3 p-3 rounded-lg hover:bg-primary/5 group transition-all"
+                              >
+                                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary/20 transition-colors">
+                                  <item.icon className="h-5 w-5 text-primary" />
+                                </div>
+                                <div>
+                                  <div className="font-semibold text-slate-800 group-hover:text-primary transition-colors">{item.title}</div>
+                                  <div className="text-sm text-slate-500">{item.description}</div>
+                                </div>
+                              </Link>
+                            ))}
                           </div>
-                          <div>
-                            <div className="font-semibold text-slate-800 group-hover:text-primary transition-colors">Blog</div>
-                            <div className="text-sm text-slate-500">Healthcare insights & EHR tips</div>
+                        </div>
+
+                        {/* Right Column */}
+                        <div className="col-span-6 p-6 bg-slate-50/50">
+                          <h3 className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-4">More</h3>
+                          <div className="space-y-1">
+                            {companyLinks.map((item) => (
+                              <Link
+                                key={item.title}
+                                href={item.href}
+                                className="flex items-center gap-2 px-3 py-2.5 rounded-md text-slate-600 hover:text-primary hover:bg-white transition-all group"
+                              >
+                                <item.icon className="h-4 w-4 text-slate-400 group-hover:text-primary transition-colors" />
+                                <span className="font-medium">{item.title}</span>
+                                <ChevronRight className="h-3 w-3 ml-auto opacity-0 group-hover:opacity-100 transition-opacity" />
+                              </Link>
+                            ))}
                           </div>
-                        </Link>
-                        <Link href="/compliance" className="flex items-center gap-3 p-3 rounded-lg hover:bg-primary/5 group transition-all">
-                          <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary/20 transition-colors">
-                            <Shield className="h-5 w-5 text-primary" />
-                          </div>
-                          <div>
-                            <div className="font-semibold text-slate-800 group-hover:text-primary transition-colors">Compliance</div>
-                            <div className="text-sm text-slate-500">HIPAA, MIPS & regulatory info</div>
-                          </div>
-                        </Link>
-                        <Link href="/support" className="flex items-center gap-3 p-3 rounded-lg hover:bg-primary/5 group transition-all">
-                          <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary/20 transition-colors">
-                            <MessageSquare className="h-5 w-5 text-primary" />
-                          </div>
-                          <div>
-                            <div className="font-semibold text-slate-800 group-hover:text-primary transition-colors">Support Center</div>
-                            <div className="text-sm text-slate-500">Help docs & live assistance</div>
-                          </div>
-                        </Link>
+                        </div>
                       </div>
                     </div>
                   </NavigationMenuContent>
@@ -435,42 +441,59 @@ export function Navbar() {
               <div className="space-y-2">
                 <h3 className="font-heading font-bold text-sm uppercase tracking-wider text-slate-900 border-b pb-2">Solutions</h3>
                 {solutionsLeft.map(c => (
-                  <Link key={c.title} href={c.href} className="block text-slate-600 py-1.5 text-sm font-medium hover:text-primary hover:bg-slate-50 px-2 rounded" onClick={() => setMobileMenuOpen(false)}>{c.title}</Link>
+                  <Link key={c.title} href={c.href} className="block py-2 text-slate-600 hover:text-primary" onClick={() => setMobileMenuOpen(false)}>{c.title}</Link>
+                ))}
+                {solutionsRight.map(c => (
+                  <Link key={c.title} href={c.href} className="block py-2 text-slate-600 hover:text-primary" onClick={() => setMobileMenuOpen(false)}>{c.title}</Link>
                 ))}
               </div>
               
               <div className="space-y-2">
                 <h3 className="font-heading font-bold text-sm uppercase tracking-wider text-slate-900 border-b pb-2">Specialties</h3>
-                <div className="grid grid-cols-2 gap-1">
-                  {[...specialtiesCol1, ...specialtiesCol2].map(s => (
-                    <Link key={s.title} href={s.href} className="text-slate-600 py-1.5 text-sm hover:text-primary px-2" onClick={() => setMobileMenuOpen(false)}>{s.title}</Link>
-                  ))}
-                </div>
+                {specialtiesCol1.map(c => (
+                  <Link key={c.title} href={c.href} className="block py-2 text-slate-600 hover:text-primary" onClick={() => setMobileMenuOpen(false)}>{c.title}</Link>
+                ))}
+                {specialtiesCol2.map(c => (
+                  <Link key={c.title} href={c.href} className="block py-2 text-slate-600 hover:text-primary" onClick={() => setMobileMenuOpen(false)}>{c.title}</Link>
+                ))}
               </div>
-
+              
               <div className="space-y-2">
                 <h3 className="font-heading font-bold text-sm uppercase tracking-wider text-slate-900 border-b pb-2">Resources</h3>
-                <Link href="/blog" className="block text-slate-600 py-1.5 text-sm font-medium hover:text-primary hover:bg-slate-50 px-2 rounded" onClick={() => setMobileMenuOpen(false)}>Blog</Link>
-                <Link href="/compliance" className="block text-slate-600 py-1.5 text-sm font-medium hover:text-primary hover:bg-slate-50 px-2 rounded" onClick={() => setMobileMenuOpen(false)}>Compliance</Link>
-                <Link href="/support" className="block text-slate-600 py-1.5 text-sm font-medium hover:text-primary hover:bg-slate-50 px-2 rounded" onClick={() => setMobileMenuOpen(false)}>Support</Link>
+                {resourcesLeft.map(c => (
+                  <Link key={c.title} href={c.href} className="block py-2 text-slate-600 hover:text-primary" onClick={() => setMobileMenuOpen(false)}>{c.title}</Link>
+                ))}
+                {resourcesRight.map(c => (
+                  <Link key={c.title} href={c.href} className="block py-2 text-slate-600 hover:text-primary" onClick={() => setMobileMenuOpen(false)}>{c.title}</Link>
+                ))}
               </div>
-
-              <div className="pt-4 border-t border-slate-100 space-y-2">
+              
+              <div className="space-y-2">
+                <h3 className="font-heading font-bold text-sm uppercase tracking-wider text-slate-900 border-b pb-2">Company</h3>
+                {companyItems.map(c => (
+                  <Link key={c.title} href={c.href} className="block py-2 text-slate-600 hover:text-primary" onClick={() => setMobileMenuOpen(false)}>{c.title}</Link>
+                ))}
+                {companyLinks.map(c => (
+                  <Link key={c.title} href={c.href} className="block py-2 text-slate-600 hover:text-primary" onClick={() => setMobileMenuOpen(false)}>{c.title}</Link>
+                ))}
+              </div>
+              
+              <div className="space-y-2">
+                <Link href="/pricing" className="block py-2 font-semibold text-slate-900 hover:text-primary" onClick={() => setMobileMenuOpen(false)}>Pricing</Link>
+              </div>
+              
+              <div className="pt-4 space-y-3">
                 <Link href="/book-demo" onClick={() => setMobileMenuOpen(false)}>
-                  <Button className="w-full">Book Demo</Button>
+                  <Button className="w-full h-12" data-testid="button-mobile-demo">Book a Demo</Button>
+                </Link>
+                <Link href="/contact" onClick={() => setMobileMenuOpen(false)}>
+                  <Button variant="outline" className="w-full h-12">Contact Us</Button>
                 </Link>
               </div>
             </div>
           </div>
         )}
       </nav>
-      
-      <ContactModal
-        isOpen={modalOpen}
-        onClose={() => setModalOpen(false)}
-        title="Schedule a Demo"
-        requestType="demo"
-      />
     </div>
   );
 }

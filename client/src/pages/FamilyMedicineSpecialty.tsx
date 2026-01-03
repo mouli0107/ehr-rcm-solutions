@@ -21,44 +21,44 @@ const fadeIn = {
 const softwareBenefits = [
   { 
     icon: Clock, 
-    title: "Complete Notes in 2.5 Minutes", 
+    title: "Complete Notes Quickly", 
     desc: "FamilyCharts auto-populates patient history, medications, and problem list. Smart templates adapt to each visit type - from well-child to Medicare AWV.",
-    stat: "40% faster"
+    stat: "Faster"
   },
   { 
     icon: DollarSign, 
     title: "Capture Every Dollar", 
-    desc: "Built-in coding guidance ensures correct E&M levels. TriZetto clearinghouse integration gets claims paid 30% faster with 98% clean claim rates.",
-    stat: "$38K saved/yr"
+    desc: "Built-in coding guidance ensures correct E&M levels. TriZetto clearinghouse integration gets claims paid faster with high clean claim rates.",
+    stat: "Optimized"
   },
   { 
     icon: Shield, 
     title: "MIPS Made Easy", 
     desc: "Automatic quality measure tracking with real-time dashboards. Hit your MIPS targets without the headache - compliance built right into your workflow.",
-    stat: "100% compliant"
+    stat: "Compliant"
   },
   { 
     icon: MousePointer, 
     title: "Click Less, Care More", 
     desc: "Intuitive interface designed by family physicians. Less time on the computer means more time actually connecting with your patients.",
-    stat: "2x patient face time"
+    stat: "More Face Time"
   }
 ];
 
 const features = [
-  { icon: Layers, title: "120+ Templates", desc: "Pre-built templates for every family medicine scenario - well visits, chronic care, AWV, acute visits, and procedures" },
+  { icon: Layers, title: "Comprehensive Templates", desc: "Pre-built templates for every family medicine scenario - well visits, chronic care, AWV, acute visits, and procedures" },
   { icon: TrendingUp, title: "Chronic Care Management", desc: "CCM billing workflows with automatic time tracking and care plan documentation" },
-  { icon: Zap, title: "Same-Day Sick Visits", desc: "Rapid documentation templates for acute visits - complete chief complaint to assessment in under 2 minutes" },
+  { icon: Zap, title: "Same-Day Sick Visits", desc: "Rapid documentation templates for acute visits - complete chief complaint to assessment quickly" },
   { icon: DollarSign, title: "Revenue Cycle Built-In", desc: "TriZetto clearinghouse handles claims, eligibility checks, and payment posting automatically" },
   { icon: Users, title: "Patient Portal Included", desc: "Secure messaging, online scheduling, and records access keeps patients engaged between visits" },
   { icon: Lock, title: "Enterprise Security", desc: "Bank-level encryption, automatic backups, and complete HIPAA compliance included" }
 ];
 
 const stats = [
-  { value: "40%", label: "Faster Documentation" },
-  { value: "98%", label: "Clean Claim Rate" },
-  { value: "$38K", label: "Avg Annual Savings" },
-  { value: "600+", label: "FM Practices" }
+  { value: "Fast", label: "Documentation Speed" },
+  { value: "High", label: "Clean Claim Rate" },
+  { value: "Significant", label: "Cost Savings" },
+  { value: "Growing", label: "FM Practices" }
 ];
 
 const integrations = [
@@ -67,12 +67,12 @@ const integrations = [
 ];
 
 const visitTypes = [
-  { type: "Well-Child Visits", time: "1.5 min", template: "AAP Bright Futures aligned" },
-  { type: "Annual Physicals", time: "2 min", template: "Preventive care checklists" },
-  { type: "Medicare AWV", time: "2.5 min", template: "HRA auto-populated" },
-  { type: "Chronic Care", time: "2 min", template: "Care plan management" },
-  { type: "Acute Visits", time: "1.5 min", template: "Chief complaint focused" },
-  { type: "Procedures", time: "1 min", template: "Consent & documentation" }
+  { type: "Well-Child Visits", time: "Quick", template: "AAP Bright Futures aligned" },
+  { type: "Annual Physicals", time: "Fast", template: "Preventive care checklists" },
+  { type: "Medicare AWV", time: "Efficient", template: "HRA auto-populated" },
+  { type: "Chronic Care", time: "Fast", template: "Care plan management" },
+  { type: "Acute Visits", time: "Quick", template: "Chief complaint focused" },
+  { type: "Procedures", time: "Rapid", template: "Consent & documentation" }
 ];
 
 export default function FamilyMedicineSpecialty() {

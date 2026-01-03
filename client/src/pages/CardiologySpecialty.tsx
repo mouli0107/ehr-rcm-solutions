@@ -73,14 +73,14 @@ const workflows = [
 ];
 
 const stats = [
-  { value: "85+", label: "Cardiology Templates" },
-  { value: "3 min", label: "Average Documentation" },
-  { value: "97%", label: "Clean Claim Rate" },
-  { value: "500+", label: "Practices Trust Us" }
+  { value: "Comprehensive", label: "Cardiology Templates" },
+  { value: "Fast", label: "Average Documentation" },
+  { value: "High", label: "Clean Claim Rate" },
+  { value: "Growing", label: "Practices Trust Us" }
 ];
 
 const testimonial = {
-  quote: "CardioCharts has completely transformed how we document. The ECG integration alone saves our team 2 hours every day. The cardiac-specific templates understand exactly how cardiologists think and work.",
+  quote: "CardioCharts has completely transformed how we document. The ECG integration saves our team significant time every day. The cardiac-specific templates understand exactly how cardiologists think and work.",
   author: "Dr. James Mitchell, MD, FACC",
   role: "Director of Cardiology",
   practice: "HeartCare Associates, New York"
@@ -319,12 +319,12 @@ export default function CardiologySpecialty() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { icon: HeartPulse, title: "ECG Auto-Interpretation", desc: "AI-assisted rhythm analysis with customizable interpretation templates. Reduce reading time by 60%." },
+              { icon: HeartPulse, title: "ECG Auto-Interpretation", desc: "AI-assisted rhythm analysis with customizable interpretation templates. Significantly reduce reading time." },
               { icon: Monitor, title: "Imaging Integration", desc: "Direct echo and nuclear imaging imports with structured reporting. View trends over time." },
               { icon: Activity, title: "Stress Test Protocols", desc: "Built-in Bruce, modified Bruce, and pharmacologic protocols with automatic stage tracking." },
               { icon: Shield, title: "Device Clinic Ready", desc: "Complete pacemaker and ICD device management with remote monitoring integration." },
-              { icon: Clock, title: "3-Minute Documentation", desc: "Cardiology-specific smart phrases and templates cut documentation time dramatically." },
-              { icon: Award, title: "97% Clean Claims", desc: "Automatic CPT code suggestions and compliance checks reduce denials significantly." }
+              { icon: Clock, title: "Fast Documentation", desc: "Cardiology-specific smart phrases and templates cut documentation time dramatically." },
+              { icon: Award, title: "High Clean Claims", desc: "Automatic CPT code suggestions and compliance checks reduce denials significantly." }
             ].map((feature, idx) => (
               <motion.div
                 key={idx}

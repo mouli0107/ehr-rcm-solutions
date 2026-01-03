@@ -65,10 +65,10 @@ const keyFeatures = [
 ];
 
 const benefits = [
-  { stat: "40%", label: "Reduction in Documentation Time", desc: "More time for patients, less time charting" },
-  { stat: "92.3", label: "Average MIPS Score", desc: "Maximizing quality payment incentives" },
-  { stat: "2-10", label: "Weeks to Go-Live", desc: "Fast implementation with full training" },
-  { stat: "24/7", label: "AI-Powered Support", desc: "Never miss a patient call again" },
+  { stat: "Less", label: "Documentation Time", desc: "More time for patients, less time charting" },
+  { stat: "High", label: "MIPS Performance", desc: "Maximizing quality payment incentives" },
+  { stat: "Fast", label: "Go-Live Timeline", desc: "Quick implementation with full training" },
+  { stat: "Always", label: "AI-Powered Support", desc: "Never miss a patient call again" },
 ];
 
 const impactItems = [

@@ -112,7 +112,7 @@ const testimonials = [
     rating: 5
   },
   {
-    quote: "The cosmetic billing separation is brilliant. We can seamlessly manage both medical and aesthetic services without confusion. Our revenue has increased 30% since implementing DermCharts.",
+    quote: "The cosmetic billing separation is brilliant. We can seamlessly manage both medical and aesthetic services without confusion. Our revenue has increased significantly since implementing DermCharts.",
     name: "Dr. Michael Chen, DO",
     practice: "Medical & Cosmetic Dermatology, SkinHealth Medical Group, CA",
     rating: 5
@@ -214,15 +214,15 @@ export default function DermatologySpecialty() {
               
               <motion.div variants={fadeInUp} className="grid grid-cols-3 gap-4 mb-8">
                 <div className="bg-white rounded-xl p-4 shadow-lg border border-slate-100">
-                  <div className="text-2xl font-bold text-primary">100+</div>
+                  <div className="text-2xl font-bold text-primary">Many</div>
                   <div className="text-xs text-slate-500 font-medium">Dermatology Templates</div>
                 </div>
                 <div className="bg-white rounded-xl p-4 shadow-lg border border-slate-100">
-                  <div className="text-2xl font-bold text-emerald-600">2-Min</div>
+                  <div className="text-2xl font-bold text-emerald-600">Fast</div>
                   <div className="text-xs text-slate-500 font-medium">Avg Documentation</div>
                 </div>
                 <div className="bg-white rounded-xl p-4 shadow-lg border border-slate-100">
-                  <div className="text-2xl font-bold text-amber-600">98%</div>
+                  <div className="text-2xl font-bold text-amber-600">High</div>
                   <div className="text-xs text-slate-500 font-medium">Clean Claim Rate</div>
                 </div>
               </motion.div>

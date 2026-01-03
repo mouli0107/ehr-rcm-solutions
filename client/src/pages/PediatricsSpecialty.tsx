@@ -21,32 +21,32 @@ const fadeIn = {
 const softwareBenefits = [
   { 
     icon: Clock, 
-    title: "2-Minute Well-Child Notes", 
+    title: "Quick Well-Child Notes", 
     desc: "PediCharts auto-populates growth percentiles, immunization status, and developmental milestones. Complete a full well-child note before the patient leaves the room.",
-    highlight: "2 min avg"
+    highlight: "Fast"
   },
   { 
     icon: DollarSign, 
     title: "Maximize Reimbursement", 
-    desc: "Built-in AAP coding guidance ensures you capture the right E&M level. TriZetto integration gets your claims paid 30% faster with 98% clean claim rates.",
-    highlight: "$32K saved/yr"
+    desc: "Built-in AAP coding guidance ensures you capture the right E&M level. TriZetto integration gets your claims paid faster with high clean claim rates.",
+    highlight: "Optimized"
   },
   { 
     icon: FileCheck, 
     title: "Automatic Vaccine Tracking", 
     desc: "ACIP-aligned schedules with automatic catch-up calculations. One-click submission to state immunization registries saves hours every week.",
-    highlight: "5 hrs/week saved"
+    highlight: "Time Saver"
   },
   { 
     icon: Shield, 
     title: "HIPAA & MIPS Ready", 
-    desc: "ONC 2015 certified with built-in quality measure tracking. Automatic audit trails and secure parent portal messaging included.",
-    highlight: "100% compliant"
+    desc: "Fully certified with built-in quality measure tracking. Automatic audit trails and secure parent portal messaging included.",
+    highlight: "Compliant"
   }
 ];
 
 const features = [
-  { icon: Layers, title: "90+ Pediatric Templates", desc: "Age-specific templates from newborn to adolescent - well-child, sick visits, sports physicals, ADHD, and more" },
+  { icon: Layers, title: "Comprehensive Templates", desc: "Age-specific templates from newborn to adolescent - well-child, sick visits, sports physicals, ADHD, and more" },
   { icon: TrendingUp, title: "Auto Growth Charts", desc: "CDC/WHO charts auto-plot with each visit. Get instant percentile calculations and growth velocity alerts" },
   { icon: Zap, title: "One-Click Vaccine Orders", desc: "VFC-compliant ordering with automatic lot tracking, consent forms, and VIS documentation" },
   { icon: MousePointer, title: "Click Less, Care More", desc: "Intuitive interface means less screen time and more face time with kids and parents" },
@@ -55,10 +55,10 @@ const features = [
 ];
 
 const stats = [
-  { value: "45%", label: "Faster Charting", icon: "⚡" },
-  { value: "98%", label: "Clean Claims", icon: "💰" },
-  { value: "$32K", label: "Annual Savings", icon: "📈" },
-  { value: "400+", label: "Practices", icon: "🏥" }
+  { value: "Fast", label: "Charting Speed", icon: "⚡" },
+  { value: "High", label: "Clean Claims", icon: "💰" },
+  { value: "Significant", label: "Cost Savings", icon: "📈" },
+  { value: "Growing", label: "Practices", icon: "🏥" }
 ];
 
 const integrations = [
@@ -87,7 +87,7 @@ export default function PediatricsSpecialty() {
               </h1>
               
               <p className="text-xl text-slate-600 mb-8">
-                PediCharts helps pediatric practices document 45% faster, get paid sooner, and spend more time with patients - not paperwork.
+                PediCharts helps pediatric practices document faster, get paid sooner, and spend more time with patients - not paperwork.
               </p>
 
               {/* Stats Cards */}

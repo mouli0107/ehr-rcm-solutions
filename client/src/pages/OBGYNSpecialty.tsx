@@ -24,13 +24,13 @@ const fadeIn = {
 const softwareBenefits = [
   {
     stage: "01",
-    title: "40% Faster Documentation",
+    title: "Faster Documentation",
     description: "OBCharts templates auto-populate patient data, gestational age, and visit history - so you click less and care more.",
     features: ["One-click prenatal notes", "Auto EDD calculation", "Smart phrase library"]
   },
   {
     stage: "02", 
-    title: "98% Clean Claim Rate",
+    title: "High Clean Claim Rate",
     description: "TriZetto integration ensures your OB global billing, antepartum visits, and delivery codes are submitted correctly the first time.",
     features: ["Global OB billing workflows", "Real-time eligibility", "Denial prevention alerts"]
   },
@@ -49,19 +49,19 @@ const softwareBenefits = [
 ];
 
 const features = [
-  { icon: Clock, title: "2-Minute Prenatal Notes", desc: "Complete a full prenatal visit note in under 2 minutes with intelligent auto-population and specialty macros" },
+  { icon: Clock, title: "Quick Prenatal Notes", desc: "Complete a full prenatal visit note quickly with intelligent auto-population and specialty macros" },
   { icon: DollarSign, title: "Revenue Cycle Built-In", desc: "TriZetto clearinghouse integration handles claims, ERA/EOB posting, and denial management automatically" },
-  { icon: Layers, title: "75+ OB/GYN Templates", desc: "Pre-built templates for antepartum, L&D, postpartum, GYN, and annual well-woman visits" },
+  { icon: Layers, title: "Comprehensive Templates", desc: "Pre-built templates for antepartum, L&D, postpartum, GYN, and annual well-woman visits" },
   { icon: LineChart, title: "Real-Time Analytics", desc: "Dashboard shows no-show rates, revenue trends, and quality measure performance at a glance" },
   { icon: Lock, title: "Enterprise Security", desc: "Bank-level encryption, role-based access, and automatic backups keep your practice safe" },
   { icon: MousePointer, title: "Click Less, Care More", desc: "Intuitive interface designed by OB/GYNs means less time on the computer and more time with patients" }
 ];
 
 const stats = [
-  { value: "40%", label: "Less Documentation Time" },
-  { value: "98%", label: "Clean Claim Rate" },
-  { value: "$47K", label: "Avg Annual Savings" },
-  { value: "300+", label: "OB/GYN Practices" }
+  { value: "Less", label: "Documentation Time" },
+  { value: "High", label: "Clean Claim Rate" },
+  { value: "Significant", label: "Cost Savings" },
+  { value: "Growing", label: "OB/GYN Practices" }
 ];
 
 const integrations = [

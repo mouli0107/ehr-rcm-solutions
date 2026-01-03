@@ -26,7 +26,7 @@ const slideIn = {
 const softwareBenefits = [
   {
     category: "Documentation Speed",
-    title: "Complete Notes 50% Faster",
+    title: "Complete Notes Faster",
     items: ["One-click procedure templates", "Voice dictation integration", "Smart phrase libraries", "Auto-populated patient history", "Batch signing capability"]
   },
   {
@@ -47,9 +47,9 @@ const softwareBenefits = [
 ];
 
 const keyFeatures = [
-  { icon: Clock, title: "3-Minute Visit Notes", desc: "Complete a full urology visit in under 3 minutes with specialty-specific templates and smart auto-population" },
-  { icon: DollarSign, title: "98% Clean Claim Rate", desc: "TriZetto integration handles claims, eligibility, and payment posting - all in one system" },
-  { icon: Layers, title: "60+ Urology Templates", desc: "Pre-built templates for BPH, prostate cancer, stones, incontinence, and in-office procedures" },
+  { icon: Clock, title: "Fast Visit Notes", desc: "Complete a full urology visit quickly with specialty-specific templates and smart auto-population" },
+  { icon: DollarSign, title: "High Clean Claim Rate", desc: "TriZetto integration handles claims, eligibility, and payment posting - all in one system" },
+  { icon: Layers, title: "Comprehensive Templates", desc: "Pre-built templates for BPH, prostate cancer, stones, incontinence, and in-office procedures" },
   { icon: TrendingUp, title: "PSA Trend Analysis", desc: "Automatic PSA velocity calculations with visual trend graphs and risk stratification" },
   { icon: Lock, title: "Enterprise Security", desc: "Bank-level encryption, automatic backups, and complete HIPAA compliance built-in" },
   { icon: MousePointer, title: "Click Less, Care More", desc: "Intuitive interface designed by urologists means less documentation burden" }
@@ -111,16 +111,16 @@ export default function UrologySpecialty() {
               {/* Quick Stats */}
               <div className="grid grid-cols-3 gap-6 p-6 bg-slate-50 rounded-xl">
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-primary">50%</div>
-                  <div className="text-xs text-slate-500">Faster Charting</div>
+                  <div className="text-2xl font-bold text-primary">Fast</div>
+                  <div className="text-xs text-slate-500">Charting Speed</div>
                 </div>
                 <div className="text-center border-x border-slate-200">
-                  <div className="text-2xl font-bold text-primary">98%</div>
+                  <div className="text-2xl font-bold text-primary">High</div>
                   <div className="text-xs text-slate-500">Clean Claims</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-primary">$41K</div>
-                  <div className="text-xs text-slate-500">Avg Savings/Yr</div>
+                  <div className="text-2xl font-bold text-primary">Significant</div>
+                  <div className="text-xs text-slate-500">Cost Savings</div>
                 </div>
               </div>
             </motion.div>

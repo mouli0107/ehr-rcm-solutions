@@ -78,7 +78,7 @@ export default function RCMPage() {
                 <div>
                   <p className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-1">Success Metric</p>
                   <p className="text-slate-900 font-medium text-sm leading-tight">
-                    "One clinic grew from <span className="font-bold text-emerald-600 bg-emerald-50 px-1 rounded">$300k</span> to over <span className="font-bold text-emerald-600 bg-emerald-50 px-1 rounded">$1 million</span> in annual collections."
+                    "Our clients consistently see <span className="font-bold text-emerald-600 bg-emerald-50 px-1 rounded">significant growth</span> in their annual collections with our RCM services."
                   </p>
                 </div>
               </div>
@@ -108,9 +108,9 @@ export default function RCMPage() {
                 {/* Overlay Metrics */}
                 <div className="absolute bottom-4 left-4 right-4 grid grid-cols-3 gap-2">
                    {[
-                     { l: "Net Collection", v: "98.5%", c: "text-emerald-600" },
-                     { l: "Days in A/R", v: "24", c: "text-blue-600" },
-                     { l: "Denial Rate", v: "<2%", c: "text-purple-600" }
+                     { l: "Net Collection", v: "High", c: "text-emerald-600" },
+                     { l: "Days in A/R", v: "Low", c: "text-blue-600" },
+                     { l: "Denial Rate", v: "Minimal", c: "text-purple-600" }
                    ].map((m, i) => (
                      <div key={i} className="bg-white/95 backdrop-blur shadow-sm p-2 rounded border border-slate-100 text-center">
                        <div className="text-[9px] font-bold text-slate-400 uppercase">{m.l}</div>
@@ -236,10 +236,10 @@ export default function RCMPage() {
           
           <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-slate-200 border border-slate-200 rounded-lg overflow-hidden">
              {[
-               { label: "Net Collection Rate", value: "96-99%", sub: "Industry standard: 95%", color: "text-emerald-600" },
-               { label: "Days in A/R", value: "< 30 Days", sub: "Faster than avg (45 days)", color: "text-blue-600" },
-               { label: "First Pass Resolution", value: "98%", sub: "Clean claims rate", color: "text-purple-600" },
-               { label: "Denial Rate", value: "< 4%", sub: "Industry avg: 5-10%", color: "text-indigo-600" },
+               { label: "Net Collection Rate", value: "Industry Leading", sub: "Above industry standard", color: "text-emerald-600" },
+               { label: "Days in A/R", value: "Low", sub: "Faster than average", color: "text-blue-600" },
+               { label: "First Pass Resolution", value: "High", sub: "Clean claims rate", color: "text-purple-600" },
+               { label: "Denial Rate", value: "Minimal", sub: "Below industry average", color: "text-indigo-600" },
              ].map((metric, i) => (
                <div key={i} className="bg-white p-6 hover:bg-slate-50 transition-colors">
                  <p className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">{metric.label}</p>

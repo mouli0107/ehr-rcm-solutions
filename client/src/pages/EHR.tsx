@@ -96,52 +96,37 @@ export default function EHRPage() {
             <motion.div
               initial={{ opacity: 1 }}
               animate={{ opacity: 1 }}
-              className="relative"
+              className="relative h-[450px]"
             >
-              {/* Cyan circle background - positioned to the right */}
-              <div className="absolute right-8 top-1/2 -translate-y-1/2 w-[350px] h-[350px] bg-primary/15 rounded-full" />
+              {/* Cyan circle background - behind and to the right of person */}
+              <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[320px] h-[320px] bg-primary/10 rounded-full" />
               
-              {/* Healthcare professional image - full visibility */}
-              <div className="relative z-10 flex justify-end">
-                <img 
-                  src={ehrHeroImage} 
-                  alt="Healthcare professional using MDcharts EHR" 
-                  className="w-full max-w-[400px] h-auto object-contain"
-                />
-              </div>
+              {/* Healthcare professional image - positioned right, large */}
+              <img 
+                src={ehrHeroImage} 
+                alt="Healthcare professional using MDcharts EHR" 
+                className="absolute right-0 bottom-0 h-[430px] w-auto object-contain z-10"
+              />
               
-              {/* Floating UI element - Patient record card - top left */}
-              <div className="absolute top-4 -left-4 bg-white rounded-xl shadow-xl p-3 border border-slate-100 z-20 hidden lg:block">
-                <div className="flex items-center gap-2 mb-2">
-                  <div className="h-8 w-8 rounded-full bg-primary/10 flex items-center justify-center">
-                    <FileText className="h-4 w-4 text-primary" />
-                  </div>
-                  <div>
-                    <p className="font-semibold text-slate-900 text-xs">Patient Records</p>
-                    <p className="text-[10px] text-slate-500">Instantly accessible</p>
-                  </div>
-                </div>
-              </div>
-              
-              {/* Floating UI element - Booking confirmed - far right */}
-              <div className="absolute top-8 -right-4 bg-white rounded-xl shadow-xl p-3 border border-slate-100 z-20 hidden md:block">
-                <div className="flex items-center gap-2 mb-2">
-                  <div className="h-6 w-6 rounded-full bg-emerald-100 flex items-center justify-center">
+              {/* Floating UI element - Booking confirmed - top right corner */}
+              <div className="absolute top-6 right-4 bg-white rounded-xl shadow-xl p-3 border border-slate-100 z-20 hidden md:block">
+                <div className="flex items-center gap-2 mb-1">
+                  <div className="h-5 w-5 rounded-full bg-emerald-100 flex items-center justify-center">
                     <CheckCircle2 className="h-3 w-3 text-emerald-600" />
                   </div>
                   <p className="font-semibold text-slate-900 text-xs">Booking confirmed</p>
                 </div>
-                <div className="text-[10px] text-slate-500 space-y-1">
+                <div className="text-[10px] text-slate-500 pl-7">
                   <p>Patient: Sarah Johnson</p>
                   <p>Tomorrow, 2:30 PM</p>
                 </div>
               </div>
               
-              {/* Stats badge - bottom right */}
-              <div className="absolute bottom-12 right-0 bg-white rounded-xl shadow-lg p-4 border border-slate-100 z-20">
-                <div className="flex items-center gap-3">
-                  <div className="h-10 w-10 rounded-full bg-emerald-100 flex items-center justify-center">
-                    <CheckCircle2 className="h-5 w-5 text-emerald-600" />
+              {/* Stats badge - middle right */}
+              <div className="absolute top-1/2 -translate-y-1/2 right-4 bg-white rounded-xl shadow-lg p-3 border border-slate-100 z-20 hidden md:block">
+                <div className="flex items-center gap-2">
+                  <div className="h-8 w-8 rounded-full bg-emerald-100 flex items-center justify-center">
+                    <CheckCircle2 className="h-4 w-4 text-emerald-600" />
                   </div>
                   <div>
                     <p className="font-bold text-slate-900 text-sm">40% Faster</p>

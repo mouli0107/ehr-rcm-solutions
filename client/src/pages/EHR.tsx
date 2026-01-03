@@ -98,18 +98,33 @@ export default function EHRPage() {
               animate={{ opacity: 1 }}
               className="relative h-[450px]"
             >
-              {/* Cyan circle background - behind and to the right of person */}
-              <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[320px] h-[320px] bg-primary/10 rounded-full" />
+              {/* Cyan circle background - centered behind person */}
+              <div className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 w-[380px] h-[380px] bg-primary/10 rounded-full" />
               
-              {/* Healthcare professional image - positioned right, large */}
+              {/* Healthcare professional image - centered and large */}
               <img 
                 src={ehrHeroImage} 
                 alt="Healthcare professional using MDcharts EHR" 
-                className="absolute right-0 bottom-0 h-[430px] w-auto object-contain z-10"
+                className="absolute left-1/2 -translate-x-1/2 bottom-0 h-[430px] w-auto object-contain z-10"
               />
               
-              {/* Floating UI element - Booking confirmed - top right corner */}
-              <div className="absolute top-6 right-4 bg-white rounded-xl shadow-xl p-3 border border-slate-100 z-20 hidden md:block">
+              {/* Floating UI - Dashboard preview - top left */}
+              <div className="absolute top-8 left-0 bg-white rounded-xl shadow-xl p-3 border border-slate-100 z-20 hidden lg:block">
+                <div className="w-40 h-24 bg-gradient-to-br from-slate-50 to-white rounded-lg border border-slate-100 p-2">
+                  <div className="flex items-center gap-1 mb-2">
+                    <div className="w-2 h-2 rounded-full bg-primary"></div>
+                    <div className="h-1.5 w-16 bg-slate-200 rounded"></div>
+                  </div>
+                  <div className="space-y-1.5">
+                    <div className="h-2 w-full bg-slate-100 rounded"></div>
+                    <div className="h-2 w-3/4 bg-slate-100 rounded"></div>
+                    <div className="h-2 w-5/6 bg-primary/20 rounded"></div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Floating UI element - Booking confirmed - top right */}
+              <div className="absolute top-4 right-0 bg-white rounded-xl shadow-xl p-3 border border-slate-100 z-20 hidden md:block">
                 <div className="flex items-center gap-2 mb-1">
                   <div className="h-5 w-5 rounded-full bg-emerald-100 flex items-center justify-center">
                     <CheckCircle2 className="h-3 w-3 text-emerald-600" />
@@ -122,8 +137,21 @@ export default function EHRPage() {
                 </div>
               </div>
               
-              {/* Stats badge - middle right */}
-              <div className="absolute top-1/2 -translate-y-1/2 right-4 bg-white rounded-xl shadow-lg p-3 border border-slate-100 z-20 hidden md:block">
+              {/* Floating UI - Message notification - bottom left */}
+              <div className="absolute bottom-24 left-0 bg-white rounded-xl shadow-xl p-3 border border-slate-100 z-20 hidden lg:block">
+                <div className="flex items-center gap-2">
+                  <div className="h-8 w-8 rounded-full bg-primary/10 flex items-center justify-center">
+                    <Monitor className="h-4 w-4 text-primary" />
+                  </div>
+                  <div>
+                    <p className="font-semibold text-slate-900 text-xs">MDcharts EHR</p>
+                    <p className="text-[10px] text-slate-500">Your visit is at 2:30pm</p>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Stats badge - bottom right */}
+              <div className="absolute bottom-20 right-0 bg-white rounded-xl shadow-lg p-3 border border-slate-100 z-20">
                 <div className="flex items-center gap-2">
                   <div className="h-8 w-8 rounded-full bg-emerald-100 flex items-center justify-center">
                     <CheckCircle2 className="h-4 w-4 text-emerald-600" />

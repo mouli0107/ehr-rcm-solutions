@@ -9,22 +9,22 @@ import {
 const pressReleases = [
   {
     title: "MDcharts Announces Enhanced Specialty EHR Solutions",
-    date: "January 2026",
+    date: "Recent",
     summary: "Expanded specialty-specific templates and workflows for improved clinical documentation."
   },
   {
-    title: "MDcharts Achieves ONC 2015 Edition Certification",
-    date: "2025",
-    summary: "Certification confirms compliance with federal health IT standards and regulations."
+    title: "MDcharts Continues Commitment to Regulatory Compliance",
+    date: "Recent",
+    summary: "Ongoing focus on meeting federal health IT standards and regulations."
   },
   {
     title: "New Telehealth Features Enhance Virtual Care Delivery",
-    date: "2025",
+    date: "Recent",
     summary: "Integrated video visits and virtual care tools help practices expand patient access."
   },
   {
     title: "MDcharts Launches Enhanced Patient Portal",
-    date: "2025",
+    date: "Recent",
     summary: "New patient engagement features improve communication and satisfaction."
   }
 ];

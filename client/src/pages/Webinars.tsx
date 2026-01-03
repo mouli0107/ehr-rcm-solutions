@@ -10,20 +10,20 @@ const upcomingWebinars = [
   {
     title: "Getting Started with MDcharts EHR",
     description: "An introduction to the MDcharts platform and its core features for new users.",
-    date: "Weekly Sessions Available",
-    duration: "30 minutes"
+    date: "Regular Sessions Available",
+    duration: "Brief session"
   },
   {
     title: "Maximizing Your Revenue Cycle",
     description: "Best practices for billing, claims management, and reducing denials.",
-    date: "Monthly Sessions",
-    duration: "45 minutes"
+    date: "Regular Sessions",
+    duration: "Standard session"
   },
   {
     title: "Specialty-Specific Workflows",
     description: "Deep dive into specialty templates and customization options.",
-    date: "Bi-Weekly Sessions",
-    duration: "45 minutes"
+    date: "Scheduled Sessions",
+    duration: "Standard session"
   }
 ];
 
@@ -31,22 +31,22 @@ const onDemandWebinars = [
   {
     title: "Patient Portal Best Practices",
     description: "Tips for driving patient adoption and engagement with your portal.",
-    duration: "30 minutes"
+    duration: "Brief session"
   },
   {
     title: "Telehealth Implementation Guide",
     description: "How to set up and optimize your virtual visit workflows.",
-    duration: "25 minutes"
+    duration: "Brief session"
   },
   {
     title: "Quality Reporting Made Easy",
-    description: "Understanding and meeting MIPS and quality measure requirements.",
-    duration: "40 minutes"
+    description: "Understanding and meeting quality measure requirements.",
+    duration: "Standard session"
   },
   {
     title: "E-Prescribing Best Practices",
     description: "Efficient prescribing workflows and medication safety features.",
-    duration: "20 minutes"
+    duration: "Brief session"
   }
 ];
 

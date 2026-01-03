@@ -29,6 +29,37 @@ import BlogPage from "@/pages/Blog";
 import BlogPostPage from "@/pages/BlogPost";
 import PricingPage from "@/pages/Pricing";
 
+import OrthopedicsSpecialtyPage from "@/pages/OrthopedicsSpecialty";
+import OphthalmologySpecialtyPage from "@/pages/OphthalmologySpecialty";
+import ENTSpecialtyPage from "@/pages/ENTSpecialty";
+import GastroenterologySpecialtyPage from "@/pages/GastroenterologySpecialty";
+import NeurologySpecialtyPage from "@/pages/NeurologySpecialty";
+import PsychiatrySpecialtyPage from "@/pages/PsychiatrySpecialty";
+
+import EPrescribingPage from "@/pages/EPrescribing";
+import LabIntegrationPage from "@/pages/LabIntegration";
+import TelehealthPage from "@/pages/Telehealth";
+import PatientPortalPage from "@/pages/PatientPortal";
+import MobileAppPage from "@/pages/MobileApp";
+import AnalyticsPage from "@/pages/Analytics";
+
+import CaseStudiesPage from "@/pages/CaseStudies";
+import TestimonialsPage from "@/pages/Testimonials";
+import FAQsPage from "@/pages/FAQs";
+import WebinarsPage from "@/pages/Webinars";
+import WhitePapersPage from "@/pages/WhitePapers";
+
+import AboutUsPage from "@/pages/AboutUs";
+import LeadershipPage from "@/pages/Leadership";
+import CareersPage from "@/pages/Careers";
+import PartnersPage from "@/pages/Partners";
+import PressPage from "@/pages/Press";
+
+import PrivacyPolicyPage from "@/pages/PrivacyPolicy";
+import TermsOfServicePage from "@/pages/TermsOfService";
+import HIPAACompliancePage from "@/pages/HIPAACompliance";
+import SecurityPage from "@/pages/Security";
+
 function ScrollToTop() {
   const [location] = useLocation();
   
@@ -56,6 +87,12 @@ function Router() {
         <Route path="/specialties/pediatrics" component={PediatricsSpecialtyPage} />
         <Route path="/specialties/urology" component={UrologySpecialtyPage} />
         <Route path="/specialties/family-medicine" component={FamilyMedicineSpecialtyPage} />
+        <Route path="/specialties/orthopedics" component={OrthopedicsSpecialtyPage} />
+        <Route path="/specialties/ophthalmology" component={OphthalmologySpecialtyPage} />
+        <Route path="/specialties/ent" component={ENTSpecialtyPage} />
+        <Route path="/specialties/gastroenterology" component={GastroenterologySpecialtyPage} />
+        <Route path="/specialties/neurology" component={NeurologySpecialtyPage} />
+        <Route path="/specialties/psychiatry" component={PsychiatrySpecialtyPage} />
         <Route path="/compliance" component={CompliancePage} />
         <Route path="/why-mdcharts" component={WhyMDChartsPage} />
         <Route path="/book-demo" component={BookDemoPage} />
@@ -67,6 +104,31 @@ function Router() {
         <Route path="/blog" component={BlogPage} />
         <Route path="/blog/:slug" component={BlogPostPage} />
         <Route path="/pricing" component={PricingPage} />
+        
+        <Route path="/features/e-prescribing" component={EPrescribingPage} />
+        <Route path="/features/lab-integration" component={LabIntegrationPage} />
+        <Route path="/features/telehealth" component={TelehealthPage} />
+        <Route path="/features/patient-portal" component={PatientPortalPage} />
+        <Route path="/features/mobile-app" component={MobileAppPage} />
+        <Route path="/features/analytics" component={AnalyticsPage} />
+        
+        <Route path="/resources/case-studies" component={CaseStudiesPage} />
+        <Route path="/resources/testimonials" component={TestimonialsPage} />
+        <Route path="/resources/faqs" component={FAQsPage} />
+        <Route path="/resources/webinars" component={WebinarsPage} />
+        <Route path="/resources/white-papers" component={WhitePapersPage} />
+        
+        <Route path="/about" component={AboutUsPage} />
+        <Route path="/about/leadership" component={LeadershipPage} />
+        <Route path="/careers" component={CareersPage} />
+        <Route path="/partners" component={PartnersPage} />
+        <Route path="/press" component={PressPage} />
+        
+        <Route path="/privacy-policy" component={PrivacyPolicyPage} />
+        <Route path="/terms-of-service" component={TermsOfServicePage} />
+        <Route path="/hipaa-compliance" component={HIPAACompliancePage} />
+        <Route path="/security" component={SecurityPage} />
+        
         <Route component={NotFound} />
       </Switch>
     </>

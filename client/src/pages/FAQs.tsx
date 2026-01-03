@@ -12,8 +12,8 @@ const faqs = [
     answer: "MDcharts supports a wide range of medical specialties including Dermatology, OB/GYN, Pediatrics, Family Medicine, Urology, Cardiology, Orthopedics, Ophthalmology, ENT, Gastroenterology, Neurology, and Psychiatry. Each specialty has tailored templates and workflows designed for specific clinical needs."
   },
   {
-    question: "Is MDcharts ONC certified?",
-    answer: "Yes, MDcharts is ONC 2015 Edition certified. Our system meets all federal requirements for Meaningful Use, MIPS, and the 21st Century Cures Act, ensuring your practice stays compliant with regulatory requirements."
+    question: "Does MDcharts meet regulatory requirements?",
+    answer: "Yes, MDcharts is designed to meet federal EHR requirements. Our system is built to support Meaningful Use, MIPS, and current regulatory standards, helping your practice stay compliant."
   },
   {
     question: "How long does implementation take?",

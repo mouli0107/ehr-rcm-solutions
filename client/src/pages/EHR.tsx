@@ -9,6 +9,7 @@ import { Link } from "wouter";
 import ehrHeroImage from "@assets/generated_images/smiling_healthcare_professional_with_tablet.png";
 import ehrDashboardImage from "@assets/image_1767433966912.png";
 import patientChartImage from "@assets/image_1767434643508.png";
+import dermchartsSlide from "@assets/mdcharts_dermcharts_slide.png";
 
 const features = [
   {
@@ -268,6 +269,69 @@ export default function EHRPage() {
                   Explore our Patient Management features
                 </Button>
               </Link>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Specialty Platforms Section */}
+      <section className="py-20 bg-slate-50">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Left Content */}
+            <motion.div
+              initial={{ opacity: 1 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 leading-tight mb-6">
+                Dedicated to Your Specialty
+              </h2>
+              
+              <p className="text-lg text-slate-600 mb-4 leading-relaxed">
+                MDcharts is perfected for efficiency, enabling providers to see more patients with specialty-specific workflows designed by physicians.
+              </p>
+              
+              <ul className="space-y-3 mb-8">
+                <li className="flex items-start gap-3">
+                  <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 shrink-0" />
+                  <span className="text-slate-700">Easily personalize any screen to fit your workflow</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 shrink-0" />
+                  <span className="text-slate-700">Built-in Peak Charge Capture™ and accurate ICD-10 coding</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 shrink-0" />
+                  <span className="text-slate-700">MIPs Made Easy℠ seamlessly collects valuable data</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 shrink-0" />
+                  <span className="text-slate-700">Personalized accelerators speed up documentation</span>
+                </li>
+              </ul>
+              
+              <Link href="/specialties">
+                <Button size="lg" className="bg-primary hover:bg-primary/90">
+                  Explore Our Specialties <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </Link>
+            </motion.div>
+
+            {/* Right Image */}
+            <motion.div
+              initial={{ opacity: 1 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              className="relative"
+            >
+              <div className="relative rounded-2xl overflow-hidden shadow-xl">
+                <img 
+                  src={dermchartsSlide} 
+                  alt="MDcharts specialty platforms including DermCharts, OBGYN Charts, and KidsCharts" 
+                  className="w-full h-auto"
+                />
+              </div>
             </motion.div>
           </div>
         </div>

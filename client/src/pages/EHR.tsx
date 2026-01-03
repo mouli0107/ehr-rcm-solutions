@@ -51,10 +51,10 @@ export default function EHRPage() {
   const [modalOpen, setModalOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-background font-sans">
+    <div className="min-h-screen bg-background font-sans overflow-x-hidden">
       <Navbar />
       
-      <section className="pt-28 pb-20 bg-gradient-to-b from-slate-50 to-white relative overflow-hidden">
+      <section className="pt-28 pb-20 bg-gradient-to-b from-slate-50 to-white relative overflow-x-hidden">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:24px_24px]" />
         
         <div className="container mx-auto px-4 md:px-6 relative z-10">
@@ -109,56 +109,56 @@ export default function EHRPage() {
               />
               
               {/* Floating UI - Dashboard preview - top left */}
-              <div className="absolute top-8 left-0 bg-white rounded-xl shadow-xl p-3 border border-slate-100 z-20 hidden lg:block">
-                <div className="w-40 h-24 bg-gradient-to-br from-slate-50 to-white rounded-lg border border-slate-100 p-2">
+              <div className="absolute top-8 left-2 bg-white rounded-xl shadow-xl p-2 border border-slate-100 z-20 hidden lg:block">
+                <div className="w-32 h-20 bg-gradient-to-br from-slate-50 to-white rounded-lg border border-slate-100 p-2">
                   <div className="flex items-center gap-1 mb-2">
                     <div className="w-2 h-2 rounded-full bg-primary"></div>
-                    <div className="h-1.5 w-16 bg-slate-200 rounded"></div>
+                    <div className="h-1.5 w-12 bg-slate-200 rounded"></div>
                   </div>
-                  <div className="space-y-1.5">
-                    <div className="h-2 w-full bg-slate-100 rounded"></div>
-                    <div className="h-2 w-3/4 bg-slate-100 rounded"></div>
-                    <div className="h-2 w-5/6 bg-primary/20 rounded"></div>
+                  <div className="space-y-1">
+                    <div className="h-1.5 w-full bg-slate-100 rounded"></div>
+                    <div className="h-1.5 w-3/4 bg-slate-100 rounded"></div>
+                    <div className="h-1.5 w-5/6 bg-primary/20 rounded"></div>
                   </div>
                 </div>
               </div>
               
               {/* Floating UI element - Booking confirmed - top right */}
-              <div className="absolute top-4 right-0 bg-white rounded-xl shadow-xl p-3 border border-slate-100 z-20 hidden md:block">
+              <div className="absolute top-4 right-2 bg-white rounded-xl shadow-xl p-2 border border-slate-100 z-20 hidden md:block">
                 <div className="flex items-center gap-2 mb-1">
-                  <div className="h-5 w-5 rounded-full bg-emerald-100 flex items-center justify-center">
-                    <CheckCircle2 className="h-3 w-3 text-emerald-600" />
+                  <div className="h-4 w-4 rounded-full bg-emerald-100 flex items-center justify-center">
+                    <CheckCircle2 className="h-2.5 w-2.5 text-emerald-600" />
                   </div>
-                  <p className="font-semibold text-slate-900 text-xs">Booking confirmed</p>
+                  <p className="font-semibold text-slate-900 text-[10px]">Booking confirmed</p>
                 </div>
-                <div className="text-[10px] text-slate-500 pl-7">
+                <div className="text-[9px] text-slate-500 pl-6">
                   <p>Patient: Sarah Johnson</p>
                   <p>Tomorrow, 2:30 PM</p>
                 </div>
               </div>
               
               {/* Floating UI - Message notification - bottom left */}
-              <div className="absolute bottom-24 left-0 bg-white rounded-xl shadow-xl p-3 border border-slate-100 z-20 hidden lg:block">
+              <div className="absolute bottom-28 left-2 bg-white rounded-xl shadow-xl p-2 border border-slate-100 z-20 hidden lg:block">
                 <div className="flex items-center gap-2">
-                  <div className="h-8 w-8 rounded-full bg-primary/10 flex items-center justify-center">
-                    <Monitor className="h-4 w-4 text-primary" />
+                  <div className="h-6 w-6 rounded-full bg-primary/10 flex items-center justify-center">
+                    <Monitor className="h-3 w-3 text-primary" />
                   </div>
                   <div>
-                    <p className="font-semibold text-slate-900 text-xs">MDcharts EHR</p>
-                    <p className="text-[10px] text-slate-500">Your visit is at 2:30pm</p>
+                    <p className="font-semibold text-slate-900 text-[10px]">MDcharts EHR</p>
+                    <p className="text-[9px] text-slate-500">Your visit is at 2:30pm</p>
                   </div>
                 </div>
               </div>
               
               {/* Stats badge - bottom right */}
-              <div className="absolute bottom-20 right-0 bg-white rounded-xl shadow-lg p-3 border border-slate-100 z-20">
+              <div className="absolute bottom-24 right-2 bg-white rounded-xl shadow-lg p-2 border border-slate-100 z-20">
                 <div className="flex items-center gap-2">
-                  <div className="h-8 w-8 rounded-full bg-emerald-100 flex items-center justify-center">
-                    <CheckCircle2 className="h-4 w-4 text-emerald-600" />
+                  <div className="h-6 w-6 rounded-full bg-emerald-100 flex items-center justify-center">
+                    <CheckCircle2 className="h-3 w-3 text-emerald-600" />
                   </div>
                   <div>
-                    <p className="font-bold text-slate-900 text-sm">40% Faster</p>
-                    <p className="text-xs text-slate-500">Documentation Time</p>
+                    <p className="font-bold text-slate-900 text-xs">40% Faster</p>
+                    <p className="text-[10px] text-slate-500">Documentation Time</p>
                   </div>
                 </div>
               </div>

@@ -5,6 +5,11 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { Users, ArrowRight } from "lucide-react";
 import heroImage from "@assets/generated_images/corporate_leadership_team_meeting.png";
+import aaronImage from "@assets/generated_images/aaron_wachspress_cto_headshot.png";
+import maitryImage from "@assets/generated_images/maitry_shah_it_manager_headshot.png";
+import ranImage from "@assets/generated_images/ran_berkman_marketing_director_headshot.png";
+import magoImage from "@assets/generated_images/mago_saldana_business_analyst_headshot.png";
+import jackieImage from "@assets/generated_images/jacqueline_lally_revenue_manager_headshot.png";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -15,32 +20,32 @@ const teamMembers = [
   {
     name: "Aaron Wachspress",
     title: "CTO",
-    initials: "AW",
+    image: aaronImage,
     bio: "Harnessing his experience as Founder and CTO at Universal EHR Solutions, Aaron brings his expertise of electronic health records technologies to MD Charts. Under his leadership, MD Charts has developed partnerships with numerous industry-leading healthcare systems, with the vision to simplify the complex and often poorly integrated healthcare systems used in most medical practices today."
   },
   {
     name: "Maitry Shah",
     title: "IT Project Manager",
-    initials: "MS",
+    image: maitryImage,
     bio: "As the IT Project Manager, Maitry is focused on MD Charts' product and technology strategy in support of the company's goals and vision. She brings extensive experience in developing and leading technology integration teams, defining strategic product vision and roadmaps, and developing a customer-focused culture."
   },
   {
     name: "Ran Berkman",
     title: "Digital Marketing Director",
-    initials: "RB",
-    bio: "Ran brings over 20 years of invaluable digital experience in the health and aesthetics sector. His unique expertise has enabled him to assist clients in developing and implementing winning strategies that continually enhance results across the USA and abroad."
+    image: ranImage,
+    bio: "Ran brings extensive digital experience in the health and aesthetics sector. His unique expertise has enabled him to assist clients in developing and implementing winning strategies that continually enhance results across the USA and abroad."
   },
   {
     name: "Mago Saldana",
     title: "Senior Business Analyst",
-    initials: "MS",
-    bio: "Mago has been instrumental in over 150 EHR implementations across a wide range of medical specialties. As a business analyst, her expertise extends to Ambulatory practices, Urgent care facilities, OB/GYN, Gastroenterology, Internal Medicine, Cardiology, Podiatry, FQHC, Pediatrics, and Dermatology."
+    image: magoImage,
+    bio: "Mago has been instrumental in numerous EHR implementations across a wide range of medical specialties. As a business analyst, her expertise extends to Ambulatory practices, Urgent care facilities, OB/GYN, Gastroenterology, Internal Medicine, Cardiology, Podiatry, FQHC, Pediatrics, and Dermatology."
   },
   {
     name: "Jacqueline Lally",
     title: "Senior Revenue Cycle Manager",
-    initials: "JL",
-    bio: "Jackie brings over 8 years of experience in Medical Billing, specializing in laboratory and genetic testing, cardiology, vascular procedures, sleep studies, internal medicine, OB/GYN, and endometriosis surgery. Her expertise spans the entire billing cycle with a strong focus on accuracy, compliance, and process efficiency."
+    image: jackieImage,
+    bio: "Jackie brings extensive experience in Medical Billing, specializing in laboratory and genetic testing, cardiology, vascular procedures, sleep studies, internal medicine, OB/GYN, and endometriosis surgery. Her expertise spans the entire billing cycle with a strong focus on accuracy, compliance, and process efficiency."
   }
 ];
 
@@ -121,10 +126,12 @@ export default function Management() {
               >
                 <div className="flex flex-col md:flex-row gap-8">
                   <div className="flex-shrink-0">
-                    <div className="w-32 h-32 rounded-2xl bg-gradient-to-br from-primary to-cyan-400 flex items-center justify-center shadow-lg">
-                      <span className="text-4xl font-bold text-white">
-                        {member.initials}
-                      </span>
+                    <div className="w-32 h-32 rounded-2xl overflow-hidden shadow-lg">
+                      <img 
+                        src={member.image} 
+                        alt={member.name}
+                        className="w-full h-full object-cover"
+                      />
                     </div>
                   </div>
                   
@@ -150,10 +157,10 @@ export default function Management() {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
             {[
-              { value: "35+", label: "Years Experience" },
-              { value: "150+", label: "EHR Implementations" },
-              { value: "40+", label: "Specialties Served" },
-              { value: "500+", label: "Happy Practices" }
+              { value: "Extensive", label: "Years Experience" },
+              { value: "Many", label: "EHR Implementations" },
+              { value: "Numerous", label: "Specialties Served" },
+              { value: "Growing", label: "Happy Practices" }
             ].map((stat, idx) => (
               <motion.div
                 key={idx}

@@ -125,26 +125,27 @@ export default function EHRPage() {
       {/* Dashboard Showcase Section - Pabau Style Side-by-Side */}
       <section className="py-24 bg-white">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-12 items-start">
             {/* Left Content */}
             <motion.div
               initial={{ opacity: 1, y: 5 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
+              className="lg:sticky lg:top-32"
             >
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 leading-tight mb-6">
                 Streamline your<br />clinical workflow
               </h2>
               
-              <p className="text-lg text-slate-600 mb-6 leading-relaxed">
+              <p className="text-lg text-slate-600 mb-4 leading-relaxed">
                 Managing unsigned items, medications, and clinical notes can be overwhelming — <strong className="text-slate-900">taking up to 2 hours every single day</strong>.
               </p>
               
-              <p className="text-lg text-slate-600 mb-6 leading-relaxed">
+              <p className="text-lg text-slate-600 mb-4 leading-relaxed">
                 MDcharts handles this for you, with smart queues that organize unsigned items by category — from medications and MA notes to lab orders and superbills.
               </p>
               
-              <p className="text-lg text-slate-600 mb-8 leading-relaxed">
+              <p className="text-lg text-slate-600 mb-6 leading-relaxed">
                 From one central dashboard, complete all pending tasks with a single click, so you can focus on what matters most — treating patients.
               </p>
               
@@ -155,12 +156,12 @@ export default function EHRPage() {
               </Link>
             </motion.div>
 
-            {/* Right Screenshot */}
+            {/* Right Screenshot - Larger */}
             <motion.div
               initial={{ opacity: 1, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="relative"
+              className="relative lg:scale-110 lg:origin-left"
             >
               <div className="relative rounded-2xl overflow-hidden shadow-xl border border-slate-200 bg-white">
                 <img 

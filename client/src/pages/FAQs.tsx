@@ -1,0 +1,117 @@
+import { Link } from "wouter";
+import { Navbar } from "@/components/Navbar";
+import { Button } from "@/components/ui/button";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { 
+  HelpCircle, ArrowRight
+} from "lucide-react";
+
+const faqs = [
+  {
+    question: "What specialties does MDcharts support?",
+    answer: "MDcharts supports a wide range of medical specialties including Dermatology, OB/GYN, Pediatrics, Family Medicine, Urology, Cardiology, Orthopedics, Ophthalmology, ENT, Gastroenterology, Neurology, and Psychiatry. Each specialty has tailored templates and workflows designed for specific clinical needs."
+  },
+  {
+    question: "Is MDcharts ONC certified?",
+    answer: "Yes, MDcharts is ONC 2015 Edition certified. Our system meets all federal requirements for Meaningful Use, MIPS, and the 21st Century Cures Act, ensuring your practice stays compliant with regulatory requirements."
+  },
+  {
+    question: "How long does implementation take?",
+    answer: "Implementation timelines vary based on practice size and complexity. Our team works closely with each practice to develop a customized implementation plan that minimizes disruption to your operations while ensuring a successful transition."
+  },
+  {
+    question: "Do you provide training?",
+    answer: "Yes, we provide comprehensive training for all users. This includes initial onboarding training, role-based training sessions, and ongoing education resources. Our support team is also available to answer questions as they arise."
+  },
+  {
+    question: "Can MDcharts integrate with our existing systems?",
+    answer: "MDcharts offers integration capabilities with many healthcare systems including laboratory networks, imaging centers, health information exchanges, and clearinghouses. Our team can discuss your specific integration needs during a consultation."
+  },
+  {
+    question: "Is there a patient portal?",
+    answer: "Yes, MDcharts includes a full-featured patient portal that allows patients to schedule appointments, view health records, communicate with your practice, pay bills, and complete pre-visit paperwork online."
+  },
+  {
+    question: "How is my data protected?",
+    answer: "MDcharts employs enterprise-grade security measures including encryption, access controls, audit logging, and regular security assessments. We are fully HIPAA compliant and take data protection seriously."
+  },
+  {
+    question: "Do you offer telehealth capabilities?",
+    answer: "Yes, MDcharts includes integrated HIPAA-compliant telehealth functionality. Providers can conduct video visits directly within the EHR, and patients can join without downloading any apps."
+  }
+];
+
+export default function FAQs() {
+  return (
+    <div className="min-h-screen bg-background font-sans overflow-x-hidden">
+      <Navbar />
+      
+      <section className="pt-28 pb-20 bg-gradient-to-b from-slate-50 to-white">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="max-w-3xl mx-auto text-center">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-semibold mb-6">
+              <HelpCircle className="h-4 w-4" />
+              FAQs
+            </div>
+            
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 leading-tight mb-6">
+              Frequently Asked <span className="text-primary">Questions</span>
+            </h1>
+            
+            <p className="text-xl text-slate-600 mb-8 leading-relaxed">
+              Find answers to common questions about MDcharts EHR and our services.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="max-w-3xl mx-auto">
+            <Accordion type="single" collapsible className="space-y-4">
+              {faqs.map((faq, index) => (
+                <AccordionItem key={index} value={`faq-${index}`} className="bg-slate-50 rounded-xl px-6 border-none">
+                  <AccordionTrigger className="text-left font-semibold text-slate-900 hover:no-underline py-6">
+                    {faq.question}
+                  </AccordionTrigger>
+                  <AccordionContent className="text-slate-600 pb-6">
+                    {faq.answer}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 bg-primary">
+        <div className="container mx-auto px-4 md:px-6 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            Still Have Questions?
+          </h2>
+          <p className="text-lg text-white/90 mb-8 max-w-2xl mx-auto">
+            Our team is here to help. Contact us or schedule a demo to learn more.
+          </p>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Link href="/book-demo">
+              <Button size="lg" variant="secondary" className="h-12 px-8">
+                Schedule a Demo <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </Link>
+            <Link href="/contact">
+              <Button size="lg" variant="outline" className="h-12 px-8 border-white text-white hover:bg-white hover:text-primary">
+                Contact Us
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <footer className="bg-slate-900 text-white py-12">
+        <div className="container mx-auto px-4 md:px-6 text-center">
+          <p className="text-slate-400">&copy; 2026 MDcharts EHR. All rights reserved.</p>
+        </div>
+      </footer>
+    </div>
+  );
+}

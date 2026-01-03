@@ -1,4 +1,4 @@
-import { Link } from "wouter";
+import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { 
   Stethoscope, Menu, X, Phone, Mail, Clock, ChevronRight, 
@@ -17,7 +17,6 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-  navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 
 const solutionsLeft = [
@@ -100,6 +99,25 @@ const companyLinks = [
   { title: "Security", href: "/security", icon: Shield },
 ];
 
+function NavLink({ href, className, children }: { href: string; className?: string; children: React.ReactNode }) {
+  const [, setLocation] = useLocation();
+  
+  return (
+    <NavigationMenuLink asChild>
+      <a
+        href={href}
+        className={className}
+        onClick={(e) => {
+          e.preventDefault();
+          setLocation(href);
+        }}
+      >
+        {children}
+      </a>
+    </NavigationMenuLink>
+  );
+}
+
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -169,7 +187,7 @@ export function Navbar() {
                           <h3 className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-4">Core Platform</h3>
                           <div className="space-y-1">
                             {solutionsLeft.map((item) => (
-                              <Link
+                              <NavLink
                                 key={item.title}
                                 href={item.href}
                                 className="flex items-start gap-3 p-3 rounded-lg hover:bg-primary/5 group transition-all"
@@ -181,7 +199,7 @@ export function Navbar() {
                                   <div className="font-semibold text-slate-800 group-hover:text-primary transition-colors">{item.title}</div>
                                   <div className="text-sm text-slate-500">{item.description}</div>
                                 </div>
-                              </Link>
+                              </NavLink>
                             ))}
                           </div>
                         </div>
@@ -191,7 +209,7 @@ export function Navbar() {
                           <h3 className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-4">Features</h3>
                           <div className="space-y-1">
                             {solutionsRight.map((item) => (
-                              <Link
+                              <NavLink
                                 key={item.title}
                                 href={item.href}
                                 className="flex items-center gap-2 px-3 py-2 rounded-md text-sm text-slate-600 hover:text-primary hover:bg-white transition-all group"
@@ -199,7 +217,7 @@ export function Navbar() {
                                 <item.icon className="h-4 w-4 text-slate-400 group-hover:text-primary transition-colors" />
                                 <span>{item.title}</span>
                                 <ChevronRight className="h-3 w-3 ml-auto opacity-0 group-hover:opacity-100 transition-opacity" />
-                              </Link>
+                              </NavLink>
                             ))}
                           </div>
                         </div>
@@ -215,9 +233,9 @@ export function Navbar() {
                               <p className="text-sm text-slate-500 mb-3">
                                 Fully certified platform for modern practices.
                               </p>
-                              <Link href="/book-demo" className="inline-flex items-center gap-1 text-sm font-semibold text-primary hover:underline">
+                              <NavLink href="/book-demo" className="inline-flex items-center gap-1 text-sm font-semibold text-primary hover:underline">
                                 Schedule Demo <ArrowRight className="h-3 w-3" />
-                              </Link>
+                              </NavLink>
                             </div>
                           </div>
                         </div>
@@ -239,14 +257,14 @@ export function Navbar() {
                           <h3 className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-4">Popular</h3>
                           <div className="space-y-1">
                             {specialtiesCol1.map((item) => (
-                              <Link
+                              <NavLink
                                 key={item.title}
                                 href={item.href}
                                 className="flex items-center justify-between px-3 py-2.5 rounded-lg text-slate-700 hover:bg-primary/5 hover:text-primary transition-all group"
                               >
                                 <span className="font-medium">{item.title}</span>
                                 <ChevronRight className="h-4 w-4 opacity-0 group-hover:opacity-100 transition-opacity" />
-                              </Link>
+                              </NavLink>
                             ))}
                           </div>
                         </div>
@@ -256,14 +274,14 @@ export function Navbar() {
                           <h3 className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-4">More Specialties</h3>
                           <div className="space-y-1">
                             {specialtiesCol2.map((item) => (
-                              <Link
+                              <NavLink
                                 key={item.title}
                                 href={item.href}
                                 className="flex items-center justify-between px-3 py-2.5 rounded-lg text-slate-700 hover:bg-white hover:text-primary transition-all group"
                               >
                                 <span className="font-medium">{item.title}</span>
                                 <ChevronRight className="h-4 w-4 opacity-0 group-hover:opacity-100 transition-opacity" />
-                              </Link>
+                              </NavLink>
                             ))}
                           </div>
                         </div>
@@ -279,9 +297,9 @@ export function Navbar() {
                               <p className="text-sm text-slate-500 mb-3">
                                 Pre-built templates for every practice type.
                               </p>
-                              <Link href="/specialties" className="inline-flex items-center gap-1 text-sm font-semibold text-primary hover:underline">
+                              <NavLink href="/specialties" className="inline-flex items-center gap-1 text-sm font-semibold text-primary hover:underline">
                                 Explore All <ArrowRight className="h-3 w-3" />
-                              </Link>
+                              </NavLink>
                             </div>
                           </div>
                         </div>
@@ -303,7 +321,7 @@ export function Navbar() {
                           <h3 className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-4">Learn</h3>
                           <div className="space-y-1">
                             {resourcesLeft.map((item) => (
-                              <Link
+                              <NavLink
                                 key={item.title}
                                 href={item.href}
                                 className="flex items-start gap-3 p-3 rounded-lg hover:bg-primary/5 group transition-all"
@@ -315,7 +333,7 @@ export function Navbar() {
                                   <div className="font-semibold text-slate-800 group-hover:text-primary transition-colors">{item.title}</div>
                                   <div className="text-sm text-slate-500">{item.description}</div>
                                 </div>
-                              </Link>
+                              </NavLink>
                             ))}
                           </div>
                         </div>
@@ -325,7 +343,7 @@ export function Navbar() {
                           <h3 className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-4">More Resources</h3>
                           <div className="space-y-1">
                             {resourcesRight.map((item) => (
-                              <Link
+                              <NavLink
                                 key={item.title}
                                 href={item.href}
                                 className="flex items-center gap-2 px-3 py-2.5 rounded-md text-slate-600 hover:text-primary hover:bg-white transition-all group"
@@ -333,7 +351,7 @@ export function Navbar() {
                                 <item.icon className="h-4 w-4 text-slate-400 group-hover:text-primary transition-colors" />
                                 <span className="font-medium">{item.title}</span>
                                 <ChevronRight className="h-3 w-3 ml-auto opacity-0 group-hover:opacity-100 transition-opacity" />
-                              </Link>
+                              </NavLink>
                             ))}
                           </div>
                         </div>
@@ -355,7 +373,7 @@ export function Navbar() {
                           <h3 className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-4">About MDcharts</h3>
                           <div className="space-y-1">
                             {companyItems.map((item) => (
-                              <Link
+                              <NavLink
                                 key={item.title}
                                 href={item.href}
                                 className="flex items-start gap-3 p-3 rounded-lg hover:bg-primary/5 group transition-all"
@@ -367,7 +385,7 @@ export function Navbar() {
                                   <div className="font-semibold text-slate-800 group-hover:text-primary transition-colors">{item.title}</div>
                                   <div className="text-sm text-slate-500">{item.description}</div>
                                 </div>
-                              </Link>
+                              </NavLink>
                             ))}
                           </div>
                         </div>
@@ -377,7 +395,7 @@ export function Navbar() {
                           <h3 className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-4">More</h3>
                           <div className="space-y-1">
                             {companyLinks.map((item) => (
-                              <Link
+                              <NavLink
                                 key={item.title}
                                 href={item.href}
                                 className="flex items-center gap-2 px-3 py-2.5 rounded-md text-slate-600 hover:text-primary hover:bg-white transition-all group"
@@ -385,7 +403,7 @@ export function Navbar() {
                                 <item.icon className="h-4 w-4 text-slate-400 group-hover:text-primary transition-colors" />
                                 <span className="font-medium">{item.title}</span>
                                 <ChevronRight className="h-3 w-3 ml-auto opacity-0 group-hover:opacity-100 transition-opacity" />
-                              </Link>
+                              </NavLink>
                             ))}
                           </div>
                         </div>
@@ -396,12 +414,12 @@ export function Navbar() {
 
                 {/* Pricing - Direct Link */}
                 <NavigationMenuItem>
-                  <NavigationMenuLink 
-                    className={cn(navigationMenuTriggerStyle(), "h-10 px-4 text-sm font-semibold text-slate-700 hover:text-primary bg-transparent hover:bg-transparent")} 
+                  <NavLink 
+                    className="h-10 px-4 text-sm font-semibold text-slate-700 hover:text-primary inline-flex items-center justify-center" 
                     href="/pricing"
                   >
                     Pricing
-                  </NavigationMenuLink>
+                  </NavLink>
                 </NavigationMenuItem>
               </NavigationMenuList>
             </NavigationMenu>

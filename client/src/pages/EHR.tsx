@@ -1,12 +1,11 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { FileText, Zap, Shield, Clock, Layers, CheckCircle2, ArrowRight, Monitor, Play } from "lucide-react";
+import { FileText, Zap, Shield, Clock, Layers, CheckCircle2, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { ContactModal } from "@/components/ContactModal";
 import { Link } from "wouter";
-import ehrHeroImage from "@assets/generated_images/smiling_healthcare_professional_with_tablet.png";
 import ehrDashboardImage from "@assets/image_1767433966912.png";
 import patientChartImage from "@assets/image_1767434643508.png";
 import dermchartsSlide from "@assets/mdcharts_dermcharts_slide.png";
@@ -98,71 +97,14 @@ export default function EHRPage() {
             <motion.div
               initial={{ opacity: 1 }}
               animate={{ opacity: 1 }}
-              className="relative h-[450px]"
+              className="relative"
             >
-              {/* Cyan circle background - centered behind person */}
-              <div className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 w-[380px] h-[380px] bg-primary/10 rounded-full" />
-              
-              {/* Healthcare professional image - centered and large */}
-              <img 
-                src={ehrHeroImage} 
-                alt="Healthcare professional using MDcharts EHR" 
-                className="absolute left-1/2 -translate-x-1/2 bottom-0 h-[430px] w-auto object-contain z-10"
-              />
-              
-              {/* Floating UI - Dashboard preview - top left */}
-              <div className="absolute top-8 left-2 bg-white rounded-xl shadow-xl p-2 border border-slate-100 z-20 hidden lg:block">
-                <div className="w-32 h-20 bg-gradient-to-br from-slate-50 to-white rounded-lg border border-slate-100 p-2">
-                  <div className="flex items-center gap-1 mb-2">
-                    <div className="w-2 h-2 rounded-full bg-primary"></div>
-                    <div className="h-1.5 w-12 bg-slate-200 rounded"></div>
-                  </div>
-                  <div className="space-y-1">
-                    <div className="h-1.5 w-full bg-slate-100 rounded"></div>
-                    <div className="h-1.5 w-3/4 bg-slate-100 rounded"></div>
-                    <div className="h-1.5 w-5/6 bg-primary/20 rounded"></div>
-                  </div>
-                </div>
-              </div>
-              
-              {/* Floating UI element - Booking confirmed - top right */}
-              <div className="absolute top-4 right-2 bg-white rounded-xl shadow-xl p-2 border border-slate-100 z-20 hidden md:block">
-                <div className="flex items-center gap-2 mb-1">
-                  <div className="h-4 w-4 rounded-full bg-emerald-100 flex items-center justify-center">
-                    <CheckCircle2 className="h-2.5 w-2.5 text-emerald-600" />
-                  </div>
-                  <p className="font-semibold text-slate-900 text-[10px]">Booking confirmed</p>
-                </div>
-                <div className="text-[9px] text-slate-500 pl-6">
-                  <p>Patient: Sarah Johnson</p>
-                  <p>Tomorrow, 2:30 PM</p>
-                </div>
-              </div>
-              
-              {/* Floating UI - Message notification - bottom left */}
-              <div className="absolute bottom-28 left-2 bg-white rounded-xl shadow-xl p-2 border border-slate-100 z-20 hidden lg:block">
-                <div className="flex items-center gap-2">
-                  <div className="h-6 w-6 rounded-full bg-primary/10 flex items-center justify-center">
-                    <Monitor className="h-3 w-3 text-primary" />
-                  </div>
-                  <div>
-                    <p className="font-semibold text-slate-900 text-[10px]">MDcharts EHR</p>
-                    <p className="text-[9px] text-slate-500">Your visit is at 2:30pm</p>
-                  </div>
-                </div>
-              </div>
-              
-              {/* Stats badge - bottom right */}
-              <div className="absolute bottom-24 right-2 bg-white rounded-xl shadow-lg p-2 border border-slate-100 z-20">
-                <div className="flex items-center gap-2">
-                  <div className="h-6 w-6 rounded-full bg-emerald-100 flex items-center justify-center">
-                    <CheckCircle2 className="h-3 w-3 text-emerald-600" />
-                  </div>
-                  <div>
-                    <p className="font-bold text-slate-900 text-xs">40% Faster</p>
-                    <p className="text-[10px] text-slate-500">Documentation Time</p>
-                  </div>
-                </div>
+              <div className="relative rounded-2xl overflow-hidden shadow-xl">
+                <img 
+                  src={dermchartsSlide} 
+                  alt="MDcharts EHR specialty platforms" 
+                  className="w-full h-auto"
+                />
               </div>
             </motion.div>
           </div>
@@ -269,69 +211,6 @@ export default function EHRPage() {
                   Explore our Patient Management features
                 </Button>
               </Link>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Specialty Platforms Section */}
-      <section className="py-20 bg-slate-50">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Left Content */}
-            <motion.div
-              initial={{ opacity: 1 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-            >
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 leading-tight mb-6">
-                Dedicated to Your Specialty
-              </h2>
-              
-              <p className="text-lg text-slate-600 mb-4 leading-relaxed">
-                MDcharts is perfected for efficiency, enabling providers to see more patients with specialty-specific workflows designed by physicians.
-              </p>
-              
-              <ul className="space-y-3 mb-8">
-                <li className="flex items-start gap-3">
-                  <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 shrink-0" />
-                  <span className="text-slate-700">Easily personalize any screen to fit your workflow</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 shrink-0" />
-                  <span className="text-slate-700">Built-in Peak Charge Capture™ and accurate ICD-10 coding</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 shrink-0" />
-                  <span className="text-slate-700">MIPs Made Easy℠ seamlessly collects valuable data</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 shrink-0" />
-                  <span className="text-slate-700">Personalized accelerators speed up documentation</span>
-                </li>
-              </ul>
-              
-              <Link href="/specialties">
-                <Button size="lg" className="bg-primary hover:bg-primary/90">
-                  Explore Our Specialties <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-              </Link>
-            </motion.div>
-
-            {/* Right Image */}
-            <motion.div
-              initial={{ opacity: 1 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              className="relative"
-            >
-              <div className="relative rounded-2xl overflow-hidden shadow-xl">
-                <img 
-                  src={dermchartsSlide} 
-                  alt="MDcharts specialty platforms including DermCharts, OBGYN Charts, and KidsCharts" 
-                  className="w-full h-auto"
-                />
-              </div>
             </motion.div>
           </div>
         </div>

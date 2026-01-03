@@ -122,96 +122,54 @@ export default function EHRPage() {
         </div>
       </section>
 
-      {/* Dashboard Showcase Section - Pabau Style */}
-      <section className="py-20 bg-gradient-to-b from-white to-slate-50 relative overflow-hidden">
+      {/* Dashboard Showcase Section - Pabau Style Side-by-Side */}
+      <section className="py-24 bg-white">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="text-center mb-12">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            {/* Left Content */}
             <motion.div
               initial={{ opacity: 1, y: 5 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-semibold mb-4">
-                <Monitor className="h-4 w-4" />
-                See It In Action
-              </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-                Your Complete Clinical Dashboard
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 leading-tight mb-6">
+                Streamline your<br />clinical workflow
               </h2>
-              <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-                Manage medications, notes, lab orders, and patient care from one intuitive interface designed for efficiency.
-              </p>
-            </motion.div>
-          </div>
-
-          <motion.div
-            initial={{ opacity: 1, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="relative max-w-5xl mx-auto"
-          >
-            {/* Browser Window Frame */}
-            <div className="bg-slate-800 rounded-t-xl p-3 flex items-center gap-2">
-              <div className="flex gap-1.5">
-                <div className="w-3 h-3 rounded-full bg-red-500"></div>
-                <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
-                <div className="w-3 h-3 rounded-full bg-green-500"></div>
-              </div>
-              <div className="flex-1 bg-slate-700 rounded-md px-4 py-1.5 text-slate-400 text-sm text-center">
-                app.mdchartsehr.com
-              </div>
-            </div>
-            
-            {/* Dashboard Screenshot */}
-            <div className="relative rounded-b-xl overflow-hidden shadow-2xl border-x border-b border-slate-200">
-              <img 
-                src={ehrDashboardImage} 
-                alt="MDcharts EHR Dashboard - Unsigned Items View" 
-                className="w-full h-auto"
-              />
               
-              {/* Gradient Overlay at Bottom */}
-              <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-white to-transparent"></div>
-            </div>
-
-            {/* Floating Feature Badges */}
-            <div className="absolute -left-4 top-1/3 bg-white rounded-xl shadow-lg p-4 border border-slate-100 hidden lg:block">
-              <div className="flex items-center gap-3">
-                <div className="h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center">
-                  <FileText className="h-5 w-5 text-primary" />
-                </div>
-                <div>
-                  <p className="font-bold text-slate-900 text-sm">Smart Queues</p>
-                  <p className="text-xs text-slate-500">Track unsigned items</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="absolute -right-4 top-1/2 bg-white rounded-xl shadow-lg p-4 border border-slate-100 hidden lg:block">
-              <div className="flex items-center gap-3">
-                <div className="h-10 w-10 rounded-full bg-emerald-100 flex items-center justify-center">
-                  <Zap className="h-5 w-5 text-emerald-600" />
-                </div>
-                <div>
-                  <p className="font-bold text-slate-900 text-sm">One-Click Actions</p>
-                  <p className="text-xs text-slate-500">Complete tasks fast</p>
-                </div>
-              </div>
-            </div>
-          </motion.div>
-
-          {/* CTA Below Screenshot */}
-          <div className="text-center mt-12">
-            <div className="flex flex-wrap gap-4 justify-center">
-              <Link href="/book-demo">
-                <Button size="lg" className="h-12 px-8">
-                  Book a Demo <ArrowRight className="ml-2 h-4 w-4" />
+              <p className="text-lg text-slate-600 mb-6 leading-relaxed">
+                Managing unsigned items, medications, and clinical notes can be overwhelming — <strong className="text-slate-900">taking up to 2 hours every single day</strong>.
+              </p>
+              
+              <p className="text-lg text-slate-600 mb-6 leading-relaxed">
+                MDcharts handles this for you, with smart queues that organize unsigned items by category — from medications and MA notes to lab orders and superbills.
+              </p>
+              
+              <p className="text-lg text-slate-600 mb-8 leading-relaxed">
+                From one central dashboard, complete all pending tasks with a single click, so you can focus on what matters most — treating patients.
+              </p>
+              
+              <Link href="/ehr">
+                <Button variant="outline" size="lg" className="rounded-full px-8 h-12 text-primary border-primary hover:bg-primary/5">
+                  Explore our Feature overview
                 </Button>
               </Link>
-              <Button size="lg" variant="outline" className="h-12 px-8 gap-2">
-                <Play className="h-4 w-4" /> Watch Video Tour
-              </Button>
-            </div>
+            </motion.div>
+
+            {/* Right Screenshot */}
+            <motion.div
+              initial={{ opacity: 1, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="relative"
+            >
+              <div className="relative rounded-2xl overflow-hidden shadow-xl border border-slate-200 bg-white">
+                <img 
+                  src={ehrDashboardImage} 
+                  alt="MDcharts EHR Dashboard showing unsigned items management" 
+                  className="w-full h-auto"
+                />
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>

@@ -1,4 +1,5 @@
 import { Navbar } from "@/components/Navbar";
+import { Footer } from "@/components/Footer";
 import { Link } from "wouter";
 import { FileText } from "lucide-react";
 
@@ -78,11 +79,7 @@ export default function TermsOfService() {
         </div>
       </section>
 
-      <footer className="bg-slate-900 text-white py-12">
-        <div className="container mx-auto px-4 md:px-6 text-center">
-          <p className="text-slate-400">&copy; 2026 MDcharts EHR. All rights reserved.</p>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

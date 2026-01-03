@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
 import { Navbar } from "@/components/Navbar";
+import { Footer } from "@/components/Footer";
 import { InlineWidget } from "react-calendly";
 import { 
-  Calendar, Clock, Video, Check,
-  Facebook, Twitter, Linkedin, Shield
+  Calendar, Clock, Video, Check, Shield
 } from "lucide-react";
 
 const fadeIn = {
@@ -110,26 +110,7 @@ export default function BookDemo() {
         </div>
       </section>
 
-      <footer className="bg-slate-900 text-white pt-12 pb-8">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-6 pb-8 border-b border-slate-800">
-            <div className="flex items-center gap-2">
-              <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center">
-                <Calendar className="h-5 w-5 text-white" />
-              </div>
-              <span className="text-xl font-bold">MDcharts EHR</span>
-            </div>
-            <div className="flex gap-3">
-              <a href="#" className="w-9 h-9 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary transition-colors"><Facebook className="h-4 w-4" /></a>
-              <a href="#" className="w-9 h-9 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary transition-colors"><Twitter className="h-4 w-4" /></a>
-              <a href="#" className="w-9 h-9 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary transition-colors"><Linkedin className="h-4 w-4" /></a>
-            </div>
-          </div>
-          <div className="pt-6 text-center text-slate-400 text-sm">
-            © 2026 MDcharts EHR. All rights reserved. ONC 2015 Edition Certified. HIPAA Compliant.
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

@@ -7,6 +7,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Navbar } from "@/components/Navbar";
+import { Footer } from "@/components/Footer";
 import { Mail, Phone, MapPin, Clock, Send, CheckCircle } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import heroImage from "@assets/generated_images/medical_team_welcoming_patients.png";
@@ -284,14 +285,7 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-slate-900 text-white py-12">
-        <div className="container mx-auto px-4 text-center">
-          <p className="text-slate-400 text-sm">
-            © 2026 MDcharts EHR. All rights reserved. ONC 2015 Edition Certified. HIPAA Compliant.
-          </p>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

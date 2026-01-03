@@ -4,6 +4,7 @@ import { Stethoscope, Heart, Brain, Baby, Eye, Bone, Activity, Pill, ArrowRight 
 import { Button } from "@/components/ui/button";
 import { Navbar } from "@/components/Navbar";
 import { ContactModal } from "@/components/ContactModal";
+import { Footer } from "@/components/Footer";
 import specialtiesHeroImage from "@assets/stock_images/group_of_doctors_med_da5596cd.jpg";
 
 const specialties = [
@@ -176,11 +177,7 @@ export default function SpecialtiesPage() {
         </div>
       </section>
 
-      <footer className="bg-slate-950 text-slate-400 py-12">
-        <div className="container mx-auto px-4 text-center">
-          <p>© 2026 MDcharts EHR. All rights reserved.</p>
-        </div>
-      </footer>
+      <Footer />
 
       <ContactModal
         isOpen={modalOpen}

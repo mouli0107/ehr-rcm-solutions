@@ -2,6 +2,7 @@ import { Link } from "wouter";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Navbar } from "@/components/Navbar";
+import { Footer } from "@/components/Footer";
 import { ContactModal } from "@/components/ContactModal";
 import { Button } from "@/components/ui/button";
 import { 
@@ -331,27 +332,7 @@ export default function OBGYNSpecialty() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-slate-900 text-white pt-16 pb-8">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-8 pb-8 border-b border-slate-800">
-            <div className="flex items-center gap-2">
-              <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center">
-                <Baby className="h-5 w-5 text-white" />
-              </div>
-              <span className="text-xl font-bold">OBCharts</span>
-            </div>
-            <div className="flex gap-4">
-              <a href="#" className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary transition-colors"><Facebook className="h-5 w-5" /></a>
-              <a href="#" className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary transition-colors"><Twitter className="h-5 w-5" /></a>
-              <a href="#" className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary transition-colors"><Linkedin className="h-5 w-5" /></a>
-            </div>
-          </div>
-          <div className="pt-8 text-center text-slate-400 text-sm">
-            © 2026 MDcharts EHR. All rights reserved. ONC 2015 Edition Certified. HIPAA Compliant.
-          </div>
-        </div>
-      </footer>
+      <Footer />
 
       <ContactModal
         isOpen={modalState.isOpen}

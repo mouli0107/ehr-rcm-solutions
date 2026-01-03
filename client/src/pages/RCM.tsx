@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, CheckCircle2, TrendingUp, DollarSign, FileText, ShieldCheck, Phone, RefreshCw } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Navbar } from "@/components/Navbar";
+import { Footer } from "@/components/Footer";
 import { ContactModal } from "@/components/ContactModal";
 import rcmImage from "@assets/generated_images/abstract_medical_financial_growth_chart.png";
 import trizettoBadge from "@assets/generated_images/trizetto_provider_solutions_integration_badge.png";
@@ -263,12 +264,7 @@ export default function RCMPage() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-slate-950 text-slate-400 py-12 border-t border-slate-900">
-        <div className="container mx-auto px-4 text-center">
-          <p>© 2026 MDcharts EHR. All rights reserved.</p>
-        </div>
-      </footer>
+      <Footer />
 
       <ContactModal
         isOpen={modalState.isOpen}

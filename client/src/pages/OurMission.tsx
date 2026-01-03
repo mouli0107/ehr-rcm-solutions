@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Navbar } from "@/components/Navbar";
+import { Footer } from "@/components/Footer";
 import { Target, Users, Heart, TrendingUp, Star, ArrowRight, CheckCircle } from "lucide-react";
 import heroImage from "@assets/generated_images/healthcare_team_mission_image.png";
 import patientCareImage from "@assets/generated_images/caring_doctor_patient_consultation.png";
@@ -231,14 +232,7 @@ export default function OurMission() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-slate-900 text-white py-12">
-        <div className="container mx-auto px-4 text-center">
-          <p className="text-slate-400 text-sm">
-            © 2026 MDcharts EHR. All rights reserved. ONC 2015 Edition Certified. HIPAA Compliant.
-          </p>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

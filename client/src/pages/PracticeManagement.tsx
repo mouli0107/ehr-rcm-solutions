@@ -4,6 +4,7 @@ import { Calendar, Users, CreditCard, ClipboardList, BarChart3, CheckCircle2, Ar
 import { Button } from "@/components/ui/button";
 import { Navbar } from "@/components/Navbar";
 import { ContactModal } from "@/components/ContactModal";
+import { Footer } from "@/components/Footer";
 import pmHeroImage from "@assets/stock_images/medical_receptionist_ec5e8f75.jpg";
 
 const features = [
@@ -188,11 +189,7 @@ export default function PracticeManagementPage() {
         </div>
       </section>
 
-      <footer className="bg-slate-950 text-slate-400 py-12">
-        <div className="container mx-auto px-4 text-center">
-          <p>© 2026 MDcharts EHR. All rights reserved.</p>
-        </div>
-      </footer>
+      <Footer />
 
       <ContactModal
         isOpen={modalOpen}

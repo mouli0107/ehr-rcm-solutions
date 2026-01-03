@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Shield, Award, FileCheck, Lock, CheckCircle2, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Navbar } from "@/components/Navbar";
+import { Footer } from "@/components/Footer";
 import { ContactModal } from "@/components/ContactModal";
 import complianceHeroImage from "@assets/stock_images/doctor_holding_digit_1e5c4a1a.jpg";
 
@@ -216,11 +217,7 @@ export default function CompliancePage() {
         </div>
       </section>
 
-      <footer className="bg-slate-950 text-slate-400 py-12">
-        <div className="container mx-auto px-4 text-center">
-          <p>© 2026 MDcharts EHR. All rights reserved.</p>
-        </div>
-      </footer>
+      <Footer />
 
       <ContactModal
         isOpen={modalOpen}

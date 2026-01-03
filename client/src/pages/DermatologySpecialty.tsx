@@ -2,6 +2,7 @@ import { Link } from "wouter";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Navbar } from "@/components/Navbar";
+import { Footer } from "@/components/Footer";
 import { ContactModal } from "@/components/ContactModal";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -650,79 +651,7 @@ export default function DermatologySpecialty() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-slate-950 text-slate-400 py-16 border-t border-slate-900">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
-            <div>
-              <div className="flex items-center gap-2 mb-6">
-                <div className="bg-primary p-2 rounded-lg">
-                  <Stethoscope className="h-5 w-5 text-white" />
-                </div>
-                <span className="text-xl font-bold text-white">MDCharts<span className="text-primary">EHR</span></span>
-              </div>
-              <p className="text-slate-500 mb-4">Click Less, Care More™</p>
-              <p className="text-slate-600 text-sm mb-6">EHR built by physicians for physicians since 2002</p>
-              <div className="flex gap-3">
-                {[Facebook, Twitter, Linkedin, Instagram].map((Icon, i) => (
-                  <a key={i} href="#" className="h-10 w-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary transition-colors">
-                    <Icon className="h-4 w-4" />
-                  </a>
-                ))}
-              </div>
-            </div>
-            
-            <div>
-              <h4 className="text-white font-bold mb-6">Solutions</h4>
-              <ul className="space-y-3 text-sm">
-                <li><a href="/ehr" className="hover:text-primary transition-colors">Electronic Health Records</a></li>
-                <li><a href="/practice-management" className="hover:text-primary transition-colors">Practice Management</a></li>
-                <li><a href="/rcm" className="hover:text-primary transition-colors">Revenue Cycle Management</a></li>
-                <li><a href="/patient-engagement" className="hover:text-primary transition-colors">Patient Portal</a></li>
-                <li><a href="#" className="hover:text-primary transition-colors">Telemedicine</a></li>
-                <li><a href="/compliance" className="hover:text-primary transition-colors">MIPS Reporting</a></li>
-              </ul>
-            </div>
-            
-            <div>
-              <h4 className="text-white font-bold mb-6">Specialties</h4>
-              <ul className="space-y-3 text-sm">
-                <li><a href="/specialties/dermatology" className="text-primary font-medium">Dermatology</a></li>
-                <li><a href="/specialties" className="hover:text-primary transition-colors">OB/GYN</a></li>
-                <li><a href="/specialties" className="hover:text-primary transition-colors">Cardiology</a></li>
-                <li><a href="/specialties" className="hover:text-primary transition-colors">Pediatrics</a></li>
-                <li><a href="/specialties" className="hover:text-primary transition-colors">Internal Medicine</a></li>
-                <li><a href="/specialties" className="text-primary hover:text-primary/80 transition-colors flex items-center gap-1">View All 40+ Specialties <ChevronRight className="h-3 w-3" /></a></li>
-              </ul>
-            </div>
-            
-            <div>
-              <h4 className="text-white font-bold mb-6">Resources</h4>
-              <ul className="space-y-3 text-sm">
-                <li><a href="/book-demo" className="hover:text-primary transition-colors">Book a Demo</a></li>
-                <li><a href="#" className="hover:text-primary transition-colors" onClick={(e) => { e.preventDefault(); setModalState({ isOpen: true, type: "contact", title: "Contact Sales" }); }}>Contact Sales</a></li>
-                <li><a href="#" className="hover:text-primary transition-colors">Support Center</a></li>
-                <li><a href="#" className="hover:text-primary transition-colors">Training Resources</a></li>
-                <li><a href="#" className="hover:text-primary transition-colors">Blog & News</a></li>
-                <li><a href="/compliance" className="hover:text-primary transition-colors">Compliance Info</a></li>
-              </ul>
-            </div>
-          </div>
-          
-          <div className="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
-            <p>&copy; 2026 MDcharts EHR. All rights reserved.</p>
-            <div className="flex flex-wrap gap-6">
-              <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-              <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
-              <a href="#" className="hover:text-white transition-colors">HIPAA Notice</a>
-            </div>
-            <div className="flex items-center gap-4 text-xs">
-              <span className="flex items-center gap-1"><Shield className="h-3 w-3 text-primary" /> ONC 2015 Certified</span>
-              <span className="flex items-center gap-1"><Award className="h-3 w-3 text-emerald-500" /> HIPAA Compliant</span>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <Footer />
 
       <ContactModal
         isOpen={modalState.isOpen}

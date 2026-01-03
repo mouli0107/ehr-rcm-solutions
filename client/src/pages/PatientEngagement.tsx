@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Smartphone, MessageSquare, Calendar, CreditCard, ArrowRight, Heart, Video, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Navbar } from "@/components/Navbar";
+import { Footer } from "@/components/Footer";
 import { Link } from "wouter";
 import patientHeroImage from "@assets/stock_images/senior_woman_patient_eb20284f.jpg";
 import telehealthVideo from "@assets/generated_videos/doctor_video_calling_elderly_patient.mp4";
@@ -222,11 +223,7 @@ export default function PatientEngagementPage() {
         </div>
       </section>
 
-      <footer className="bg-slate-950 text-slate-400 py-12">
-        <div className="container mx-auto px-4 text-center">
-          <p>© 2026 MDcharts EHR. All rights reserved.</p>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

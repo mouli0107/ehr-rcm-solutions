@@ -5,16 +5,12 @@ import { Navbar } from "@/components/Navbar";
 import { Button } from "@/components/ui/button";
 import { blogPosts, blogCategories, getPostsByCategory } from "@/lib/blogData";
 import { getBlogImage } from "@/lib/blogImages";
+import { Footer } from "@/components/Footer";
 import { 
   Calendar, 
   Clock, 
   ArrowRight, 
   Search,
-  Stethoscope,
-  Facebook,
-  Twitter,
-  Linkedin,
-  Instagram,
   BookOpen,
   Sparkles,
   User
@@ -300,77 +296,7 @@ export default function Blog() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-slate-900 text-white pt-16 pb-8">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-4 gap-8 mb-12">
-            <div>
-              <div className="flex items-center gap-2 mb-4">
-                <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center">
-                  <Stethoscope className="h-5 w-5 text-white" />
-                </div>
-                <span className="text-xl font-bold">MDcharts</span>
-              </div>
-              <p className="text-slate-400 text-sm mb-4">
-                Click Less. Care More. The complete EHR and practice management solution.
-              </p>
-              <div className="flex gap-3">
-                <a href="#" className="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary transition-colors">
-                  <Facebook className="h-4 w-4" />
-                </a>
-                <a href="#" className="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary transition-colors">
-                  <Twitter className="h-4 w-4" />
-                </a>
-                <a href="#" className="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary transition-colors">
-                  <Linkedin className="h-4 w-4" />
-                </a>
-                <a href="#" className="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary transition-colors">
-                  <Instagram className="h-4 w-4" />
-                </a>
-              </div>
-            </div>
-
-            <div>
-              <h4 className="font-bold mb-4">Solutions</h4>
-              <ul className="space-y-2 text-sm text-slate-400">
-                <li><Link href="/ehr" className="hover:text-primary transition-colors">Electronic Health Records</Link></li>
-                <li><Link href="/rcm" className="hover:text-primary transition-colors">Revenue Cycle Management</Link></li>
-                <li><Link href="/practice-management" className="hover:text-primary transition-colors">Practice Management</Link></li>
-                <li><Link href="/patient-engagement" className="hover:text-primary transition-colors">Patient Engagement</Link></li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="font-bold mb-4">Specialties</h4>
-              <ul className="space-y-2 text-sm text-slate-400">
-                <li><Link href="/specialties/dermatology" className="hover:text-primary transition-colors">Dermatology</Link></li>
-                <li><Link href="/specialties/obgyn" className="hover:text-primary transition-colors">OB/GYN</Link></li>
-                <li><Link href="/specialties/pediatrics" className="hover:text-primary transition-colors">Pediatrics</Link></li>
-                <li><Link href="/specialties" className="hover:text-primary transition-colors">All Specialties</Link></li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="font-bold mb-4">Resources</h4>
-              <ul className="space-y-2 text-sm text-slate-400">
-                <li><Link href="/blog" className="text-primary">Blog</Link></li>
-                <li><Link href="/book-demo" className="hover:text-primary transition-colors">Book a Demo</Link></li>
-                <li><Link href="/contact" className="hover:text-primary transition-colors">Contact Us</Link></li>
-                <li><Link href="/support" className="hover:text-primary transition-colors">Support</Link></li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-400">
-            <p>&copy; 2026 MDcharts EHR. All rights reserved.</p>
-            <div className="flex gap-6">
-              <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-              <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
-              <a href="#" className="hover:text-white transition-colors">HIPAA Notice</a>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

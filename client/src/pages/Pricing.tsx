@@ -1,6 +1,7 @@
 import { Link } from "wouter";
 import { motion } from "framer-motion";
 import { Navbar } from "@/components/Navbar";
+import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { 
   Check, 
@@ -446,30 +447,7 @@ export default function Pricing() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-slate-900 text-white py-12">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-            <div className="flex items-center gap-2">
-              <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center">
-                <Stethoscope className="h-5 w-5 text-white" />
-              </div>
-              <span className="text-xl font-bold">MDcharts EHR</span>
-            </div>
-            <div className="flex items-center gap-6 text-sm text-slate-400">
-              <a href="tel:5166849521" className="flex items-center gap-2 hover:text-white transition-colors">
-                <Phone className="h-4 w-4" /> (516) 684-9521
-              </a>
-              <a href="mailto:info@mdchartsehr.com" className="flex items-center gap-2 hover:text-white transition-colors">
-                <Mail className="h-4 w-4" /> info@mdchartsehr.com
-              </a>
-            </div>
-          </div>
-          <div className="border-t border-slate-800 mt-8 pt-8 text-center text-sm text-slate-500">
-            © 2026 MDcharts EHR. All rights reserved. ONC 2015 Edition Certified. HIPAA Compliant.
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

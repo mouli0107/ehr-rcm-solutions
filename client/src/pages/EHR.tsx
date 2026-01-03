@@ -177,15 +177,15 @@ export default function EHRPage() {
       </section>
 
       {/* Patient Chart Section - Cyan Background */}
-      <section className="py-20 bg-primary overflow-hidden">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="grid lg:grid-cols-12 gap-8 items-center">
-            {/* Left Screenshot - Takes more space */}
+      <section className="py-20 bg-primary">
+        <div className="container mx-auto px-4 md:px-6 overflow-hidden">
+          <div className="grid lg:grid-cols-2 gap-10 items-center">
+            {/* Left Screenshot */}
             <motion.div
-              initial={{ opacity: 1, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 1 }}
+              whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              className="lg:col-span-7 relative"
+              className="relative"
             >
               <div className="relative rounded-lg overflow-hidden shadow-2xl bg-white">
                 <img 
@@ -198,10 +198,9 @@ export default function EHRPage() {
 
             {/* Right Content */}
             <motion.div
-              initial={{ opacity: 1, y: 5 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 1 }}
+              whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              className="lg:col-span-5"
             >
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white leading-tight mb-4">
                 Go paperless with digital patient records

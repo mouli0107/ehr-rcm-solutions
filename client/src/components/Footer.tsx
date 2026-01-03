@@ -1,5 +1,6 @@
 import { Link } from "wouter";
-import { Stethoscope, Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
+import { Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
+import mdchartsLogo from "@assets/logo_1767448797855.png";
 
 export function Footer() {
   return (
@@ -7,13 +8,12 @@ export function Footer() {
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-12 mb-12">
           <div className="lg:col-span-2">
-            <Link href="/" className="flex items-center gap-2 mb-6">
-              <div className="bg-blue-900/30 p-2 rounded-lg">
-                <Stethoscope className="h-6 w-6 text-white" />
-              </div>
-              <span className="text-xl font-bold font-heading text-white tracking-tight">
-                MDCharts<span className="text-primary">EHR</span>
-              </span>
+            <Link href="/" className="flex items-center mb-6">
+              <img 
+                src={mdchartsLogo} 
+                alt="MDcharts EHR" 
+                className="h-8 w-auto brightness-0 invert"
+              />
             </Link>
             <p className="mb-6 max-w-sm text-slate-500 leading-relaxed">
               The all-in-one EHR, RCM, and Practice Management solution designed to help independent practices thrive in a complex healthcare environment.

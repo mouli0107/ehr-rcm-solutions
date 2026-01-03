@@ -38,38 +38,38 @@ const staggerContainer = {
 const features = [
   {
     icon: Camera,
-    title: "Integrated Photo Capture",
-    description: "HIPAA-compliant before/after photos with built-in body mapping and lesion tracking over time",
+    title: "BiopsyMapping™ Technology",
+    description: "Visualize multiple biopsy results on one page with our proprietary body mapping and lesion tracking system",
     color: "bg-primary"
   },
   {
     icon: Target,
-    title: "Smart Dermatology Billing",
-    description: "Auto-suggested CPT codes for biopsies, excisions, Mohs surgery, and cosmetic procedures",
+    title: "Peak Charge Capture™",
+    description: "Built-in charge capture with accurate ICD-10 coding and auto-suggested CPT codes for biopsies, excisions, and Mohs surgery",
     color: "bg-emerald-500"
   },
   {
     icon: Syringe,
     title: "Medical vs. Aesthetic Workflows",
-    description: "Separate billing and documentation for cosmetic treatments - Botox, fillers, laser procedures",
+    description: "Separate billing and documentation for cosmetic treatments - Botox, fillers, laser procedures with Smart Super Bill℠",
     color: "bg-purple-500"
   },
   {
     icon: Microscope,
-    title: "Seamless Biopsy Tracking",
-    description: "Automatic pathology result integration with alerts for critical findings and follow-up actions",
+    title: "InstaPath℠ Biopsy Tracking",
+    description: "Track biopsies with time-stamped entries including body-part location and diagnosis safely and accurately",
     color: "bg-amber-500"
   },
   {
     icon: Calendar,
-    title: "Procedure-Specific Appointments",
-    description: "Pre-configured time blocks for screenings, Mohs surgery, cosmetic consultations, and procedures",
+    title: "TimeGuard℠ Scheduling",
+    description: "Pre-configured time blocks for screenings, Mohs surgery, cosmetic consultations with optimized financial management",
     color: "bg-rose-500"
   },
   {
     icon: Pill,
-    title: "Quick Dermatology Medications",
-    description: "One-click prescribing for topicals, biologics, and commonly used dermatology medications",
+    title: "Quick E-Prescribing",
+    description: "E-prescribe from virtually any screen with favorites, smart-searching, and complete RX history access",
     color: "bg-indigo-500"
   }
 ];
@@ -87,11 +87,11 @@ const medicalFeatures = [
 const surgicalFeatures = [
   "Mohs micrographic surgery workflows",
   "Excision and closure documentation",
-  "Skin biopsy templates with pathology tracking",
+  "InstaPath℠ biopsy tracking with pathology integration",
   "Pre-operative consent forms with e-signature",
   "Post-operative care instructions",
-  "Surgical procedure coding assistance",
-  "Photo documentation before/during/after"
+  "Peak Charge Capture™ for surgical coding",
+  "BiopsyMapping™ photo documentation"
 ];
 
 const cosmeticFeatures = [
@@ -127,42 +127,66 @@ const testimonials = [
 
 const faqs = [
   {
-    question: "How long does it take to implement DermCharts for my dermatology practice?",
-    answer: "Most practices are fully operational within 2-4 weeks, including data migration, staff training, and workflow customization."
+    question: "Why should I choose DermCharts over other EHR systems?",
+    answer: "DermCharts was designed by dermatologists, specifically for the practice of dermatology. Our development team optimized every feature to meet the requirements of even the most demanding dermatology workflows."
+  },
+  {
+    question: "How long does it take to implement DermCharts?",
+    answer: "Our typical onboarding process is designed for rapid implementation with moderate customizations. Out-of-the-box implementations can be up and running quickly for practices ready to go."
   },
   {
     question: "Can DermCharts handle both medical and cosmetic dermatology billing?",
-    answer: "Yes! DermCharts has built-in separation for medical vs. cosmetic charges, making it easy to manage insurance claims and cash-pay cosmetic services."
+    answer: "Yes! DermCharts has built-in separation for medical vs. cosmetic charges, making it easy to manage insurance claims and cash-pay cosmetic services with our Smart Super Bill℠ technology."
   },
   {
     question: "Does DermCharts integrate with pathology labs?",
-    answer: "Yes, we integrate with major pathology labs for automatic result delivery and critical finding alerts."
+    answer: "Yes, DermCharts allows providers to directly send orders and receive lab results with bi-directional interfaces to regional and major national labs including Quest, LabCorp, BioReference, and many more."
   },
   {
-    question: "How does photo documentation work for HIPAA compliance?",
-    answer: "All patient photos are encrypted, stored on HIPAA-compliant servers, and accessible only through secure authentication with full audit trails."
+    question: "Is every local pharmacy integrated into DermCharts?",
+    answer: "With DermCharts' scripting partners, you can electronically prescribe to pharmacies across the United States. You can still print prescriptions for pharmacies that don't yet accept electronic prescriptions."
+  },
+  {
+    question: "Is all my data secure?",
+    answer: "Your data is fully secure with end-to-end encryption and stored in the cloud with multiple secure, encrypted daily backups. DermCharts is compliant with all HIPAA and privacy regulations."
   },
   {
     question: "What happens to my existing patient data?",
-    answer: "We provide free data migration from most EHR systems, including patient demographics, clinical notes, and historical photos."
+    answer: "DermCharts has support options to assist in importing data into the platform. As long as you can export fields from your current system into Excel or CSV format, our Data Services team takes it from there."
+  },
+  {
+    question: "Can I export my data if I discontinue my subscription?",
+    answer: "Yes, you can export your data at any time in standard file formats like CSV or Microsoft Excel. This provides flexibility to store backup copies or take your data with you."
+  },
+  {
+    question: "What type of support can I expect after signing up?",
+    answer: "We offer comprehensive onboarding and training with your subscription. Upon signing up, you'll be assigned a Success Coach who guides you through setup, training webinars, and ongoing support."
+  },
+  {
+    question: "What days and hours is support available?",
+    answer: "DermCharts support is available during regular business hours on weekdays, excluding national holidays. Emergency support is available outside standard hours."
+  },
+  {
+    question: "Can I submit electronic claims to all insurance companies?",
+    answer: "You can submit electronic claims to thousands of insurers through DermCharts including Medicare, Medicaid, Blue Cross, Blue Shield, Tricare, and major national insurers like Aetna, Cigna, Humana, and United Healthcare."
   },
   {
     question: "Do you support Mohs surgery documentation?",
-    answer: "Absolutely! We have specialized Mohs surgery templates with stage-by-stage documentation, margin mapping, and defect measurement tools."
+    answer: "Absolutely! We have specialized Mohs surgery templates with stage-by-stage documentation, BiopsyMapping™ visualization, margin mapping, and defect measurement tools."
   }
 ];
 
 const comparisonFeatures = [
   { name: "Total body skin exam templates", basic: false, generic: "limited", mdcharts: true },
-  { name: "Lesion tracking and mapping", basic: false, generic: "limited", mdcharts: true },
-  { name: "Before/after photo documentation", basic: false, generic: true, mdcharts: true },
+  { name: "BiopsyMapping™ lesion tracking", basic: false, generic: false, mdcharts: true },
+  { name: "InstaPath℠ biopsy tracking", basic: false, generic: false, mdcharts: true },
   { name: "Customizable body diagrams", basic: false, generic: false, mdcharts: true },
-  { name: "Dermatology-specific coding", basic: false, generic: "limited", mdcharts: true },
+  { name: "Peak Charge Capture™ coding", basic: false, generic: "limited", mdcharts: true },
   { name: "Medical vs. cosmetic separation", basic: false, generic: false, mdcharts: true },
   { name: "Integrated clearinghouse (TriZetto)", basic: false, generic: false, mdcharts: true },
-  { name: "Automated skin cancer recalls", basic: false, generic: false, mdcharts: true },
-  { name: "Cosmetic inventory tracking", basic: false, generic: false, mdcharts: true },
-  { name: "E-prescribing for dermatology meds", basic: "limited", generic: true, mdcharts: true },
+  { name: "MIPs Made Easy℠ reporting", basic: false, generic: false, mdcharts: true },
+  { name: "Smart Super Bill℠", basic: false, generic: false, mdcharts: true },
+  { name: "E-prescribing with RX history", basic: "limited", generic: true, mdcharts: true },
 ];
 
 const showcaseImages = [

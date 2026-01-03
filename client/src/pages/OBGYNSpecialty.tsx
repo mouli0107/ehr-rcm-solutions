@@ -9,8 +9,9 @@ import {
   Baby, Clock, DollarSign, FileText, Zap, Users,
   Check, Star, ChevronRight, Shield, Award, TrendingUp,
   Facebook, Twitter, Linkedin, ArrowRight, Phone,
-  MousePointer, Layers, LineChart, Lock
+  MousePointer, Layers, LineChart, Lock, HelpCircle
 } from "lucide-react";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 import heroImage from "@assets/generated_images/diverse_obgyn_doctors_with_pregnant_patient.png";
 import ultrasoundImage from "@assets/generated_images/prenatal_ultrasound_examination.png";
@@ -25,7 +26,7 @@ const softwareBenefits = [
   {
     stage: "01",
     title: "Faster Documentation",
-    description: "OBCharts templates auto-populate patient data, gestational age, and visit history - so you click less and care more.",
+    description: "OBGYN Charts™ templates auto-populate patient data, gestational age, and visit history - so you click less and care more.",
     features: ["One-click prenatal notes", "Auto EDD calculation", "Smart phrase library"]
   },
   {
@@ -69,6 +70,49 @@ const integrations = [
   "LabCorp", "Surescripts", "Immunization Registries"
 ];
 
+const faqs = [
+  {
+    question: "Why should I choose OBGYN Charts™ over other EHR systems?",
+    answer: "OBGYN Charts™ was designed and developed by OBGYNs to cater to the specific needs of obstetrics and gynecology practices. No stone is left unturned in optimizing the system to meet the highest standards."
+  },
+  {
+    question: "How long does the system take to set up?",
+    answer: "Our standard onboarding process is designed for rapid implementation with moderate customizations, while our out-of-the-box solution can be operational quickly for practices ready to go."
+  },
+  {
+    question: "Is every local pharmacy integrated into OBGYN Charts™?",
+    answer: "You can access pharmacies nationwide for seamless electronic prescribing with our trusted scripting partners. For pharmacies that do not accept e-prescriptions, you can still print traditional prescriptions."
+  },
+  {
+    question: "Is my data secure, backed up and compliant?",
+    answer: "OBGYN Charts™ ensures the highest level of data security. Your information is end-to-end encrypted, stored in the cloud with encrypted daily backups, and compliant with all HIPAA and privacy regulations."
+  },
+  {
+    question: "Can OBGYN Charts™ help import my data?",
+    answer: "Yes, we offer support options to help with data import into the platform. We recommend scheduling a consultation to assess your practice's needs and determine the appropriate approach."
+  },
+  {
+    question: "Can I export my data if I discontinue my subscription?",
+    answer: "Yes, you can export your data at any time in standard file formats like CSV or Microsoft Excel. This provides flexibility to store backup copies or take your data with you."
+  },
+  {
+    question: "What type of support can I expect after signing up?",
+    answer: "Upon signup, you'll be assigned a dedicated Success Coach who will guide you throughout the setup process, and our Training Specialists will provide training webinars for further guidance."
+  },
+  {
+    question: "When is your support available?",
+    answer: "OBGYN Charts™ support is available during regular business hours on weekdays, excluding national holidays. Emergency support is also available outside standard hours."
+  },
+  {
+    question: "Can I submit electronic claims to all insurance companies?",
+    answer: "OBGYN Charts™ enables electronic claims submission to thousands of insurers, including Medicare, Medicaid, Blue Cross, Blue Shield, Tricare, and major national insurers like Aetna, Cigna, Humana, and United Healthcare."
+  },
+  {
+    question: "Which insurance claim formats are supported?",
+    answer: "We support professional claim formats including CMS 1500 paper claim format and ANSI 837p electronic claim format for provider charges, as well as institutional claim formats like UB-04 and 837I."
+  }
+];
+
 export default function OBGYNSpecialty() {
   const [modalState, setModalState] = useState<{
     isOpen: boolean;
@@ -91,18 +135,18 @@ export default function OBGYNSpecialty() {
               </div>
               
               <h1 className="text-4xl md:text-6xl font-bold text-slate-900 mb-6 leading-tight">
-                Click Less, Care More
-                <span className="block text-primary">In Your OB/GYN Practice</span>
+                OBGYN Charts™
+                <span className="block text-primary">Click Less, Care More</span>
               </h1>
               
               <p className="text-xl text-slate-600 mb-8 max-w-2xl mx-auto">
-                OBCharts saves your practice 40% on documentation time while boosting revenue with built-in billing and TriZetto integration.
+                OBGYN Charts™ streamlines your documentation while boosting revenue with built-in billing and TriZetto integration.
               </p>
 
               <div className="flex flex-wrap justify-center gap-4 mb-12">
                 <Link href="/book-demo">
                   <Button size="lg" className="bg-primary hover:bg-primary/90">
-                    See OBCharts in Action <ArrowRight className="ml-2 h-4 w-4" />
+                    See OBGYN Charts™ in Action <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                 </Link>
                 <Link href="/book-demo">
@@ -160,7 +204,7 @@ export default function OBGYNSpecialty() {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mb-4">
-              How OBCharts Transforms Your OB/GYN Practice
+              How OBGYN Charts™ Transforms Your Practice
             </h2>
             <p className="text-xl text-slate-600 max-w-2xl mx-auto">
               Purpose-built EHR software that solves the real problems OB/GYN practices face daily
@@ -294,7 +338,7 @@ export default function OBGYNSpecialty() {
             </div>
             
             <blockquote className="text-2xl md:text-3xl font-medium leading-relaxed mb-10">
-              "OBCharts cut our documentation time in half and our denials dropped to almost zero. The TriZetto integration handles our global OB billing perfectly - we finally get paid faster."
+              "OBGYN Charts™ dramatically cut our documentation time and our denials dropped significantly. The TriZetto integration handles our global OB billing perfectly - we finally get paid faster."
             </blockquote>
             
             <div>
@@ -306,6 +350,39 @@ export default function OBGYNSpecialty() {
         </div>
       </section>
 
+      {/* FAQs Section */}
+      <section className="py-20 bg-slate-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+              Frequently Asked Questions
+            </h2>
+            <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+              Everything you need to know about OBGYN Charts™
+            </p>
+          </div>
+          
+          <div className="max-w-3xl mx-auto">
+            <Accordion type="single" collapsible className="space-y-4">
+              {faqs.map((faq, index) => (
+                <AccordionItem 
+                  key={index} 
+                  value={`faq-${index}`}
+                  className="bg-white rounded-xl border border-slate-200 px-6 shadow-sm"
+                >
+                  <AccordionTrigger className="text-left font-semibold text-slate-900 hover:no-underline py-5">
+                    {faq.question}
+                  </AccordionTrigger>
+                  <AccordionContent className="text-slate-600 pb-5">
+                    {faq.answer}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="py-24 bg-white">
         <div className="container mx-auto px-4 text-center">
@@ -314,7 +391,7 @@ export default function OBGYNSpecialty() {
               Ready to Transform Your OB/GYN Practice?
             </h2>
             <p className="text-xl text-slate-600 mb-8 max-w-2xl mx-auto">
-              See why 300+ OB/GYN practices choose OBCharts for faster documentation and better revenue
+              See why OB/GYN practices nationwide choose OBGYN Charts™ for faster documentation and better revenue
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link href="/book-demo">

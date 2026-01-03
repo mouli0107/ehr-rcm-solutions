@@ -51,6 +51,19 @@ const benefits = [
   "Quality measure reporting"
 ];
 
+const labPartners = {
+  major: ["Quest Diagnostics", "LabCorp", "BioReference", "Northwell Health Labs", "Sunrise Medical Labs"],
+  regional: [
+    "Accupath", "Ameripath", "Aurora Diagnostics", "Bostwick Laboratories", 
+    "Carnegie Hill Imaging", "CBL Path", "Cesar Colorado Labs", "Counsyl",
+    "DCL Diagnostics", "Dianon Systems", "Enzo Clinical Labs", 
+    "GE Viewpoint", "Genzyme Genetics", "Main Street Radiology", 
+    "MedInformatix", "Natera", "New York Imaging", "NTD Labs", 
+    "Quentin Labs", "Sema4", "Shiel Medical Laboratory", 
+    "UWL Labs", "Zwanger-Pesiri"
+  ]
+};
+
 export default function LabIntegration() {
   return (
     <div className="min-h-screen bg-background font-sans overflow-x-hidden">
@@ -154,6 +167,53 @@ export default function LabIntegration() {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="py-20 bg-slate-50">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+              Participating Lab Partners
+            </h2>
+            <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+              Bi-directional interfaces with major national and regional laboratories. 
+              MD Charts integrates with virtually any HL7-compatible lab.
+            </p>
+          </div>
+          
+          <div className="mb-10">
+            <h3 className="text-sm font-bold uppercase tracking-wider text-primary mb-4 text-center">Major National Labs</h3>
+            <div className="flex flex-wrap justify-center gap-4">
+              {labPartners.major.map((lab, index) => (
+                <div 
+                  key={index}
+                  className="bg-white px-6 py-3 rounded-full shadow-sm border border-slate-200 font-semibold text-slate-700 hover:border-primary hover:shadow-md transition-all"
+                >
+                  {lab}
+                </div>
+              ))}
+            </div>
+          </div>
+          
+          <div>
+            <h3 className="text-sm font-bold uppercase tracking-wider text-slate-500 mb-4 text-center">Regional & Specialty Labs</h3>
+            <div className="flex flex-wrap justify-center gap-3">
+              {labPartners.regional.map((lab, index) => (
+                <div 
+                  key={index}
+                  className="bg-white px-4 py-2 rounded-lg shadow-sm border border-slate-100 text-sm text-slate-600 hover:border-primary/30 transition-all"
+                >
+                  {lab}
+                </div>
+              ))}
+            </div>
+          </div>
+          
+          <p className="text-center text-slate-500 text-sm mt-8">
+            Don't see your lab? MD Charts integrates with virtually any HL7-compatible laboratory. 
+            <Link href="/contact" className="text-primary font-medium ml-1 hover:underline">Contact us</Link> to add your lab.
+          </p>
         </div>
       </section>
 

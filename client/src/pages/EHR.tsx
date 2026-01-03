@@ -96,33 +96,31 @@ export default function EHRPage() {
             <motion.div
               initial={{ opacity: 1 }}
               animate={{ opacity: 1 }}
-              className="relative flex justify-center"
+              className="relative"
             >
-              {/* Cyan circle background */}
-              <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-primary/20 rounded-full" />
+              {/* Cyan circle background - positioned to the right */}
+              <div className="absolute right-8 top-1/2 -translate-y-1/2 w-[350px] h-[350px] bg-primary/15 rounded-full" />
               
-              {/* Healthcare professional image */}
-              <div className="relative z-10">
+              {/* Healthcare professional image - full visibility */}
+              <div className="relative z-10 flex justify-end">
                 <img 
                   src={ehrHeroImage} 
                   alt="Healthcare professional using MDcharts EHR" 
-                  className="w-full max-w-[420px] h-auto object-contain relative z-10"
+                  className="w-full max-w-[400px] h-auto object-contain"
                 />
               </div>
               
-              {/* Floating UI element - Calendar/Dashboard */}
-              <div className="absolute top-8 left-0 bg-white rounded-xl shadow-xl p-3 border border-slate-100 z-20 hidden md:block">
-                <div className="w-44 h-28 bg-gradient-to-br from-slate-50 to-slate-100 rounded-lg flex items-center justify-center">
-                  <div className="grid grid-cols-5 gap-1 p-2">
-                    {[...Array(15)].map((_, i) => (
-                      <div key={i} className={`w-3 h-3 rounded-sm ${i === 7 || i === 12 ? 'bg-primary' : i === 3 || i === 9 ? 'bg-emerald-400' : 'bg-slate-200'}`} />
-                    ))}
-                  </div>
-                </div>
+              {/* Floating UI element - Dashboard preview - top left, not covering face */}
+              <div className="absolute top-4 -left-4 bg-white rounded-xl shadow-xl overflow-hidden border border-slate-100 z-20 hidden lg:block">
+                <img 
+                  src={ehrDashboardImage} 
+                  alt="EHR Dashboard Preview" 
+                  className="w-48 h-auto"
+                />
               </div>
               
-              {/* Floating UI element - Booking confirmed */}
-              <div className="absolute top-4 right-0 bg-white rounded-xl shadow-xl p-3 border border-slate-100 z-20 hidden md:block">
+              {/* Floating UI element - Booking confirmed - far right */}
+              <div className="absolute top-8 -right-4 bg-white rounded-xl shadow-xl p-3 border border-slate-100 z-20 hidden md:block">
                 <div className="flex items-center gap-2 mb-2">
                   <div className="h-6 w-6 rounded-full bg-emerald-100 flex items-center justify-center">
                     <CheckCircle2 className="h-3 w-3 text-emerald-600" />
@@ -135,21 +133,8 @@ export default function EHRPage() {
                 </div>
               </div>
               
-              {/* Floating UI element - Message notification */}
-              <div className="absolute bottom-16 left-4 bg-white rounded-xl shadow-xl p-3 border border-slate-100 z-20 hidden md:block">
-                <div className="flex items-center gap-2">
-                  <div className="h-8 w-8 rounded-full bg-primary/10 flex items-center justify-center">
-                    <Monitor className="h-4 w-4 text-primary" />
-                  </div>
-                  <div>
-                    <p className="font-semibold text-slate-900 text-xs">MDcharts EHR</p>
-                    <p className="text-[10px] text-slate-500">Your visit is at 2:30pm</p>
-                  </div>
-                </div>
-              </div>
-              
-              {/* Stats badge */}
-              <div className="absolute bottom-8 right-8 bg-white rounded-xl shadow-lg p-4 border border-slate-100 z-20">
+              {/* Stats badge - bottom right */}
+              <div className="absolute bottom-12 right-0 bg-white rounded-xl shadow-lg p-4 border border-slate-100 z-20">
                 <div className="flex items-center gap-3">
                   <div className="h-10 w-10 rounded-full bg-emerald-100 flex items-center justify-center">
                     <CheckCircle2 className="h-5 w-5 text-emerald-600" />

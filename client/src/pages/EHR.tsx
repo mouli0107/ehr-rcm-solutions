@@ -179,13 +179,13 @@ export default function EHRPage() {
       {/* Patient Chart Section - Cyan Background */}
       <section className="py-24 bg-primary">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Left Screenshot */}
+          <div className="grid lg:grid-cols-2 gap-10 items-center">
+            {/* Left Screenshot - Larger */}
             <motion.div
               initial={{ opacity: 1, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="relative"
+              className="relative lg:scale-105 lg:origin-right"
             >
               <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-white">
                 <img 
@@ -196,26 +196,26 @@ export default function EHRPage() {
               </div>
             </motion.div>
 
-            {/* Right Content */}
+            {/* Right Content - Condensed */}
             <motion.div
               initial={{ opacity: 1, y: 5 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mb-6">
+              <h2 className="text-3xl md:text-4xl font-bold text-white leading-tight mb-5">
                 Go paperless with digital patient records
               </h2>
               
-              <p className="text-lg text-white/90 mb-4 leading-relaxed">
+              <p className="text-base text-white/90 mb-3 leading-relaxed">
                 MDcharts' patient management system has been tailor-made to cater for the heavy documentation needs of medical patient workflows.
               </p>
               
-              <p className="text-lg text-white/90 mb-4 leading-relaxed">
+              <p className="text-base text-white/90 mb-3 leading-relaxed">
                 Access complete patient history at a glance — allergies, medications, critical items, and visit notes — all organized in a single view.
               </p>
               
-              <p className="text-lg text-white/90 mb-8 leading-relaxed">
-                From allergy alerts to SOAP notes and lab orders — all the information you need about your patients is securely stored in one place and can be accessed from anywhere, on any device.
+              <p className="text-base text-white/90 mb-6 leading-relaxed">
+                From allergy alerts to SOAP notes and lab orders — all the information you need is securely stored in one place and can be accessed from anywhere.
               </p>
               
               <Link href="/ehr">

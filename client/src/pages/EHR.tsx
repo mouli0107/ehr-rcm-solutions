@@ -66,8 +66,8 @@ export default function EHRPage() {
               </div>
               
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-[1.1] mb-6">
-                Chart Smarter. <br/>
-                <span className="text-primary">Not Harder.</span>
+                Click Less. <br/>
+                <span className="text-primary">Care More.</span>
               </h1>
               
               <p className="text-xl text-slate-600 mb-8 leading-relaxed">

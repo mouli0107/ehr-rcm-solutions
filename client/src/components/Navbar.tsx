@@ -1,13 +1,14 @@
 import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { 
-  Stethoscope, Menu, X, Phone, Mail, Clock, ChevronRight, 
+  Menu, X, Phone, Mail, Clock, ChevronRight, 
   FileText, Calendar, DollarSign, Users, Shield, Award, 
   BookOpen, ExternalLink, ArrowRight, Building2, Heart,
   ClipboardList, Zap, TrendingUp, MessageSquare, Video,
   Smartphone, BarChart3, FlaskConical, Briefcase, Newspaper,
-  HelpCircle, Star, Handshake
+  HelpCircle, Star, Handshake, Stethoscope
 } from "lucide-react";
+import mdchartsLogo from "@assets/mdcharts_logo.png";
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import {
@@ -157,16 +158,12 @@ export function Navbar() {
         )}
       >
         <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2 group relative z-50">
-            <div className="bg-primary p-1.5 rounded-md shadow-sm group-hover:bg-blue-700 transition-colors">
-              <Stethoscope className="h-5 w-5 text-white" />
-            </div>
-            <div className="flex flex-col leading-none">
-              <span className="text-lg font-extrabold font-heading text-slate-900 tracking-tight">
-                MDCharts<span className="text-primary">EHR</span>
-              </span>
-              <span className="text-[9px] font-bold text-slate-400 uppercase tracking-widest">Enterprise Suite</span>
-            </div>
+          <Link href="/" className="flex items-center group relative z-50">
+            <img 
+              src={mdchartsLogo} 
+              alt="MDcharts EHR" 
+              className="h-8 w-auto"
+            />
           </Link>
 
           {/* Desktop Mega Menu */}

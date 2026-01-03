@@ -24,8 +24,6 @@ const pricingPlans = [
   {
     name: "Starter",
     description: "Perfect for solo practitioners and small practices",
-    price: "299",
-    period: "per provider/month",
     popular: false,
     features: [
       "Core EHR functionality",
@@ -37,14 +35,12 @@ const pricingPlans = [
       "Basic reporting",
       "HIPAA compliant",
     ],
-    cta: "Get Started",
+    cta: "Contact for Pricing",
     highlight: false,
   },
   {
     name: "Professional",
     description: "Ideal for growing practices with advanced needs",
-    price: "499",
-    period: "per provider/month",
     popular: true,
     features: [
       "Everything in Starter, plus:",
@@ -58,14 +54,12 @@ const pricingPlans = [
       "Advanced analytics",
       "Patient engagement tools",
     ],
-    cta: "Start Free Trial",
+    cta: "Contact for Pricing",
     highlight: true,
   },
   {
     name: "Enterprise",
     description: "For large practices and healthcare organizations",
-    price: "Custom",
-    period: "tailored to your needs",
     popular: false,
     features: [
       "Everything in Professional, plus:",
@@ -79,7 +73,7 @@ const pricingPlans = [
       "SLA guarantees",
       "API access",
     ],
-    cta: "Contact Sales",
+    cta: "Contact for Pricing",
     highlight: false,
   },
 ];
@@ -106,8 +100,8 @@ const faqs = [
     answer: "Yes, absolutely. We're ONC 2015 Edition Certified and fully HIPAA compliant. All data is encrypted at rest and in transit, with regular security audits and SOC 2 Type II certification.",
   },
   {
-    question: "Do you offer discounts for annual billing?",
-    answer: "Yes! Save 20% when you choose annual billing. Contact our sales team for multi-year agreements with additional savings.",
+    question: "How do I get pricing information?",
+    answer: "Schedule a demo with our team and we'll provide custom pricing based on your practice size and needs. Contact us to discuss your requirements.",
   },
 ];
 
@@ -128,7 +122,6 @@ const comparisonFeatures = [
 
 export default function Pricing() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
-  const [billingPeriod, setBillingPeriod] = useState<"monthly" | "annual">("monthly");
 
   return (
     <div className="min-h-screen bg-white font-sans">
@@ -155,35 +148,8 @@ export default function Pricing() {
             </h1>
             
             <p className="text-lg text-slate-600 max-w-2xl mx-auto mb-6">
-              No hidden fees. No long-term contracts. Start with a 30-day free trial and scale as you grow.
+              Contact us for custom pricing tailored to your practice. Schedule a call to discuss your needs.
             </p>
-
-            {/* Billing Toggle */}
-            <div className="inline-flex items-center bg-slate-100 rounded-full p-1 mb-6">
-              <button
-                onClick={() => setBillingPeriod("monthly")}
-                className={`px-6 py-2 rounded-full text-sm font-semibold transition-all ${
-                  billingPeriod === "monthly" 
-                    ? "bg-white text-slate-900 shadow-sm" 
-                    : "text-slate-600 hover:text-slate-900"
-                }`}
-              >
-                Monthly
-              </button>
-              <button
-                onClick={() => setBillingPeriod("annual")}
-                className={`px-6 py-2 rounded-full text-sm font-semibold transition-all flex items-center gap-2 ${
-                  billingPeriod === "annual" 
-                    ? "bg-white text-slate-900 shadow-sm" 
-                    : "text-slate-600 hover:text-slate-900"
-                }`}
-              >
-                Annual
-                <span className="bg-emerald-100 text-emerald-700 text-xs font-bold px-2 py-0.5 rounded-full">
-                  Save 20%
-                </span>
-              </button>
-            </div>
           </motion.div>
         </div>
       </section>
@@ -224,15 +190,12 @@ export default function Pricing() {
 
                 <div className="mb-8">
                   <div className="flex items-baseline gap-1">
-                    {plan.price !== "Custom" && (
-                      <span className={`text-lg ${plan.highlight ? "text-white/80" : "text-slate-500"}`}>$</span>
-                    )}
-                    <span className={`text-5xl font-bold ${plan.highlight ? "text-white" : "text-slate-900"}`}>
-                      {plan.price === "Custom" ? "Custom" : billingPeriod === "annual" ? Math.round(parseInt(plan.price) * 0.8) : plan.price}
+                    <span className={`text-3xl font-bold ${plan.highlight ? "text-white" : "text-slate-900"}`}>
+                      Contact Us
                     </span>
                   </div>
                   <p className={`text-sm mt-1 ${plan.highlight ? "text-white/70" : "text-slate-500"}`}>
-                    {plan.period}
+                    for custom pricing
                   </p>
                 </div>
 
@@ -285,14 +248,14 @@ export default function Pricing() {
               <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-3">
                 <Zap className="h-7 w-7 text-primary" />
               </div>
-              <h4 className="font-bold text-slate-900 mb-1">99.9% Uptime</h4>
+              <h4 className="font-bold text-slate-900 mb-1">High Uptime</h4>
               <p className="text-sm text-slate-600">Reliable performance</p>
             </div>
             <div className="flex flex-col items-center">
               <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-3">
                 <Users className="h-7 w-7 text-primary" />
               </div>
-              <h4 className="font-bold text-slate-900 mb-1">1000+ Practices</h4>
+              <h4 className="font-bold text-slate-900 mb-1">Growing Practices</h4>
               <p className="text-sm text-slate-600">Trust MDcharts daily</p>
             </div>
             <div className="flex flex-col items-center">
@@ -428,18 +391,18 @@ export default function Pricing() {
               Ready to Transform Your Practice?
             </h2>
             <p className="text-xl text-white/80 max-w-2xl mx-auto mb-8">
-              Join 1000+ healthcare providers who trust MDcharts EHR. Start your free 30-day trial today.
+              Join healthcare providers who trust MDcharts EHR. Schedule a demo to learn more.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link href="/book-demo">
                 <Button size="lg" className="bg-white text-primary hover:bg-slate-100 px-8">
-                  Start Free Trial
+                  Schedule a Demo
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </Link>
-              <Link href="/contact">
+              <Link href="/book-demo">
                 <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10 px-8">
-                  Talk to Sales
+                  Contact Sales
                 </Button>
               </Link>
             </div>

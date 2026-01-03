@@ -91,7 +91,7 @@ export default function BookDemo() {
                   <h2 className="font-bold text-lg">Select a Time That Works for You</h2>
                 </div>
                 <InlineWidget 
-                  url="https://calendly.com/testmouli4/30min"
+                  url="https://calendly.com/testmouli4/30min?hide_gdpr_banner=1"
                   styles={{
                     height: '700px',
                     width: '100%'
@@ -103,6 +103,10 @@ export default function BookDemo() {
                     primaryColor: '0891b2',
                     textColor: '1e293b'
                   }}
+                  prefill={{
+                    customAnswers: {}
+                  }}
+                  utm={{}}
                 />
               </motion.div>
             </div>

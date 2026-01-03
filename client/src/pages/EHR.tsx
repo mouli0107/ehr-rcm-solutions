@@ -1,10 +1,8 @@
 import { motion } from "framer-motion";
-import { useState } from "react";
 import { FileText, Zap, Shield, Clock, Layers, CheckCircle2, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { ContactModal } from "@/components/ContactModal";
 import { Link } from "wouter";
 import ehrDashboardImage from "@assets/image_1767433966912.png";
 import patientChartImage from "@assets/image_1767434643508.png";
@@ -49,8 +47,6 @@ const modules = [
 ];
 
 export default function EHRPage() {
-  const [modalOpen, setModalOpen] = useState(false);
-
   return (
     <div className="min-h-screen bg-background font-sans overflow-x-hidden">
       <Navbar />
@@ -80,17 +76,20 @@ export default function EHRPage() {
               </p>
               
               <div className="flex flex-wrap gap-4">
-                <Button 
-                  size="lg" 
-                  className="h-12 px-8"
-                  onClick={() => setModalOpen(true)}
-                  data-testid="button-ehr-demo"
-                >
-                  Book a Demo <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-                <Button size="lg" variant="outline" className="h-12 px-8">
-                  View Features
-                </Button>
+                <Link href="/book-demo">
+                  <Button 
+                    size="lg" 
+                    className="h-12 px-8"
+                    data-testid="button-ehr-demo"
+                  >
+                    Book a Demo <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </Link>
+                <a href="#features">
+                  <Button size="lg" variant="outline" className="h-12 px-8" data-testid="button-view-features">
+                    View Features
+                  </Button>
+                </a>
               </div>
             </motion.div>
 
@@ -138,9 +137,9 @@ export default function EHRPage() {
                 From one central dashboard, complete all pending tasks with a single click, so you can focus on what matters most — treating patients.
               </p>
               
-              <Link href="/ehr">
+              <Link href="/book-demo">
                 <Button variant="outline" size="lg" className="rounded-full px-8 h-12 text-primary border-primary hover:bg-primary/5">
-                  Explore our Feature overview
+                  Schedule a Demo
                 </Button>
               </Link>
             </motion.div>
@@ -208,9 +207,9 @@ export default function EHRPage() {
                 From allergy alerts to SOAP notes and lab orders — all the information you need is securely stored in one place and can be accessed from anywhere.
               </p>
               
-              <Link href="/ehr">
+              <Link href="/book-demo">
                 <Button variant="outline" size="lg" className="rounded-full px-8 h-12 bg-transparent border-white text-white hover:bg-white hover:text-primary">
-                  Explore our Patient Management features
+                  Book Your Demo
                 </Button>
               </Link>
             </motion.div>
@@ -218,7 +217,7 @@ export default function EHRPage() {
         </div>
       </section>
 
-      <section className="py-20 bg-white">
+      <section id="features" className="py-20 bg-white">
         <div className="container mx-auto px-4 md:px-6">
           <h2 className="text-3xl font-bold text-slate-900 mb-12 text-center">
             Why Providers Choose Our EHR
@@ -282,25 +281,20 @@ export default function EHRPage() {
           <p className="text-blue-100 text-lg mb-8 max-w-2xl mx-auto">
             Join thousands of providers who have reduced charting time and improved patient care.
           </p>
-          <Button 
-            size="lg" 
-            variant="secondary" 
-            className="h-14 px-8"
-            onClick={() => setModalOpen(true)}
-          >
-            Schedule Your Demo
-          </Button>
+          <Link href="/book-demo">
+            <Button 
+              size="lg" 
+              variant="secondary" 
+              className="h-14 px-8"
+              data-testid="button-schedule-demo"
+            >
+              Schedule Your Demo
+            </Button>
+          </Link>
         </div>
       </section>
 
       <Footer />
-
-      <ContactModal
-        isOpen={modalOpen}
-        onClose={() => setModalOpen(false)}
-        requestType="demo"
-        title="Book EHR Demo"
-      />
     </div>
   );
 }

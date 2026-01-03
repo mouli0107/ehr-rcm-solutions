@@ -158,6 +158,8 @@ export default function EHRPage() {
                   alt="MDcharts EHR Dashboard showing unsigned items management" 
                   className="w-full h-auto"
                 />
+                {/* Overlay to hide IP address, date and time */}
+                <div className="absolute bottom-[12%] left-[28%] w-[18%] h-[22%] bg-slate-100 rounded"></div>
               </div>
             </motion.div>
           </div>

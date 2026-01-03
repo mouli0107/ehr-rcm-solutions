@@ -159,7 +159,7 @@ export default function EHRPage() {
                   className="w-full h-auto"
                 />
                 {/* Overlay to hide IP address, date and time */}
-                <div className="absolute bottom-[4.5%] left-[5%] w-[20%] h-[19%] bg-white"></div>
+                <div className="absolute bottom-0 left-[5%] w-[20%] h-[24%] bg-white"></div>
               </div>
             </motion.div>
           </div>

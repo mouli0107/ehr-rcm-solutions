@@ -88,7 +88,7 @@ const resourcesRight = [
 
 const companyItems = [
   { title: "About Us", href: "/about", description: "Our mission and values", icon: Heart },
-  { title: "Leadership", href: "/about/leadership", description: "Meet our team", icon: Users },
+  { title: "Management", href: "/about/management", description: "Meet our team", icon: Users },
 ];
 
 const companyLinks = [

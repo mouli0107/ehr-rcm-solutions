@@ -35,7 +35,6 @@ export function Footer() {
               <li><Link href="/rcm" className="hover:text-primary transition-colors">Revenue Cycle Management</Link></li>
               <li><Link href="/patient-engagement" className="hover:text-primary transition-colors">Patient Engagement</Link></li>
               <li><Link href="/features/telehealth" className="hover:text-primary transition-colors">Telemedicine</Link></li>
-              <li><Link href="/features/mobile-app" className="hover:text-primary transition-colors">Mobile App</Link></li>
             </ul>
           </div>
           

@@ -40,7 +40,6 @@ import EPrescribingPage from "@/pages/EPrescribing";
 import LabIntegrationPage from "@/pages/LabIntegration";
 import TelehealthPage from "@/pages/Telehealth";
 import PatientPortalPage from "@/pages/PatientPortal";
-import MobileAppPage from "@/pages/MobileApp";
 import AnalyticsPage from "@/pages/Analytics";
 
 import CaseStudiesPage from "@/pages/CaseStudies";
@@ -109,7 +108,6 @@ function Router() {
         <Route path="/features/lab-integration" component={LabIntegrationPage} />
         <Route path="/features/telehealth" component={TelehealthPage} />
         <Route path="/features/patient-portal" component={PatientPortalPage} />
-        <Route path="/features/mobile-app" component={MobileAppPage} />
         <Route path="/features/analytics" component={AnalyticsPage} />
         
         <Route path="/resources/case-studies" component={CaseStudiesPage} />

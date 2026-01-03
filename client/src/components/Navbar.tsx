@@ -51,7 +51,6 @@ const solutionsRight = [
   { title: "Lab Integration", href: "/features/lab-integration", icon: FlaskConical },
   { title: "Telehealth", href: "/features/telehealth", icon: Video },
   { title: "Patient Portal", href: "/features/patient-portal", icon: Users },
-  { title: "Mobile App", href: "/features/mobile-app", icon: Smartphone },
   { title: "Analytics & Reports", href: "/features/analytics", icon: BarChart3 },
 ];
 

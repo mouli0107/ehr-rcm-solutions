@@ -177,32 +177,33 @@ export default function EHRPage() {
       </section>
 
       {/* Patient Chart Section - Cyan Background */}
-      <section className="py-24 bg-primary">
+      <section className="py-20 bg-primary overflow-hidden">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="grid lg:grid-cols-2 gap-10 items-center">
-            {/* Left Screenshot - Larger */}
+          <div className="grid lg:grid-cols-12 gap-8 items-center">
+            {/* Left Screenshot - Takes more space */}
             <motion.div
               initial={{ opacity: 1, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="relative lg:scale-105 lg:origin-right"
+              className="lg:col-span-7 relative"
             >
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-white">
+              <div className="relative rounded-lg overflow-hidden shadow-2xl bg-white">
                 <img 
                   src={patientChartImage} 
                   alt="MDcharts Patient Chart with comprehensive medical history" 
-                  className="w-full h-auto"
+                  className="w-full h-auto block"
                 />
               </div>
             </motion.div>
 
-            {/* Right Content - Condensed */}
+            {/* Right Content */}
             <motion.div
               initial={{ opacity: 1, y: 5 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
+              className="lg:col-span-5"
             >
-              <h2 className="text-3xl md:text-4xl font-bold text-white leading-tight mb-5">
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white leading-tight mb-4">
                 Go paperless with digital patient records
               </h2>
               
@@ -219,7 +220,7 @@ export default function EHRPage() {
               </p>
               
               <Link href="/ehr">
-                <Button variant="secondary" size="lg" className="rounded-full px-8 h-12">
+                <Button variant="outline" size="lg" className="rounded-full px-8 h-12 bg-transparent border-white text-white hover:bg-white hover:text-primary">
                   Explore our Patient Management features
                 </Button>
               </Link>

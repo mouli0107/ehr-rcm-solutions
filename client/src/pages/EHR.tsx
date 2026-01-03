@@ -110,13 +110,17 @@ export default function EHRPage() {
                 />
               </div>
               
-              {/* Floating UI element - Dashboard preview - top left, not covering face */}
-              <div className="absolute top-4 -left-4 bg-white rounded-xl shadow-xl overflow-hidden border border-slate-100 z-20 hidden lg:block">
-                <img 
-                  src={ehrDashboardImage} 
-                  alt="EHR Dashboard Preview" 
-                  className="w-48 h-auto"
-                />
+              {/* Floating UI element - Patient record card - top left */}
+              <div className="absolute top-4 -left-4 bg-white rounded-xl shadow-xl p-3 border border-slate-100 z-20 hidden lg:block">
+                <div className="flex items-center gap-2 mb-2">
+                  <div className="h-8 w-8 rounded-full bg-primary/10 flex items-center justify-center">
+                    <FileText className="h-4 w-4 text-primary" />
+                  </div>
+                  <div>
+                    <p className="font-semibold text-slate-900 text-xs">Patient Records</p>
+                    <p className="text-[10px] text-slate-500">Instantly accessible</p>
+                  </div>
+                </div>
               </div>
               
               {/* Floating UI element - Booking confirmed - far right */}

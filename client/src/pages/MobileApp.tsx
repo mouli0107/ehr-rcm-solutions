@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
+import mobileAppHeroImage from '@assets/generated_images/mobile_ehr_app_usage.png';
 import { 
   Smartphone, Bell, FileText, Shield, Zap, Cloud,
   Check, ArrowRight
@@ -57,31 +58,37 @@ export default function MobileApp() {
       
       <section className="pt-28 pb-20 bg-gradient-to-b from-slate-50 to-white">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="max-w-3xl mx-auto text-center">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-semibold mb-6">
-              <Smartphone className="h-4 w-4" />
-              Mobile App
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="text-center lg:text-left">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-semibold mb-6">
+                <Smartphone className="h-4 w-4" />
+                Mobile App
+              </div>
+              
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 leading-tight mb-6">
+                Your Practice <span className="text-primary">In Your Pocket</span>
+              </h1>
+              
+              <p className="text-xl text-slate-600 mb-8 leading-relaxed">
+                Access your full EHR from anywhere with our powerful mobile application for iOS and Android devices.
+              </p>
+              
+              <div className="flex flex-wrap justify-center lg:justify-start gap-4">
+                <Link href="/book-demo">
+                  <Button size="lg" className="h-12 px-8" data-testid="button-mobile-demo">
+                    Book a Demo <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </Link>
+                <Link href="/contact">
+                  <Button size="lg" variant="outline" className="h-12 px-8">
+                    Learn More
+                  </Button>
+                </Link>
+              </div>
             </div>
             
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 leading-tight mb-6">
-              Your Practice <span className="text-primary">In Your Pocket</span>
-            </h1>
-            
-            <p className="text-xl text-slate-600 mb-8 leading-relaxed">
-              Access your full EHR from anywhere with our powerful mobile application for iOS and Android devices.
-            </p>
-            
-            <div className="flex flex-wrap justify-center gap-4">
-              <Link href="/book-demo">
-                <Button size="lg" className="h-12 px-8" data-testid="button-mobile-demo">
-                  Book a Demo <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-              </Link>
-              <Link href="/contact">
-                <Button size="lg" variant="outline" className="h-12 px-8">
-                  Learn More
-                </Button>
-              </Link>
+            <div className="order-first lg:order-last">
+              <img src={mobileAppHeroImage} alt="Mobile EHR app usage" className="rounded-2xl shadow-2xl w-full" />
             </div>
           </div>
         </div>

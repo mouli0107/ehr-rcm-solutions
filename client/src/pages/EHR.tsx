@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Navbar } from "@/components/Navbar";
 import { ContactModal } from "@/components/ContactModal";
 import { Link } from "wouter";
-import ehrHeroImage from "@assets/stock_images/female_doctor_smilin_9aeffd62.jpg";
+import ehrHeroImage from "@assets/generated_images/smiling_healthcare_professional_with_tablet.png";
 import ehrDashboardImage from "@assets/image_1767433966912.png";
 import patientChartImage from "@assets/image_1767434643508.png";
 
@@ -94,20 +94,62 @@ export default function EHRPage() {
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 1, x: 30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.2 }}
-              className="relative"
+              initial={{ opacity: 1 }}
+              animate={{ opacity: 1 }}
+              className="relative flex justify-center"
             >
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+              {/* Cyan circle background */}
+              <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-primary/20 rounded-full" />
+              
+              {/* Healthcare professional image */}
+              <div className="relative z-10">
                 <img 
                   src={ehrHeroImage} 
-                  alt="Doctor using EHR system" 
-                  className="w-full h-[450px] object-cover"
+                  alt="Healthcare professional using MDcharts EHR" 
+                  className="w-full max-w-[420px] h-auto object-contain relative z-10"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent" />
               </div>
-              <div className="absolute -bottom-4 -left-4 bg-white rounded-xl shadow-lg p-4 border border-slate-100">
+              
+              {/* Floating UI element - Calendar/Dashboard */}
+              <div className="absolute top-8 left-0 bg-white rounded-xl shadow-xl p-3 border border-slate-100 z-20 hidden md:block">
+                <div className="w-44 h-28 bg-gradient-to-br from-slate-50 to-slate-100 rounded-lg flex items-center justify-center">
+                  <div className="grid grid-cols-5 gap-1 p-2">
+                    {[...Array(15)].map((_, i) => (
+                      <div key={i} className={`w-3 h-3 rounded-sm ${i === 7 || i === 12 ? 'bg-primary' : i === 3 || i === 9 ? 'bg-emerald-400' : 'bg-slate-200'}`} />
+                    ))}
+                  </div>
+                </div>
+              </div>
+              
+              {/* Floating UI element - Booking confirmed */}
+              <div className="absolute top-4 right-0 bg-white rounded-xl shadow-xl p-3 border border-slate-100 z-20 hidden md:block">
+                <div className="flex items-center gap-2 mb-2">
+                  <div className="h-6 w-6 rounded-full bg-emerald-100 flex items-center justify-center">
+                    <CheckCircle2 className="h-3 w-3 text-emerald-600" />
+                  </div>
+                  <p className="font-semibold text-slate-900 text-xs">Booking confirmed</p>
+                </div>
+                <div className="text-[10px] text-slate-500 space-y-1">
+                  <p>Patient: Sarah Johnson</p>
+                  <p>Tomorrow, 2:30 PM</p>
+                </div>
+              </div>
+              
+              {/* Floating UI element - Message notification */}
+              <div className="absolute bottom-16 left-4 bg-white rounded-xl shadow-xl p-3 border border-slate-100 z-20 hidden md:block">
+                <div className="flex items-center gap-2">
+                  <div className="h-8 w-8 rounded-full bg-primary/10 flex items-center justify-center">
+                    <Monitor className="h-4 w-4 text-primary" />
+                  </div>
+                  <div>
+                    <p className="font-semibold text-slate-900 text-xs">MDcharts EHR</p>
+                    <p className="text-[10px] text-slate-500">Your visit is at 2:30pm</p>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Stats badge */}
+              <div className="absolute bottom-8 right-8 bg-white rounded-xl shadow-lg p-4 border border-slate-100 z-20">
                 <div className="flex items-center gap-3">
                   <div className="h-10 w-10 rounded-full bg-emerald-100 flex items-center justify-center">
                     <CheckCircle2 className="h-5 w-5 text-emerald-600" />

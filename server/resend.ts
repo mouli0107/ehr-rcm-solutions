@@ -89,3 +89,63 @@ export async function sendContactEmail(data: ContactFormData): Promise<{ success
     return { success: false, error: error instanceof Error ? error.message : 'Failed to send email' };
   }
 }
+
+const whitePaperTitles: Record<string, string> = {
+  "ehr-selection": "The Modern Medical Practice Guide to EHR Selection",
+  "rcm-optimization": "Optimizing Revenue Cycle Management in Healthcare",
+  "patient-engagement": "Patient Engagement in the Digital Age",
+  "telehealth": "Telehealth Implementation Best Practices",
+  "hipaa-compliance": "HIPAA Compliance in the Cloud Era",
+  "specialty-ehr": "Specialty EHR: Why One Size Doesn't Fit All"
+};
+
+export interface WhitePaperDownloadData {
+  whitePaperId: string;
+  firstName: string;
+  lastName: string;
+  email: string;
+  practiceAddress: string;
+  downloadReason: string;
+}
+
+export async function sendWhitePaperDownloadEmail(data: WhitePaperDownloadData): Promise<{ success: boolean; error?: string }> {
+  try {
+    const { client, fromEmail } = await getUncachableResendClient();
+    
+    const whitePaperTitle = whitePaperTitles[data.whitePaperId] || data.whitePaperId;
+    
+    const htmlContent = `
+      <h2>New White Paper Download</h2>
+      <p><strong>White Paper:</strong> ${whitePaperTitle}</p>
+      <hr/>
+      <h3>Lead Information</h3>
+      <p><strong>Name:</strong> ${data.firstName} ${data.lastName}</p>
+      <p><strong>Email:</strong> <a href="mailto:${data.email}">${data.email}</a></p>
+      <p><strong>Practice Address:</strong> ${data.practiceAddress}</p>
+      <hr/>
+      <h3>Reason for Interest</h3>
+      <p>${data.downloadReason}</p>
+      <hr/>
+      <p style="color: #666; font-size: 12px;">This lead was captured from the MDcharts EHR white paper download form.</p>
+      <p style="color: #666; font-size: 12px;">You can view all leads at: <a href="https://mdchartsehr.com/admin/leads">Lead Management Dashboard</a></p>
+    `;
+
+    const result = await client.emails.send({
+      from: fromEmail || 'MDcharts EHR <noreply@mdchartsehr.com>',
+      to: ['awachspress@mdcharts.net'],
+      subject: `New Lead: ${data.firstName} ${data.lastName} downloaded "${whitePaperTitle}"`,
+      html: htmlContent,
+      replyTo: data.email,
+    });
+
+    if (result.error) {
+      console.error('Resend error:', result.error);
+      return { success: false, error: result.error.message };
+    }
+
+    return { success: true };
+  } catch (error) {
+    console.error('Email sending error:', error);
+    return { success: false, error: error instanceof Error ? error.message : 'Failed to send email' };
+  }
+}

@@ -3,7 +3,7 @@ import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { insertContactRequestSchema, insertWhitePaperDownloadSchema } from "@shared/schema";
 import { z } from "zod";
-import { sendContactEmail } from "./resend";
+import { sendContactEmail, sendWhitePaperDownloadEmail } from "./resend";
 import { setupAuth, registerAuthRoutes, isAuthenticated } from "./replit_integrations/auth";
 
 export async function registerRoutes(
@@ -58,6 +58,20 @@ export async function registerRoutes(
     try {
       const validated = insertWhitePaperDownloadSchema.parse(req.body);
       const download = await storage.createWhitePaperDownload(validated);
+      
+      const emailResult = await sendWhitePaperDownloadEmail({
+        whitePaperId: validated.whitePaperId,
+        firstName: validated.firstName,
+        lastName: validated.lastName,
+        email: validated.email,
+        practiceAddress: validated.practiceAddress,
+        downloadReason: validated.downloadReason,
+      });
+      
+      if (!emailResult.success) {
+        console.error("Email notification failed:", emailResult.error);
+      }
+      
       res.status(201).json({ success: true, downloadId: download.id });
     } catch (error) {
       if (error instanceof z.ZodError) {

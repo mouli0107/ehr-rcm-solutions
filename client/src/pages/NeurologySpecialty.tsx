@@ -83,17 +83,17 @@ export default function NeurologySpecialty() {
     <div className="min-h-screen bg-background font-sans overflow-x-hidden">
       <Navbar />
       
-      {/* Deep Purple Hero with Neural Network Effect */}
-      <section className="pt-28 pb-20 bg-gradient-to-br from-violet-900 via-purple-900 to-indigo-900 relative overflow-hidden">
+      {/* Cool Gray/Slate Hero */}
+      <section className="pt-28 pb-20 bg-gradient-to-br from-slate-800 via-slate-700 to-gray-800 relative overflow-hidden">
         <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(139,92,246,0.3)_0%,transparent_50%)]" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_70%,rgba(99,102,241,0.2)_0%,transparent_40%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(148,163,184,0.2)_0%,transparent_50%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_70%,rgba(100,116,139,0.15)_0%,transparent_40%)]" />
           {/* Neural network dots */}
           <div className="absolute inset-0 opacity-20">
             {[...Array(20)].map((_, i) => (
               <div
                 key={i}
-                className="absolute w-2 h-2 bg-purple-400 rounded-full"
+                className="absolute w-2 h-2 bg-slate-400 rounded-full"
                 style={{
                   left: `${Math.random() * 100}%`,
                   top: `${Math.random() * 100}%`,
@@ -106,27 +106,27 @@ export default function NeurologySpecialty() {
         <div className="container mx-auto px-4 md:px-6 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="text-center lg:text-left">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-500/20 border border-purple-400/30 text-purple-300 text-sm font-semibold mb-6">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-600/40 border border-slate-500/30 text-slate-200 text-sm font-semibold mb-6">
                 <Brain className="h-4 w-4" />
                 Customizable Solution
               </div>
               
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
-                Customizable EHR for <span className="text-purple-400">Neurology</span> Practices
+                Customizable EHR for <span className="text-cyan-400">Neurology</span> Practices
               </h1>
               
-              <p className="text-xl text-purple-100 mb-8 leading-relaxed">
+              <p className="text-xl text-slate-300 mb-8 leading-relaxed">
                 Our flexible EHR platform adapts to your neurology workflow. Work with our team to configure exam templates, neurodiagnostic integrations, and specialized workflows for complex neurological conditions.
               </p>
               
               <div className="flex flex-wrap justify-center lg:justify-start gap-4">
                 <Link href="/book-demo">
-                  <Button size="lg" className="h-12 px-8 bg-purple-500 hover:bg-purple-600" data-testid="button-neuro-consultation">
+                  <Button size="lg" className="h-12 px-8 bg-cyan-500 hover:bg-cyan-600" data-testid="button-neuro-consultation">
                     Schedule a Consultation <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                 </Link>
                 <Link href="/contact">
-                  <Button size="lg" variant="outline" className="h-12 px-8 border-purple-400/50 text-purple-200 hover:bg-purple-800/50">
+                  <Button size="lg" variant="outline" className="h-12 px-8 border-slate-500 text-slate-200 hover:bg-slate-700">
                     Discuss Your Needs
                   </Button>
                 </Link>
@@ -135,8 +135,8 @@ export default function NeurologySpecialty() {
             
             <div className="flex justify-center lg:justify-end">
               <div className="relative">
-                <div className="absolute -inset-4 bg-purple-500/20 rounded-3xl blur-xl" />
-                <img src={neurologyHeroImage} alt="Neurologist analyzing brain scan" className="rounded-2xl shadow-2xl w-full relative z-10 ring-2 ring-purple-400/30" />
+                <div className="absolute -inset-4 bg-slate-500/20 rounded-3xl blur-xl" />
+                <img src={neurologyHeroImage} alt="Neurologist analyzing brain scan" className="rounded-2xl shadow-2xl w-full relative z-10 ring-2 ring-slate-600/30" />
               </div>
             </div>
           </div>
@@ -163,8 +163,8 @@ export default function NeurologySpecialty() {
                   onClick={() => setActivePathway(pathway.id)}
                   className={`px-6 py-3 rounded-xl font-medium transition-all ${
                     activePathway === pathway.id
-                      ? 'bg-purple-600 text-white shadow-lg'
-                      : 'bg-purple-50 text-purple-700 hover:bg-purple-100'
+                      ? 'bg-slate-700 text-white shadow-lg'
+                      : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
                   }`}
                   data-testid={`button-neuro-pathway-${pathway.id}`}
                 >
@@ -177,13 +177,13 @@ export default function NeurologySpecialty() {
               key={activePathway}
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              className="bg-gradient-to-br from-purple-50 to-indigo-50 rounded-2xl p-8 border border-purple-200"
+              className="bg-gradient-to-br from-slate-50 to-gray-100 rounded-2xl p-8 border border-slate-200"
             >
-              <h3 className="text-xl font-bold text-purple-900 mb-6">{activePathwayData?.label} Configuration</h3>
+              <h3 className="text-xl font-bold text-slate-800 mb-6">{activePathwayData?.label} Configuration</h3>
               <div className="grid md:grid-cols-2 gap-4">
                 {activePathwayData?.items.map((item, index) => (
-                  <div key={index} className="flex items-center gap-3 bg-white rounded-xl p-4 border border-purple-100">
-                    <div className="h-8 w-8 rounded-lg bg-purple-600 flex items-center justify-center flex-shrink-0">
+                  <div key={index} className="flex items-center gap-3 bg-white rounded-xl p-4 border border-slate-200">
+                    <div className="h-8 w-8 rounded-lg bg-slate-700 flex items-center justify-center flex-shrink-0">
                       <Check className="h-4 w-4 text-white" />
                     </div>
                     <span className="text-slate-700">{item}</span>
@@ -196,7 +196,7 @@ export default function NeurologySpecialty() {
       </section>
 
       {/* How We Customize */}
-      <section className="py-20 bg-gradient-to-b from-white to-purple-50">
+      <section className="py-20 bg-gradient-to-b from-white to-slate-50">
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
@@ -221,10 +221,10 @@ export default function NeurologySpecialty() {
                 className="text-center"
               >
                 <div className="relative inline-block mb-6">
-                  <div className="h-20 w-20 rounded-2xl bg-gradient-to-br from-purple-600 to-indigo-600 flex items-center justify-center mx-auto shadow-xl rotate-3 hover:rotate-0 transition-transform">
+                  <div className="h-20 w-20 rounded-2xl bg-gradient-to-br from-slate-700 to-gray-800 flex items-center justify-center mx-auto shadow-xl rotate-3 hover:rotate-0 transition-transform">
                     <item.icon className="h-10 w-10 text-white" />
                   </div>
-                  <div className="absolute -top-2 -right-2 h-8 w-8 rounded-full bg-purple-100 text-purple-700 font-bold flex items-center justify-center text-sm border-2 border-white">
+                  <div className="absolute -top-2 -right-2 h-8 w-8 rounded-full bg-cyan-500 text-white font-bold flex items-center justify-center text-sm border-2 border-white">
                     {item.step}
                   </div>
                 </div>
@@ -237,7 +237,7 @@ export default function NeurologySpecialty() {
       </section>
 
       {/* Features Grid */}
-      <section className="py-20 bg-purple-50">
+      <section className="py-20 bg-slate-50">
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
@@ -255,9 +255,9 @@ export default function NeurologySpecialty() {
                 initial={{ opacity: 1, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="bg-white rounded-2xl p-6 shadow-lg border border-purple-100 hover:border-purple-300 transition-all group"
+                className="bg-white rounded-2xl p-6 shadow-lg border border-slate-200 hover:border-slate-400 transition-all group"
               >
-                <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-purple-500 to-indigo-500 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-slate-700 to-gray-800 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                   <feature.icon className="h-6 w-6 text-white" />
                 </div>
                 <h3 className="text-xl font-semibold text-slate-900 mb-2">{feature.title}</h3>
@@ -269,32 +269,32 @@ export default function NeurologySpecialty() {
       </section>
 
       {/* Benefits */}
-      <section className="py-20 bg-gradient-to-br from-purple-900 to-indigo-900">
+      <section className="py-20 bg-gradient-to-br from-slate-800 to-gray-900">
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
                 Tailored to Your Neurology Practice
               </h2>
-              <p className="text-purple-200 text-lg mb-8">
+              <p className="text-slate-300 text-lg mb-8">
                 From initial consultation to long-term disease management, we configure MDcharts with the tools you need for exceptional neurological care.
               </p>
               <ul className="space-y-3">
                 {benefits.map((benefit, index) => (
                   <li key={index} className="flex items-center gap-3 text-white">
-                    <div className="h-6 w-6 rounded-full bg-purple-500/30 flex items-center justify-center flex-shrink-0">
-                      <Check className="h-4 w-4 text-purple-300" />
+                    <div className="h-6 w-6 rounded-full bg-cyan-500/30 flex items-center justify-center flex-shrink-0">
+                      <Check className="h-4 w-4 text-cyan-400" />
                     </div>
-                    <span className="text-purple-100">{benefit}</span>
+                    <span className="text-slate-200">{benefit}</span>
                   </li>
                 ))}
               </ul>
             </div>
-            <div className="bg-white/10 backdrop-blur rounded-2xl p-8 border border-purple-400/20">
+            <div className="bg-white/10 backdrop-blur rounded-2xl p-8 border border-slate-600/30">
               <div className="text-center">
-                <Clock className="h-16 w-16 text-purple-300 mx-auto mb-4" />
+                <Clock className="h-16 w-16 text-cyan-400 mx-auto mb-4" />
                 <h3 className="text-2xl font-bold text-white mb-2">Complex Care Made Simple</h3>
-                <p className="text-purple-200">
+                <p className="text-slate-300">
                   Custom-configured workflows for managing chronic neurological conditions.
                 </p>
               </div>
@@ -313,7 +313,7 @@ export default function NeurologySpecialty() {
             Schedule a consultation to explore how we can customize MDcharts for your neurological care delivery.
           </p>
           <Link href="/book-demo">
-            <Button size="lg" className="h-12 px-8 bg-purple-600 hover:bg-purple-700">
+            <Button size="lg" className="h-12 px-8 bg-slate-700 hover:bg-slate-800">
               Schedule Your Consultation <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
           </Link>

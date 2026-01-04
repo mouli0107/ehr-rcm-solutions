@@ -41,6 +41,7 @@ export const whitePaperDownloads = pgTable("white_paper_downloads", {
   whitePaperId: text("white_paper_id").notNull(),
   firstName: text("first_name").notNull(),
   lastName: text("last_name").notNull(),
+  email: text("email").notNull(),
   practiceAddress: text("practice_address").notNull(),
   downloadReason: text("download_reason").notNull(),
   createdAt: timestamp("created_at").defaultNow().notNull(),

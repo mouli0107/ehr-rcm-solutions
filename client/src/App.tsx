@@ -58,6 +58,7 @@ import PrivacyPolicyPage from "@/pages/PrivacyPolicy";
 import TermsOfServicePage from "@/pages/TermsOfService";
 import HIPAACompliancePage from "@/pages/HIPAACompliance";
 import SecurityPage from "@/pages/Security";
+import AdminLeadsPage from "@/pages/AdminLeads";
 
 function ScrollToTop() {
   const [location] = useLocation();
@@ -126,6 +127,8 @@ function Router() {
         <Route path="/terms-of-service" component={TermsOfServicePage} />
         <Route path="/hipaa-compliance" component={HIPAACompliancePage} />
         <Route path="/security" component={SecurityPage} />
+        
+        <Route path="/admin/leads" component={AdminLeadsPage} />
         
         <Route component={NotFound} />
       </Switch>

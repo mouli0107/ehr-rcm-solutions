@@ -9,6 +9,7 @@ export interface IStorage {
   createContactRequest(insertRequest: InsertContactRequest): Promise<ContactRequest>;
   getAllContactRequests(): Promise<ContactRequest[]>;
   createWhitePaperDownload(insertDownload: InsertWhitePaperDownload): Promise<WhitePaperDownload>;
+  getAllWhitePaperDownloads(): Promise<WhitePaperDownload[]>;
 }
 
 export class DatabaseStorage implements IStorage {
@@ -48,6 +49,10 @@ export class DatabaseStorage implements IStorage {
       .values(insertDownload)
       .returning();
     return download;
+  }
+
+  async getAllWhitePaperDownloads(): Promise<WhitePaperDownload[]> {
+    return await db.select().from(whitePaperDownloads).orderBy(desc(whitePaperDownloads.createdAt));
   }
 }
 

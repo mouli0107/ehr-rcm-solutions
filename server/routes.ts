@@ -66,5 +66,15 @@ export async function registerRoutes(
     }
   });
 
+  app.get("/api/white-paper-downloads", async (req, res) => {
+    try {
+      const downloads = await storage.getAllWhitePaperDownloads();
+      res.json(downloads);
+    } catch (error) {
+      console.error("Error fetching white paper downloads:", error);
+      res.status(500).json({ error: "Failed to fetch downloads" });
+    }
+  });
+
   return httpServer;
 }

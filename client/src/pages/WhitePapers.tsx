@@ -569,6 +569,7 @@ const whitePapers: WhitePaper[] = [
 interface FormData {
   firstName: string;
   lastName: string;
+  email: string;
   practiceAddress: string;
   downloadReason: string;
 }
@@ -576,6 +577,7 @@ interface FormData {
 interface FormErrors {
   firstName?: string;
   lastName?: string;
+  email?: string;
   practiceAddress?: string;
   downloadReason?: string;
 }
@@ -587,6 +589,7 @@ export default function WhitePapers() {
   const [formData, setFormData] = useState<FormData>({
     firstName: "",
     lastName: "",
+    email: "",
     practiceAddress: "",
     downloadReason: ""
   });
@@ -601,6 +604,11 @@ export default function WhitePapers() {
     }
     if (!formData.lastName.trim()) {
       errors.lastName = "Last name is required";
+    }
+    if (!formData.email.trim()) {
+      errors.email = "Email is required";
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email.trim())) {
+      errors.email = "Please enter a valid email address";
     }
     if (!formData.practiceAddress.trim()) {
       errors.practiceAddress = "Practice address is required";
@@ -693,6 +701,7 @@ export default function WhitePapers() {
     setFormData({
       firstName: "",
       lastName: "",
+      email: "",
       practiceAddress: "",
       downloadReason: ""
     });
@@ -717,6 +726,7 @@ export default function WhitePapers() {
           whitePaperId: selectedPaper.id,
           firstName: formData.firstName.trim(),
           lastName: formData.lastName.trim(),
+          email: formData.email.trim(),
           practiceAddress: formData.practiceAddress.trim(),
           downloadReason: formData.downloadReason.trim()
         })
@@ -857,6 +867,22 @@ export default function WhitePapers() {
                   <p className="text-red-500 text-sm">{formErrors.lastName}</p>
                 )}
               </div>
+            </div>
+            
+            <div className="space-y-2">
+              <Label htmlFor="email">Email Address *</Label>
+              <Input
+                id="email"
+                type="email"
+                value={formData.email}
+                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                placeholder="john.smith@practice.com"
+                className={formErrors.email ? "border-red-500" : ""}
+                data-testid="input-email"
+              />
+              {formErrors.email && (
+                <p className="text-red-500 text-sm">{formErrors.email}</p>
+              )}
             </div>
             
             <div className="space-y-2">

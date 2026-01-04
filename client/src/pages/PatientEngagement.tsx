@@ -5,7 +5,7 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { Link } from "wouter";
 import patientHeroImage from "@assets/stock_images/senior_woman_patient_eb20284f.jpg";
-import telehealthVideo from "@assets/generated_videos/doctor_in_telehealth_video_call.mp4";
+import telehealthVideo from "@assets/generated_videos/doctor_viewing_patient_on_screen.mp4";
 
 const features = [
   {

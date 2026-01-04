@@ -632,30 +632,39 @@ export default function WhitePapers() {
     yPosition += 15;
     
     paper.content.forEach((line) => {
+      let processedLine = line
+        .replace(/•/g, "-")
+        .replace(/□/g, "[ ]")
+        .replace(/©/g, "(c)");
+      
       if (yPosition > pageHeight - margin - 20) {
         doc.addPage();
         yPosition = margin;
       }
       
-      if (line === "") {
+      if (processedLine === "") {
         yPosition += lineHeight / 2;
         return;
       }
       
-      if (line === line.toUpperCase() && line.length > 10 && !line.startsWith("•") && !line.startsWith("□")) {
+      const isBullet = line.startsWith("-") || processedLine.startsWith("-");
+      const isCheckbox = line.startsWith("[ ]") || processedLine.startsWith("[ ]");
+      const isCopyright = line.startsWith("(c)") || processedLine.startsWith("(c)") || line.startsWith("www.");
+      
+      if (processedLine === processedLine.toUpperCase() && processedLine.length > 10 && !isBullet && !isCheckbox) {
         doc.setFont("helvetica", "bold");
-        doc.setFontSize(line.length > 40 ? 14 : 16);
+        doc.setFontSize(processedLine.length > 40 ? 14 : 16);
         doc.setTextColor(0, 80, 120);
-      } else if (line.startsWith("CHAPTER") || line.startsWith("EXECUTIVE")) {
+      } else if (processedLine.startsWith("CHAPTER") || processedLine.startsWith("EXECUTIVE")) {
         doc.setFont("helvetica", "bold");
         doc.setFontSize(12);
         doc.setTextColor(0, 100, 140);
         yPosition += 5;
-      } else if (line.startsWith("•") || line.startsWith("□")) {
+      } else if (isBullet || isCheckbox) {
         doc.setFont("helvetica", "normal");
         doc.setFontSize(10);
         doc.setTextColor(60, 60, 60);
-      } else if (line.startsWith("©") || line.startsWith("www.")) {
+      } else if (isCopyright) {
         doc.setFont("helvetica", "italic");
         doc.setFontSize(9);
         doc.setTextColor(120, 120, 120);
@@ -665,7 +674,7 @@ export default function WhitePapers() {
         doc.setTextColor(40, 40, 40);
       }
       
-      const splitLines = doc.splitTextToSize(line, maxWidth);
+      const splitLines = doc.splitTextToSize(processedLine, maxWidth);
       splitLines.forEach((splitLine: string) => {
         if (yPosition > pageHeight - margin - 10) {
           doc.addPage();

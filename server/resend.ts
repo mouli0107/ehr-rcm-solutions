@@ -45,7 +45,7 @@ export interface ContactFormData {
   phone?: string;
   company?: string;
   state?: string;
-  message: string;
+  message?: string;
   requestType?: string;
 }
 
@@ -65,7 +65,7 @@ export async function sendContactEmail(data: ContactFormData): Promise<{ success
       <p><strong>State:</strong> ${data.state || 'Not provided'}</p>
       <hr/>
       <h3>Message</h3>
-      <p>${data.message}</p>
+      <p>${data.message || 'No message provided'}</p>
       <hr/>
       <p style="color: #666; font-size: 12px;">This email was sent from the MDcharts EHR website contact form.</p>
     `;

@@ -1,4 +1,4 @@
-import { users, contactRequests, type User, type InsertUser, type ContactRequest, type InsertContactRequest } from "@shared/schema";
+import { users, contactRequests, whitePaperDownloads, type User, type InsertUser, type ContactRequest, type InsertContactRequest, type WhitePaperDownload, type InsertWhitePaperDownload } from "@shared/schema";
 import { db } from "./db";
 import { eq, desc } from "drizzle-orm";
 
@@ -8,6 +8,7 @@ export interface IStorage {
   createUser(insertUser: InsertUser): Promise<User>;
   createContactRequest(insertRequest: InsertContactRequest): Promise<ContactRequest>;
   getAllContactRequests(): Promise<ContactRequest[]>;
+  createWhitePaperDownload(insertDownload: InsertWhitePaperDownload): Promise<WhitePaperDownload>;
 }
 
 export class DatabaseStorage implements IStorage {
@@ -39,6 +40,14 @@ export class DatabaseStorage implements IStorage {
 
   async getAllContactRequests(): Promise<ContactRequest[]> {
     return await db.select().from(contactRequests).orderBy(desc(contactRequests.createdAt));
+  }
+
+  async createWhitePaperDownload(insertDownload: InsertWhitePaperDownload): Promise<WhitePaperDownload> {
+    const [download] = await db
+      .insert(whitePaperDownloads)
+      .values(insertDownload)
+      .returning();
+    return download;
   }
 }
 

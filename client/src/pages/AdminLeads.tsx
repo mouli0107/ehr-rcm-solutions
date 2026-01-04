@@ -13,8 +13,9 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { 
-  Users, FileText, ArrowLeft, Search, Download, Mail, MapPin, Calendar
+  Users, FileText, ArrowLeft, Search, Download, Mail, MapPin, Calendar, LogIn, Loader2
 } from "lucide-react";
+import { useAuth } from "@/hooks/use-auth";
 
 interface WhitePaperDownload {
   id: number;
@@ -48,6 +49,7 @@ const whitePaperTitles: Record<string, string> = {
 };
 
 export default function AdminLeads() {
+  const { user, isLoading: authLoading, isAuthenticated } = useAuth();
   const [downloads, setDownloads] = useState<WhitePaperDownload[]>([]);
   const [contacts, setContacts] = useState<ContactRequest[]>([]);
   const [searchTerm, setSearchTerm] = useState("");
@@ -55,6 +57,11 @@ export default function AdminLeads() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    if (!isAuthenticated) {
+      setIsLoading(false);
+      return;
+    }
+    
     const fetchData = async () => {
       setIsLoading(true);
       try {
@@ -80,7 +87,43 @@ export default function AdminLeads() {
     };
 
     fetchData();
-  }, []);
+  }, [isAuthenticated]);
+
+  if (authLoading) {
+    return (
+      <div className="min-h-screen bg-background flex items-center justify-center">
+        <Loader2 className="h-8 w-8 animate-spin text-primary" />
+      </div>
+    );
+  }
+
+  if (!isAuthenticated) {
+    return (
+      <div className="min-h-screen bg-background font-sans overflow-x-hidden">
+        <Navbar />
+        <section className="pt-28 pb-20 bg-gradient-to-b from-slate-50 to-white min-h-[60vh] flex items-center">
+          <div className="container mx-auto px-4 md:px-6">
+            <div className="max-w-md mx-auto text-center">
+              <div className="h-20 w-20 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6">
+                <Users className="h-10 w-10 text-primary" />
+              </div>
+              <h1 className="text-3xl font-bold text-slate-900 mb-4">Admin Access Required</h1>
+              <p className="text-slate-600 mb-8">
+                Please log in to access the lead management dashboard.
+              </p>
+              <a href="/api/login">
+                <Button size="lg" className="h-12 px-8" data-testid="button-login">
+                  <LogIn className="h-5 w-5 mr-2" />
+                  Log In to Continue
+                </Button>
+              </a>
+            </div>
+          </div>
+        </section>
+        <Footer />
+      </div>
+    );
+  }
 
   const filteredDownloads = downloads.filter(d => 
     d.firstName.toLowerCase().includes(searchTerm.toLowerCase()) ||

@@ -4,11 +4,14 @@ import { storage } from "./storage";
 import { insertContactRequestSchema, insertWhitePaperDownloadSchema } from "@shared/schema";
 import { z } from "zod";
 import { sendContactEmail } from "./resend";
+import { setupAuth, registerAuthRoutes, isAuthenticated } from "./replit_integrations/auth";
 
 export async function registerRoutes(
   httpServer: Server,
   app: Express
 ): Promise<Server> {
+  await setupAuth(app);
+  registerAuthRoutes(app);
   // Contact Request API
   app.post("/api/contact", async (req, res) => {
     try {
@@ -41,7 +44,7 @@ export async function registerRoutes(
     }
   });
 
-  app.get("/api/contact-requests", async (req, res) => {
+  app.get("/api/contact-requests", isAuthenticated, async (req, res) => {
     try {
       const requests = await storage.getAllContactRequests();
       res.json(requests);
@@ -66,7 +69,7 @@ export async function registerRoutes(
     }
   });
 
-  app.get("/api/white-paper-downloads", async (req, res) => {
+  app.get("/api/white-paper-downloads", isAuthenticated, async (req, res) => {
     try {
       const downloads = await storage.getAllWhitePaperDownloads();
       res.json(downloads);

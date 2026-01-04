@@ -60,19 +60,25 @@ export default function EHRPage() {
               initial={{ opacity: 0.9, y: 5 }}
               animate={{ opacity: 1, y: 0 }}
             >
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-100 text-primary text-xs font-bold uppercase tracking-wide mb-6">
-                <FileText className="h-4 w-4" />
-                Electronic Health Records
+              <div className="flex flex-wrap gap-3 mb-6">
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-50 border border-amber-200 text-amber-700 text-xs font-bold uppercase tracking-wide">
+                  <Shield className="h-4 w-4" />
+                  ONC 2015 Edition Certified
+                </div>
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 text-xs font-bold uppercase tracking-wide">
+                  <CheckCircle2 className="h-4 w-4" />
+                  21st Century Cures Act Certified
+                </div>
               </div>
               
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-[1.1] mb-6">
                 Click Less. <br/>
-                <span className="text-primary">Care More.</span>
+                <span className="text-primary">Chart Smarter.</span>
               </h1>
               
               <p className="text-xl text-slate-600 mb-8 leading-relaxed">
-                Our intuitive EHR system reduces documentation time by 40% with adaptive templates, 
-                intelligent automation, and seamless integrations.
+                A highly configurable, template-based EHR engine that adapts to your workflow. 
+                Create detailed clinical notes in seconds, not minutes.
               </p>
               
               <div className="flex flex-wrap gap-4">

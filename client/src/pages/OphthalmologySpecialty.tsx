@@ -5,7 +5,8 @@ import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { 
   Eye, Scan, FileText, Calendar, Shield, Zap,
-  Check, ArrowRight, Clock, Settings, MessageSquare, Users
+  Check, ArrowRight, Clock, Settings, MessageSquare, Users,
+  Monitor, Glasses
 } from "lucide-react";
 import ophthalmologyHeroImage from '@assets/generated_images/ophthalmologist_eye_examination.png';
 
@@ -42,6 +43,13 @@ const features = [
   }
 ];
 
+const diagnosticTimeline = [
+  { step: 1, title: "Visual Acuity", description: "Configure auto-population from your phoropter" },
+  { step: 2, title: "OCT Imaging", description: "Integrate with your specific OCT device" },
+  { step: 3, title: "Visual Fields", description: "Import results directly into charts" },
+  { step: 4, title: "Fundus Photos", description: "Attach imaging to patient records" }
+];
+
 const benefits = [
   "Configure IOP trending and alert thresholds",
   "Customize visual field progression analysis views",
@@ -51,40 +59,28 @@ const benefits = [
   "Configure referral workflows for sub-specialists"
 ];
 
-const customizationSteps = [
-  {
-    icon: MessageSquare,
-    title: "Consultation",
-    description: "Discuss your ophthalmology practice's specific workflow needs and diagnostic integration requirements"
-  },
-  {
-    icon: Settings,
-    title: "Configuration",
-    description: "Our team configures exam templates, device integrations, and optical workflows for your practice"
-  },
-  {
-    icon: Users,
-    title: "Training & Go-Live",
-    description: "Comprehensive training and support to ensure a smooth transition for your clinical and optical staff"
-  }
-];
-
 export default function OphthalmologySpecialty() {
   return (
     <div className="min-h-screen bg-background font-sans overflow-x-hidden">
       <Navbar />
       
-      <section className="pt-28 pb-20 bg-gradient-to-b from-slate-50 to-white">
-        <div className="container mx-auto px-4 md:px-6">
+      {/* Gradient Hero with Lens Flare Effect */}
+      <section className="pt-28 pb-20 bg-gradient-to-br from-sky-50 via-white to-indigo-50 relative overflow-hidden">
+        <div className="absolute inset-0">
+          <div className="absolute top-20 right-1/4 w-96 h-96 bg-sky-200/30 rounded-full blur-3xl" />
+          <div className="absolute bottom-0 left-1/4 w-80 h-80 bg-indigo-200/30 rounded-full blur-3xl" />
+        </div>
+        
+        <div className="container mx-auto px-4 md:px-6 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="text-center lg:text-left">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-50 border border-amber-200 text-amber-700 text-sm font-semibold mb-6">
-                <Settings className="h-4 w-4" />
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-sky-100 border border-sky-200 text-sky-700 text-sm font-semibold mb-6">
+                <Eye className="h-4 w-4" />
                 Customizable Solution
               </div>
               
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 leading-tight mb-6">
-                Customizable EHR for <span className="text-primary">Eye Care</span> Professionals
+                Customizable EHR for <span className="bg-gradient-to-r from-sky-600 to-indigo-600 bg-clip-text text-transparent">Eye Care</span> Professionals
               </h1>
               
               <p className="text-xl text-slate-600 mb-8 leading-relaxed">
@@ -93,12 +89,12 @@ export default function OphthalmologySpecialty() {
               
               <div className="flex flex-wrap justify-center lg:justify-start gap-4">
                 <Link href="/book-demo">
-                  <Button size="lg" className="h-12 px-8" data-testid="button-ophtho-consultation">
+                  <Button size="lg" className="h-12 px-8 bg-gradient-to-r from-sky-600 to-indigo-600 hover:from-sky-700 hover:to-indigo-700" data-testid="button-ophtho-consultation">
                     Schedule a Consultation <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                 </Link>
                 <Link href="/contact">
-                  <Button size="lg" variant="outline" className="h-12 px-8">
+                  <Button size="lg" variant="outline" className="h-12 px-8 border-sky-300 text-sky-700 hover:bg-sky-50">
                     Discuss Your Needs
                   </Button>
                 </Link>
@@ -106,18 +102,67 @@ export default function OphthalmologySpecialty() {
             </div>
             
             <div className="flex justify-center lg:justify-end">
-              <img 
-                src={ophthalmologyHeroImage} 
-                alt="Ophthalmologist eye examination" 
-                className="rounded-2xl shadow-2xl w-full max-w-lg"
-                data-testid="img-ophthalmology-hero"
-              />
+              <div className="relative">
+                <div className="absolute -inset-4 bg-gradient-to-r from-sky-400/20 to-indigo-400/20 rounded-3xl blur-xl" />
+                <img 
+                  src={ophthalmologyHeroImage} 
+                  alt="Ophthalmologist eye examination" 
+                  className="rounded-2xl shadow-2xl w-full max-w-lg relative z-10 ring-1 ring-sky-100"
+                  data-testid="img-ophthalmology-hero"
+                />
+              </div>
             </div>
           </div>
         </div>
       </section>
 
+      {/* Diagnostic Equipment Timeline */}
       <section className="py-20 bg-white">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+              Seamless Diagnostic Integration
+            </h2>
+            <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+              We configure your EHR to integrate with your specific diagnostic equipment.
+            </p>
+          </div>
+          
+          <div className="max-w-4xl mx-auto">
+            <div className="relative">
+              <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-gradient-to-b from-sky-400 to-indigo-400 hidden md:block" />
+              
+              <div className="space-y-8">
+                {diagnosticTimeline.map((item, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 1, x: index % 2 === 0 ? -20 : 20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    className={`flex items-center gap-8 ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}
+                  >
+                    <div className={`flex-1 ${index % 2 === 0 ? 'md:text-right' : 'md:text-left'}`}>
+                      <div className="bg-gradient-to-br from-sky-50 to-indigo-50 rounded-2xl p-6 border border-sky-100">
+                        <h3 className="text-lg font-semibold text-slate-900 mb-2">{item.title}</h3>
+                        <p className="text-slate-600">{item.description}</p>
+                      </div>
+                    </div>
+                    <div className="relative z-10 hidden md:flex">
+                      <div className="h-12 w-12 rounded-full bg-gradient-to-br from-sky-500 to-indigo-500 flex items-center justify-center text-white font-bold shadow-lg">
+                        {item.step}
+                      </div>
+                    </div>
+                    <div className="flex-1 hidden md:block" />
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* How We Customize */}
+      <section className="py-20 bg-gradient-to-br from-slate-50 to-sky-50">
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
@@ -128,32 +173,37 @@ export default function OphthalmologySpecialty() {
             </p>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-8 mb-16">
-            {customizationSteps.map((step, index) => (
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              { icon: MessageSquare, step: 1, title: "Consultation", description: "Discuss your ophthalmology practice's specific workflow needs and diagnostic integration requirements" },
+              { icon: Settings, step: 2, title: "Configuration", description: "Our team configures exam templates, device integrations, and optical workflows for your practice" },
+              { icon: Users, step: 3, title: "Training & Go-Live", description: "Comprehensive training and support for your clinical and optical staff" }
+            ].map((item, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 1, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="text-center"
+                className="bg-white rounded-2xl p-8 shadow-lg border border-sky-100 text-center"
               >
-                <div className="h-16 w-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                  <step.icon className="h-8 w-8 text-primary" />
+                <div className="h-16 w-16 rounded-2xl bg-gradient-to-br from-sky-500 to-indigo-500 flex items-center justify-center mx-auto mb-4 shadow-lg">
+                  <item.icon className="h-8 w-8 text-white" />
                 </div>
-                <div className="text-sm font-bold text-primary mb-2">Step {index + 1}</div>
-                <h3 className="text-xl font-semibold text-slate-900 mb-2">{step.title}</h3>
-                <p className="text-slate-600">{step.description}</p>
+                <div className="text-sm font-bold text-sky-600 mb-2">Step {item.step}</div>
+                <h3 className="text-xl font-semibold text-slate-900 mb-2">{item.title}</h3>
+                <p className="text-slate-600">{item.description}</p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="py-20 bg-slate-50">
+      {/* Features */}
+      <section className="py-20 bg-white">
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-              Configure Features for Your Ophthalmology Practice
+              Configure Features for Your Practice
             </h2>
             <p className="text-lg text-slate-600 max-w-2xl mx-auto">
               From comprehensive eye exams to complex surgical procedures, customize MDcharts to match your workflows.
@@ -167,10 +217,10 @@ export default function OphthalmologySpecialty() {
                 initial={{ opacity: 1, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="bg-white rounded-2xl p-6 hover:shadow-lg transition-shadow"
+                className="bg-gradient-to-br from-white to-sky-50 rounded-2xl p-6 hover:shadow-xl transition-all border border-sky-100 group"
               >
-                <div className="h-12 w-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
-                  <feature.icon className="h-6 w-6 text-primary" />
+                <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-sky-500 to-indigo-500 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                  <feature.icon className="h-6 w-6 text-white" />
                 </div>
                 <h3 className="text-xl font-semibold text-slate-900 mb-2">{feature.title}</h3>
                 <p className="text-slate-600">{feature.description}</p>
@@ -180,30 +230,31 @@ export default function OphthalmologySpecialty() {
         </div>
       </section>
 
-      <section className="py-20 bg-primary">
+      {/* Benefits */}
+      <section className="py-20 bg-gradient-to-br from-sky-600 to-indigo-700">
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
                 Tailored to Your Eye Care Practice
               </h2>
-              <p className="text-white/90 text-lg mb-8">
+              <p className="text-sky-100 text-lg mb-8">
                 We configure MDcharts to integrate clinical documentation, diagnostic imaging, and practice management into one seamless platform for your practice.
               </p>
               <ul className="space-y-3">
                 {benefits.map((benefit, index) => (
                   <li key={index} className="flex items-center gap-3 text-white">
-                    <Check className="h-5 w-5 text-white" />
+                    <Check className="h-5 w-5 text-sky-300" />
                     <span>{benefit}</span>
                   </li>
                 ))}
               </ul>
             </div>
-            <div className="bg-white/10 rounded-2xl p-8">
+            <div className="bg-white/10 backdrop-blur rounded-2xl p-8 border border-white/20">
               <div className="text-center">
                 <Clock className="h-16 w-16 text-white mx-auto mb-4" />
                 <h3 className="text-2xl font-bold text-white mb-2">Your Workflow, Your Way</h3>
-                <p className="text-white/80">
+                <p className="text-sky-100">
                   Custom-configured for the unique needs of your ophthalmology practice.
                 </p>
               </div>
@@ -212,19 +263,41 @@ export default function OphthalmologySpecialty() {
         </div>
       </section>
 
+      {/* Dual CTA */}
       <section className="py-20 bg-white">
-        <div className="container mx-auto px-4 md:px-6 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-            Ready to Discuss Your Eye Care Practice Needs?
-          </h2>
-          <p className="text-lg text-slate-600 mb-8 max-w-2xl mx-auto">
-            Schedule a consultation to explore how we can customize MDcharts for your ophthalmology workflows.
-          </p>
-          <Link href="/book-demo">
-            <Button size="lg" className="h-12 px-8">
-              Schedule Your Consultation <ArrowRight className="ml-2 h-4 w-4" />
-            </Button>
-          </Link>
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+              Ready to Discuss Your Eye Care Practice Needs?
+            </h2>
+            <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+              Whether you run a clinical practice or a full-service optical center, we can help.
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <div className="bg-gradient-to-br from-sky-50 to-indigo-50 rounded-2xl p-8 border border-sky-200 text-center">
+              <Monitor className="h-12 w-12 text-sky-600 mx-auto mb-4" />
+              <h3 className="text-xl font-bold text-slate-900 mb-2">Clinical Practice</h3>
+              <p className="text-slate-600 mb-6">Configure exam templates, surgical workflows, and diagnostic integrations</p>
+              <Link href="/book-demo">
+                <Button className="bg-gradient-to-r from-sky-600 to-indigo-600 hover:from-sky-700 hover:to-indigo-700">
+                  Schedule Consultation <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </Link>
+            </div>
+            
+            <div className="bg-gradient-to-br from-indigo-50 to-purple-50 rounded-2xl p-8 border border-indigo-200 text-center">
+              <Glasses className="h-12 w-12 text-indigo-600 mx-auto mb-4" />
+              <h3 className="text-xl font-bold text-slate-900 mb-2">Optical Shop</h3>
+              <p className="text-slate-600 mb-6">Set up dispensary workflows, prescription management, and inventory</p>
+              <Link href="/book-demo">
+                <Button className="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700">
+                  Schedule Consultation <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
 

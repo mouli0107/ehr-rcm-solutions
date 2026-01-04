@@ -87,7 +87,7 @@ export default function OrthopedicsSpecialty() {
               </div>
               
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
-                Customizable EHR for <span className="text-cyan-400">Orthopedic</span> Practices
+                Tailored EHR Platform Built for <span className="text-cyan-400">Orthopedic</span> Teams
               </h1>
               
               <p className="text-xl text-slate-300 mb-8 leading-relaxed">

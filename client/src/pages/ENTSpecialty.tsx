@@ -89,7 +89,7 @@ export default function ENTSpecialty() {
               </div>
               
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 leading-tight mb-6">
-                Customizable EHR for <span className="text-amber-600">ENT</span> Specialists
+                Specialty-Tuned EHR Workflows for <span className="text-amber-600">Otolaryngology</span>
               </h1>
               
               <p className="text-xl text-slate-600 mb-8 leading-relaxed">

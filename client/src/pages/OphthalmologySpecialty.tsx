@@ -80,7 +80,7 @@ export default function OphthalmologySpecialty() {
               </div>
               
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 leading-tight mb-6">
-                Customizable EHR for <span className="bg-gradient-to-r from-rose-500 to-orange-500 bg-clip-text text-transparent">Eye Care</span> Professionals
+                <span className="bg-gradient-to-r from-rose-500 to-orange-500 bg-clip-text text-transparent">Eye Care</span> EHR Configured Around Your Practice
               </h1>
               
               <p className="text-xl text-slate-600 mb-8 leading-relaxed">

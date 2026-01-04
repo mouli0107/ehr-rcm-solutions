@@ -95,7 +95,7 @@ export default function PsychiatrySpecialty() {
               </div>
               
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 leading-tight mb-6">
-                Customizable EHR for <span className="text-teal-600">Behavioral Health</span>
+                <span className="text-teal-600">Behavioral Health</span> EHR Designed for Personalized Care
               </h1>
               
               <p className="text-xl text-slate-600 mb-8 leading-relaxed">

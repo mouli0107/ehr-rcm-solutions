@@ -112,7 +112,7 @@ export default function NeurologySpecialty() {
               </div>
               
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
-                Customizable EHR for <span className="text-cyan-400">Neurology</span> Practices
+                <span className="text-cyan-400">Neurology</span>-Focused EHR Engineered to Fit Your Clinic
               </h1>
               
               <p className="text-xl text-slate-300 mb-8 leading-relaxed">

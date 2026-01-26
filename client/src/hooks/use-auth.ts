@@ -3,24 +3,30 @@ import type { User } from "@shared/models/auth";
 
 async function fetchUser(): Promise<User | null> {
   try {
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 5000);
+    
     const response = await fetch("/api/auth/user", {
       credentials: "include",
+      signal: controller.signal,
     });
-
-    if (response.status === 401) {
-      return null;
-    }
+    
+    clearTimeout(timeoutId);
 
     if (!response.ok) {
       return null;
     }
 
     const text = await response.text();
-    if (!text) {
+    if (!text || text.trim() === '') {
       return null;
     }
     
-    return JSON.parse(text);
+    try {
+      return JSON.parse(text);
+    } catch {
+      return null;
+    }
   } catch {
     return null;
   }
@@ -32,11 +38,12 @@ async function logout(): Promise<void> {
 
 export function useAuth() {
   const queryClient = useQueryClient();
-  const { data: user, isLoading } = useQuery<User | null>({
+  const { data: user, isLoading, error } = useQuery<User | null>({
     queryKey: ["/api/auth/user"],
     queryFn: fetchUser,
     retry: false,
     staleTime: 1000 * 60 * 5, // 5 minutes
+    throwOnError: false,
   });
 
   const logoutMutation = useMutation({
@@ -47,9 +54,9 @@ export function useAuth() {
   });
 
   return {
-    user,
+    user: error ? null : user,
     isLoading,
-    isAuthenticated: !!user,
+    isAuthenticated: !!user && !error,
     logout: logoutMutation.mutate,
     isLoggingOut: logoutMutation.isPending,
   };

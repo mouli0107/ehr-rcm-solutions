@@ -19,6 +19,40 @@
   </head>
   <body>
     <div id="root"></div>
+    <script>
+      // Patch Response.json() to handle empty responses gracefully
+      (function() {
+        var originalJson = Response.prototype.json;
+        Response.prototype.json = function() {
+          return this.text().then(function(text) {
+            if (!text || text.trim() === '') {
+              return null;
+            }
+            try {
+              return JSON.parse(text);
+            } catch (e) {
+              console.warn('JSON parse failed, returning null');
+              return null;
+            }
+          });
+        };
+      })();
+      // Global error handlers
+      window.addEventListener('error', function(event) {
+        if (event.message && (event.message.includes('Unexpected end of input') || event.message.includes('JSON'))) {
+          event.preventDefault();
+          event.stopPropagation();
+          event.stopImmediatePropagation();
+          return false;
+        }
+      }, true);
+      window.addEventListener('unhandledrejection', function(event) {
+        if (event.reason && event.reason.message && (event.reason.message.includes('Unexpected end of input') || event.reason.message.includes('JSON'))) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+      }, true);
+    </script>
     <script type="module" src="/src/main.tsx"></script>
     <!--Start of Tawk.to Script-->
     <script type="text/javascript">
